@@ -6,8 +6,8 @@ export function UnsavedChangesDialog({ visible, saving, onSave, onDiscard, onCan
 }) {
   return <Modal transparent animationType="fade" visible={visible} onRequestClose={onCancel}>
     <View style={styles.backdrop}><View accessibilityViewIsModal style={styles.dialog}>
-      <Text accessibilityRole="header" style={styles.title}>บันทึกการจัดวาง?</Text>
-      <Text style={styles.body}>ผังร่างยังไม่ได้บันทึก เลือก Save เพื่อยืนยัน หรือ Discard เพื่อกลับไปใช้ผังที่บันทึกไว้ล่าสุด</Text>
+      <Text accessibilityRole="header" style={styles.title}>Save your layout?</Text>
+      <Text style={styles.body}>You have unsaved changes. Choose Save to keep this layout, or Discard to restore the last saved layout.</Text>
       <Pressable accessibilityRole="button" disabled={saving} onPress={onSave} style={styles.primary}>
         <Text style={styles.primaryText}>{saving ? 'Saving…' : 'Save'}</Text>
       </Pressable>

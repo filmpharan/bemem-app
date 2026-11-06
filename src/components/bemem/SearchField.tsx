@@ -6,10 +6,10 @@ import { BememIcon } from './BememIcon';
 export function SearchField({ value, onChange }: { value: string; onChange: (text: string) => void }) {
   return <View style={styles.container}>
     <BememIcon name="search" />
-    <TextInput autoFocus accessibilityLabel="ค้นหาบัตร" placeholder="Search cards & folders"
+    <TextInput autoFocus accessibilityLabel="Search cards" placeholder="Search cards & folders"
       placeholderTextColor={bemem.muted} value={value} onChangeText={onChange}
       autoCorrect={false} returnKeyType="search" style={styles.input} />
-    {!!value && <Pressable onPress={() => onChange('')} accessibilityRole="button" accessibilityLabel="ล้างคำค้นหา" style={styles.clear}>
+    {!!value && <Pressable onPress={() => onChange('')} accessibilityRole="button" accessibilityLabel="Clear search" style={styles.clear}>
       <BememIcon name="close" />
     </Pressable>}
   </View>;

@@ -7,7 +7,7 @@ export function CanvasActions({ editing, empty, dirty, disabled, saving, onAdd, 
   editing: boolean; empty: boolean; dirty: boolean; disabled: boolean; saving: boolean; onAdd: () => void; onSave: () => void;
 }) {
   return <View pointerEvents="box-none" style={styles.actions}>
-    {(editing || empty) && <GlassButton kind="gel" accessibilityLabel="Add Card (ยังไม่เปิดใช้งานใน Phase 1)"
+    {(editing || empty) && <GlassButton kind="gel" accessibilityLabel="Add Card (coming soon, not available in Phase 1)"
       disabled={disabled} onPress={onAdd}
       style={[styles.fab, editing ? styles.left : styles.right]}>
       <BememIcon name="plus" color={lagoon.text.primary} />

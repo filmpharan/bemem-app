@@ -27,7 +27,7 @@ export function useWalletCanvas() {
     }).catch(() => {
       if (!active) return;
       setBlocked(true); setReady(true);
-      setError('อ่านผังที่บันทึกไว้ไม่ได้ แสดงบัตรตัวอย่างเท่านั้น และปิดการบันทึกเพื่อรักษาไฟล์เดิม กรุณาปิดแล้วเปิดแอปใหม่เพื่อลองอีกครั้ง');
+      setError('Unable to read the saved layout. Showing demo cards only. Saving is disabled to protect your existing files. Close and reopen the app to try again.');
     });
     return () => { active = false; };
   }, []);
@@ -56,7 +56,7 @@ export function useWalletCanvas() {
       const doc = await canvasStorage.save(snapshot, revision);
       dispatch({ type: 'saved', document: doc });
     } catch {
-      setError('บันทึกไม่สำเร็จ ผังร่างยังอยู่ และยังไม่ยืนยันเป็นผังที่บันทึกแล้ว กรุณาลองอีกครั้งหรือเลือก Discard');
+      setError('Saving failed. Your draft is still here and has not been saved. Try again or choose Discard.');
       dispatch({ type: 'saveFailed' });
     } finally {
       savingRef.current = false; setSaving(false);
