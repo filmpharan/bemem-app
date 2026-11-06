@@ -9,6 +9,7 @@ import { SearchField } from '@/components/bemem/SearchField';
 import { UnsavedChangesDialog } from '@/components/bemem/UnsavedChangesDialog';
 import { WalletCanvas } from '@/components/bemem/WalletCanvas';
 import { bemem } from '@/constants/bemem-theme';
+import { core, lagoon, lagoonFonts } from '@/constants/lagoon-theme';
 import { PREVIEW_CARDS } from '@/data/wallet-preview';
 import { useWalletCanvas } from '@/hooks/use-wallet-canvas';
 import { backAction, primaryHeaderAction } from '@/lib/phase1-navigation';
@@ -49,13 +50,17 @@ export default function HomeScreen() {
 
   return <SafeAreaView style={styles.safe}>
     <View style={styles.screen}>
+      <View pointerEvents="none" accessible={false} style={styles.canvasLight} />
       <HomeHeader editing={editing} searchOpen={searchOpen} disabled={disabled} onBack={handleBack}
         onSearch={() => { if (searchOpen) { setQuery(''); Keyboard.dismiss(); } setSearchOpen(!searchOpen); }}
         onCreate={openCreate} onLogo={() => { if (editing) handleBack(); }} />
       {searchOpen && <SearchField value={query} onChange={setQuery} />}
       <View style={styles.statusRow}>
-        <Text style={styles.status}>{editing ? 'Create · ลากบัตรเพื่อจัดวาง' : 'บัตรตัวอย่าง · Phase 1'}</Text>
-        {editing && <Text style={styles.status}>{wallet.dirty ? 'ยังไม่ได้บันทึก' : 'ไม่มีการเปลี่ยนแปลง'}</Text>}
+        <View style={styles.headingCopy}>
+          <Text accessibilityRole="header" style={styles.pageTitle}>{editing ? 'Arrange your cards' : 'Your cards'}</Text>
+          <Text style={styles.status}>{editing ? wallet.dirty ? 'Draft layout · ยังไม่ได้บันทึก' : 'ลากบัตรเพื่อจัดวาง' : 'A little pocket of everyday. · บัตรตัวอย่าง'}</Text>
+        </View>
+        <View style={styles.count}><Text style={styles.countText}>{String(PREVIEW_CARDS.length).padStart(2, '0')}</Text></View>
       </View>
       {!!wallet.error && <Text accessibilityRole="alert" accessibilityLiveRegion="assertive" style={styles.error}>{wallet.error}</Text>}
       {!wallet.ready ? <View style={styles.loading}><ActivityIndicator color={bemem.muted} /><Text style={styles.loadingText}>กำลังอ่านผังในเครื่อง…</Text></View>
@@ -102,16 +107,21 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: bemem.background },
   screen: { flex: 1, width: '100%', maxWidth: 600, alignSelf: 'center', backgroundColor: bemem.background },
-  statusRow: { flexDirection: 'row', justifyContent: 'space-between', gap: 8, flexWrap: 'wrap', paddingHorizontal: 20, paddingTop: 12 },
-  status: { fontSize: 11, color: bemem.muted, lineHeight: 18 },
+  canvasLight: { ...StyleSheet.absoluteFill, backgroundImage: `radial-gradient(ellipse at 0% 10%, ${lagoon.canvas.high}, transparent 65%), linear-gradient(120deg, ${lagoon.canvas.base}, ${lagoon.canvas.low})` },
+  statusRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', gap: 8, paddingHorizontal: 22, paddingTop: 12, paddingBottom: 4 },
+  headingCopy: { flex: 1 },
+  pageTitle: { ...core.typography.styles.pageTitle, fontWeight: '700', color: lagoon.text.primary, fontFamily: lagoonFonts.latin },
+  status: { fontSize: 12, color: bemem.muted, lineHeight: 20, fontFamily: lagoonFonts.thai },
+  count: { minWidth: 31, minHeight: 31, paddingHorizontal: 6, borderRadius: 12, backgroundColor: lagoon.surface.base, borderWidth: 1, borderColor: lagoon.rim.inner, justifyContent: 'center', alignItems: 'center' },
+  countText: { fontSize: 12, fontFamily: lagoonFonts.latin, color: lagoon.text.primary, fontWeight: '700' },
   error: { paddingHorizontal: 20, paddingTop: 8, fontSize: 12, lineHeight: 19, color: bemem.error },
   loading: { flex: 1, justifyContent: 'center', alignItems: 'center', gap: 12 },
   loadingText: { color: bemem.muted, fontSize: 14 },
   modalBackdrop: { flex: 1, justifyContent: 'flex-end', backgroundColor: 'rgba(15,23,42,0.4)' },
   sheet: { backgroundColor: bemem.background, borderTopLeftRadius: 24, borderTopRightRadius: 24, overflow: 'hidden', maxHeight: '92%', width: '100%', maxWidth: 600, alignSelf: 'center' },
   sheetContent: { padding: 24, paddingBottom: 40, gap: 16 },
-  sheetTitle: { fontSize: 20, fontWeight: '800', color: bemem.foreground },
-  description: { fontSize: 14, lineHeight: 22, color: bemem.muted },
+  sheetTitle: { fontSize: 20, fontWeight: '800', color: bemem.foreground, fontFamily: lagoonFonts.latin },
+  description: { fontSize: 14, lineHeight: 22, color: bemem.muted, fontFamily: lagoonFonts.thai },
   close: { minHeight: 48, borderRadius: 12, alignItems: 'center', justifyContent: 'center', backgroundColor: bemem.primary },
   closeText: { color: bemem.white, fontSize: 14, fontWeight: '600' },
 });

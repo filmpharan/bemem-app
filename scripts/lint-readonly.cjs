@@ -26,7 +26,7 @@ async function main() {
   // Limit to Phase 1 code and the template component touched for SDK 58 compatibility.
   const results = await eslint.lintFiles([
     'src/app/**/*.{ts,tsx}', 'src/components/bemem/**/*.{ts,tsx}',
-    'src/components/app-tabs.web.tsx', 'src/constants/bemem-theme.ts',
+    'src/components/app-tabs.web.tsx', 'src/constants/bemem-theme.ts', 'src/constants/lagoon-theme.ts',
     'src/data/**/*.ts', 'src/hooks/use-wallet-canvas.ts', 'src/lib/**/*.ts', 'src/types/**/*.ts',
   ]);
   const formatter = await eslint.loadFormatter('stylish');

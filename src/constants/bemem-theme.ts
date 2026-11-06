@@ -1,12 +1,14 @@
-// sRGB equivalents of the website's light theme. Native sizes are density-independent.
+import { lagoon, core } from './lagoon-theme';
+
+// Compatibility bridge for existing Phase 1 views; no Canvas/storage dependency.
 export const bemem = {
-  background: '#f1f5f9',
-  foreground: '#0f172a',
-  primary: '#14161f',
+  background: lagoon.canvas.base,
+  foreground: lagoon.text.primary,
+  primary: lagoon.action.primary,
   white: '#ffffff',
-  muted: '#64748b',
-  border: '#e2e8f0',
-  grid: '#cbd5e1',
+  muted: lagoon.text.secondary,
+  border: lagoon.rim.inner,
+  grid: lagoon.grid.line,
   error: '#b42318',
-  radius: 12,
+  radius: core.radius.card,
 } as const;

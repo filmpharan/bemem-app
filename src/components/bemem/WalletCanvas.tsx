@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { PanResponder, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { bemem } from '../../constants/bemem-theme';
+import { core, lagoonFonts } from '../../constants/lagoon-theme';
 import { canPlace, canvasMetrics, cardSize, dropPosition } from '../../lib/canvas-layout';
 import type { CanvasLayout, Position, PreviewCard } from '../../types/wallet-ui';
 import { MembershipCard } from './MembershipCard';
@@ -107,9 +108,9 @@ export function WalletCanvas({ cards, allCards, layout, editing, disabled, onMov
 const styles = StyleSheet.create({
   viewport: { flex: 1, marginHorizontal: 16, marginTop: 12, overflow: 'hidden' },
   scrollContent: { paddingBottom: 120 },
-  card: { position: 'absolute', borderRadius: 12 },
+  card: { position: 'absolute', borderRadius: core.radius.card },
   cross: { position: 'absolute', width: 8, height: 8, opacity: 0.3 },
-  crossHorizontal: { position: 'absolute', left: 0, top: 3.5, width: 8, height: 1, backgroundColor: bemem.muted, borderRadius: 1 },
-  crossVertical: { position: 'absolute', top: 0, left: 3.5, width: 1, height: 8, backgroundColor: bemem.muted, borderRadius: 1 },
-  scrollHint: { color: bemem.muted, fontSize: 12, textAlign: 'center', paddingVertical: 16 },
+  crossHorizontal: { position: 'absolute', left: 3, top: 3, width: 2, height: 2, backgroundColor: bemem.grid, borderRadius: 1 },
+  crossVertical: { display: 'none' },
+  scrollHint: { color: bemem.muted, fontSize: 12, textAlign: 'center', paddingVertical: 16, fontFamily: lagoonFonts.thai },
 });
