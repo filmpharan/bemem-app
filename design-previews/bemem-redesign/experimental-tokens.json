@@ -1,0 +1,302 @@
+{
+  "metadata": {
+    "name": "bemem Full Visual Redesign — experimental directions",
+    "version": "0.1.0",
+    "date": "2026-11-06",
+    "status": "preview-only-not-approved",
+    "sourceDesignSystemModified": false,
+    "appSourceModified": false,
+    "dependenciesAdded": false,
+    "unitNote": "CSS px/blur in this artifact are browser simulation values, not React Native blur intensities.",
+    "typographyNote": "Bundled OFL fonts are preview assets only; native font registration requires later approval."
+  },
+  "invariantControls": {
+    "headerRight": [
+      "search",
+      "create"
+    ],
+    "createBottomLeft": "add-card-fab",
+    "createBottomRight": "save",
+    "homeEmptyBottomRight": "add-card-fab",
+    "homePopulatedFab": false
+  },
+  "fixtureContract": {
+    "source": "preview-fixture.json; identical saved/draft maps for all themes",
+    "userStorageAccess": false,
+    "actualQrOrBarcodeGenerated": false,
+    "dragOrSaveImplemented": false
+  },
+  "states": {
+    "default": {
+      "contentOpacity": 1
+    },
+    "pressed": {
+      "contentOpacity": 1,
+      "overlayAlpha": 0.1,
+      "scale": 1
+    },
+    "disabled": {
+      "contentOpacity": 0.56,
+      "interactive": false,
+      "blur": false
+    },
+    "saving": {
+      "contentOpacity": 1,
+      "interactive": false,
+      "label": "Saving…",
+      "demoOnly": true
+    },
+    "reducedMotion": {
+      "durationMs": 0,
+      "disableDecorativeMotion": true
+    }
+  },
+  "accessibility": {
+    "iosTouchMinPt": 44,
+    "androidTouchMinDp": 48,
+    "controlCssTargetPx": 48,
+    "normalTextContrastTarget": 4.5,
+    "nonTextContrastTarget": 3,
+    "scanSurface": {
+      "background": "#ffffff",
+      "foreground": "#000000",
+      "glass": false,
+      "blur": false,
+      "overlays": false,
+      "qrQuietZoneModules": 4,
+      "code128QuietZone": "renderer-defined in later phase"
+    }
+  },
+  "nativePolicy": {
+    "expoSdk": 58,
+    "reactNative": "0.88.1",
+    "material": "Evaluate local control-only blur after theme selection; CSS screenshots are not native proof.",
+    "ios": "expo-glass-effect is already declared, but requires supported runtime and capability checks. Not a one-to-one match for these CSS materials.",
+    "android": "No blur provider is installed by this task. Use opaque fallback unless separately approved, and gate costly effects by performance.",
+    "dragging": "No backdrop capture or material animation per frame; preserve existing gesture logic.",
+    "storage": "No reading/writing Documents, AsyncStorage, localStorage or layout files.",
+    "maxLocalBlurEffects": 2,
+    "codeOpen": "No visual animation may delay displaying the real code in a future implementation."
+  },
+  "themes": {
+    "atelier": {
+      "name": "Atelier",
+      "number": "01",
+      "character": "Quiet luxury · minimal premium",
+      "thai": "สงบ ประณีต เหมือนกระเป๋าที่เลือกมาอย่างดี",
+      "headline": "Less noise.<br>More yours.",
+      "createHeadline": "A place for<br>everything.",
+      "micro": "THE EVERYDAY COLLECTION",
+      "accentName": "Antique brass",
+      "colors": {
+        "canvas": "#eee9e1",
+        "ink": "#302b25",
+        "muted": "#6e6355",
+        "accent": "#745b36",
+        "onAccent": "#fffdf8",
+        "glass": "rgba(255, 253, 247, .78)",
+        "glassBorder": "rgba(255, 255, 255, .92)",
+        "secondary": "#e0d7c7",
+        "grid": "rgba(89, 74, 54, .17)",
+        "cardCoffee": "#463b30",
+        "cardEveryday": "#c9bc9e",
+        "cardTravel": "#7d8979",
+        "cardWeekend": "#b88268",
+        "cardInk": "#fffdf5",
+        "lightCardInk": "#17130f"
+      },
+      "type": {
+        "display": "Instrument Serif",
+        "body": "Manrope",
+        "thai": "Noto Sans Thai",
+        "logoSize": 38,
+        "headingSize": 37,
+        "cardWeight": 600,
+        "letterSpacing": -0.8
+      },
+      "geometry": {
+        "cardRadius": 15,
+        "controlRadius": 999,
+        "fabRadius": 999,
+        "saveRadius": 999,
+        "controlSize": 48,
+        "fabSize": 56,
+        "saveHeight": 56
+      },
+      "material": {
+        "name": "Champagne-cut glass",
+        "cssBlurPx": 16,
+        "fillAlpha": 0.78,
+        "highlight": "broad upper-left reflection",
+        "rim": "warm white, 1px + inner hairline",
+        "shadow": "0 10px 30px -12px rgba(74,56,34,.32)",
+        "nativeBlurCandidate": {
+          "ios": 20,
+          "android": 12
+        },
+        "fallback": "#fffaf2",
+        "depth": "restrained · 2 layers"
+      },
+      "motion": {
+        "pressMs": 90,
+        "releaseMs": 140,
+        "entryMs": 160,
+        "reducedMotionMs": 0,
+        "animateOnly": [
+          "opacity"
+        ],
+        "noOpeningDelay": true
+      },
+      "strengths": "อ่านง่ายที่สุด ภาพรวมสงบ เห็นบัตรก่อนเอฟเฟกต์ และลด blur ได้โดยบุคลิกยังอยู่",
+      "risks": "ตัว serif บางต้องจำกัดที่ wordmark/หัวเรื่อง; โทนอุ่นมีพลังน้อยกว่าอีกสองแบบ",
+      "suitability": "เหมาะที่สุดสำหรับรุ่นใช้งานประจำวัน และเป็นฐานที่นำไปทำ Native ได้ง่าย",
+      "recommendation": "Recommended foundation"
+    },
+    "lagoon": {
+      "name": "Lagoon",
+      "number": "02",
+      "character": "Soft glass · optimistic utility",
+      "thai": "เบาสบาย เป็นมิตร เหมือนแสงผ่านน้ำตื้น",
+      "headline": "Good things.<br>All together.",
+      "createHeadline": "Make room<br>for your day.",
+      "micro": "A LITTLE POCKET OF EVERYTHING",
+      "accentName": "Deep sea",
+      "colors": {
+        "canvas": "#dff1ec",
+        "ink": "#123f3d",
+        "muted": "#426b66",
+        "accent": "#0b625b",
+        "onAccent": "#f4fffc",
+        "glass": "rgba(248, 255, 252, .72)",
+        "glassBorder": "rgba(255, 255, 255, .96)",
+        "secondary": "#b9ddd2",
+        "grid": "rgba(33, 102, 91, .19)",
+        "cardCoffee": "#186b64",
+        "cardEveryday": "#b5d88c",
+        "cardTravel": "#8bbccf",
+        "cardWeekend": "#d69d83",
+        "cardInk": "#f7fffb",
+        "lightCardInk": "#143f3c"
+      },
+      "type": {
+        "display": "Manrope",
+        "body": "Manrope",
+        "thai": "Noto Sans Thai",
+        "logoSize": 30,
+        "headingSize": 31,
+        "cardWeight": 750,
+        "letterSpacing": -1.3
+      },
+      "geometry": {
+        "cardRadius": 23,
+        "controlRadius": 20,
+        "fabRadius": 22,
+        "saveRadius": 20,
+        "controlSize": 48,
+        "fabSize": 56,
+        "saveHeight": 56
+      },
+      "material": {
+        "name": "Sea-glass gel",
+        "cssBlurPx": 22,
+        "fillAlpha": 0.72,
+        "highlight": "soft white meniscus on top edge",
+        "rim": "double edge, white outside + teal inside",
+        "shadow": "0 12px 28px -12px rgba(28,109,91,.30)",
+        "nativeBlurCandidate": {
+          "ios": 28,
+          "android": 16
+        },
+        "fallback": "#f0fcf7",
+        "depth": "soft · rounded layers"
+      },
+      "motion": {
+        "pressMs": 90,
+        "releaseMs": 160,
+        "entryMs": 180,
+        "reducedMotionMs": 0,
+        "animateOnly": [
+          "opacity"
+        ],
+        "noOpeningDelay": true
+      },
+      "strengths": "เข้าถึงง่าย ให้ความรู้สึกเป็นเจ้าของ บัตรแต่ละใบแตกต่างชัดโดยไม่ใช้สีฉูดฉาด",
+      "risks": "ความโปร่งและเงานุ่มต้องทดสอบกับจอสว่างน้อย; หากเพิ่มของตกแต่งมากจะดูเป็นของเล่น",
+      "suitability": "เหมาะหากต้องการแบรนด์เป็นมิตรและสดใหม่มากกว่าภาพพรีเมียม",
+      "recommendation": "Most approachable"
+    },
+    "ion": {
+      "name": "Ion",
+      "number": "03",
+      "character": "Precision glass · after dark",
+      "thai": "แม่นยำ ล้ำสมัย ชัดเจนท่ามกลางพื้นผิวเข้ม",
+      "headline": "Everything.<br>Within reach.",
+      "createHeadline": "Your space.<br>Your system.",
+      "micro": "PERSONAL / LOCAL / READY",
+      "accentName": "Signal lime",
+      "colors": {
+        "canvas": "#10171d",
+        "ink": "#edf5f4",
+        "muted": "#a5b8bc",
+        "accent": "#d1f281",
+        "onAccent": "#1b2a14",
+        "glass": "rgba(35, 51, 60, .86)",
+        "glassBorder": "rgba(183, 224, 231, .34)",
+        "secondary": "#283b44",
+        "grid": "rgba(153, 201, 211, .18)",
+        "cardCoffee": "#253f48",
+        "cardEveryday": "#b9d27d",
+        "cardTravel": "#7599bc",
+        "cardWeekend": "#9e829e",
+        "cardInk": "#eef9fa",
+        "lightCardInk": "#102125"
+      },
+      "type": {
+        "display": "Space Grotesk",
+        "body": "Space Grotesk",
+        "thai": "Noto Sans Thai",
+        "logoSize": 31,
+        "headingSize": 33,
+        "cardWeight": 600,
+        "letterSpacing": -1.3
+      },
+      "geometry": {
+        "cardRadius": 12,
+        "controlRadius": 14,
+        "fabRadius": 18,
+        "saveRadius": 14,
+        "controlSize": 48,
+        "fabSize": 56,
+        "saveHeight": 56
+      },
+      "material": {
+        "name": "Optical graphite",
+        "cssBlurPx": 14,
+        "fillAlpha": 0.86,
+        "highlight": "narrow icy rim, no bloom behind labels",
+        "rim": "cold top rim + quiet lower occlusion",
+        "shadow": "0 14px 30px -12px rgba(0,0,0,.65)",
+        "nativeBlurCandidate": {
+          "ios": 18,
+          "android": 10
+        },
+        "fallback": "#23333c",
+        "depth": "precise · shallow etched planes"
+      },
+      "motion": {
+        "pressMs": 70,
+        "releaseMs": 120,
+        "entryMs": 140,
+        "reducedMotionMs": 0,
+        "animateOnly": [
+          "opacity"
+        ],
+        "noOpeningDelay": true
+      },
+      "strengths": "จดจำง่ายที่สุด contrast สูง ปุ่มหลักแยกชัด และการเปลี่ยนจากผิวเข้มไปแผ่นรหัสขาวมีลำดับชัด",
+      "risks": "ต้องทดสอบ glare/ความสว่างอัตโนมัติเมื่อเปิดรหัส; ภาพเทคโนโลยีอาจไม่เหมาะกับผู้ใช้ทุกกลุ่ม",
+      "suitability": "เหมาะเป็นทิศทางแบรนด์ที่กล้าและเฉพาะตัว ต้องลงทุนทดสอบข้ามแพลตฟอร์มมากขึ้น",
+      "recommendation": "Most distinctive"
+    }
+  }
+}

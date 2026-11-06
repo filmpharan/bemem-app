@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-07",
+  "browser": "Microsoft Edge headless / isolated fresh profile",
+  "method": "Node built-in WebSocket / Chrome DevTools Protocol; no added dependency",
+  "scope": "static previews only; not native device or scan validation",
+  "checks": [
+    {
+      "page": "contact-sheet.html",
+      "width": 2400,
+      "screens": 12,
+      "checks": "PASS"
+    },
+    {
+      "page": "lagoon-mint.html#capture",
+      "width": 1440,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "lagoon-mint.html",
+      "width": 375,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "blush-pink.html#capture",
+      "width": 1440,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "blush-pink.html",
+      "width": 375,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "warm-beige.html#capture",
+      "width": 1440,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "warm-beige.html",
+      "width": 375,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "lilac-dream.html#capture",
+      "width": 1440,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "lilac-dream.html",
+      "width": 375,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "sky-blue.html#capture",
+      "width": 1440,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "sky-blue.html",
+      "width": 375,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "pearl-gray.html#capture",
+      "width": 1440,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "pearl-gray.html",
+      "width": 375,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "materials.html",
+      "width": 1440,
+      "checks": "PASS",
+      "scope": "browser render; enlarged material and states"
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "screens": 12,
+      "checks": "PASS"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "screens": 12,
+      "checks": "PASS"
+    }
+  ]
+}

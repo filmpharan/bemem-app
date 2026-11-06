@@ -1,0 +1,162 @@
+{
+  "date": "2026-11-07",
+  "designSystemVersion": "2.0.0-rc.1",
+  "status": "PASS — document/browser checks only",
+  "json": "duplicate-key/non-finite check passed",
+  "aliasResolution": "all six palettes passed; no missing references or cycles",
+  "paletteShape": "identical color-role structures; no geometry/type overrides",
+  "coreFingerprint": {
+    "geometry": "447502c3b5158d6e2d15e59c9d99a582ef4f39f625e49650ed86210d09bc0ff2",
+    "spacing": "62b3c08d2630f8ae245f2e356d38f83389454f8dfd349a6b7b0dbdce1344181c",
+    "radius": "92f8697fcb86453afe4ff539aa3f4078e7efc1f7a5c8926e9fbd969f070c6b7a",
+    "typography": "51c697e531d4a5b52300bb1dfa528cf05e5a95a7d9d8eb156263b6f9b22a7a2d",
+    "icons": "91ff6832764e23b35be74014068b8b1c2f18bfcf3b93cb0579a3383ac9ccd6e0",
+    "motion": "78e559366280e13b7b08ceb402bb754cccd2901f276ffc062fb9320f6be1c104",
+    "touch": "0fcb1eb5299761fddea56d31501a9305bebe68910a95d595d35377621664dada"
+  },
+  "sharedCore": "geometry, spacing, radius, typography, icons, motion, touch identical after resolution",
+  "calculatedContrast": {
+    "lagoon-mint": {
+      "canvasTextMin": 5.304,
+      "utilityLabelBandMin": 4.976,
+      "utilitySelectedLabelBandMin": 6.179,
+      "gelLabelBandMin": 4.976,
+      "actionLabelBandMin": 4.798,
+      "inactiveLabelBandMin": 7.195
+    },
+    "blush-pink": {
+      "canvasTextMin": 5.545,
+      "utilityLabelBandMin": 5.292,
+      "utilitySelectedLabelBandMin": 6.567,
+      "gelLabelBandMin": 5.292,
+      "actionLabelBandMin": 5.203,
+      "inactiveLabelBandMin": 7.643
+    },
+    "warm-beige": {
+      "canvasTextMin": 5.289,
+      "utilityLabelBandMin": 4.76,
+      "utilitySelectedLabelBandMin": 5.909,
+      "gelLabelBandMin": 4.76,
+      "actionLabelBandMin": 4.728,
+      "inactiveLabelBandMin": 6.879
+    },
+    "lilac-dream": {
+      "canvasTextMin": 5.425,
+      "utilityLabelBandMin": 5.476,
+      "utilitySelectedLabelBandMin": 6.793,
+      "gelLabelBandMin": 5.476,
+      "actionLabelBandMin": 5.115,
+      "inactiveLabelBandMin": 7.904
+    },
+    "sky-blue": {
+      "canvasTextMin": 5.108,
+      "utilityLabelBandMin": 4.773,
+      "utilitySelectedLabelBandMin": 5.925,
+      "gelLabelBandMin": 4.773,
+      "actionLabelBandMin": 4.718,
+      "inactiveLabelBandMin": 6.896
+    },
+    "pearl-gray": {
+      "canvasTextMin": 4.859,
+      "utilityLabelBandMin": 5.116,
+      "utilitySelectedLabelBandMin": 6.353,
+      "gelLabelBandMin": 5.116,
+      "actionLabelBandMin": 4.85,
+      "inactiveLabelBandMin": 7.397
+    }
+  },
+  "contrastModel": "sRGB tint against black/white plus 4% label-band influence; not native compositor certification",
+  "html": {
+    "blush-pink.html": {
+      "screens": 2,
+      "scripts": 0
+    },
+    "contact-sheet.html": {
+      "screens": 12,
+      "scripts": 0
+    },
+    "index.html": {
+      "screens": 12,
+      "scripts": 0
+    },
+    "lagoon-mint.html": {
+      "screens": 2,
+      "scripts": 0
+    },
+    "lilac-dream.html": {
+      "screens": 2,
+      "scripts": 0
+    },
+    "materials.html": {
+      "screens": 0,
+      "scripts": 0
+    },
+    "pearl-gray.html": {
+      "screens": 2,
+      "scripts": 0
+    },
+    "sky-blue.html": {
+      "screens": 2,
+      "scripts": 0
+    },
+    "warm-beige.html": {
+      "screens": 2,
+      "scripts": 0
+    }
+  },
+  "localLinkCount": 98,
+  "browserChecks": 16,
+  "sameModeStructure": "verified in Edge",
+  "cardArtwork": "computed fill/text/radius/shadow/gradient unchanged across all 12 screens",
+  "png": {
+    "blush-pink.png": [
+      1440,
+      1120
+    ],
+    "comparison.png": [
+      2400,
+      1900
+    ],
+    "lagoon-mint.png": [
+      1440,
+      1120
+    ],
+    "lilac-dream.png": [
+      1440,
+      1120
+    ],
+    "materials.png": [
+      1440,
+      2721
+    ],
+    "pearl-gray.png": [
+      1440,
+      1120
+    ],
+    "sky-blue.png": [
+      1440,
+      1120
+    ],
+    "warm-beige.png": [
+      1440,
+      1120
+    ]
+  },
+  "nativeDeviceValidation": "NOT PERFORMED",
+  "walletStorageAccess": false,
+  "implementationCreated": false,
+  "protectedSourceVerification": {
+    "method": "SHA-256 snapshot before/after, excluding node_modules/.git/.expo and the two authorized new directories",
+    "appExistingFiles": 179,
+    "websiteExistingFiles": 189,
+    "changed": [],
+    "removed": [],
+    "addedOutsideApprovedDirectories": [],
+    "oldDesignSystemAndPreviewsPreserved": true
+  },
+  "baselineChecks": {
+    "typescript": "PASS: npx.cmd tsc --noEmit",
+    "lint": "PASS: read-only existing ESLint tools; 20 Phase 1 files, zero errors/warnings",
+    "dependenciesInstalled": false
+  }
+}

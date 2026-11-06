@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-06",
+  "browser": "Microsoft Edge headless / isolated fresh profile",
+  "method": "Node built-in WebSocket / Chrome DevTools Protocol; no added dependency",
+  "scope": "static previews only; not native device or scan validation",
+  "checks": [
+    {
+      "page": "contact-sheet.html",
+      "width": 1600,
+      "screens": 6,
+      "checks": "PASS"
+    },
+    {
+      "page": "atelier.html#capture",
+      "width": 1440,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "atelier.html",
+      "width": 375,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "lagoon.html#capture",
+      "width": 1440,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "lagoon.html",
+      "width": 375,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "ion.html#capture",
+      "width": 1440,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "ion.html",
+      "width": 375,
+      "screens": 2,
+      "checks": "PASS"
+    },
+    {
+      "page": "index.html",
+      "width": 1440,
+      "screens": 6,
+      "checks": "PASS"
+    },
+    {
+      "page": "index.html",
+      "width": 375,
+      "screens": 6,
+      "checks": "PASS"
+    }
+  ]
+}

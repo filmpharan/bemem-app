@@ -1,0 +1,94 @@
+{
+  "metadata": {
+    "kind": "fictional-preview-only",
+    "source": "hand-authored from Phase 1 demo fixture; not user storage",
+    "columns": 12
+  },
+  "cards": [
+    {
+      "id": "demo-coffee",
+      "name": "Coffee Club",
+      "short": "coffee",
+      "mark": "C",
+      "category": "EVERYDAY RITUALS",
+      "orientation": "landscape",
+      "cols": 6,
+      "rows": 4,
+      "number": "01"
+    },
+    {
+      "id": "demo-everyday",
+      "name": "Everyday Club",
+      "short": "everyday",
+      "mark": "e",
+      "category": "LITTLE ESSENTIALS",
+      "orientation": "portrait",
+      "cols": 4,
+      "rows": 6,
+      "number": "02"
+    },
+    {
+      "id": "demo-travel",
+      "name": "Travel Club",
+      "short": "travel",
+      "mark": "t",
+      "category": "GO SOMEWHERE",
+      "orientation": "landscape",
+      "cols": 6,
+      "rows": 4,
+      "number": "03"
+    },
+    {
+      "id": "demo-weekend",
+      "name": "Weekend Club",
+      "short": "weekend",
+      "mark": "w",
+      "category": "OFF THE CLOCK",
+      "orientation": "portrait",
+      "cols": 4,
+      "rows": 6,
+      "number": "04"
+    }
+  ],
+  "savedLayout": {
+    "demo-coffee": {
+      "col": 0,
+      "row": 0
+    },
+    "demo-everyday": {
+      "col": 7,
+      "row": 0
+    },
+    "demo-travel": {
+      "col": 0,
+      "row": 5
+    },
+    "demo-weekend": {
+      "col": 7,
+      "row": 7
+    }
+  },
+  "draftLayout": {
+    "demo-coffee": {
+      "col": 0,
+      "row": 1
+    },
+    "demo-everyday": {
+      "col": 7,
+      "row": 0
+    },
+    "demo-travel": {
+      "col": 0,
+      "row": 5
+    },
+    "demo-weekend": {
+      "col": 7,
+      "row": 7
+    }
+  },
+  "draftNote": "Create shows Coffee Club moved down one row to illustrate an unsaved draft. The same draft is used in all themes. No actual drag/save runs.",
+  "emptyHome": {
+    "cards": [],
+    "showFab": true
+  }
+}
