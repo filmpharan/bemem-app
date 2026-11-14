@@ -1,0 +1,283 @@
+{
+  "status": "passed",
+  "faces": [
+    {
+      "id": "A-pink",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 50386,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "A-brown",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 54262,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "A-green",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 53021,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "A-yellow",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 53004,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "A-blue",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 51351,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "A-purple",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 50812,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "B-pink",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 41972,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "B-brown",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 43109,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "B-green",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 42762,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "B-yellow",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 42692,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "B-blue",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 41860,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "B-purple",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 41584,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "C-pink",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 1542340,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "C-brown",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 1522760,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "C-green",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 1514436,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "C-yellow",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 1556029,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "C-blue",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 1506010,
+      "alpha": "opaque by design",
+      "decoded": true
+    },
+    {
+      "id": "C-purple",
+      "size": [
+        1536,
+        1536
+      ],
+      "bytes": 1492072,
+      "alpha": "opaque by design",
+      "decoded": true
+    }
+  ],
+  "frames": [
+    {
+      "id": "A-compact",
+      "size": [
+        960,
+        720
+      ],
+      "bytes": 14173,
+      "transparentCenter": true,
+      "decoded": true
+    },
+    {
+      "id": "A-tall",
+      "size": [
+        800,
+        1152
+      ],
+      "bytes": 16195,
+      "transparentCenter": true,
+      "decoded": true
+    },
+    {
+      "id": "A-wide",
+      "size": [
+        1152,
+        560
+      ],
+      "bytes": 13756,
+      "transparentCenter": true,
+      "decoded": true
+    },
+    {
+      "id": "B-compact",
+      "size": [
+        960,
+        720
+      ],
+      "bytes": 21411,
+      "transparentCenter": true,
+      "decoded": true
+    },
+    {
+      "id": "B-tall",
+      "size": [
+        800,
+        1152
+      ],
+      "bytes": 25677,
+      "transparentCenter": true,
+      "decoded": true
+    },
+    {
+      "id": "B-wide",
+      "size": [
+        1152,
+        560
+      ],
+      "bytes": 19943,
+      "transparentCenter": true,
+      "decoded": true
+    },
+    {
+      "id": "C-compact",
+      "size": [
+        960,
+        720
+      ],
+      "bytes": 15570,
+      "transparentCenter": true,
+      "decoded": true
+    },
+    {
+      "id": "C-tall",
+      "size": [
+        800,
+        1152
+      ],
+      "bytes": 17713,
+      "transparentCenter": true,
+      "decoded": true
+    },
+    {
+      "id": "C-wide",
+      "size": [
+        1152,
+        560
+      ],
+      "bytes": 15164,
+      "transparentCenter": true,
+      "decoded": true
+    }
+  ],
+  "limitations": [
+    "Visual acceptance pending. Vector artwork is authored programmatically, not claimed to be human hand-painted.",
+    "Group frames are transparent full-container concepts, not 1\u00d71 Decorate tiles or implemented group logic."
+  ],
+  "comparisonSheets": 10,
+  "totalPngBytes": 12694134
+}

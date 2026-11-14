@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "targetProposals": 7,
+  "references": 6,
+  "existingBeforeExamples": 3,
+  "editableTargetSVGs": 7,
+  "transparentTargetPngs": 7,
+  "uniqueTargetPixelHashes": 7,
+  "targetStroke": 2,
+  "targetViewBox": [
+    0,
+    0,
+    24,
+    24
+  ],
+  "ink": "#263943",
+  "protectedProductionHashesUnchanged": 432,
+  "nativeSamsungRenderingVerified": false
+}

@@ -1,0 +1,407 @@
+{
+  "assetCount": 222,
+  "uniqueByteHashes": 222,
+  "uniqueD4PixelHashes": 222,
+  "identicalSilhouetteReviewCandidates": [],
+  "frameChecks": [
+    {
+      "collection": "pets",
+      "pairs": 1250,
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "collection": "travel",
+      "pairs": 1250,
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "collection": "wellness",
+      "pairs": 1250,
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "collection": "cafe",
+      "pairs": 1250,
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "collection": "shopping",
+      "pairs": 1250,
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "collection": "savings",
+      "pairs": 1250,
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    }
+  ],
+  "samsungVerified": false,
+  "paintExceptions": [
+    {
+      "id": "pet-frame-01",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "pet-frame-02",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "pet-frame-03",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "pet-frame-04",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "pet-frame-05",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "pet-frame-06",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "pet-frame-07",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "pet-frame-08",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "pet-frame-09",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "pet-frame-10",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "pet-frame-11",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "pet-frame-12",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "travel-frame-01",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "travel-frame-02",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "travel-frame-03",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "travel-frame-04",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "travel-frame-05",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "travel-frame-06",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "travel-frame-07",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "travel-frame-08",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "travel-frame-09",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "travel-frame-10",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "travel-frame-11",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "travel-frame-12",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "vine-corner",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "vine-end",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "vine-straight",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "wellness-frame-04",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "wellness-frame-05",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "wellness-frame-06",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "wellness-frame-07",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "wellness-frame-08",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "wellness-frame-09",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "wellness-frame-10",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "wellness-frame-11",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "wellness-frame-12",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "cafe-frame-04",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "cafe-frame-05",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "cafe-frame-06",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "cafe-frame-07",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "cafe-frame-08",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "cafe-frame-09",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "cafe-frame-10",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "cafe-frame-11",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "cafe-frame-12",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "coffee-corner",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "coffee-end",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "coffee-straight",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "ribbon-corner",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "ribbon-end",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "ribbon-straight",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "shopping-frame-04",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "shopping-frame-05",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "shopping-frame-06",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "shopping-frame-07",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "shopping-frame-08",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "shopping-frame-09",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "shopping-frame-10",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "shopping-frame-11",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "shopping-frame-12",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "savings-corner",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "savings-end",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "savings-frame-04",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "savings-frame-05",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "savings-frame-06",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "savings-frame-07",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "savings-frame-08",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "savings-frame-09",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "savings-frame-10",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "savings-frame-11",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "savings-frame-12",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    },
+    {
+      "id": "savings-straight",
+      "scale": 1.0,
+      "reason": "edge connector geometry"
+    }
+  ]
+}

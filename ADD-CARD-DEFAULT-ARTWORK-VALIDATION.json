@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-14",
+  "status": "implemented / awaiting Samsung acceptance",
+  "artworks": {
+    "frontCount": 7,
+    "backCount": 6,
+    "pngDimensions": [
+      1536,
+      1536
+    ],
+    "totalPngBytes": 17025140,
+    "manifest": "assets/card-faces/MANIFEST.json",
+    "coralOrangeBack": "art-bemem-spm1-back-brown.png",
+    "sourceBytesPreserved": true
+  },
+  "session": {
+    "selection": "one pure lazy initializer per new production Add session",
+    "uploads": "side-specific; asynchronous default preparation never patches form artwork",
+    "persistedField": "appearance.artwork.front/back",
+    "schemaChanged": false
+  },
+  "validation": {
+    "typeScript": {
+      "passed": true,
+      "command": "tsc --noEmit"
+    },
+    "focused": {
+      "passed": 16,
+      "failed": 0,
+      "log": "output/default-card-artwork-validation/focused.txt"
+    },
+    "fullRegression": {
+      "passed": 1020,
+      "failed": 0,
+      "log": "output/default-card-artwork-validation/regression.txt"
+    },
+    "hermes": {
+      "passed": true,
+      "bundle": "output/default-card-artwork-android/_expo/static/js/android/entry-a3cc83e08c63f54749f373447b32cd06.hbc",
+      "byteLength": 3939823,
+      "allThirteenPngsIncluded": true,
+      "log": "output/default-card-artwork-validation/android-export.txt"
+    },
+    "lint": "ESLint CLI not installed; no dependency installation attempted",
+    "whitespace": "git diff --check passed"
+  },
+  "safety": {
+    "realWalletAccess": false,
+    "phoneTests": false,
+    "dependenciesInstalled": false,
+    "existingExpoAssetVersion": "58.0.20",
+    "protectedFilesUnchanged": true,
+    "originalPreviewFilesUnchanged": true,
+    "groupFolderCodeUnchanged": true,
+    "existingAssetFilesUnchanged": true,
+    "commitPushDeploy": false
+  },
+  "changes": {
+    "changed": [
+      "src\\components\\bemem\\AddCardEditor.tsx",
+      "src\\components\\bemem\\AddCardForm.tsx",
+      "src\\components\\bemem\\CardAppearancePreview.tsx",
+      "src\\lib\\card-artwork-store.ts",
+      "scripts\\test-card-form.cjs",
+      "scripts\\test-production-integration.cjs"
+    ],
+    "added": [
+      "src\\constants\\default-card-artwork.ts",
+      "src\\lib\\default-card-artwork-assets.ts",
+      "src\\lib\\default-card-artwork-native.ts",
+      "src\\lib\\default-card-artwork.ts",
+      "scripts\\prepare-default-card-artwork.py",
+      "scripts\\test-default-card-artwork.cjs",
+      "assets\\card-faces\\art-bemem-lg2-front-blush-pink.png",
+      "assets\\card-faces\\art-bemem-lg2-front-coral-orange.png",
+      "assets\\card-faces\\art-bemem-lg2-front-dream-purple.png",
+      "assets\\card-faces\\art-bemem-lg2-front-fresh-green.png",
+      "assets\\card-faces\\art-bemem-lg2-front-golden-yellow.png",
+      "assets\\card-faces\\art-bemem-lg2-front-sky-blue.png",
+      "assets\\card-faces\\art-bemem-lg2-front-warm-brown.png",
+      "assets\\card-faces\\art-bemem-spm1-back-blue.png",
+      "assets\\card-faces\\art-bemem-spm1-back-brown.png",
+      "assets\\card-faces\\art-bemem-spm1-back-green.png",
+      "assets\\card-faces\\art-bemem-spm1-back-pink.png",
+      "assets\\card-faces\\art-bemem-spm1-back-purple.png",
+      "assets\\card-faces\\art-bemem-spm1-back-yellow.png",
+      "assets\\card-faces\\MANIFEST.json"
+    ],
+    "removed": []
+  },
+  "notes": [
+    "Saved/restart tests use actual approved public PNG bytes and mocked FileSystem/Repository, not a Samsung Wallet.",
+    "Native Share/ViewShot pixel output and actual decoding need Samsung acceptance.",
+    "Expo Go needs Metro for first delivery of an uncached new bundle asset; saved artwork uses verified Documents copies.",
+    "Cancelled Add sessions may leave reusable immutable public default files, never a newly written card or Wallet snapshot."
+  ]
+}

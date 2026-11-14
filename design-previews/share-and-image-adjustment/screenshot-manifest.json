@@ -1,0 +1,128 @@
+[
+  {
+    "file": "adjust-a-confirmed.png",
+    "width": 412,
+    "height": 831,
+    "bytes": 61859,
+    "format": "PNG"
+  },
+  {
+    "file": "adjust-a-large-text.png",
+    "width": 320,
+    "height": 740,
+    "bytes": 61757,
+    "format": "PNG"
+  },
+  {
+    "file": "adjust-a-portrait.png",
+    "width": 412,
+    "height": 831,
+    "bytes": 58255,
+    "format": "PNG"
+  },
+  {
+    "file": "adjust-a.png",
+    "width": 412,
+    "height": 831,
+    "bytes": 58297,
+    "format": "PNG"
+  },
+  {
+    "file": "adjust-b-confirmed.png",
+    "width": 412,
+    "height": 831,
+    "bytes": 61859,
+    "format": "PNG"
+  },
+  {
+    "file": "adjust-b-large-text.png",
+    "width": 320,
+    "height": 740,
+    "bytes": 58429,
+    "format": "PNG"
+  },
+  {
+    "file": "adjust-b-large.png",
+    "width": 412,
+    "height": 831,
+    "bytes": 58665,
+    "format": "PNG"
+  },
+  {
+    "file": "adjust-b.png",
+    "width": 412,
+    "height": 831,
+    "bytes": 64160,
+    "format": "PNG"
+  },
+  {
+    "file": "adjust-comparison.png",
+    "width": 920,
+    "height": 986,
+    "bytes": 113511,
+    "format": "PNG"
+  },
+  {
+    "file": "crop-proof-seven.png",
+    "width": 1440,
+    "height": 2439,
+    "bytes": 296624,
+    "format": "PNG"
+  },
+  {
+    "file": "share-a-back-barcode.png",
+    "width": 412,
+    "height": 831,
+    "bytes": 43546,
+    "format": "PNG"
+  },
+  {
+    "file": "share-a-large-text.png",
+    "width": 320,
+    "height": 740,
+    "bytes": 65050,
+    "format": "PNG"
+  },
+  {
+    "file": "share-a-qr.png",
+    "width": 412,
+    "height": 831,
+    "bytes": 56124,
+    "format": "PNG"
+  },
+  {
+    "file": "share-a.png",
+    "width": 412,
+    "height": 831,
+    "bytes": 67863,
+    "format": "PNG"
+  },
+  {
+    "file": "share-b-large-text.png",
+    "width": 320,
+    "height": 740,
+    "bytes": 63878,
+    "format": "PNG"
+  },
+  {
+    "file": "share-b-reviewed.png",
+    "width": 412,
+    "height": 831,
+    "bytes": 57382,
+    "format": "PNG"
+  },
+  {
+    "file": "share-b.png",
+    "width": 412,
+    "height": 831,
+    "bytes": 62186,
+    "format": "PNG"
+  },
+  {
+    "file": "share-comparison.png",
+    "width": 920,
+    "height": 986,
+    "bytes": 126924,
+    "format": "PNG"
+  }
+]

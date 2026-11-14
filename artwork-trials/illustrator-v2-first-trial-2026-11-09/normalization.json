@@ -1,0 +1,200 @@
+[
+  {
+    "id": "pet-cat",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "alphaBounds": [
+      0,
+      71,
+      1244,
+      1254
+    ],
+    "normalizedSize": [
+      768,
+      768
+    ],
+    "visibleBoundsSize": [
+      614,
+      584
+    ],
+    "method": "Uniform alpha-bounds fit to 80% canvas; no background removal; source preserved"
+  },
+  {
+    "id": "pet-dog",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "alphaBounds": [
+      0,
+      35,
+      1218,
+      1254
+    ],
+    "normalizedSize": [
+      768,
+      768
+    ],
+    "visibleBoundsSize": [
+      613,
+      614
+    ],
+    "method": "Uniform alpha-bounds fit to 80% canvas; no background removal; source preserved"
+  },
+  {
+    "id": "pet-paw",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "alphaBounds": [
+      0,
+      69,
+      1235,
+      1254
+    ],
+    "normalizedSize": [
+      768,
+      768
+    ],
+    "visibleBoundsSize": [
+      614,
+      589
+    ],
+    "method": "Uniform alpha-bounds fit to 80% canvas; no background removal; source preserved"
+  },
+  {
+    "id": "travel-suitcase",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "alphaBounds": [
+      59,
+      81,
+      1214,
+      1254
+    ],
+    "normalizedSize": [
+      768,
+      768
+    ],
+    "visibleBoundsSize": [
+      605,
+      614
+    ],
+    "method": "Uniform alpha-bounds fit to 80% canvas; no background removal; source preserved"
+  },
+  {
+    "id": "travel-plane",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "alphaBounds": [
+      0,
+      57,
+      1224,
+      1222
+    ],
+    "normalizedSize": [
+      768,
+      768
+    ],
+    "visibleBoundsSize": [
+      614,
+      584
+    ],
+    "method": "Uniform alpha-bounds fit to 80% canvas; no background removal; source preserved"
+  },
+  {
+    "id": "travel-cloud",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "alphaBounds": [
+      0,
+      41,
+      1170,
+      1228
+    ],
+    "normalizedSize": [
+      768,
+      768
+    ],
+    "visibleBoundsSize": [
+      605,
+      614
+    ],
+    "method": "Uniform alpha-bounds fit to 80% canvas; no background removal; source preserved"
+  },
+  {
+    "id": "wellness-flower",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "alphaBounds": [
+      65,
+      33,
+      1234,
+      1254
+    ],
+    "normalizedSize": [
+      768,
+      768
+    ],
+    "visibleBoundsSize": [
+      588,
+      614
+    ],
+    "method": "Uniform alpha-bounds fit to 80% canvas; no background removal; source preserved"
+  },
+  {
+    "id": "wellness-leaf",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "alphaBounds": [
+      0,
+      53,
+      1178,
+      1186
+    ],
+    "normalizedSize": [
+      768,
+      768
+    ],
+    "visibleBoundsSize": [
+      614,
+      591
+    ],
+    "method": "Uniform alpha-bounds fit to 80% canvas; no background removal; source preserved"
+  },
+  {
+    "id": "wellness-teacup",
+    "originalSize": [
+      1254,
+      1254
+    ],
+    "alphaBounds": [
+      0,
+      60,
+      1210,
+      1199
+    ],
+    "normalizedSize": [
+      768,
+      768
+    ],
+    "visibleBoundsSize": [
+      614,
+      578
+    ],
+    "method": "Uniform alpha-bounds fit to 80% canvas; no background removal; source preserved"
+  }
+]

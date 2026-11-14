@@ -3,10 +3,16 @@ import { bemem } from '../../constants/bemem-theme';
 import { lagoonFonts } from '../../constants/lagoon-theme';
 import type { PreviewCard } from '../../types/wallet-ui';
 import { MembershipCard } from './MembershipCard';
+import { MembershipCardDetail } from './MembershipCardDetail';
+import type { MembershipCard as MembershipData } from '../../types/membership-card';
+import type { createWalletFeatureCommands } from '../../lib/wallet-feature-commands';
 
-export function CardPreview({ card, fromCreate, onClose }: {
+export function CardPreview({ card, fromCreate, onClose, membership, editCommands, onHome }: {
   card: PreviewCard | null; fromCreate: boolean; onClose: () => void;
+  membership?: Readonly<MembershipData> | { readonly kind: 'demo' } | null;
+  editCommands?: ReturnType<typeof createWalletFeatureCommands>; onHome?: () => void;
 }) {
+  if (card && membership?.kind === 'membership') return <MembershipCardDetail key={membership.id} card={membership} fromCreate={fromCreate} onClose={onClose} onHome={onHome} editCommands={editCommands} />;
   return <Modal transparent animationType="slide" visible={card !== null} onRequestClose={onClose}>
     <View style={styles.backdrop}>
       {/* Sibling hit targets: touches inside the sheet cannot bubble to the backdrop. */}

@@ -1,0 +1,365 @@
+{
+  "status": "Trial assets integrated for user testing; not commercially finalized",
+  "assets": [
+    {
+      "id": "coffee-straight",
+      "collection": "Café Day",
+      "source": "artwork-source\\coffee-straight.svg",
+      "png": "review/png/coffee-straight.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "rotatable": true,
+      "bytes": 5132,
+      "sha256": "da934f4a2abe93a514de5d3fbdda16ec3745bf58eb422df3a22b942ebe49cba3"
+    },
+    {
+      "id": "coffee-corner",
+      "collection": "Café Day",
+      "source": "artwork-source\\coffee-corner.svg",
+      "png": "review/png/coffee-corner.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [
+        "W",
+        "S"
+      ],
+      "rotatable": true,
+      "bytes": 4660,
+      "sha256": "833db98fd1c72cfda2452351a7f28bc0b453cf85683e2c34ae8a1cc0b8c059d0"
+    },
+    {
+      "id": "coffee-end",
+      "collection": "Café Day",
+      "source": "artwork-source\\coffee-end.svg",
+      "png": "review/png/coffee-end.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [
+        "W"
+      ],
+      "rotatable": true,
+      "bytes": 4084,
+      "sha256": "846f127a37b8d96580a15ce208ba3eee19d577e9b7f140c7aaea95cb70180272"
+    },
+    {
+      "id": "coffee-accent",
+      "collection": "Café Day",
+      "source": "artwork-source\\coffee-accent.svg",
+      "png": "review/png/coffee-accent.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [],
+      "rotatable": true,
+      "bytes": 3046,
+      "sha256": "459cf8489db7715da720b9841225c5576fc8f661a05962d5b735046e82bbc249"
+    },
+    {
+      "id": "ribbon-straight",
+      "collection": "Shopping & Gifts",
+      "source": "artwork-source\\ribbon-straight.svg",
+      "png": "review/png/ribbon-straight.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "rotatable": true,
+      "bytes": 7160,
+      "sha256": "095618f2a49aca434e04dea84a4b69c36dc1fa1f6b1f32c69cc6a855573ba436"
+    },
+    {
+      "id": "ribbon-corner",
+      "collection": "Shopping & Gifts",
+      "source": "artwork-source\\ribbon-corner.svg",
+      "png": "review/png/ribbon-corner.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [
+        "W",
+        "S"
+      ],
+      "rotatable": true,
+      "bytes": 5780,
+      "sha256": "55609ff34de4b474cf5fd7cc06bfa545da347742ef8ba6e5733be001f49672c9"
+    },
+    {
+      "id": "ribbon-end",
+      "collection": "Shopping & Gifts",
+      "source": "artwork-source\\ribbon-end.svg",
+      "png": "review/png/ribbon-end.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [
+        "W"
+      ],
+      "rotatable": true,
+      "bytes": 5280,
+      "sha256": "9d2536a797fd86aa638c33aae60a53f877b439b84662355f20e3f2144600aa8d"
+    },
+    {
+      "id": "ribbon-accent",
+      "collection": "Shopping & Gifts",
+      "source": "artwork-source\\ribbon-accent.svg",
+      "png": "review/png/ribbon-accent.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [],
+      "rotatable": true,
+      "bytes": 4366,
+      "sha256": "9f7da6d93e4445f5fc7be973e3107f42535b464bbe845059dfb0ee5692329231"
+    },
+    {
+      "id": "savings-straight",
+      "collection": "Little Savings",
+      "source": "artwork-source\\savings-straight.svg",
+      "png": "review/png/savings-straight.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "rotatable": true,
+      "bytes": 4313,
+      "sha256": "8edf966db6ce3469d61ce67d4fb2b4ed4c2740020f10fa313848b7936b971a5c"
+    },
+    {
+      "id": "savings-corner",
+      "collection": "Little Savings",
+      "source": "artwork-source\\savings-corner.svg",
+      "png": "review/png/savings-corner.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [
+        "W",
+        "S"
+      ],
+      "rotatable": true,
+      "bytes": 4219,
+      "sha256": "8883bc1f530d2ff23e7e8627936bd4e8c647acc52809af1f53863f7ca2393915"
+    },
+    {
+      "id": "savings-end",
+      "collection": "Little Savings",
+      "source": "artwork-source\\savings-end.svg",
+      "png": "review/png/savings-end.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [
+        "W"
+      ],
+      "rotatable": true,
+      "bytes": 3430,
+      "sha256": "68b4276b74230397ad27f981237be1f9419d821ad5030bf57e95ec0e0918b663"
+    },
+    {
+      "id": "savings-accent",
+      "collection": "Little Savings",
+      "source": "artwork-source\\savings-accent.svg",
+      "png": "review/png/savings-accent.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [],
+      "rotatable": true,
+      "bytes": 2006,
+      "sha256": "239c5c8ef97a78b0fc5e89bd41df72087dac8744375d928c05b2970b7a681124"
+    },
+    {
+      "id": "cafe-coffee",
+      "collection": "Café Day",
+      "source": "artwork-source\\cafe-coffee.png",
+      "png": "review/png/cafe-coffee.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [],
+      "rotatable": true,
+      "bytes": 20006,
+      "sha256": "f77901796a2df4fe0f8941d21a007a661c255cce1672064aceaf37921c3da445"
+    },
+    {
+      "id": "cafe-cookie",
+      "collection": "Café Day",
+      "source": "artwork-source\\cafe-cookie.png",
+      "png": "review/png/cafe-cookie.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [],
+      "rotatable": true,
+      "bytes": 15671,
+      "sha256": "84e1eb66377cbb0a35bbc91bf72cf120c47f81508c1aefb648ad26c3114f6396"
+    },
+    {
+      "id": "cafe-croissant",
+      "collection": "Café Day",
+      "source": "artwork-source\\cafe-croissant.png",
+      "png": "review/png/cafe-croissant.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [],
+      "rotatable": true,
+      "bytes": 14272,
+      "sha256": "7541d471cea95d053099d807f81abfa14bd4e53dde6c3aeb9f0fdfc61ac0985f"
+    },
+    {
+      "id": "shopping-bag",
+      "collection": "Shopping & Gifts",
+      "source": "artwork-source\\shopping-bag.png",
+      "png": "review/png/shopping-bag.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [],
+      "rotatable": true,
+      "bytes": 14431,
+      "sha256": "58284eaa4427d3f0a6798e1c2617b8536d898390fbc94e5127d17f89aa15b9b8"
+    },
+    {
+      "id": "shopping-gift",
+      "collection": "Shopping & Gifts",
+      "source": "artwork-source\\shopping-gift.png",
+      "png": "review/png/shopping-gift.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [],
+      "rotatable": true,
+      "bytes": 15031,
+      "sha256": "0be4a3aaf13c430c4740bb13286bcab7fe43081a948acb56fb94d8bd2765ea73"
+    },
+    {
+      "id": "shopping-bow",
+      "collection": "Shopping & Gifts",
+      "source": "artwork-source\\shopping-bow.png",
+      "png": "review/png/shopping-bow.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [],
+      "rotatable": true,
+      "bytes": 17469,
+      "sha256": "0a980d5de6c19988aa5c8655e9f313a98232b164855d82f1b65095beadc42191"
+    },
+    {
+      "id": "savings-piggy",
+      "collection": "Little Savings",
+      "source": "artwork-source\\savings-piggy.png",
+      "png": "review/png/savings-piggy.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [],
+      "rotatable": true,
+      "bytes": 15583,
+      "sha256": "2a862f6ea9362c6a6657bdd11f56b75f0a779913375e223e74f8aa00e5c93067"
+    },
+    {
+      "id": "savings-coin",
+      "collection": "Little Savings",
+      "source": "artwork-source\\savings-coin.png",
+      "png": "review/png/savings-coin.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [],
+      "rotatable": true,
+      "bytes": 13023,
+      "sha256": "77e0f3c429c99b173ba02bfb518993b3a8e836f11ed501a8104604e24fcf5ea4"
+    },
+    {
+      "id": "savings-wallet",
+      "collection": "Little Savings",
+      "source": "artwork-source\\savings-wallet.png",
+      "png": "review/png/savings-wallet.png",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "connectors": [],
+      "rotatable": true,
+      "bytes": 13995,
+      "sha256": "cfee1d68ce97774e0a4e80e9e83e5b377c73b74ff95e1b1ae0a5a389ebfc8a84"
+    }
+  ]
+}

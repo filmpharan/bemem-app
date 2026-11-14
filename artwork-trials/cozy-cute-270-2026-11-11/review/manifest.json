@@ -1,0 +1,970 @@
+{
+  "assets": [
+    {
+      "id": "pet-rope-straight",
+      "label": "Rope Straight segment",
+      "collection": "pets",
+      "category": "frame",
+      "reference": "pet-accent-06",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "source": "artwork-source/pet-rope-straight.svg",
+      "png": "review/png/pet-rope-straight.png",
+      "sha256": "401b3f163494dda8848f3fa2b6fab754d597ecc07a1d0c7291f36b35df067be4",
+      "bytes": 6020,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "pet-rope-corner",
+      "label": "Rope Rounded corner",
+      "collection": "pets",
+      "category": "frame",
+      "reference": "pet-accent-06",
+      "connectors": [
+        "W",
+        "S"
+      ],
+      "source": "artwork-source/pet-rope-corner.svg",
+      "png": "review/png/pet-rope-corner.png",
+      "sha256": "8d7277711d75d416f6d562a3312c515797ef8c03377c4d333779c5bf0d7c1f49",
+      "bytes": 7769,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "pet-rope-end",
+      "label": "Rope End cap",
+      "collection": "pets",
+      "category": "frame",
+      "reference": "pet-accent-06",
+      "connectors": [
+        "W"
+      ],
+      "source": "artwork-source/pet-rope-end.svg",
+      "png": "review/png/pet-rope-end.png",
+      "sha256": "5bb57bb77f36d4810f4803b3341dbf70ec6eb5fe046d686c557c42bb09a20e06",
+      "bytes": 4506,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "pet-rope-tee",
+      "label": "Rope T-junction",
+      "collection": "pets",
+      "category": "frame",
+      "reference": "pet-accent-06",
+      "connectors": [
+        "W",
+        "E",
+        "S"
+      ],
+      "source": "artwork-source/pet-rope-tee.svg",
+      "png": "review/png/pet-rope-tee.png",
+      "sha256": "af77c50418429479b4e9a4bfb714bb81b6cd5cc63c30eb1b1d8801eb67306ca3",
+      "bytes": 6848,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "pet-rope-cross",
+      "label": "Rope Four-way junction",
+      "collection": "pets",
+      "category": "frame",
+      "reference": "pet-accent-06",
+      "connectors": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "source": "artwork-source/pet-rope-cross.svg",
+      "png": "review/png/pet-rope-cross.png",
+      "sha256": "fd96855df0de2be72bad65d39b7d9775af5e161371d819436a5fcb6c8db3290b",
+      "bytes": 8650,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "pet-rope-short-detail",
+      "label": "Rope Short-detail straight",
+      "collection": "pets",
+      "category": "frame",
+      "reference": "pet-accent-06",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "source": "artwork-source/pet-rope-short-detail.svg",
+      "png": "review/png/pet-rope-short-detail.png",
+      "sha256": "cff64e1f83ab76988fb30cc8b78e7cf9ef7479c16e653bf3291731f94e420eb0",
+      "bytes": 4183,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "pet-rope-long-detail",
+      "label": "Rope Long-detail straight",
+      "collection": "pets",
+      "category": "frame",
+      "reference": "pet-accent-06",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "source": "artwork-source/pet-rope-long-detail.svg",
+      "png": "review/png/pet-rope-long-detail.png",
+      "sha256": "f02252b3d0c8fdfc0d8243e03d23963ce8516cb44a87ba58d0c03aa9fe40e0fb",
+      "bytes": 7276,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "pet-rope-ornamental-corner",
+      "label": "Rope Decorative corner",
+      "collection": "pets",
+      "category": "frame",
+      "reference": "pet-accent-06",
+      "connectors": [
+        "W",
+        "S"
+      ],
+      "source": "artwork-source/pet-rope-ornamental-corner.svg",
+      "png": "review/png/pet-rope-ornamental-corner.png",
+      "sha256": "cd1105ed8f1fb38dec1b8a1fe5827c61b4939daba7fe24b11c007fc221541729",
+      "bytes": 10069,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "pet-rope-connector",
+      "label": "Rope Ornamental connector",
+      "collection": "pets",
+      "category": "frame",
+      "reference": "pet-accent-06",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "source": "artwork-source/pet-rope-connector.svg",
+      "png": "review/png/pet-rope-connector.png",
+      "sha256": "a35530667bcc9519fbfdf752fbc2eeef2eae8ab887778bcdcdd7e34b64294849",
+      "bytes": 9193,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "pet-rope-special-end",
+      "label": "Rope Special end cap",
+      "collection": "pets",
+      "category": "frame",
+      "reference": "pet-accent-06",
+      "connectors": [
+        "W"
+      ],
+      "source": "artwork-source/pet-rope-special-end.svg",
+      "png": "review/png/pet-rope-special-end.png",
+      "sha256": "0b66ff1970547a8f65b52021d759949644d127c4b899384843666e09540fab73",
+      "bytes": 8612,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "wellness-sprig-straight",
+      "label": "Leaf Straight segment",
+      "collection": "wellness",
+      "category": "frame",
+      "reference": "wellness-accent-02",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "source": "artwork-source/wellness-sprig-straight.svg",
+      "png": "review/png/wellness-sprig-straight.png",
+      "sha256": "c640ddea04232816dd1516559ef2f6ea511d8390bf9ab900b7e3c125aff7e10f",
+      "bytes": 7294,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "wellness-sprig-corner",
+      "label": "Leaf Rounded corner",
+      "collection": "wellness",
+      "category": "frame",
+      "reference": "wellness-accent-02",
+      "connectors": [
+        "W",
+        "S"
+      ],
+      "source": "artwork-source/wellness-sprig-corner.svg",
+      "png": "review/png/wellness-sprig-corner.png",
+      "sha256": "01ad4f6748ba7433d9165435f79718eafbad53f7ee60e611fda806f4865f428d",
+      "bytes": 7592,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "wellness-sprig-end",
+      "label": "Leaf End cap",
+      "collection": "wellness",
+      "category": "frame",
+      "reference": "wellness-accent-02",
+      "connectors": [
+        "W"
+      ],
+      "source": "artwork-source/wellness-sprig-end.svg",
+      "png": "review/png/wellness-sprig-end.png",
+      "sha256": "b48845b037d0b0dd61d8cf173e97044691803a607ee6e7e4489e18bfe07a0367",
+      "bytes": 4047,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "wellness-sprig-tee",
+      "label": "Leaf T-junction",
+      "collection": "wellness",
+      "category": "frame",
+      "reference": "wellness-accent-02",
+      "connectors": [
+        "W",
+        "E",
+        "S"
+      ],
+      "source": "artwork-source/wellness-sprig-tee.svg",
+      "png": "review/png/wellness-sprig-tee.png",
+      "sha256": "ffcfd4cd25c3c94d5cc18b3da40d22265adc0a7b836520c0ade82feca97993a9",
+      "bytes": 8952,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "wellness-sprig-cross",
+      "label": "Leaf Four-way junction",
+      "collection": "wellness",
+      "category": "frame",
+      "reference": "wellness-accent-02",
+      "connectors": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "source": "artwork-source/wellness-sprig-cross.svg",
+      "png": "review/png/wellness-sprig-cross.png",
+      "sha256": "26eb33cc65fc956b2c323b680a31b485e9602aef0b1cf359f0d7029af30ecfb8",
+      "bytes": 9911,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "wellness-sprig-short-detail",
+      "label": "Leaf Short-detail straight",
+      "collection": "wellness",
+      "category": "frame",
+      "reference": "wellness-accent-02",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "source": "artwork-source/wellness-sprig-short-detail.svg",
+      "png": "review/png/wellness-sprig-short-detail.png",
+      "sha256": "439b3985293e8605f1576ef96dc1b9290d361cf0f242e42b622e99f269d60be0",
+      "bytes": 5914,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "wellness-sprig-long-detail",
+      "label": "Leaf Long-detail straight",
+      "collection": "wellness",
+      "category": "frame",
+      "reference": "wellness-accent-02",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "source": "artwork-source/wellness-sprig-long-detail.svg",
+      "png": "review/png/wellness-sprig-long-detail.png",
+      "sha256": "4dcee5ad6141e69d818f4d8e2b4d8b5c696a49168c149767bbbac540269717bf",
+      "bytes": 7878,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "wellness-sprig-ornamental-corner",
+      "label": "Leaf Decorative corner",
+      "collection": "wellness",
+      "category": "frame",
+      "reference": "wellness-accent-02",
+      "connectors": [
+        "W",
+        "S"
+      ],
+      "source": "artwork-source/wellness-sprig-ornamental-corner.svg",
+      "png": "review/png/wellness-sprig-ornamental-corner.png",
+      "sha256": "73023612a15a0ed6723b9db252300c46bd6d94cc5553e1e2e00daeadb60bda29",
+      "bytes": 8956,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "wellness-sprig-connector",
+      "label": "Leaf Ornamental connector",
+      "collection": "wellness",
+      "category": "frame",
+      "reference": "wellness-accent-02",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "source": "artwork-source/wellness-sprig-connector.svg",
+      "png": "review/png/wellness-sprig-connector.png",
+      "sha256": "cc19c665b077577238bc40300f5ae3b0bedcd3ec7552aba1e65708b99814b667",
+      "bytes": 8280,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "wellness-sprig-special-end",
+      "label": "Leaf Special end cap",
+      "collection": "wellness",
+      "category": "frame",
+      "reference": "wellness-accent-02",
+      "connectors": [
+        "W"
+      ],
+      "source": "artwork-source/wellness-sprig-special-end.svg",
+      "png": "review/png/wellness-sprig-special-end.png",
+      "sha256": "81a5d3d9e01d3256eb290c69367f204a5e1329e6d24fe9c885bc07447d0017d6",
+      "bytes": 8043,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "savings-chain-straight",
+      "label": "Chain Straight segment",
+      "collection": "savings",
+      "category": "frame",
+      "reference": "savings-accent-07",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "source": "artwork-source/savings-chain-straight.svg",
+      "png": "review/png/savings-chain-straight.png",
+      "sha256": "e0047454b580122d1f645cc40ff6ec62a5211fd41d4fccd34ed25655edc34a81",
+      "bytes": 9677,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "savings-chain-corner",
+      "label": "Chain Rounded corner",
+      "collection": "savings",
+      "category": "frame",
+      "reference": "savings-accent-07",
+      "connectors": [
+        "W",
+        "S"
+      ],
+      "source": "artwork-source/savings-chain-corner.svg",
+      "png": "review/png/savings-chain-corner.png",
+      "sha256": "9b6d22d527f110954a81feba05caa44a4b53bd4c02a86607e78d6d8e0b26309d",
+      "bytes": 9925,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "savings-chain-end",
+      "label": "Chain End cap",
+      "collection": "savings",
+      "category": "frame",
+      "reference": "savings-accent-07",
+      "connectors": [
+        "W"
+      ],
+      "source": "artwork-source/savings-chain-end.svg",
+      "png": "review/png/savings-chain-end.png",
+      "sha256": "f640369802faa95a3afdffc20ae07a0b94f170ae63ccdb1805f6683bc57eeb26",
+      "bytes": 8698,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "savings-chain-tee",
+      "label": "Chain T-junction",
+      "collection": "savings",
+      "category": "frame",
+      "reference": "savings-accent-07",
+      "connectors": [
+        "W",
+        "E",
+        "S"
+      ],
+      "source": "artwork-source/savings-chain-tee.svg",
+      "png": "review/png/savings-chain-tee.png",
+      "sha256": "9f84948e697855d7a6d300ecdaffd121bd26bac4e91afc1228e3198dc565dc0e",
+      "bytes": 13088,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "savings-chain-cross",
+      "label": "Chain Four-way junction",
+      "collection": "savings",
+      "category": "frame",
+      "reference": "savings-accent-07",
+      "connectors": [
+        "N",
+        "E",
+        "S",
+        "W"
+      ],
+      "source": "artwork-source/savings-chain-cross.svg",
+      "png": "review/png/savings-chain-cross.png",
+      "sha256": "2d7b5664d2f34f86937b85ba26c758d2c75d8b061f781a6ea1ae3341353c01fe",
+      "bytes": 17736,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "savings-chain-short-detail",
+      "label": "Chain Short-detail straight",
+      "collection": "savings",
+      "category": "frame",
+      "reference": "savings-accent-07",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "source": "artwork-source/savings-chain-short-detail.svg",
+      "png": "review/png/savings-chain-short-detail.png",
+      "sha256": "421aa1e98b5f0f8df3bb342cadae547dcd8f2a7656e700070883e87f6c15674c",
+      "bytes": 9844,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "savings-chain-long-detail",
+      "label": "Chain Long-detail straight",
+      "collection": "savings",
+      "category": "frame",
+      "reference": "savings-accent-07",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "source": "artwork-source/savings-chain-long-detail.svg",
+      "png": "review/png/savings-chain-long-detail.png",
+      "sha256": "0e9c74286cd8694f767f2ebc75373e886bee494f04ceee521a6ce6c608508ee6",
+      "bytes": 12680,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "savings-chain-ornamental-corner",
+      "label": "Chain Decorative corner",
+      "collection": "savings",
+      "category": "frame",
+      "reference": "savings-accent-07",
+      "connectors": [
+        "W",
+        "S"
+      ],
+      "source": "artwork-source/savings-chain-ornamental-corner.svg",
+      "png": "review/png/savings-chain-ornamental-corner.png",
+      "sha256": "21342bb16b727fd724df776f2b49e7a534d3b2b01f354bb778424a4099943e4f",
+      "bytes": 16162,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "savings-chain-connector",
+      "label": "Chain Ornamental connector",
+      "collection": "savings",
+      "category": "frame",
+      "reference": "savings-accent-07",
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "source": "artwork-source/savings-chain-connector.svg",
+      "png": "review/png/savings-chain-connector.png",
+      "sha256": "e5a2334f73c23896d349445ec59970ced9a084de1094895c543f92d7e721f726",
+      "bytes": 15302,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    },
+    {
+      "id": "savings-chain-special-end",
+      "label": "Chain Special end cap",
+      "collection": "savings",
+      "category": "frame",
+      "reference": "savings-accent-07",
+      "connectors": [
+        "W"
+      ],
+      "source": "artwork-source/savings-chain-special-end.svg",
+      "png": "review/png/savings-chain-special-end.png",
+      "sha256": "d88c12f6324bb21b65a75620d1d018b7961e40ff8c3da831ebc454f3f60e4a11",
+      "bytes": 14191,
+      "format": "PNG",
+      "sizePx": [
+        192,
+        192
+      ],
+      "colorMode": "RGBA",
+      "bitDepth": 8,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "paintScale": 1,
+      "rotatable": true
+    }
+  ],
+  "existingAssets": 240,
+  "totalAssets": 270,
+  "method": "Code-authored SVG, rendered by Inkscape; not hand-painted or AI-generated."
+}

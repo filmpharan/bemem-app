@@ -1,0 +1,53 @@
+{
+  "method": "AI raster illustrations + code-authored SVG frames; not human hand painting",
+  "basePrompt": "Generate ONE original bemem Cozy Cute illustration sticker on a genuinely TRANSPARENT alpha background, no white background or checkerboard baked in. The attached cat is a STYLE REFERENCE ONLY; do not include the cat. Match its warm cocoa organic outlines, muted cream/blush/sage/butter pastel flat fills, soft slightly imperfect handmade shapes and tiny charming details. Clear silhouette when the whole tile is 24-32px. No emoji, copied character, heavy shadow, text, elaborate gradient, extra props, scene, floor or sticker border. Complete subject fits centered within 80% of a square with generous transparent margins. Subject: ",
+  "sources": [
+    {
+      "id": "cafe-coffee",
+      "subject": "one small cozy cream coffee cup and a muted sage saucer, cocoa coffee surface, a tiny gentle smile and one curved steam stroke, distinguish it from a tea mug",
+      "path": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-06be1001-23c1-4638-90e0-30b6ab271813.png"
+    },
+    {
+      "id": "cafe-cookie",
+      "subject": "one tiny butter golden round cookie with slightly uneven scalloped edges, four cocoa chocolate chips, a friendly subtle smile, no other objects",
+      "path": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-69d8d2d7-f6f3-4d99-8d5c-827ac6f7f956.png"
+    },
+    {
+      "id": "cafe-croissant",
+      "subject": "one plump little crescent croissant, warm biscuit and butter colors with just three simple curved pastry folds, no plate",
+      "path": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-8e5fb80d-af7d-43f5-a969-fac911704eb5.png"
+    },
+    {
+      "id": "shopping-bag",
+      "subject": "one small blush shopping bag with two cocoa rounded handles, a soft cream heart motif, softly uneven paper silhouette",
+      "path": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-2c2c5a40-1325-4ba0-9e6b-70f47fcbdab3.png"
+    },
+    {
+      "id": "shopping-gift",
+      "subject": "one tiny sage gift box with a butter ribbon and a rounded blush bow, slightly tilted lid, simple chunky silhouette",
+      "path": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-9821790b-df84-42ec-8852-09d0411b063b.png"
+    },
+    {
+      "id": "shopping-bow",
+      "subject": "one soft blush ribbon bow, two plump asymmetric loops and two short fluttering tails, cream highlight, simple silhouette",
+      "path": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-30983b11-0740-49ef-bb9e-cb408de8631a.png"
+    },
+    {
+      "id": "savings-piggy",
+      "subject": "one tiny friendly blush pink piggy bank, small ears, four stubby feet, a simple cocoa coin slot and a short curly tail, no text or money symbol",
+      "path": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-11c4d2ca-9383-44a3-83d1-8e0ae4405d38.png"
+    },
+    {
+      "id": "savings-coin",
+      "subject": "one small butter yellow coin, cocoa irregular round outline, a simple embossed cream flower in its center, no numbers or currency symbols",
+      "path": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-d1b8e87b-fede-43d4-96a6-d3b0b8044b48.png"
+    },
+    {
+      "id": "savings-wallet",
+      "subject": "one small rounded sage pocket wallet, warm cocoa edging and a blush button clasp, one cream card corner peeking out, no text",
+      "path": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-24cb5d28-956e-4eea-a26b-fadfd469b7d0.png"
+    }
+  ],
+  "walletRevision": "First output rejected for exterior haze; regenerated with clean alpha silhouette.",
+  "walletRevisionPrompt": "Generate ONE original bemem Cozy Cute illustration sticker on a genuinely TRANSPARENT alpha background, no white background or checkerboard baked in. The attached cat is a STYLE REFERENCE ONLY; do not include the cat. Match its warm cocoa organic outlines, muted cream/blush/sage/butter pastel flat fills, soft slightly imperfect handmade shapes and tiny charming details. Clear silhouette when the whole tile is 24-32px. No emoji, copied character, heavy shadow, text, elaborate gradient, extra props, scene, floor or sticker border. Complete subject fits centered within 80% of a square with generous transparent margins. Subject: One SMALL simple sage green rounded wallet with cocoa outline, blush button clasp and one cream card corner. IMPORTANT: flat clean outer silhouette and genuine empty transparent alpha everywhere outside the wallet. Absolutely no glow, haze, gray cloud, shadow, light spark, vignette, texture outside the outline, floor, or other object. Keep it as crisp and clean as the reference cat. Only a tiny gentle smiling face on the wallet."
+}

@@ -1,27 +1,22 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { core, lagoon, lagoonFonts } from '../../constants/lagoon-theme';
+import { StyleSheet, View } from 'react-native';
+import { core, lagoon } from '../../constants/lagoon-theme';
 import { GlassButton } from './GlassButton';
 import { BememIcon } from './BememIcon';
 
-export function CanvasActions({ editing, empty, dirty, disabled, saving, onAdd, onSave }: {
-  editing: boolean; empty: boolean; dirty: boolean; disabled: boolean; saving: boolean; onAdd: () => void; onSave: () => void;
+export function CanvasActions({ editing, empty, disabled, onAdd }: {
+  editing: boolean; empty: boolean; disabled: boolean; onAdd: () => void;
 }) {
+  if(editing||!empty)return null;
   return <View pointerEvents="box-none" style={styles.actions}>
-    {(editing || empty) && <GlassButton kind="gel" accessibilityLabel="Add Card (coming soon, not available in Phase 1)"
+    <GlassButton kind="gel" accessibilityLabel="Add Card"
       disabled={disabled} onPress={onAdd}
-      style={[styles.fab, editing ? styles.left : styles.right]}>
+      style={[styles.fab, styles.right]}>
       <BememIcon name="plus" color={lagoon.text.primary} />
-    </GlassButton>}
-    {editing && dirty && <GlassButton kind="action" disabled={disabled} busy={saving} onPress={onSave}
-      style={styles.save}>
-      <Text style={styles.saveText}>{saving ? 'Saving…' : 'Save'}</Text>
-    </GlassButton>}
+    </GlassButton>
   </View>;
 }
 const styles = StyleSheet.create({
   actions: { position: 'absolute', left: core.geometry.actionRail.horizontalInset, right: core.geometry.actionRail.horizontalInset, bottom: 24, height: 56 },
   fab: { position: 'absolute', ...core.geometry.fab },
-  left: { left: 0 }, right: { right: 0 },
-  save: { position: 'absolute', right: 0, bottom: 0, ...core.geometry.save, paddingVertical: 12 },
-  saveText: { color: lagoon.text.onAction, fontSize: 14, fontWeight: '700', fontFamily: lagoonFonts.latin },
+  right: { right: 0 },
 });

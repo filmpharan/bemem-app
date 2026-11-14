@@ -1,0 +1,1037 @@
+{
+  "status": "TECHNICAL QA PASS / HUMAN VISUAL APPROVAL PENDING",
+  "assets": [
+    {
+      "id": "pet-cat",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "animated": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 27361,
+      "visibleBounds": [
+        34,
+        42,
+        165,
+        161
+      ],
+      "bytes": 19088,
+      "sha256": "996ccec2af981c43e823333cd4c526bf533622d97171a3a7616fa630ec58ba3b"
+    },
+    {
+      "id": "pet-dog",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "animated": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 28191,
+      "visibleBounds": [
+        29,
+        58,
+        168,
+        150
+      ],
+      "bytes": 17690,
+      "sha256": "e60ed6d8ba3b44e2ad96694f301c7d3ceb1ac69c7453ffeae06fce5f25f56353"
+    },
+    {
+      "id": "pet-paw",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "animated": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 27496,
+      "visibleBounds": [
+        34,
+        36,
+        171,
+        150
+      ],
+      "bytes": 20321,
+      "sha256": "9474bdf7272219a73d03cfd1bfc4c4e535c951546e4c96e2366a7c1cbb5832e3"
+    },
+    {
+      "id": "travel-suitcase",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "animated": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 27592,
+      "visibleBounds": [
+        39,
+        26,
+        155,
+        173
+      ],
+      "bytes": 20549,
+      "sha256": "e61b9d01d35f5e139ee08109b9c50f4a07c511d2454154337012bdb6bfc72be3"
+    },
+    {
+      "id": "travel-plane",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "animated": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 30408,
+      "visibleBounds": [
+        39,
+        56,
+        155,
+        148
+      ],
+      "bytes": 16125,
+      "sha256": "1e740998d0bea535cd70224fb897bb62915e1da5d868e2e84af71e29ecada0ab"
+    },
+    {
+      "id": "travel-cloud",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "animated": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 29385,
+      "visibleBounds": [
+        39,
+        53,
+        163,
+        143
+      ],
+      "bytes": 14341,
+      "sha256": "5fd3dbb5ab88ab03cff02dc51acc77ae823e0316eb8f7746858342a3955768bc"
+    },
+    {
+      "id": "wellness-flower",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "animated": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 30518,
+      "visibleBounds": [
+        44,
+        42,
+        138,
+        166
+      ],
+      "bytes": 15587,
+      "sha256": "03669193f7c49c3963b8ed50a19214461fb0d5b384890d4bcb02c478dd2b3210"
+    },
+    {
+      "id": "wellness-leaf",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "animated": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 30952,
+      "visibleBounds": [
+        38,
+        47,
+        160,
+        152
+      ],
+      "bytes": 14107,
+      "sha256": "02dd6234c9583139167315673371ad4795759c47c9e8ae7d0fb7c7d21835e47f"
+    },
+    {
+      "id": "wellness-teacup",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "animated": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 27980,
+      "visibleBounds": [
+        40,
+        37,
+        159,
+        155
+      ],
+      "bytes": 20487,
+      "sha256": "c2cf4e3e36f35caed57c09ec033fd31e0648d93a53b30ed9bee38931477e0735"
+    },
+    {
+      "id": "vine-straight",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "animated": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 33288,
+      "visibleBounds": [
+        0,
+        46,
+        192,
+        146
+      ],
+      "bytes": 5532,
+      "sha256": "3d1429e2d25d79da8d4fa92d14bdd740b92d5d26206bfdf087dd625f60fd8215"
+    },
+    {
+      "id": "vine-corner",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "animated": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 33773,
+      "visibleBounds": [
+        0,
+        57,
+        116,
+        192
+      ],
+      "bytes": 5697,
+      "sha256": "387cee88ddfb1c52174f7b13ad08e454389a90032a7f48a30c28da935257b80a"
+    },
+    {
+      "id": "vine-end",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "animated": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 33196,
+      "visibleBounds": [
+        0,
+        43,
+        164,
+        142
+      ],
+      "bytes": 6388,
+      "sha256": "2e2685753d872e52436e0b59e5b37c40fe7fe56a5ea663fdf6b7653bcc94120d"
+    },
+    {
+      "id": "vine-flower-accent",
+      "format": "PNG",
+      "size": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "bitDepth": 8,
+      "animated": false,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 27585,
+      "visibleBounds": [
+        36,
+        32,
+        156,
+        168
+      ],
+      "bytes": 8174,
+      "sha256": "80ebb34efb11d870d1768240d1c63034b942f5636efdcaa5468af64c45f7cd57"
+    }
+  ],
+  "totalPngBytes": 184086,
+  "rotatedVariants": 12,
+  "seamChecks": [
+    {
+      "from": [
+        "vine-straight",
+        0,
+        "E"
+      ],
+      "to": [
+        "vine-straight",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        0,
+        "E"
+      ],
+      "to": [
+        "vine-straight",
+        180,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        0,
+        "E"
+      ],
+      "to": [
+        "vine-corner",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        0,
+        "E"
+      ],
+      "to": [
+        "vine-corner",
+        90,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-straight",
+        0,
+        "E"
+      ],
+      "to": [
+        "vine-end",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-straight",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-straight",
+        180,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-corner",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-corner",
+        90,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-straight",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-end",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-corner",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-straight",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-corner",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-straight",
+        180,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-corner",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-corner",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-corner",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-corner",
+        90,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-corner",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-end",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-corner",
+        270,
+        "E"
+      ],
+      "to": [
+        "vine-straight",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-corner",
+        270,
+        "E"
+      ],
+      "to": [
+        "vine-straight",
+        180,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-corner",
+        270,
+        "E"
+      ],
+      "to": [
+        "vine-corner",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-corner",
+        270,
+        "E"
+      ],
+      "to": [
+        "vine-corner",
+        90,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-corner",
+        270,
+        "E"
+      ],
+      "to": [
+        "vine-end",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-end",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-straight",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-end",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-straight",
+        180,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-end",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-corner",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-end",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-corner",
+        90,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-end",
+        180,
+        "E"
+      ],
+      "to": [
+        "vine-end",
+        0,
+        "W"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        90,
+        "S"
+      ],
+      "to": [
+        "vine-straight",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        90,
+        "S"
+      ],
+      "to": [
+        "vine-straight",
+        270,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        90,
+        "S"
+      ],
+      "to": [
+        "vine-corner",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        90,
+        "S"
+      ],
+      "to": [
+        "vine-corner",
+        180,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-straight",
+        90,
+        "S"
+      ],
+      "to": [
+        "vine-end",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-straight",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-straight",
+        270,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-corner",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-straight",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-corner",
+        180,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-straight",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-end",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-corner",
+        0,
+        "S"
+      ],
+      "to": [
+        "vine-straight",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-corner",
+        0,
+        "S"
+      ],
+      "to": [
+        "vine-straight",
+        270,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-corner",
+        0,
+        "S"
+      ],
+      "to": [
+        "vine-corner",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-corner",
+        0,
+        "S"
+      ],
+      "to": [
+        "vine-corner",
+        180,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-corner",
+        0,
+        "S"
+      ],
+      "to": [
+        "vine-end",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-corner",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-straight",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-corner",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-straight",
+        270,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-corner",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-corner",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-corner",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-corner",
+        180,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-corner",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-end",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-end",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-straight",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-end",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-straight",
+        270,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-end",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-corner",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "from": [
+        "vine-end",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-corner",
+        180,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 2
+    },
+    {
+      "from": [
+        "vine-end",
+        270,
+        "S"
+      ],
+      "to": [
+        "vine-end",
+        90,
+        "N"
+      ],
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    }
+  ],
+  "seamSummary": {
+    "horizontalPairs": 25,
+    "verticalPairs": 25,
+    "maxAlphaDifference": 0,
+    "maxRgbDifference": 2,
+    "note": "At the corner south edge, SVG antialias rounding differs by at most 2/255 in RGB; alpha coverage, occupied pixels and centerline match exactly."
+  },
+  "sourceUnit": "96 x 96 SVG viewBox; connectors N(48,0), E(96,48), S(48,96), W(0,48)",
+  "deviceVerification": "NOT VERIFIED: no Samsung measurement/device access",
+  "simulatedViewportDp": {
+    "320": 24.0,
+    "360": 27.333333333333332,
+    "390": 29.833333333333332,
+    "412": 31.666666666666668
+  },
+  "productionIntegration": false
+}

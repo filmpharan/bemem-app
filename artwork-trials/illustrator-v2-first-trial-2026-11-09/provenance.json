@@ -1,0 +1,78 @@
+{
+  "method": "Built-in image_gen; AI raster illustration, not human hand drawing",
+  "styleReference": "pet-cat",
+  "basePrompt": "Create ONE isolated original bemem miniature sticker, square PNG, genuine transparent alpha background, no white backdrop or checkerboard. Use the attached cat only as a STYLE reference, do not include the cat or copy its silhouette. Cozy Cute, softly hand-drawn, confident slightly irregular cocoa outlines #725A50 with round ends, warm cream #F9F3EA, blush #E9B8B1, sage #97B6A0, butter #E8C98C and muted sky #AFC8D8. Simple gentle flat colors, restrained shading, no heavy shadows, no gradients, no glitter or extra props, no text, no border. Clear custom illustrated silhouette at 28px, not emoji or a system icon. Complete artwork centered inside approximately 80% of the square, transparent margins around every side. Subject: ",
+  "subjects": [
+    {
+      "id": "pet-dog",
+      "prompt": "a friendly original puppy FACE, cream with biscuit floppy ears, slightly asymmetric ears, tiny cocoa eyes and nose, chubby round muzzle, just a little dusty blush. Gentle cozy smiling expression, different from any recognizable commercial mascot. No collar or other objects."
+    },
+    {
+      "id": "pet-paw",
+      "prompt": "one charming organic paw print, a soft sage heart-like rounded central pad and four gently uneven rounded toe beans, outlined in warm cocoa. A little cream highlight can give a paper-painted feel. No pet face or extra motifs."
+    },
+    {
+      "id": "travel-suitcase",
+      "prompt": "a tiny rounded butter-yellow suitcase, softly uneven corners, cocoa handle, two small rounded wheels, a simple sage strap and one small blank blush luggage tag. Front three-quarter impression but very simple, friendly handmade travel keepsake, no readable letters."
+    },
+    {
+      "id": "travel-plane",
+      "prompt": "one tiny friendly hand-drawn airplane seen from slightly above, diagonally pointing up-right, cream body and soft sky-blue wings, cocoa outline, rounded nose, short simple tail, just one or two tiny blue window marks. Bold readable silhouette, no clouds, no trails, no scene."
+    },
+    {
+      "id": "travel-cloud",
+      "prompt": "one plump little cloud with three softly uneven rounded lobes, a warm cream fill with a tiny soft sky-blue underside accent, cocoa outline, two small cocoa eyes and a gentle smile, a little dusty blush. Cozy homemade painted feel, no rain, no sun, no rainbow."
+    },
+    {
+      "id": "wellness-flower",
+      "prompt": "one tiny original friendly flower on a short sage stem with two simple leaves, five gently uneven soft blush petals and a butter-yellow center, tiny cocoa dots in the center if needed, cocoa organic outline. No pot, no extra flowers or decorations, confident simple silhouette."
+    },
+    {
+      "id": "wellness-leaf",
+      "prompt": "one small leafy sprig, two plump soft-sage leaves growing from a short gently curved cocoa stem, uneven organic leaf shapes, each with only a single quiet midrib, a tiny warm-cream painted highlight if needed. No face, no pot, no extra flowers. Relaxed botanical scrapbook feel, not a symmetrical system leaf icon."
+    },
+    {
+      "id": "wellness-teacup",
+      "prompt": "one cozy little cream tea cup in a round shallow sage saucer, generous simple rounded cocoa handle on the right, visible warm tea as a simple ellipse, two short cocoa steam wisps, one tiny blush dot or petal on the cup. Rounded chunky friendly silhouette. No lettering, no teaspoon, no scenery."
+    }
+  ],
+  "sources": [
+    {
+      "id": "pet-cat",
+      "generatedPath": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-57757e1d-89d7-43ad-8304-6471592d732f.png"
+    },
+    {
+      "id": "pet-dog",
+      "generatedPath": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-960e7154-cab0-4275-830a-43b1eed16410.png"
+    },
+    {
+      "id": "pet-paw",
+      "generatedPath": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-bc735030-e969-41e8-94fc-9501118d3e08.png"
+    },
+    {
+      "id": "travel-suitcase",
+      "generatedPath": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-e59c7d12-af31-4cd7-8df8-d0f6d7e06429.png"
+    },
+    {
+      "id": "travel-plane",
+      "generatedPath": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-bfc6fabc-974b-43d3-8316-391e229efa4d.png"
+    },
+    {
+      "id": "travel-cloud",
+      "generatedPath": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-8f2c1fe1-3c04-4d03-b79b-c5a5c5bd78ae.png"
+    },
+    {
+      "id": "wellness-flower",
+      "generatedPath": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-68da5779-df1a-4ba6-9430-7d0e2ffa3054.png"
+    },
+    {
+      "id": "wellness-leaf",
+      "generatedPath": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-a8db156b-4e96-4293-8342-c39bece2f027.png"
+    },
+    {
+      "id": "wellness-teacup",
+      "generatedPath": "C:\\Users\\User\\.codex\\generated_images\\01a1b04d-2470-7710-bbbb-f8f4ad3c675a\\exec-5e658571-5121-46f0-9dce-9dd0d3499248.png"
+    }
+  ],
+  "catPrompt": "Create ONE original miniature sticker illustration for bemem Decorate, asset ID pet-cat. Output a square high-resolution PNG with a genuinely TRANSPARENT background (alpha), no white backdrop and no checkerboard drawn in the image. Art direction: Cozy Cute, warm gentle friendly soft hand-drawn 2D illustration, not an emoji or a stock vector icon. An original small cream-and-muted-cinnamon cat FACE with softly uneven triangular ears, one gently folded ear tip, pudgy cheeks, two tiny cocoa eyes, a small smiling muzzle, short whiskers, restrained dusty-blush cheeks, and only a couple of simple forehead markings. The personality should be shy and lovable, generic and unlike any recognizable existing mascot. Loose but confident organic cocoa outlines, rounded stroke caps, simple warm flat fills, subtle deliberate asymmetry. Palette cocoa #725A50, cream #F9F3EA, muted biscuit #DFC3A5 and blush #E9B8B1. No gradients, no heavy shadows, no detailed texture, no writing, no sticker border, no extra props, no floor. Keep silhouette/eyes readable when the entire square is displayed at 28px. Center the complete face and ears in roughly the middle 80% of the square with generous transparent margins on all sides. This is a charming custom illustration, NOT a perfect geometric cat icon. Deliver only the single isolated cat."
+}

@@ -1,0 +1,1930 @@
+﻿[
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\global.css",
+        "hash":  "3D65B4B82FE8112CD874D5058BB78B94743D2679958A421191802F4239CEDF56"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\app\\dev-add-card.tsx",
+        "hash":  "9C67F89E594B87296EE9954706BD6B208A9AF3F6B337DE773E191EFF36E13F0D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\app\\dev-sandbox.tsx",
+        "hash":  "FB964EB2F401D15F0308158A1C6073ED37402A2770BC580BFC36BF625A0D7278"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\app\\dev-wallet-cutover.tsx",
+        "hash":  "B99C0578053C0FECB40FDBE32F12844470C0E65A2583DD58EF85CE60CD2722A2"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\app\\dev-wallet-migration.tsx",
+        "hash":  "4239032382BF6FF6C17E2213B1672CCF93483839FFAAFF049321391A8924B72F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\app\\dev-wallet-startup.tsx",
+        "hash":  "2A8F29C7E2695A1195F9ED035C27CEAEA7A875534B9CD87F36AA739A211B302F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\app\\dev-wallet-test.tsx",
+        "hash":  "A8A5776B5A5398CD4FAC1B582EB45F4DDC9CA06C691AC2D9AA0F6F4FD03C4C5F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\app\\explore.tsx",
+        "hash":  "0384831FD5E5A1A7FD39B88BE7B45ADA6F26308FB3F37FD7AA672F96EC81AA1B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\app\\index.tsx",
+        "hash":  "A07E2BF88EE44735923A576D3658F5F00C8CC58C2E88A0B11D80D6B70A11A57C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\app\\_layout.tsx",
+        "hash":  "D741C8D79655F8A74ECBB4A89F0FE91E262DC3DDF7C4876438A322FEB685489E"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\animated-icon.module.css",
+        "hash":  "A70D5B1B0561336E53541E4FCCA0431FA9E3671FC29DD232A44D546FF488423C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\animated-icon.tsx",
+        "hash":  "53772B1CFEE876E9E79BE0456FC6A4500B76A88E12990C63B3CC96D9BA9842B5"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\animated-icon.web.tsx",
+        "hash":  "D99B902D487BB7A0C6357B201CC5C5FDA1FD1A482E6EDEA3D896324E949712D2"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\app-tabs.tsx",
+        "hash":  "69F9558EF4B19A57D6AB124E12A95D778E36D4691DF3E2A135DDBC91C5F5EC92"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\app-tabs.web.tsx",
+        "hash":  "2DFF3FD16CCECB824D86E5920A9A5DEBB9106497B41ECFB129D0D398223B3AD7"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\external-link.tsx",
+        "hash":  "2838582E2DC21877652B710D4AEE5F4BA5A795B17FCF63BD7AC9C25A749C8C26"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\hint-row.tsx",
+        "hash":  "2B5B1BBD4DA6D9946E9A267587D7D6279059B0FAB01DFECA144CD8CC3653A099"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\themed-text.tsx",
+        "hash":  "AE907D2B52A6A231963DB7882ACB5F853E6A08B94C34EFC88D89FB1CD5F83264"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\themed-view.tsx",
+        "hash":  "E13930B2F4DFD4DAB093D1A86C1586825A97D56E895BA8CB9C89233E654138C9"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\web-badge.tsx",
+        "hash":  "0AF7715337E070C7C476202C8DD77F2FD6A3514255ACE1EAD9F832CCC8351A7F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\AccountIcon.tsx",
+        "hash":  "1D7F24C65BC00DF712C87CA9457297D68491E4C9F4E163AC1E2AE7E695F03910"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\add-card-layout.ts",
+        "hash":  "D3AF626A0C1DAE41486CCE5B0AC5918E30348DF6EFAB5563F46CBF9FD6813675"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\AddCardEditor.tsx",
+        "hash":  "CD175014D429476C7903A3E851A9E6BF58DBA68BA9198266085845F5C17BFD7B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\AddCardForm.tsx",
+        "hash":  "5EFE71CA4377512000180898129E9607EFB4B2BB5FDE3D77EA16D62BA4219642"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\AddCardIcon.tsx",
+        "hash":  "7D889F4650084A0D2024B036BA9516B4FEE1A9A6DF669BA28A4C1108C80D0B04"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\AddCardSheet.tsx",
+        "hash":  "81ABF579B21EF855FFC6A5F63E08A5D1575E1E9AF0E57B4BC94FD2C51987A42C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\AddCardText.tsx",
+        "hash":  "C4D9DE01AB798BE4C4FDCDCFB52847704CC7DD726B9F929A9953319A363B53E0"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\BememIcon.tsx",
+        "hash":  "794B73E1C02467FF3E9BBAA350F2252B68EC8ACE506AC93F25BD0F992A8300AE"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\CanvasActions.tsx",
+        "hash":  "30F7B9513D9E26356F75D27EE35215D05B67DF68541CFA14C8084A6333C9D9FF"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\CardAppearancePreview.tsx",
+        "hash":  "E5A9B90515203208C2219D324E12AAF5534C91B7CEFE5B0EE75F6CCE392ACE52"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\CardArtworkControls.tsx",
+        "hash":  "E4BC217C5AF4FC476B415E44F9C4AE76EC0F62AD06616FBC0F8C9449323029C6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\CardArtworkImage.tsx",
+        "hash":  "1E6275261369A16521E143A8F0B9B1063FA2954490C6011B9F4871C5D6BFE630"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\CardCodeView.tsx",
+        "hash":  "6DA737B6A1D529524C9008F22968A287FA801B527C4B536FB76466F0B24D2F20"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\CardHistorySheet.tsx",
+        "hash":  "05861790FBC70D61F8096089FF38A2FCBB90026F7145131E389A1F2F68BDEEC3"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\CardPreview.tsx",
+        "hash":  "2E9D0B5C11CDF00BA326C9E08FD81ADD8C03619D11EB7E1E69D0DD01E17A070F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\CardShareSurface.tsx",
+        "hash":  "0F1FBF85160B3EF36ADD7C95A9CFA5492E2096802B398D7AC1EF3FD907FF4AEC"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\CutoverTestHarness.tsx",
+        "hash":  "B41AF0ED3F083B276A5BE0C979ACEACD33D8BE5D44E5345729DA2CC0C39FE016"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\DecorateIcon.tsx",
+        "hash":  "2F1731C3AC4369D2CA37E320782F9983D4DED87C5F28DA4DF54A876C9B99741A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\DecorateMode.tsx",
+        "hash":  "2CCF719FEB57EB7D3E3406CF39788CDBDF1C07DB90EF051460B8A29CC05144E8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\DecorationImage.tsx",
+        "hash":  "F446C8ED261F0AE1878DAB7F8EBC06FE1C4559697F030A32598DC148057E9A37"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\DevAddCardRuntime.tsx",
+        "hash":  "438912D452480C99B5F2DC9C381673B7860B75E74BAC467F261D1B21C87D1A19"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\EditMembershipCardEditor.tsx",
+        "hash":  "656660C7057C3BCFCB333B7216DB2DA3BFCA8308C10A8552CEE4DF8FCFA3AB08"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\ExpirationDatePicker.tsx",
+        "hash":  "82F82108B783CDC806CFB9A19814910C05AEB7023B36BB527D5FC193F8D4484A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\FullScreenCardView.tsx",
+        "hash":  "4CC8E1F13EBC4423EED13F680139EAFB2391119745E35BCEFBA346F8A2DCF9C0"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\GlassButton.tsx",
+        "hash":  "3083E1ACB8A92FF08B7C0F592F3E337E51F7094F7291BDAD6520CBED5DE440B5"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\HomeAccountMenu.tsx",
+        "hash":  "676893494A9AF81D5F59B0BFB65BD9DAF41CD3B8B05AF615C93381BF77B93B92"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\HomeHeader.tsx",
+        "hash":  "79D368CC81F66D93A6AF98235E92E771680DC2C49792BC8F96EBFE1AD558196B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\MembershipCard.tsx",
+        "hash":  "9648267D406F42155FD9F0A7CB87142F31D1655348E65969ACDA5D3B21E282A8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\MembershipCardDetail.tsx",
+        "hash":  "03A0C833B80A00F1FD726EB1BD2DC3F6017E18EC170EFD693F4D7AD1B86D282F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\MembershipNumberScanner.tsx",
+        "hash":  "0558DA906FB7C778230950F55EFCC1DFE5D020D69DF66044C97147CCDD4DF770"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\ReceiptAttachments.tsx",
+        "hash":  "2105D0590769A95B583A36BC7DC432F12B8FAFAF35059694DD01892F5A9C246E"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\ReceiptViewer.tsx",
+        "hash":  "7D700453DE9164512037E499AE84D444AA19973CBDC582A7C8A37D346557871A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\SearchField.tsx",
+        "hash":  "02C22A71F7FF142BE770A9658EEA0083BA2C8D636F1B2ED6955DE545B34DB4EB"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\ShareCardSheet.tsx",
+        "hash":  "90ECCA14A4900E854079191D82D2C22191725B5774ACCB32CC8E3A641E9FA7DF"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\UnsavedChangesDialog.tsx",
+        "hash":  "C3C61C299292C5E791C9B998B50BA7C8DC8B5FEA8AEC34E9E5CF9BCE6EE01428"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\WalletCanvas.tsx",
+        "hash":  "67726E024B51196141FC39C607AB169922775397031FFA62C787FAB25F9CEF78"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\WalletEmptyState.tsx",
+        "hash":  "830D7EEE8CF57F4757751A61ADE5ECFFB4EB228EDBE9B4BA33624FF5FEF7ED36"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\WalletMigrationPanel.tsx",
+        "hash":  "C89644BFF1E530C553E7E0AD2D373BBFD512EF3E4E8D49964B8930DCC4D6F459"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\WalletRuntimeProvider.tsx",
+        "hash":  "131D61DC819FD16B7B2F350F32D0848851E85295E1BB08C005DC5649484339D6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\bemem\\WalletTestHarness.tsx",
+        "hash":  "64F5098C0191495D4F085BD2775E9674193BA3D2D74A3E180B9D209CDAE727F8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\components\\ui\\collapsible.tsx",
+        "hash":  "73613FBB9C2D64215F7C365683EC790DBF6F04160BEA48BC7273CC0A36D4A95B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\constants\\bemem-theme.ts",
+        "hash":  "28BC0ABB058A0376A579D11D1CF9CFA2C87B6E5F6DE15D0D59797052DB8515D4"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\constants\\card-appearance.ts",
+        "hash":  "6ADBA67E6B682AF28A92A8A81819F0364C76F83319B0825CAC88161D715ACFB6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\constants\\decoration-images.ts",
+        "hash":  "5CE51FACEED3A306D4142456E3D9CAB38A7AEF3C63D4F5AF4B2D0F7963D1932A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\constants\\decoration-paint.ts",
+        "hash":  "45F6E7770A6E4D69347E790EDFB024179C6818C6029B36DE3FEAE49B2DD7C687"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\constants\\lagoon-theme.ts",
+        "hash":  "7DD1F0B541C750839ABAD6DC8D52F588CCA5169A5F9D6ADBC442D4C078B7147A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\constants\\theme.ts",
+        "hash":  "5C524DC8B8C75B01E6F5D10EC0D2EFA094F3E4591CB8B2866508573806311A69"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\constants\\wallet-release.ts",
+        "hash":  "80BA4C5D7CDA5B1C11E7985B63F09A11909F45F109DBAA62D1E8BB5FB8476C75"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\data\\wallet-preview.ts",
+        "hash":  "0D5046445228F1022AC3E3EF6142724AE2AA7C68D027510C44B6DA8F81514E54"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\hooks\\use-color-scheme.ts",
+        "hash":  "33BEB965500AE5FDFE5C8699805A6BE94C8C126A751FBE2ED7BCAE87DF394882"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\hooks\\use-color-scheme.web.ts",
+        "hash":  "84F19B5C1A8E941AB9868D2E83F6E61DB11D3D9BF4FA91FAC979BCD0FDC8019B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\hooks\\use-theme.ts",
+        "hash":  "267508AEF2EF836C3267D3FFB52BBD499282A4EA1DAB2C36E061E008945D77B8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\hooks\\use-wallet-canvas.ts",
+        "hash":  "3C8C5C8F6DDAE280620D439C25B83430095CE7D406BC16D74DB58AD8BC289C34"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\canvas-layout.ts",
+        "hash":  "6CFFAD72E03BC0DBE87D7A2B11853AEFB59911AD88C0F2E3A6C84E93A15A9609"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\canvas-repository.ts",
+        "hash":  "00470CCB2101485AC940BC925BD2F801755EAD29C849D18689E6533F47A6E209"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\canvas-session.ts",
+        "hash":  "360D2A45D3362756DE6F3D81D5F94C695FD98B49DFC92C84A9E55E259A7B3D64"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\canvas-storage.ts",
+        "hash":  "FC7DC1D82456F1D9C31CE96EA39B98588ACE9213CF3495B5094103450BD38B84"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-artwork-store.ts",
+        "hash":  "D0ACD813256B9478C7EB0D364C1FC8B82722347059858C848AE61AA288B11011"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-artwork.ts",
+        "hash":  "3E363E5BC1E47A562A3F6F6B868CF9B308786326FA031D264AE268561A08A2F7"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-code.ts",
+        "hash":  "5B5B14D42EC56AB8905E78108F53101E07EBB8CD0860CDB81C35E5EDB6FC77C9"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-detail-controls.ts",
+        "hash":  "D2C8E4C7E2C50584D35281359B23498F3CFB5DBB7D909A8C0EF6263328E9F37B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-detail-interaction.ts",
+        "hash":  "601296C3F5E2E4DE2939A42822DB65B1AA42B78656826AA6407900F07DC81B96"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-detail-layout.ts",
+        "hash":  "CD92F313296F29D55842433D55E7BC6D62B4A771BBB647AFC1C31C80D7DAB0CC"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-editor-state.ts",
+        "hash":  "900CD8883A78E27A43D57D381542C3F6F54527E77E78A1A4E168263E1783A65C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-form-adapter.ts",
+        "hash":  "EC065AC0C3CB9FE510D3197A731BA3782A5E965072EE520AD41FE1261AD0C7D0"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-form.ts",
+        "hash":  "0103F8F55173889179D01DAFABAC99977D1F3476410016F93A62B9C65F985BE9"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-history-commands.ts",
+        "hash":  "A60E7A145BAB82E68D8B8BBC853E026E01477FB2B799B48A0DFC0032C24ADDE8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-history-delete-native.ts",
+        "hash":  "3373F6234A322D3A9B2CBF94A6444E266CAAD15A29297BD2510F8F4E0A7AC83F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-history-deletion.ts",
+        "hash":  "E3871744A5D66DD58CA09157B7E12D4489A4B0F751D09AF28E9FC51AEDC26033"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-history-native.ts",
+        "hash":  "86122874806D1AADCE9260E2CFDA45BDBAB63A7F29957D2F963FB37E3DF4ABEB"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-history-repository.ts",
+        "hash":  "B04E0C24ECE8CCAE5944DF20F5A64DE19A0A38392A13BB372FC0B8E898BD4215"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-history.ts",
+        "hash":  "F196BB01BC46A42FF062CBE72735D62511024B37DC86366247DA9A822F7387F7"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-interaction.ts",
+        "hash":  "5AE2CC065E7E5231EF1C8BDD03AF14105FEC2CEE3C29BD226237D141899B9A00"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-presentation.ts",
+        "hash":  "983A48CA480AA25A6B156C5C8B99C3ECD2B6A2E1EC7128975BEDB06147F1947A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-share-native.ts",
+        "hash":  "7C406A5F1D35B11E96C944C69F3086B3D8AB2D6591B87568C8D5D20BE999C7AC"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-share-plan.ts",
+        "hash":  "4E52137AA85D8E04AC87CAA561E4F4EC92827905FB970F280AB1ED12D30531A8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-share-session.ts",
+        "hash":  "BD5D61541091D0041F48694D7331AEC88CC5E72C23034C4BF5B312BCAB577695"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\card-size-presets.ts",
+        "hash":  "2191FB75CF78945A1CCAA91E5408F953AD60471DC5D457DA40921DF3596B184D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\code128-display.ts",
+        "hash":  "1A559133F612C8417BB92074211B52CFAB11E0B65C8432DB9C6620EEB9F786E3"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\decorate-session.ts",
+        "hash":  "D0FBCF5071D337E264EE9A699A3D01796A99035B5A42CEA09B551885EBEBFAF0"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\decoration-catalog.ts",
+        "hash":  "17085B6B98E124005754D944C43E7D08B6BD97A448C0AC46188E99F8A53412EF"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\decoration-pagination.ts",
+        "hash":  "1F81DEFEF727DD9F17DA877A13F794311A174760853BFD84B2B2C9F5287F6CE6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\dev-add-card-runtime.ts",
+        "hash":  "F859A168B9DAE72272945DADD7D5971E0D95F85A95E85EE20C5E17978BE7EF35"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\dev-cutover-checks.ts",
+        "hash":  "13A03E1C00EBD7E311FD26414E0449D3C6EC91B59FCD6C3A48380D7AA879C504"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\dev-migration-preview.ts",
+        "hash":  "3976C3422D9A9A0A03F63599E9AF53CE8565EEBBCA5872C2FA0833CAB355C6E4"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\dev-startup-readers.ts",
+        "hash":  "CF5B3523E42A0EEDA4A4CF76263101C67EA8393E9E74CA37E6D56596B55A6098"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\dev-wallet-checks.ts",
+        "hash":  "8266DD9306C077793E91A3ACD4FF7A06C03B24A45D1CCE39AE33111C669FC5DD"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\dev-wallet-sandbox.ts",
+        "hash":  "F1A181E765DB3650DD64F5886D4AF2AB3ADEDAFB2B360E9BFBC6FD5D6CC1BBE6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\expiration-date.ts",
+        "hash":  "F0DA94B9A3ED03F9FB2E9793E888EAE475492928B64577D186970241D6319F6A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\full-card-view.ts",
+        "hash":  "10713710B3F139AD3AF6DF94D6EA4822FC40A9CABCEEC70922CBA5CF90524306"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\full-view-orientation.ts",
+        "hash":  "3946D9ACA683EA511CA2CC00725BE811BE040F47B87E57C4C7686D97C6ED5989"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\membership-card-edit.ts",
+        "hash":  "810915463B9650B715EA96E5933D3B9052CA54A0AA5D2A0E67F18C6B20F77803"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\phase1-navigation.ts",
+        "hash":  "6CD8A66585254EE48AB8E004980DB4A8FB09708074A63E19899A477C16AC74BC"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\receipt-picker.ts",
+        "hash":  "9A2497AAF2F4101F0F5DA67C78E7B9EC6B8A20797282F359A33422C0FAF0961B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\sandbox-preview.ts",
+        "hash":  "5337C65C8FF05B288AF1338865E3969F3E544318399CA7422F54442F7954F716"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\search-reflow.ts",
+        "hash":  "FA1FFDC5AA2173AB5AE6F92BB7821E24D982067F7D26E1C132E77A13883C8883"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-coordinator.ts",
+        "hash":  "8F896D5DE0D30B3F06A9A8A5C0AAE3A1C9A6641282F294719084EA3B371A736F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-cutover-backup.ts",
+        "hash":  "49DA3F494C178B9769FF7611877B71B0FF149F6AC9B717E1867B237BAC7D66B5"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-cutover-runtime.ts",
+        "hash":  "A3DC2F2128D914140E31A91BFEF6DABFD6C308B927FDDD891AC2D84A6E3C4273"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-device-runtime.ts",
+        "hash":  "4466AC6B79E428797B47B4FE85703BAAACC0AC9B00E90707F65CABA5972341E0"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-feature-commands.ts",
+        "hash":  "DE38023438440B475AAAFC7E25BF85422C9297C8059D4C3050F5900EC498AA39"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-migration-consent.ts",
+        "hash":  "AE6F26D8AF17E6FD790C2704FFF0BA326758C0784809946042369E8688544159"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-migration.ts",
+        "hash":  "E990DC2F254F601FC45E0079B3BC6B15F64EE7CD30F03541CC28ADEEA780C229"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-preparation.ts",
+        "hash":  "73D36EDB90BCFB6D38A54FEC77A1E65D93DCEDFB368E8F223375AF4AA857CA10"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-production-policy.ts",
+        "hash":  "C682746A9ECA53772130DD13C00B2094A7852F294E987D0A91794F00F3632B68"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-repository.ts",
+        "hash":  "BB44E8BA0480E6D5123E9E8A370F05363F91054C72C15242B288EDE0FB31939C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-runtime-owner.ts",
+        "hash":  "EAECD5DCF9899FBA572A8100580A38D72003A1FFCA9DF29FD0DE028B30A65E10"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-startup-diagnostics.ts",
+        "hash":  "B151B38C91BE5311F6EDA84DFC5655B0DD998F495FC57E355246181C45DB9E26"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-startup.ts",
+        "hash":  "D913111D7B4B50E20A8B5E13E330B635439FFD02FED5F4217990F6B41F246422"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-storage-adapters.ts",
+        "hash":  "96E569D1D473563FC150D71CA6F989C90DEB91D3938995CD62653AA4E813C993"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-storage.ts",
+        "hash":  "38AD16978D1105900A1B7016BBEFB0F57228B6B7FBDB2C7C946B48F97264D0A3"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\lib\\wallet-validation.ts",
+        "hash":  "1E1C20EF3EF9A51B3BDACF90602980672BE0AE4329D692F53807931E878457D9"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\types\\assets.d.ts",
+        "hash":  "B5D4FE332B830CB9D443E4B582BBC2FC0CADEFD647986ADD242D7BC9207DD94D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\types\\decoration.ts",
+        "hash":  "D283D821F062A31A274D253427012404F1C4345A40FBB42B845D165DE59166CB"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\types\\membership-card.ts",
+        "hash":  "E53865DEADB61978A23C96758F291803C0EEAB2DA4F3744EDB6D60BF0FC38299"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\types\\qrcode-core.d.ts",
+        "hash":  "743276912AF65F4E34D08ACBF99539653BCBF5021524973A7F02577BEFBACC60"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\types\\wallet-document.ts",
+        "hash":  "A219206283B82D5C27162780A65114B3E8B44515BFB3CA16D590DF3A42AD6EA0"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\src\\types\\wallet-ui.ts",
+        "hash":  "C2B2F53FEDD597B27F4DF5FD1FCEEAF2FB3D3F7541A878E10B3AB8F34804F0E7"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\cafe-coffee.png",
+        "hash":  "F77901796A2DF4FE0F8941D21A007A661C255CCE1672064ACEAF37921C3DA445"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\cafe-cookie.png",
+        "hash":  "84E1EB66377CBB0A35BBC91BF72CF120C47F81508C1AEFB648AD26C3114F6396"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\cafe-croissant.png",
+        "hash":  "7541D471CEA95D053099D807F81ABFA14BD4E53DDE6C3AEB9F0FDFC61AC0985F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\coffee-accent.png",
+        "hash":  "459CF8489DB7715DA720B9841225C5576FC8F661A05962D5B735046E82BBC249"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\coffee-corner.png",
+        "hash":  "833DB98FD1C72CFDA2452351A7F28BC0B453CF85683E2C34AE8A1CC0B8C059D0"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\coffee-end.png",
+        "hash":  "846F127A37B8D96580A15CE208BA3EEE19D577E9B7F140C7AAEA95CB70180272"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\coffee-straight.png",
+        "hash":  "DA934F4A2ABE93A514DE5D3FBDDA16EC3745BF58EB422DF3A22B942EBE49CBA3"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\pet-cat.png",
+        "hash":  "996CCEC2AF981C43E823333CD4C526BF533622D97171A3A7616FA630EC58BA3B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\pet-dog.png",
+        "hash":  "E60ED6D8BA3B44E2AD96694F301C7D3CEB1AC69C7453FFEAE06FCE5F25F56353"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\pet-paw.png",
+        "hash":  "9474BDF7272219A73D03CFD1BFC4C4E535C951546E4C96E2366A7C1CBB5832E3"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\ribbon-accent.png",
+        "hash":  "9F7DA6D93E4445F5FC7BE973E3107F42535B464BBE845059DFB0EE5692329231"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\ribbon-corner.png",
+        "hash":  "55609FF34DE4B474CF5FD7CC06BFA545DA347742EF8BA6E5733BE001F49672C9"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\ribbon-end.png",
+        "hash":  "9D2536A797FD86AA638C33AAE60A53F877B439B84662355F20E3F2144600AA8D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\ribbon-straight.png",
+        "hash":  "095618F2A49ACA434E04DEA84A4B69C36DC1FA1F6B1F32C69CC6A855573BA436"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\savings-accent.png",
+        "hash":  "239C5C8EF97A78B0FC5E89BD41DF72087DAC8744375D928C05B2970B7A681124"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\savings-coin.png",
+        "hash":  "77E0F3C429C99B173BA02BFB518993B3A8E836F11ED501A8104604E24FCF5EA4"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\savings-corner.png",
+        "hash":  "8883BC1F530D2FF23E7E8627936BD4E8C647ACC52809AF1F53863F7CA2393915"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\savings-end.png",
+        "hash":  "68B4276B74230397AD27F981237BE1F9419D821AD5030BF57E95EC0E0918B663"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\savings-piggy.png",
+        "hash":  "2A862F6EA9362C6A6657BDD11F56B75F0A779913375E223E74F8AA00E5C93067"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\savings-straight.png",
+        "hash":  "8EDF966DB6CE3469D61CE67D4FB2B4ED4C2740020F10FA313848B7936B971A5C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\savings-wallet.png",
+        "hash":  "CFEE1D68CE97774E0A4E80E9E83E5B377C73B74FF95E1B1AE0A5A389EBFC8A84"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\shopping-bag.png",
+        "hash":  "58284EAA4427D3F0A6798E1C2617B8536D898390FBC94E5127D17F89AA15B9B8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\shopping-bow.png",
+        "hash":  "0A980D5DE6C19988AA5C8655E9F313A98232B164855D82F1B65095BEADC42191"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\shopping-gift.png",
+        "hash":  "0BE4A3AAF13C430C4740BB13286BCAB7FE43081A948ACB56FB94D8BD2765EA73"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\travel-cloud.png",
+        "hash":  "5FD3DBB5AB88AB03CFF02DC51ACC77AE823E0316EB8F7746858342A3955768BC"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\travel-plane.png",
+        "hash":  "1E740998D0BEA535CD70224FB897BB62915E1DA5D868E2E84AF71E29ECADA0AB"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\travel-suitcase.png",
+        "hash":  "E61B9D01D35F5E139EE08109B9C50F4A07C511D2454154337012BDB6BFC72BE3"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\vine-corner.png",
+        "hash":  "387CEE88DDFB1C52174F7B13AD08E454389A90032A7F48A30C28DA935257B80A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\vine-end.png",
+        "hash":  "2E2685753D872E52436E0B59E5B37C40FE7FE56A5EA663FDF6B7653BCC94120D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\vine-flower-accent.png",
+        "hash":  "80EBB34EFB11D870D1768240D1C63034B942F5636EFDCAA5468AF64C45F7CD57"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\vine-straight.png",
+        "hash":  "3D1429E2D25D79DA8D4FA92D14BDD740B92D5D26206BFDF087DD625F60FD8215"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\wellness-flower.png",
+        "hash":  "03669193F7C49C3963B8ED50A19214461FB0D5B384890D4BCB02C478DD2B3210"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\wellness-leaf.png",
+        "hash":  "02DD6234C9583139167315673371AD4795759C47C9E8AE7D0FB7C7D21835E47F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v1\\wellness-teacup.png",
+        "hash":  "C2CF4E3E36F35CAED57C09EC033FD31E0648D93A53B30ED9BEE38931477E0735"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-accent-02.png",
+        "hash":  "1F34ABC65620840A0AE3C0142B30574FA6B92848753C6D792F34A738B230CF14"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-accent-03.png",
+        "hash":  "E86530C9EC0BB1DD9687865A97DF12FB3463D906B88F72682DD85C40B4A16E92"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-accent-04.png",
+        "hash":  "B3342475EA52217E2E07574E99A553D22D51AAAAD5D78F55F990DB655B321CB1"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-accent-05.png",
+        "hash":  "31DF21A64B88FC6F3F2FF25D14FCE9C097A9CC1F793A802ACC940D980AF0C770"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-accent-06.png",
+        "hash":  "8617B8FE938F7757001D24F2775B22A2FFC5E0170B4C55C76782187D5EF55C3D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-accent-07.png",
+        "hash":  "646739CD14B9267AFA071223BB38512D0AA571B8EBD143F3053A57F402EC567E"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-accent-08.png",
+        "hash":  "2C9816B589528123036CED6AD82E605C93AED95EEB3A7DA401CABAE270C1A6BA"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-focal-04.png",
+        "hash":  "592C0BBED11C45E7F3157B6F6F9E00BDCA38B204DFB83FF9BC8582E005B50576"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-focal-05.png",
+        "hash":  "42A3E4C10FDE6399143375745563D8CDF2EEB454C63833814B85AE20AA2B4D2C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-focal-06.png",
+        "hash":  "599287DE6DFB4F28FD2201A251C855987A0D77E35C54ECD1AEFABA0176F5218F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-focal-07.png",
+        "hash":  "2A7D12ABAF2FCDF36DADD45084464B6C3154DF2A9156A06B8EE982C7737D7A71"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-focal-08.png",
+        "hash":  "7EC7D806FEA3BD605489FA73E0FA692D5E06E1FA83C3D64A120836BBC2126483"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-focal-09.png",
+        "hash":  "F4151859E77AAA7ED64DFF7DD120D222CB7BB484DCBB8C8EEDF80589EB7F25E6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-focal-10.png",
+        "hash":  "D6BDC4F7054601C9FFF07FE7E1F2691F19B0845DEE1C9347E9C4673F48A992FE"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-frame-04.png",
+        "hash":  "565A37C413BD217D1B96DDB81B8DC724A0B67FE25CD11877639729B2684766F4"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-frame-05.png",
+        "hash":  "B3E0640AAF7379A51243ED2F247380A74B506B08E588F52E1C3B12F1C7813945"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-frame-06.png",
+        "hash":  "33837D7C63879CEEB89C7A884E724FDA60D480A6DE7484D8FC81D449490D40DC"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-frame-07.png",
+        "hash":  "51B197773F48F98CEDFDF99216F7DDC7C8F2A9C8A5BC4A8D5411DE11F9A759E8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-frame-08.png",
+        "hash":  "0B6EFDFC6B258A4A0ED02C797F756DB63F3C7340470DE5360748F86CDAE41B06"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-frame-09.png",
+        "hash":  "E84299F80549F891F0EEE6AFE7E71A1F4C4F9D1EE824D615EB514C68E09F63AC"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-frame-10.png",
+        "hash":  "E273FDCF6BE65EC43DAC3331CDD41ECCBED416DF0DBD21D150024F06CEC5FB0E"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-frame-11.png",
+        "hash":  "54223E494E06F25891DEA01BF58CB1344F16523573BDE27CDABBF51D684B0896"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-frame-12.png",
+        "hash":  "355A8F5B001E8EE544FA70030685358CE52AD7E3308078550E10A76D9B98D8AD"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-mini-01.png",
+        "hash":  "E4411CD1D371E291C295C83C02BC304C6FF277F7537E9E1CA370CDBE9669C348"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-mini-02.png",
+        "hash":  "E079076FEE2ABF0FDFDC611AD45AA47962E796C040A2DFD893611ECC248CC8B9"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-mini-03.png",
+        "hash":  "220D663BCEE7A1506B7CC29CED10B53F6CDDF04C783A2340E91105D68BC4CE2A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-mini-04.png",
+        "hash":  "7FF3F155160C0F4FCFBE09231EBCC81CA0333FC2D3C14D973BF6EF09BAA4723C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-mini-05.png",
+        "hash":  "9FA2552B1DFA563ECD496BF06AD4CED48F8FAB3724C5717BF975CAECFC7EC713"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-mini-06.png",
+        "hash":  "2ACB54D6D192BAE432BF924BED1F1FC679D29E5E13966A6238ABAEA3A2DC86A1"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-mini-07.png",
+        "hash":  "CA8933160729801BE0D26AC7E55AB4B0463ED1B5F67123D47BFC276FF6E2C84C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-mini-08.png",
+        "hash":  "1455E68269AE96E9AB2FCF2EC2BE3F2D45FD8B7A45C95414C728973B09B44076"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-mini-09.png",
+        "hash":  "24F1A81A5D4A3497DC15F87B137F317626C336DA189EE5C647A5AEFE76105CD6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\cafe-mini-10.png",
+        "hash":  "16955E3A5B886E0081228DFB06176DEEF4FDEF08D1D88E1869B44B30B9604629"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-accent-01.png",
+        "hash":  "0955308D024BDF908DD48916213FAAAB6F70FB1FBD102C72A87B73F90280D2D7"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-accent-02.png",
+        "hash":  "3AF365DE09DFD8AFF82E9A3CC9D438C9163363A8F2D0E175968C0AC1E51B3329"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-accent-03.png",
+        "hash":  "13AC3DA557901650DCAC11688D7B7A6F3B1EA181AF25AC9D35B7991BA4FF02F5"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-accent-04.png",
+        "hash":  "51E4948602EA4E4D1A22146501568146FEF372A7804694DADF69980B718F816E"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-accent-05.png",
+        "hash":  "F5BDE84AEDE083D29A78E70F7B81B2D2B5ECFE803B77DDBA7C799AA094DEE82B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-accent-06.png",
+        "hash":  "0CF11641897057F5FEA1C44F03CC71708620696A63A59A5B1FE3AE4E20CA9C57"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-accent-07.png",
+        "hash":  "A5FEEABF5C2839698708714262D73B9E8EB49B9D39161EDACEB267491105C545"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-accent-08.png",
+        "hash":  "EF2E3E6355BD6A5DC78B76843923488470D544967EB620E48E046B1EFD47DBA6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-focal-04.png",
+        "hash":  "045DD57078B5EF0C682BB1C3995710B3739A52AAD5AA139678809C456782436B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-focal-05.png",
+        "hash":  "ACEF177D258732114FA62BB5869D95D4FD7E336C180172D56E75B67893903144"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-focal-06.png",
+        "hash":  "B82DB49949E2A4BBE5A9A997DA5DB8C814CB5932B5F78D21C0F59DF9418755B9"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-focal-07.png",
+        "hash":  "1C3714F9577F8373D215B5DF21BDDAF4AAE013CB1B8D8FA0F5281F5BB5808AE1"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-focal-08.png",
+        "hash":  "0CD082392E30D49E3D581E730E10985453A1F9070682A37693E19BA9CC1F8229"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-focal-09.png",
+        "hash":  "FD610A04E01E0E09093B13C884D344D515993E91A2C2C280143E1FA624C3E141"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-focal-10.png",
+        "hash":  "F9B0BB9CF34072CDFF02AA7485B94ED233FDE58416C49F1726591B8F7AA60B4D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-frame-01.png",
+        "hash":  "D37AAD3AB4DA4BAEF07853DD0C5185FF7491B9809E1311CCE5201C61D84AFB7D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-frame-02.png",
+        "hash":  "B72573C114CB45C44D9391140F0D9FF915CA89799015F4ED79B72DF6831984FF"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-frame-03.png",
+        "hash":  "0316DB5927472CDE1FC8291111EE168EE7C556284C7998B704620B2D36FBDD5D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-frame-04.png",
+        "hash":  "AED004AAA1198EFD582F930F763CE7CD08BA3E3EDE420A479335883B1984CD15"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-frame-05.png",
+        "hash":  "78CFFE4730FD8B2F23834755B4E6A7C0FE5A1347E32F4C636EF5D4DBD12DE2C9"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-frame-06.png",
+        "hash":  "57FA8AD9154A635C9E1190071F5314CF0A92A100D3D3EA775DAF54644371E96D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-frame-07.png",
+        "hash":  "B51A1E58F522CD9355F82FEC5B4D8B92BC9528BB29B1D1293F746B07B348D321"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-frame-08.png",
+        "hash":  "A5791EF359422B944560784F915F42420C550D0A14E6BD904164B3C58209F0DA"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-frame-09.png",
+        "hash":  "CFB06DE4EE12B3AA0A0E3EB8E578D6491D077467505F3B352E7E3DDEB9DA7E06"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-frame-10.png",
+        "hash":  "F5A1D89C8FF25EE7BA18509D3EA5E90C7B1A312EFC1A65C188F2FCF79F6320EF"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-frame-11.png",
+        "hash":  "C8A4B3FF3B5405693DA6F1F9F346547556700A207A8436FC98FFE8FC9FA45601"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-frame-12.png",
+        "hash":  "E3F5F32EE5B38335DB4D7D1CE532E2608B596DBB07134FEE486B427C527B64E9"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-mini-01.png",
+        "hash":  "6BEACBD989903357F2096A252C0C8CFB0BECDDF445C95ED46FDA73BFFD672533"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-mini-02.png",
+        "hash":  "0D5D37EF51FD4B010137D8B6A0AEAF1FCDB74CCD59587FA1C3933AD785E148C5"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-mini-03.png",
+        "hash":  "91A01C73DCE680DCCA6111122F6E04E7A391B5F76D006970680DE0841844DEE3"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-mini-04.png",
+        "hash":  "30F6DC84490B08DBDDB91EADD0C2237D8578792A7846042EC2E58481C5410F6B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-mini-05.png",
+        "hash":  "029212BC28AE30BE46FDE11127F7890936C395F143A0F219ACBBAFBBA535529C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-mini-06.png",
+        "hash":  "C85932295CB9833270452FEFCFE6272F5360F2FB7CE0B12CB5AE1214FC48AE06"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-mini-07.png",
+        "hash":  "CCAD6DD989448C97045D779CFDE084F85EB7C046B0EA2D4E6DB7A887FA868E6A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-mini-08.png",
+        "hash":  "BD8F94AB0B1BFB1804D704B77E9E7B6D5E5B3E0D03918BB0940A906D6F66F633"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-mini-09.png",
+        "hash":  "AFF3E2332217BDDC5F37954FC1CD13DE05FEAB4DAF245CCD65C4612135156992"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\pet-mini-10.png",
+        "hash":  "F1B4FF4531D083C3D45277ABDC8CC0586FC904FF13FFC561CB94EF4BA9AB31C1"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-accent-02.png",
+        "hash":  "5ABDF124A356F9C69E23FAB5AE351ACE83ABC995D8C58E2826E9AE30D04AA501"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-accent-03.png",
+        "hash":  "C20C5AA3B1824D427A87D3A425A0637E72AAF17FD9EC2133D56C9A2F42991CCD"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-accent-04.png",
+        "hash":  "DC9ADFBB3CFB5FD217673D49B093248EA0685CC71362750955FA0437A6D5BF0E"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-accent-05.png",
+        "hash":  "883454A22F16BDD08327468C8696E3FEAA3CE2FA86A9C730419F1EFDA966E2C5"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-accent-06.png",
+        "hash":  "20B900BD331DC3D5E123BEB033AE48040E35363343F5EE07A12EBD93076A8647"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-accent-07.png",
+        "hash":  "98617C949F7E6A071212C2160483B4D5F787F924BACC11DA7813356F9DED6262"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-accent-08.png",
+        "hash":  "0FD11BD859CBD4E245545BF2BBBB3249FE22F0FB4318A03EF7406F00B69E7948"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-focal-04.png",
+        "hash":  "DC916C8BC6AA543EB423BC6E49E1C088C4F9635091C3AB05F9E2F65FB62EF48F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-focal-05.png",
+        "hash":  "9D9977E9E7E17DB8F7EAC7E8C54C34B09AE0063B034BB53F5BA67D82BE4540B9"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-focal-06.png",
+        "hash":  "0554F63E9F6380BED00E951AB6A924463A2FD69A9CF7340F2B3F6113FEF9F131"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-focal-07.png",
+        "hash":  "728E45F560B2002448D3824227E927671EA171910A7BEECEB44979C8641C3BEB"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-focal-08.png",
+        "hash":  "FE21F4E4EBE63D169B4F163E4C58FD49355BEA67E381AB9F5D4AFE8F4B127E8A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-focal-09.png",
+        "hash":  "BA395EB258A183833BCB929E7E3D04B97C833760D97B63BA3E589F689583E944"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-focal-10.png",
+        "hash":  "325B54E6112C0C323131D799A2C1C643060A1B3132A44802544B4CA5E8369C7C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-frame-04.png",
+        "hash":  "9A62AE9E09978748B9C892CB9DE91119D506ADA9029434A31E5C0E9F44023874"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-frame-05.png",
+        "hash":  "79834C892499E017326D4E4E88C0F74308AED2FC3797A4999B45A86C997BEFF0"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-frame-06.png",
+        "hash":  "C624A09BA5307036B5EE3BC67B887156A696F1A27DB4BBCB79B7A3D71DC61284"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-frame-07.png",
+        "hash":  "0B1EFA64132CBE5E9E7C9796CDAA559842F9840E17F3B70DE6006F9682ABF46B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-frame-08.png",
+        "hash":  "E6A73176543CA03351446AA6743A5D07B2A1F0A882DD53034DF0A59B77E61BEA"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-frame-09.png",
+        "hash":  "F51F084685EEAF4C5BDE9B61CABFA5C71E7A29E30ABC3895BEC7852353B277E6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-frame-10.png",
+        "hash":  "C28112C99F2365CE8154418FFD9140CF4C8FC779BF75B48518F5852E2AD7D3F0"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-frame-11.png",
+        "hash":  "9036878336555F6E0E1C3744F48FC6DE8E4F45548BC721BECB22D21777E94868"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-frame-12.png",
+        "hash":  "45CC5E14A9672605B00911EFCBC2412B6C92855D1E9FC5383A71D254D9C6A4CA"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-mini-01.png",
+        "hash":  "FB60023B73257E639E653BA1B80FB32B9870681E76267B1E2A2587C1BD81C5AD"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-mini-02.png",
+        "hash":  "FE76E3427161600BDB1396D073B9D0272CEC3741401D2605B4301D8550B6CF10"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-mini-03.png",
+        "hash":  "18E3E825D4BFC163739266C30E003FEF339441BA94A62EC5ECDB949D82397664"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-mini-04.png",
+        "hash":  "8DFDB2D6F874558102CE59F7B41E527EC52A83F89794CD4A054DE08A1FF39DE5"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-mini-05.png",
+        "hash":  "BF3E94E2B425E277EB891061C7482503D1F3C12ECE155B8DF8CE1F3B8DA6BC1E"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-mini-06.png",
+        "hash":  "DDA25FD143EE254AFC78BB1A49D5F6DC4F3235730AD16AB9BE7F434A297F99D5"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-mini-07.png",
+        "hash":  "80731678A068D7E038C36C8F898296173E5504F94FD55AE97EEA8BE063A40FB2"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-mini-08.png",
+        "hash":  "E096FF9A0DD773755E9FE5FBDE34B04C927F3E1967024D97C30D95663F3BF6AB"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-mini-09.png",
+        "hash":  "E5343BDCC2929E9AEDC261CDB4266DCA681B7124148AAA8676944DBB7218F8DB"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\savings-mini-10.png",
+        "hash":  "0684F5F0BCD5DD277377C6DDA016D967C0731B6C4C24142C38DCF0F56535A3BD"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-accent-02.png",
+        "hash":  "6DBCE5AB420BD6F0BEDB2F817CAD48D977B99A7C8BAD0A40BF862E6D0D641174"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-accent-03.png",
+        "hash":  "696B591E005A56E27DFE51043691A61034D2228927F130B7967E08ED2D09F73F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-accent-04.png",
+        "hash":  "C94C6D17C5D2C051233DF2D943CA310E3DE2C871E4675655A080D82BFC84A016"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-accent-05.png",
+        "hash":  "9D302A427492C73CE35D3094B88C6A90D1A1FA882236940A5EB0D7E6DA4F9E27"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-accent-06.png",
+        "hash":  "2E80FE6E30BD60D980D548CD3DA4E5EA5D99F31CD0BFE0F438190D7739F5DEA6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-accent-07.png",
+        "hash":  "95FBC68FC8EF558F67D3F85FAFF9EE106177C0662561D1A7FCD01F19B7ACAB0D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-accent-08.png",
+        "hash":  "ECB73E3E41CEC97EC2B3AA8F680900EDC80E52ACBB3425AAE71B7015CD9A21CA"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-focal-04.png",
+        "hash":  "52F22E7B08FEA526A3ABD8334BE644BB0A41AD1712844A893A931605D7834C64"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-focal-05.png",
+        "hash":  "D43AF0DF60AC2BFCA1EAF51A333EB1AC3ABE9C8CEDE5FDAC6AAE9A56237889FC"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-focal-06.png",
+        "hash":  "B3270D2B4A2998AF7D41E2E7540B40C437605C2B82085A543A91ADFEB3A732EF"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-focal-07.png",
+        "hash":  "E1BFDEA6708D4FF5FF399263743D2F6635FDFFFD5642B3107AC4F6849175007A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-focal-08.png",
+        "hash":  "38DC322E47A99813BFDCEB7219541CE3051DEC70DC03A5A5A5EDECD00D450358"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-focal-09.png",
+        "hash":  "B0D0BF39DB18A3AD25701C4DE5784025DD7AB17456E12BDA9612111DE957042C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-focal-10.png",
+        "hash":  "DBCBEB161E5757561E2532C69F688450A847DEDDDFBABCDDFAF68F5904790BFA"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-frame-04.png",
+        "hash":  "A2D90F7512844DA85AF3AD1820456EAC69022C454FC6E1B6E7AC202E158C66FA"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-frame-05.png",
+        "hash":  "A0C9056AA8D6444450772B2F8A558A49B3D2FD0F524B2FBB3A038170E14D3F7B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-frame-06.png",
+        "hash":  "CC26577D1ADA08EF4BA542CD28196E9667A71A7AF398F607999A71CB3A3C79A3"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-frame-07.png",
+        "hash":  "5432047A26ADE3A1392F228ECF85B8DD1E4968E494C3F197D6D3BAE6C98EB810"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-frame-08.png",
+        "hash":  "1C7FD4707E2D96932E03128F12526B082FC2C4052D9DCB41022E540AB0687D24"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-frame-09.png",
+        "hash":  "5BAAE8F7EAB5F0B6BE35FA349C7255B6759789843AB21C7882E3ECE67568F29C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-frame-10.png",
+        "hash":  "9081FA66C866D12779B9810A1E6E5C9206C6AAB2654C65A865290FC204B62043"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-frame-11.png",
+        "hash":  "16EAC247497593F1B2E259C63D019813EA39C7CDA744D357554EA827295175C8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-frame-12.png",
+        "hash":  "F23A6D7DD8AABEF58FB2C7660FDB39885C604AE74E15460FF884ECD20423AD42"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-mini-01.png",
+        "hash":  "CBD6FF410FE91E592F54CE1269F2FB3BD7E9BA694ED8517C7B3A041FDF53E887"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-mini-02.png",
+        "hash":  "869F0003F5978652E5006DBAB59CEC7D1DE52E256C3C5D412123134DF9954F5A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-mini-03.png",
+        "hash":  "B97D39060A7F46FCCE43C64E09921E1BE0DA9FB10911C12DD4030FB9369C51A8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-mini-04.png",
+        "hash":  "7B962C0213B61CC918647070CC40E764D152830DC40B9A83152D940D7C85D58B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-mini-05.png",
+        "hash":  "DCB016E26A549B8541D20294E8F0EC67424EF1FC62D9D2C1C9ADCF8D3E66CFAF"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-mini-06.png",
+        "hash":  "03B8D970BF15F31BD670476BE0C0B5EB18E1D6A0BE26FF8F046284E3E216F13F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-mini-07.png",
+        "hash":  "FA637F6DE45D6DCD07EC82359B289497E6D8A6D7C032A9301DD14A5A270FA358"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-mini-08.png",
+        "hash":  "8C8275B51786EE51557717750C7308D09C2A907461220CFA92F7FA822D542031"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-mini-09.png",
+        "hash":  "ECBC0634E71E9C899C876061A113DE33AC9FA69B5B527A574C4ABAB0338277E8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\shopping-mini-10.png",
+        "hash":  "CD63C460A14012E2902574599410204FA8B9671A7248DCD438221D6AA062112F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-accent-01.png",
+        "hash":  "2E49227423974BD58BEF730153F05CFDAC21E5D43A2D9CCED741F89DC6433FA3"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-accent-02.png",
+        "hash":  "94ED3723324C4E6105B425E1BEC1071BEA88BF64ED3A95F34229D5BBF675BF06"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-accent-03.png",
+        "hash":  "F44204F4AEBBE90359055EB3414FCD1B2A36FCC3E256CD6F4E2638D30CC4D008"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-accent-04.png",
+        "hash":  "A81FD1152212B7951F33A85C0EF58A902093364B5EA737DDF5B8C4701EFA9220"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-accent-05.png",
+        "hash":  "B660AD55D1252E44FCAEC7920F4EF4AC247B6D2240F22C26B2C5F1FE3117B6D7"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-accent-06.png",
+        "hash":  "F5FA1B77A8DDCB6B6653485B280989AB5B947225E5BB7A84CBF9BC44CBFA902F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-accent-07.png",
+        "hash":  "7D9101259D4153F8236C56A66288DE37A2AB45EE87F0B7FDD65FBB81184FE8D8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-accent-08.png",
+        "hash":  "8294C054E1215A8346043990653D830F19322E46C01C41F1E6395D31442A89CE"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-focal-04.png",
+        "hash":  "18D3FC6FD3DD54F29FB32C865C8C81B3F9FA518AD6283E93D71730F943896085"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-focal-05.png",
+        "hash":  "4C34F22E6C4BEFB409496BA6096295C7C55550F8DDBCB6B042211CE9DF4D4484"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-focal-06.png",
+        "hash":  "7B7D557B4C6DCF17C2E74AD5D4C0EA43506A69C9DEB69090357ED18728EEAE0E"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-focal-07.png",
+        "hash":  "B5FED8374760C567EED1002412C31D5A91F7D34E9ECBF65AA021662AFD9E7820"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-focal-08.png",
+        "hash":  "156A0FF64F8EC1F2198B507DC2FE3DEC1C5536A2B5E8A567A47BEDB09A9AAF55"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-focal-09.png",
+        "hash":  "80BE9AADBC71F4D059677101097EA3DC22B140629170E3667A27905809C57E9B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-focal-10.png",
+        "hash":  "020C5209D3592941E67CAE0FA9F46CCE4099F0031945DCF218F39C6008CB1A0B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-frame-01.png",
+        "hash":  "1F888C7591D9B58F305337E2304478FF8EE2F99B6835CE5579E792B38BBA5484"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-frame-02.png",
+        "hash":  "DA796C7A599F611FAD7E30EB69F809FB61F62DA05CD51A47EB993B906AF2B986"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-frame-03.png",
+        "hash":  "73B5ADC5BCAAF52356B66769D2BFFE2866CA1DD2B9E8EA2B3DB217FAA1454949"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-frame-04.png",
+        "hash":  "F36B8A53C61BAD32E12E73BBE98B83504DE043D7D8AA1F94312062DF28ABFB0B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-frame-05.png",
+        "hash":  "AA8FB72A7455C6483718CC7037895C75CCD6A5040A97D913037656FABA027514"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-frame-06.png",
+        "hash":  "4C08676694E3E955BA8138A7ACD71E4D36CE89A367C3B142A13BDE8B137BACC2"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-frame-07.png",
+        "hash":  "3AD2862D97E235CB2BC960095BF35AA177D135879271B88FF8DA7FBC55ABED5A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-frame-08.png",
+        "hash":  "0AC3AD6DC0B157152C72EE6F58A909A12217A74511C969852E7F91B404174655"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-frame-09.png",
+        "hash":  "E74413C7D0BD82153BDA943E62C91BE85C445301B8D5980AD38ADA4A2A62EAC1"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-frame-10.png",
+        "hash":  "1B55B231293C821E6998D52A608D5077333B75C2EAD14E4D0C34675298C7C6BD"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-frame-11.png",
+        "hash":  "4B149728640C22C0D088B36CCB170486C67994EB1F523B255195919D8595394D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-frame-12.png",
+        "hash":  "A1762B5E510ED1B02F66F19264043350B6FDD96303BCD297B126F1D4BE1F068F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-mini-01.png",
+        "hash":  "44C74A9AB30F94A76271396AD0144F207DF6F128D993BA896E4071ED31CF0274"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-mini-02.png",
+        "hash":  "A3360001F1B95E0D01AF33503C38964A09C60040FE1F0B9C3EADADE92D7EA3D6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-mini-03.png",
+        "hash":  "C3BC45F2B839FA223D021F89A4216915DC7255289E3F6159F044FC2A451DBE7D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-mini-04.png",
+        "hash":  "7C33C0BAB8FC893EDF92D423D5E9C38AEEB5E2BFA6E0205CEB6BF31F4257BDBC"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-mini-05.png",
+        "hash":  "F1B790D384339DEBF8D2905A1A8277C9A6798F37AE4E426D6D2C75B5BACBB3E7"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-mini-06.png",
+        "hash":  "AF0802CDD36DDE01117E633527A4D2B1D4464A9B12C2704ADBEAE9462E61B60C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-mini-07.png",
+        "hash":  "585440E31562AEE367665E53249546F0A150A34CC797ABCE4C822945CFA36DB8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-mini-08.png",
+        "hash":  "50D4E5A839E5AE847DE4B93BC5B7E2AB79F907C7A25AB205C1CD2CF2CF86DD34"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-mini-09.png",
+        "hash":  "FD1A40A88E3309FF569AA1E6A5FE2E3DE024C9AB6A5AB07942502216AFE8F158"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\travel-mini-10.png",
+        "hash":  "365930B67B8910EB8FDC198B5CDC2674E66CC562A0AEE2DECB016640CA16CEF4"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-accent-02.png",
+        "hash":  "0E550FB7E631B85D9B11807916883221B65C5574FEFBF14E733BF60193AA7F45"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-accent-03.png",
+        "hash":  "30160FD0DBEF282D2E969FC21806DA0B370BAACCFFF0304370C029EFF362832F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-accent-04.png",
+        "hash":  "9AE7C87B0EFF7E6BD4F871AC7C3BC7F29EA53163E5A38C9DE5AC36BE09882B8F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-accent-05.png",
+        "hash":  "3C185AA9DF62B38ED248A534AB75A0A1A92839EAD30776D36E8A9269836437FD"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-accent-06.png",
+        "hash":  "2422388A5B1E8DFC7CC85E4AC2D8FAC34DC165693343061F6409670AA694898E"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-accent-07.png",
+        "hash":  "FF9103FFED413C9F0D4A8499CFBB12DFDB94A2CD240C2152658885FAAFE8BDE7"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-accent-08.png",
+        "hash":  "6DD16F6B0750B99D6F68A99F70B500C2179EFA6DCEFF037C34DA4A391B1A0BA5"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-focal-04.png",
+        "hash":  "7118CB9821F6059C58D730D854E20D9255363E99389F6BCF10A5740C84873EE6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-focal-05.png",
+        "hash":  "35E8DE34C33309A09425A1B260804D0DC8B41EBDCAC9FD189B9A91F0DA9E7192"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-focal-06.png",
+        "hash":  "30B720585B2035FD493AC615C1ABFF84D8501D449EBDE2D1C895DBF10ADAFD92"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-focal-07.png",
+        "hash":  "B339EE90BF8335C2B11D617396709E6316A382E04AE933FC1B6064862B520340"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-focal-08.png",
+        "hash":  "9C2182C2906ECE450379B8461FB3C8A76EAC2EB5E56EE94F10C72EA670ECA8F2"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-focal-09.png",
+        "hash":  "D93CC3B1A46B13FD032C5F1038B2E745554EB47548C27DD327A20A5999042254"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-focal-10.png",
+        "hash":  "FE0A019217BC5114D8B11A7EF0ABCFC01382AEB2DCF61E7BB27727148868FCB8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-frame-04.png",
+        "hash":  "8B3A0138D1298FFBF28DDA25FB8FAADFE530CF1CB01A649E3C794646519B3648"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-frame-05.png",
+        "hash":  "6324B220BC9FEA83F8CEC16E6271041D6C6B605712D51C1D8F7CBBE6B306F90F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-frame-06.png",
+        "hash":  "C050CE3A63A201DC191CEDF9B2A44FB4608CBEA5BB68F4B037BA9E067D4B43A4"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-frame-07.png",
+        "hash":  "5BB696F1E04B4CF43C07D760DDA973C855A491117B1CB189D703C2354FF264CF"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-frame-08.png",
+        "hash":  "B38EBD193A63A343E6D51A27CF7019D6348843917B64495DE941BDAC4723D2E2"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-frame-09.png",
+        "hash":  "5F80AB27314524B4A30614F1FE883F67007848ACB08FFBDF4203709769BB7F85"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-frame-10.png",
+        "hash":  "1A7F3ECBA60180CE6C4C3A0F71F87A94867AA78DDBFC45FBECC69D7778BB972C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-frame-11.png",
+        "hash":  "F1D220958B76FD0683F5F20B24303A364FAC397641F3C08B6F7570A8FDB4287A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-frame-12.png",
+        "hash":  "CDC7DE3E2468794666AA11A55900AD9C076E07175C0B50E2F25BE937F389BD5A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-mini-01.png",
+        "hash":  "2C1D777A8DBD83610630E09A2CB9EE0415006A9D6DA05792C83202C707C580CE"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-mini-02.png",
+        "hash":  "D347AF13399F9D2FE0B42E81B9561E502BDAF8DC2FE0213DADC9F792F2A8D244"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-mini-03.png",
+        "hash":  "07F82104139F14077AB366A725B8780706529F2608F2AF017A7B58D791DC972D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-mini-04.png",
+        "hash":  "25962B2298261C1B8DE9D9523909668DF50EAC02D08B267858AE0FE48BE4E7D8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-mini-05.png",
+        "hash":  "52C656D7DB44C400205D025155608974031BD78768F902C77A168FA6FC85E2AC"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-mini-06.png",
+        "hash":  "D4E70DF266A0C19BC7395EF049982EC17BFBDF82C74566046094010D9D1E03C2"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-mini-07.png",
+        "hash":  "B7D55AE901B8B5CC4C34B2B6F8648CB825774F1C54C1FF876EBE2CD4B1F943D8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-mini-08.png",
+        "hash":  "A54E4FB85AB44A477920FCEFED85D0C4F372BF0E6C6B002B2413C0E843F5243A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-mini-09.png",
+        "hash":  "73D6494BA546B526B283E71D83659F09D6FFBDDF55B02E3A62FA3140957C4054"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v2\\wellness-mini-10.png",
+        "hash":  "7E15AC21AA2F84BE2479FA27F66CBD10E8D101A22D355ED59446643E5712FEA0"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\pet-rope-connector.png",
+        "hash":  "6EDBBA1F881777F507E361CDE61C296B8F9F51D349B3D57601C34F4CE1549625"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\pet-rope-corner.png",
+        "hash":  "C78427B518D996F6EC6A95D95F4AFDDA7F98B91DDE095C50129AC3DADE3DE8BD"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\pet-rope-cross.png",
+        "hash":  "83AB811191B89CF482A699C5EC221A698955595D95208064B9BB2E5A7D97AF98"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\pet-rope-end.png",
+        "hash":  "440591DB2F4553BCC9EF41186FFF34FB5BC5E74E9C1A9FFA127586779E1F1A5A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\pet-rope-long-detail.png",
+        "hash":  "B2C952FD27D62B35ACB2D02B9DB4C71EEE2B3E5627D762C84554BB2E1B376ED3"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\pet-rope-ornamental-corner.png",
+        "hash":  "CAE9008899B926BB46227122F47A98717ED763D6E431F29F3C7FF452F1A3A576"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\pet-rope-short-detail.png",
+        "hash":  "4E482DB08D433FE4E9D24E6CBDE5852C94524912EDF5F2DF223CD5F4120F7E4A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\pet-rope-special-end.png",
+        "hash":  "3916AAE40B0D143090EFAC318F73FB18DA00A17F3FEB564F97E5F64784A5B8F5"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\pet-rope-straight.png",
+        "hash":  "1D7D795BFFA7555E552846E1FD9C31238504AE3684E817A9C60BEFA32106A6B4"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\pet-rope-tee.png",
+        "hash":  "4567D7B4723B432C90F1085793B3820DA763CDE84015E76CBE518C1DD457B654"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\savings-chain-connector.png",
+        "hash":  "620000D7197A14F707472CAFC35A3F453DBD9A2844BFA81D2CED1678CDF5F5FB"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\savings-chain-corner.png",
+        "hash":  "DA307C1599846C2FC4428B597783EEBBC75C0E4E3710DA414C9A62D793B1CC89"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\savings-chain-cross.png",
+        "hash":  "B3EF3A4B1B218D93ECD6310366236F793CBD961E6A0D73AF76F85AE22315FCF7"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\savings-chain-end.png",
+        "hash":  "46E66298F89A065410F2C284A863FD3F6968D036E5F6E29F514FB4D77FA2A10A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\savings-chain-long-detail.png",
+        "hash":  "F5F47B462D9EAFD07E22254C9107D1F681ABB3FB79624B95D010872776A230CC"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\savings-chain-ornamental-corner.png",
+        "hash":  "63D69A1882527A4519BC8179CBE4D2C40C4F92157F4145AF19575677F1054128"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\savings-chain-short-detail.png",
+        "hash":  "F6E9926C4C21D2A2E00EC5BA6B6FBC59DDFC58AB98F89D78C8DC2F7B2B04C80E"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\savings-chain-special-end.png",
+        "hash":  "A0D26C90D725395C63B6808B579F6D18A6A67A76CA33057BE884C906A86A9EA8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\savings-chain-straight.png",
+        "hash":  "28EA166B7F5267ED906C6AD6FEABE4CD9FE0080C6C57C7F33D3129EF175099F0"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\savings-chain-tee.png",
+        "hash":  "D8DFA9785CB03DC8D9EF32673C0899B8BED41ABD507B182E290AF15A83369DF7"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\wellness-sprig-connector.png",
+        "hash":  "7E83B1458F54E5D27FFC7C0EC38EE8EE557DE99DE5E7C906265F9AA89B555226"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\wellness-sprig-corner.png",
+        "hash":  "E30FE66F25BEC5855B546D274771F6C90EADFCAAE8FF4510DFE9C18987B868C1"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\wellness-sprig-cross.png",
+        "hash":  "ED603153FB5319824EA564F4033E2734E8042D3B13985C4CC44AB2B80471DD22"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\wellness-sprig-end.png",
+        "hash":  "13305929704DE2D668A0B2CC664F8BF2142246E96D6E0231B1BBBD251D4B6BAA"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\wellness-sprig-long-detail.png",
+        "hash":  "F7B4A116AFDA66BB0E0693AAA300FAF39E034FD1806857A9E33A91864AB22EB0"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\wellness-sprig-ornamental-corner.png",
+        "hash":  "A2F25E362E551F39446B728399E383423DEF3C641FB3A8DC2156D8A828B7672D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\wellness-sprig-short-detail.png",
+        "hash":  "F1E7E0357B2D11BFF3DE3C4A8A5E69411829AD18D2AA4848AC988DF4E7DA16C4"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\wellness-sprig-special-end.png",
+        "hash":  "D3C7D2F8C85D239E28886B06104AA490323FB2462A8658F877FC86944E4DDBDB"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\wellness-sprig-straight.png",
+        "hash":  "349E701B5AB7FA7B9D762ACC5ECFC62896CDBD65ACBFC5FE397346F5D3F1840C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\decorations\\cozy-cute-v3\\wellness-sprig-tee.png",
+        "hash":  "2332BD1F9BA76D58AB06F0325A66A35E38A5B45FF3524F9FFCF72E1CA03FB2AB"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\expo.icon\\icon.json",
+        "hash":  "747C56E178222A6255C6DD61C5DE011B286CDC935FEBE89F04D1B191C3D076FE"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\expo.icon\\Assets\\expo-symbol 2.svg",
+        "hash":  "AD117D20FD819F4EC71876CE09C0E8B9275B1F20C5EC3C9D7D1914977CEFFEC6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\expo.icon\\Assets\\grid.png",
+        "hash":  "8247D79A2B31328FE4E330A973E6FAE16924ED9AEBD72C64D464D6856AB18C72"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\fonts\\lagoon\\manrope.ttf",
+        "hash":  "3AE11C49DB0455A3CC33E37D380F20FDB8C7F8B41DC07625C177E3D87A9D6AE6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\fonts\\lagoon\\noto-sans-thai.ttf",
+        "hash":  "5A1C559BB539583C8A1FD99D1C5B9491E5E14478C9CD2BD0970D5C3096CC9EF8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\fonts\\lagoon\\OFL-manrope.txt",
+        "hash":  "58172E0C0FAC2CDA8A37B348164BB55E44B0E69051E557E92B1D3F6910141F7B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\fonts\\lagoon\\OFL-noto-sans-thai.txt",
+        "hash":  "2E98FD23A52D253DB8612CD5942C8F2FF4111B21D2367050FDCA91D8CCC374A0"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\icons\\bemem-functional\\add-card.svg",
+        "hash":  "D8807DE5E38B9376C22007410886A1F5D46E0F76D1A75A8AFE42C84FDE47D429"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\icons\\bemem-functional\\decorate.svg",
+        "hash":  "3DC2254D8E242EFE7A7319B0E15C5D44521843D2A82D92BDEFC69AB2606FD410"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\icons\\bemem-functional\\delete.svg",
+        "hash":  "34940FF08BC08132BD872DF75682A130E90894DF8AE3D5314A99F9490306BCBA"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\icons\\bemem-functional\\policy.svg",
+        "hash":  "5F19EB5BD82E625099B71B9A688A4AA2174C47F38EA2DF260CB63422FAEDBEB6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\icons\\bemem-functional\\README.md",
+        "hash":  "824BE66E097C190AAC41C94D9F65520DFCA1A3310BD6D6F5D9E498F58A79315D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\icons\\bemem-functional\\rotate.svg",
+        "hash":  "D7845A2FB277835CBD0DB9C7BC77514BC6FD7758D8D4630A2EC73A446103253A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\android-icon-background.png",
+        "hash":  "FB139C2DEE362EBF2070E23B96DA6FC0D43F8492DE38B8AF1FD7223E19B5861D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\android-icon-foreground.png",
+        "hash":  "9E3D0315A33C6799DE601DD34CD8BF8CC3A8D16F3BF75592BAEC2CEB7240B391"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\android-icon-monochrome.png",
+        "hash":  "6371FC2C12E33AD2215A86C281DB3D682A81BEBE7C957A842C13B8BF00CCEB83"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\expo-badge-white.png",
+        "hash":  "D9BA28C5E93AEA3C2DABD901EE96FEA3BB296AD8E648F6F64706DAE11A1A62BD"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\expo-badge.png",
+        "hash":  "FF353C7EFADBD379903923CB604FCA11C908CBA0D4658CC2BD1F147D98317249"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\expo-logo.png",
+        "hash":  "27B060A757A29038C9618586BAA0BA3894DBE60D084C6059DF497FF429C2D92F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\favicon.png",
+        "hash":  "A4E030697A7571B3E95D31860E4DA55D2F98E5E861E2B55E414F45A8556828BA"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\icon.png",
+        "hash":  "7A667804BB80A6A424A5DAF18A2599C4F32237CF06FE78FC0DE45DBB09E0ECCF"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\logo-glow.png",
+        "hash":  "BBD98A3F3C12D090F4DF6065B7462FCDF6BC266209D002B4EF5FE554C245F66C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\react-logo.png",
+        "hash":  "224B7636B15E672801579B5B418077CBC2CA42F0146389062364356B0ECB5C5C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\react-logo@2x.png",
+        "hash":  "FA600BE9AD2F869C7A8DBAFFC78BB15AF741123E1319C948F0BE51753A153CDE"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\react-logo@3x.png",
+        "hash":  "CD84E02A5D542A3E71B7FA10A685C1B9FB51DB4AFF92ACA6C0DA6461CE17BE16"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\splash-icon.png",
+        "hash":  "27B060A757A29038C9618586BAA0BA3894DBE60D084C6059DF497FF429C2D92F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\tutorial-web.png",
+        "hash":  "E372EC23AD6262E2E0DC2799CE416B495A631A565BCD24F0615D4AFC04DAC3BD"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\tabIcons\\explore.png",
+        "hash":  "E2DEA1C2D20929D83E8EEBD74818E808B1B72E376D3A1F3A03679FFF0255D073"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\tabIcons\\explore@2x.png",
+        "hash":  "1B54913B3A0ACC3E1FB72D3B9B79AD04814304B35BBB9D03A533E6130AD6C26A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\tabIcons\\explore@3x.png",
+        "hash":  "2F3E43801DF70EBE83273B90A7D170BACF5CA74A8A8DC5C154A020C2C8B06609"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\tabIcons\\home.png",
+        "hash":  "3829632EC7D495225395F5DA3D0942935D7D055979B174613D1ADE82FE420E76"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\tabIcons\\home@2x.png",
+        "hash":  "21C5A07DF9017D97464A0A8256E265288F2FCA0741CA651DE05E12B32F32F5AB"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\assets\\images\\tabIcons\\home@3x.png",
+        "hash":  "FE5B397975E7CB70AE7A122472D174ED12EC2AE106F7B49C968225AD37F8B3B8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\lint-readonly.cjs",
+        "hash":  "673C1200115EDE35DC3074406739C9912B4FE4320F6CE366E03D59CA2BC36A9F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\reset-project.js",
+        "hash":  "E1989C1CA90F059A21B3319C7428BCCD875E165DCB41F7EE3C580F407B21AA1B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-add-card-runtime.cjs",
+        "hash":  "75DBCB82C350D0A80F6202DB081AC1A6385D6D627F9647F58A5369DAE2D50535"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-canvas.cjs",
+        "hash":  "D76B80EDDCF9389B60794361BAA0F33EF37F4A4CEE31EDF9536F1B6860412DA2"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-card-codes.cjs",
+        "hash":  "9B98FA54EE1BB503B39D525795AE5949BB0AB3C534CF01D74EE7A97C9459B7BC"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-card-detail.cjs",
+        "hash":  "428C0BC77D5C79D2CA33D5624A13188158D7F741EDB30B4C691FE5E2FC3EE3D8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-card-form.cjs",
+        "hash":  "C225B5EC1435C40FC0F7DF331545820AECD7E7AC8C91686D1E402F52EF91182A"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-card-history.cjs",
+        "hash":  "FFF0472B112B50D07BDBD2542C9AEFDD742FF56B257B8BE6706F4C3BF110BC94"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-card-image-controls.cjs",
+        "hash":  "A789C7CF224C50987BE5972E535E6B153830D41084686BC5FB67A4A5128DF95F"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-card-interactions.cjs",
+        "hash":  "C0E1D2BDB72D03BD4469BF09341CCDEA3E8F70A945E4AD32D75444FA8F22FA2B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-card-management.cjs",
+        "hash":  "8A873EF54B2ABB6537C7A376A354DA3ACE1FF3ACA42D205AB52508AFFE03DB6D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-card-share.cjs",
+        "hash":  "142C8380A398A4585968EBF9484DB8A58327E2524E65AE1D1B4064270F81AC1C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-cutover-preparation.cjs",
+        "hash":  "413D6747ACBF9719232C7D807F25B55239B58D8DE7969C69A2E7160774822F84"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-cutover-safety.cjs",
+        "hash":  "821126D807440E6EF8190A30596D2EC038404AE000E02F05B2108B0812DEE730"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-decorate.cjs",
+        "hash":  "778CACF9220923ABB64FC7D59FA8E8969F94D4333978C7A5633441042D87BD00"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-decoration-frames.cjs",
+        "hash":  "E0AAA763A19D47A45ACDB9A1C84EB40FB63FB279FCB26C451014B43266737BDF"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-decoration-pagination.cjs",
+        "hash":  "0BBFDFAEACAB5B6F4312541678DA90D0CCBCD57DDDE76085DA327BFBD92E2FBE"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-expiration-picker.cjs",
+        "hash":  "297E7A43FC4DC76FEAF9B81146603C62AA41ACBB8ECD2CDAAC3481CA9CCE7AB3"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-full-card-view.cjs",
+        "hash":  "ED9131F8A253516DBB587A1791DDC042171115B7975B0C4F076F55F54F9EC0C6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-functional-icons.cjs",
+        "hash":  "77AF8047474D5F530AD5CDCA77673C1AAA181950094C92AA09E862854F653CC8"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-header-layout.cjs",
+        "hash":  "3097A90B295162066CB5CF49F0461C12694B80996C2E76B1DA096C46A4E2A7D1"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-home-account.cjs",
+        "hash":  "F587FB7A714A808DB394A0812F744449E7C40EF470DE5BB01E60CD07DBD4255B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-lagoon.cjs",
+        "hash":  "D8E62EF28118AA0E548FA484263F3E9EDF68FD7799E7EE94CD544E7B6C2CBC53"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-membership-scanner.cjs",
+        "hash":  "924CF1DEEDF4315A9FF75354961A0EA9BF6C5ECDB1FFE49347A04DFA759CF995"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-migration-consent.cjs",
+        "hash":  "D353A1BDB18DEB7D3A2BE15692DF78DB926FD5BDA0161F567F7EF443714042BF"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-production-integration.cjs",
+        "hash":  "30BE4577BB44DC328283EE337F8667E297C7BE46C776BA3CF7142C579406BF13"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-repository-safety-gate.cjs",
+        "hash":  "3353D884A19B9DF0E53A70F148C9B7BDBD69865F96100E5A4D17B859541E1D61"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-sandbox-foundation.cjs",
+        "hash":  "5B56F86B462528FFD37D52EC2DB225AD38B1F7BEE447AF86CFD50B88C0AC0029"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-search-reflow.cjs",
+        "hash":  "D64ADA7719BEFF6B618F524E8CCD672E5C3E958C403B9531BDE1AF67D880A14D"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-startup-diagnostics.cjs",
+        "hash":  "76191EF1416D9EC2F0F01C60B96D1375A6D8C073A6359465A20EB75FE970989B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-wallet-adapters.cjs",
+        "hash":  "6E838413B2EA986ED4325B8BAAF12FC68B9DAD79019A209D3026A421BE1A8648"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-wallet-coordinator.cjs",
+        "hash":  "BDF76C302AEF1E12CC00B783A82535AA764AC142C35795DD88F1080B72315BAD"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-wallet-model.cjs",
+        "hash":  "AA3FECF4D4163B2C2E51ACEC2F5935027A9C5CA2043868122BDCE8D588E95FAD"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-wallet-repository.cjs",
+        "hash":  "036FEA9F26870D258E73C12A2F4B4472E2FDD5B1AB88868B332F5CCFE53162F5"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-wallet-sandbox.cjs",
+        "hash":  "41DB9F277D017FE4F1B8F7BBBEDB6E10DBB6F43558BCCD6E307665B5171CFDDC"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-wallet-schema-extension.cjs",
+        "hash":  "CBE1F45FD187B5E1437D81689067651FE64F0A0CA6A3766D1A273CA6F130AD9C"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\scripts\\test-wallet-startup.cjs",
+        "hash":  "2616F2B4B2794EB729B6B44901E28D2E663A5696DC87430D58A103FE38E852D6"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\package.json",
+        "hash":  "555D1D0E683918519135CC68EAB9D421B7B1D83297610F3339943965C61AE074"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\package-lock.json",
+        "hash":  "B9B951C6EBFE86290015CF53E27BAF11EB06C6BBB2BC11F7DAF0280446F35673"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\app.json",
+        "hash":  "E7555411B7D62C5FC44C17075F4CF12AA2EDC0BBAB7CDCFD7496C6E74DC6461B"
+    },
+    {
+        "path":  "C:\\ฉันจะทำเว็บไซด์\\bemem-app\\AGENTS.md",
+        "hash":  "B7D381DD55800D242252E8BF89A40B026586D254E34908210931BC35582396A3"
+    }
+]

@@ -4,6 +4,7 @@ import { useFonts } from 'expo-font';
 import manrope from '../../assets/fonts/lagoon/manrope.ttf';
 import notoThai from '../../assets/fonts/lagoon/noto-sans-thai.ttf';
 import { bemem } from '@/constants/bemem-theme';
+import { WalletRuntimeProvider } from '@/components/bemem/WalletRuntimeProvider';
 
 export default function RootLayout() {
   // Render immediately with system fallback; font failure never blocks card access.
@@ -11,10 +12,10 @@ export default function RootLayout() {
     BememManrope: manrope,
     BememThai: notoThai,
   });
-  return <>
+  return <WalletRuntimeProvider>
     <StatusBar style="dark" />
     <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: bemem.background } }}>
       <Stack.Screen name="index" />
     </Stack>
-  </>;
+  </WalletRuntimeProvider>;
 }

@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-14",
+  "status": "design preview only / awaiting visual approval",
+  "browser": {
+    "mainAssertions": 407,
+    "focusAssertions": 5,
+    "totalPassed": 412,
+    "failed": 0,
+    "combinations": 126,
+    "widthsCssPx": [
+      360,
+      393,
+      412
+    ],
+    "nativeSamsungVerified": false,
+    "nativeAndroidBackVerified": false,
+    "offline": "Local files, no external dependencies; loaded offline interaction verified"
+  },
+  "assets": {
+    "transparentShellLayers": 12,
+    "photo": "original AI-generated sample, WebP gallery copy 102344 bytes; PNG master preserved",
+    "editableSources": "SVG",
+    "fixtureMembershipNumbers": false,
+    "fixtureCodePayloads": false
+  },
+  "checks": {
+    "typeScript": "tsc --noEmit: passed",
+    "javaScriptSyntax": "node --check: passed",
+    "lint": "No installed ESLint CLI; not run; no installation attempted",
+    "fullExpoBuild": "Not run: static preview only",
+    "productionProtectedGroupsUnchanged": true,
+    "storageAccessFromPrototype": false,
+    "dependenciesInstalled": false
+  },
+  "protectedGroupsBefore": {
+    "src": {
+      "count": 154,
+      "hash": "041467c54543846e60879227974ed962248ccc500582816a0b90f6dbd484ca81"
+    },
+    "scripts": {
+      "count": 48,
+      "hash": "875bfb596ee1e787691c6fcbd2380bbbf5811bfd6db7a95f5c7b5d7df52871c8"
+    },
+    "assets": {
+      "count": 303,
+      "hash": "072e2c7511482f2a7c646424e6194ac0010d2e79a332e016314e525b9f29bfca"
+    },
+    "design-system": {
+      "count": 18,
+      "hash": "ed7ed2d16b0c0ac5991bf0b65e94edda97cc837ac1931da41ce0c698de293a8e"
+    },
+    "design-previews": {
+      "count": 568,
+      "hash": "2d2cef138d75c162ef308eb57f59324f124a9bdb0054da1d525eb0a2cde9c0f6"
+    },
+    "artwork-trials": {
+      "count": 1107,
+      "hash": "a8db088204879b016deda3ec9d241c346d14b6b54dee76c5b4671bd8dc0ecddd"
+    }
+  },
+  "protectedGroupsAfter": {
+    "src": {
+      "count": 154,
+      "hash": "041467c54543846e60879227974ed962248ccc500582816a0b90f6dbd484ca81"
+    },
+    "scripts": {
+      "count": 48,
+      "hash": "875bfb596ee1e787691c6fcbd2380bbbf5811bfd6db7a95f5c7b5d7df52871c8"
+    },
+    "assets": {
+      "count": 303,
+      "hash": "072e2c7511482f2a7c646424e6194ac0010d2e79a332e016314e525b9f29bfca"
+    },
+    "design-system": {
+      "count": 18,
+      "hash": "ed7ed2d16b0c0ac5991bf0b65e94edda97cc837ac1931da41ce0c698de293a8e"
+    },
+    "design-previews": {
+      "count": 568,
+      "hash": "2d2cef138d75c162ef308eb57f59324f124a9bdb0054da1d525eb0a2cde9c0f6"
+    },
+    "artwork-trials": {
+      "count": 1107,
+      "hash": "a8db088204879b016deda3ec9d241c346d14b6b54dee76c5b4671bd8dc0ecddd"
+    }
+  },
+  "limits": [
+    "Browser CSS geometry is not a physical Samsung measurement.",
+    "Native Back, safe areas, TalkBack and native performance await approved production integration.",
+    "No Wallet, schema or runtime integration implemented."
+  ]
+}

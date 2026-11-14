@@ -1,0 +1,1 @@
+document.querySelectorAll('.mocks button').forEach(button=>button.addEventListener('click',()=>{document.getElementById('status').textContent='Preview only: '+(button.getAttribute('aria-label')||button.textContent)+'. No app action was triggered.'}));

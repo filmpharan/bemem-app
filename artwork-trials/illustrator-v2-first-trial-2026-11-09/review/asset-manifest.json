@@ -1,0 +1,314 @@
+{
+  "version": 1,
+  "status": "ART REVIEW ONLY - NOT APPROVED FOR APP",
+  "png_format": "RGBA transparent 192x192",
+  "assets": [
+    {
+      "id": "pet-cat",
+      "collection": "Pet & Care",
+      "source": "pet-cat.png",
+      "png": "png/pet-cat.png",
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "rotatable": false,
+      "connectors": [],
+      "size_px": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "bytes": 19088,
+      "sha256": "996ccec2af981c43e823333cd4c526bf533622d97171a3a7616fa630ec58ba3b"
+    },
+    {
+      "id": "pet-dog",
+      "collection": "Pet & Care",
+      "source": "pet-dog.png",
+      "png": "png/pet-dog.png",
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "rotatable": false,
+      "connectors": [],
+      "size_px": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "bytes": 17690,
+      "sha256": "e60ed6d8ba3b44e2ad96694f301c7d3ceb1ac69c7453ffeae06fce5f25f56353"
+    },
+    {
+      "id": "pet-paw",
+      "collection": "Pet & Care",
+      "source": "pet-paw.png",
+      "png": "png/pet-paw.png",
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "rotatable": false,
+      "connectors": [],
+      "size_px": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "bytes": 20321,
+      "sha256": "9474bdf7272219a73d03cfd1bfc4c4e535c951546e4c96e2366a7c1cbb5832e3"
+    },
+    {
+      "id": "travel-suitcase",
+      "collection": "Travel Diary",
+      "source": "travel-suitcase.png",
+      "png": "png/travel-suitcase.png",
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "rotatable": false,
+      "connectors": [],
+      "size_px": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "bytes": 20549,
+      "sha256": "e61b9d01d35f5e139ee08109b9c50f4a07c511d2454154337012bdb6bfc72be3"
+    },
+    {
+      "id": "travel-plane",
+      "collection": "Travel Diary",
+      "source": "travel-plane.png",
+      "png": "png/travel-plane.png",
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "rotatable": false,
+      "connectors": [],
+      "size_px": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "bytes": 16125,
+      "sha256": "1e740998d0bea535cd70224fb897bb62915e1da5d868e2e84af71e29ecada0ab"
+    },
+    {
+      "id": "travel-cloud",
+      "collection": "Travel Diary",
+      "source": "travel-cloud.png",
+      "png": "png/travel-cloud.png",
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "rotatable": false,
+      "connectors": [],
+      "size_px": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "bytes": 14341,
+      "sha256": "5fd3dbb5ab88ab03cff02dc51acc77ae823e0316eb8f7746858342a3955768bc"
+    },
+    {
+      "id": "wellness-flower",
+      "collection": "Wellness",
+      "source": "wellness-flower.png",
+      "png": "png/wellness-flower.png",
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "rotatable": false,
+      "connectors": [],
+      "size_px": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "bytes": 15587,
+      "sha256": "03669193f7c49c3963b8ed50a19214461fb0d5b384890d4bcb02c478dd2b3210"
+    },
+    {
+      "id": "wellness-leaf",
+      "collection": "Wellness",
+      "source": "wellness-leaf.png",
+      "png": "png/wellness-leaf.png",
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "rotatable": false,
+      "connectors": [],
+      "size_px": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "bytes": 14107,
+      "sha256": "02dd6234c9583139167315673371ad4795759c47c9e8ae7d0fb7c7d21835e47f"
+    },
+    {
+      "id": "wellness-teacup",
+      "collection": "Wellness",
+      "source": "wellness-teacup.png",
+      "png": "png/wellness-teacup.png",
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "rotatable": false,
+      "connectors": [],
+      "size_px": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "bytes": 20487,
+      "sha256": "c2cf4e3e36f35caed57c09ec033fd31e0648d93a53b30ed9bee38931477e0735"
+    },
+    {
+      "id": "vine-straight",
+      "collection": "Botanical Frame",
+      "source": "vine-straight.svg",
+      "png": "png/vine-straight.png",
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "rotatable": true,
+      "connectors": [
+        "W",
+        "E"
+      ],
+      "size_px": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "bytes": 5532,
+      "sha256": "3d1429e2d25d79da8d4fa92d14bdd740b92d5d26206bfdf087dd625f60fd8215"
+    },
+    {
+      "id": "vine-corner",
+      "collection": "Botanical Frame",
+      "source": "vine-corner.svg",
+      "png": "png/vine-corner.png",
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "rotatable": true,
+      "connectors": [
+        "W",
+        "S"
+      ],
+      "size_px": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "bytes": 5697,
+      "sha256": "387cee88ddfb1c52174f7b13ad08e454389a90032a7f48a30c28da935257b80a"
+    },
+    {
+      "id": "vine-end",
+      "collection": "Botanical Frame",
+      "source": "vine-end.svg",
+      "png": "png/vine-end.png",
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "rotatable": true,
+      "connectors": [
+        "W"
+      ],
+      "size_px": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "bytes": 6388,
+      "sha256": "2e2685753d872e52436e0b59e5b37c40fe7fe56a5ea663fdf6b7653bcc94120d"
+    },
+    {
+      "id": "vine-flower-accent",
+      "collection": "Botanical Frame",
+      "source": "vine-flower-accent.svg",
+      "png": "png/vine-flower-accent.png",
+      "footprint": {
+        "cols": 1,
+        "rows": 1
+      },
+      "rotatable": false,
+      "connectors": [],
+      "size_px": [
+        192,
+        192
+      ],
+      "mode": "RGBA",
+      "alpha_min_max": [
+        0,
+        255
+      ],
+      "bytes": 8174,
+      "sha256": "80ebb34efb11d870d1768240d1c63034b942f5636efdcaa5468af64c45f7cd57"
+    }
+  ]
+}

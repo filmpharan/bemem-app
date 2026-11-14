@@ -1,7 +1,11 @@
 import { memo } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { core, lagoonFonts } from '../../constants/lagoon-theme';
+import { lagoonFonts } from '../../constants/lagoon-theme';
+import { CARD_CORNER_RADIUS } from '../../constants/card-appearance';
 import type { PreviewCard } from '../../types/wallet-ui';
+import { CardArtworkImage } from './CardArtworkImage';
+import { WEB_BRANDS } from '../../lib/card-presentation';
+import { GroupFolderCard } from './GroupFolderCard';
 
 // Fixed DEMO artwork only: never derived from the app's chosen color palette.
 const demoArt: Record<string, { fill: string; light: string; ink: string; mark: string }> = {
@@ -12,9 +16,13 @@ const demoArt: Record<string, { fill: string; light: string; ink: string; mark: 
 };
 
 export const MembershipCard = memo(function MembershipCard({ card }: { card: PreviewCard }) {
+  if(card.kind==='folder')return <GroupFolderCard card={card}/>;
   const art = demoArt[card.id];
+  const image = card.appearance?.artwork?.front;
+  const gradient = WEB_BRANDS.find(brand => brand.id === card.appearance?.gradientPresetId)?.gradient;
   return <View style={[styles.card, { backgroundColor: art?.fill ?? card.colors[0],
-    backgroundImage: art ? undefined : `linear-gradient(135deg, ${card.colors[0]}, ${card.colors[1]})` }]}>
+    backgroundImage: art ? undefined : `linear-gradient(135deg, ${(gradient ?? card.colors).join(', ')})` }, image && styles.imageCard]}>
+    {image && <CardArtworkImage key={image.assetId} image={image} />}
     {art && <>
       <View pointerEvents="none" style={[styles.orb, card.orientation === 'portrait' && styles.portraitOrb, {
         backgroundColor: art.light,
@@ -22,17 +30,18 @@ export const MembershipCard = memo(function MembershipCard({ card }: { card: Pre
       }]} />
       <Text accessible={false} style={[styles.mark, { color: art.ink }]}>{art.mark}</Text>
     </>}
-    <View pointerEvents="none" style={styles.rim} />
-    <Text numberOfLines={3} style={[styles.name, { color: art?.ink ?? '#ffffff' }]}>{card.name}</Text>
+    {!image && <View pointerEvents="none" style={styles.rim} />}
+    <Text numberOfLines={3} style={[styles.name, { color: art?.ink ?? card.appearance?.textColor ?? '#ffffff' }]}>{card.name}</Text>
   </View>;
 });
 
 const styles = StyleSheet.create({
-  card: { flex: 1, overflow: 'hidden', borderRadius: core.radius.card, padding: 10, justifyContent: 'space-between',
+  card: { flex: 1, overflow: 'hidden', borderRadius: CARD_CORNER_RADIUS, padding: 10, justifyContent: 'space-between',
     borderWidth: 1, borderColor: '#ffffff5e', boxShadow: '0 10px 16px -9px #1a6c635c' },
+  imageCard: { borderWidth: 0, backgroundColor: 'transparent', backgroundImage: 'none', boxShadow: '0 10px 16px -9px #2639432b' },
   orb: { position: 'absolute', width: 100, height: 86, right: -34, top: -18, borderRadius: 50, boxShadow: 'inset 5px 7px 12px #ffffff35' },
   portraitOrb: { width: 110, height: 125, right: -38, top: 30, transform: [{ rotate: '30deg' }] },
-  rim: { ...StyleSheet.absoluteFill, borderRadius: core.radius.card, backgroundImage: 'linear-gradient(135deg, #ffffff22, transparent 38%, transparent 70%, #ffffff12)' },
+  rim: { ...StyleSheet.absoluteFill, borderRadius: CARD_CORNER_RADIUS, backgroundImage: 'linear-gradient(135deg, #ffffff22, transparent 38%, transparent 70%, #ffffff12)' },
   mark: { fontSize: 30, lineHeight: 36, fontWeight: '700', fontFamily: lagoonFonts.latin },
   name: { fontSize: 13, lineHeight: 18, fontWeight: '700', fontFamily: lagoonFonts.latin, marginTop: 'auto' },
 });

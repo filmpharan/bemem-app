@@ -1,0 +1,44 @@
+{
+  "task": "Group Folder visual repair",
+  "preservation": {
+    "changed": [
+      "src\\components\\bemem\\GroupFolderCard.tsx",
+      "scripts\\test-group-folder.cjs"
+    ],
+    "added": [
+      "src\\lib\\group-folder-visual.ts",
+      "assets\\group-folders\\lagoon-stack-landscape-back.png",
+      "assets\\group-folders\\lagoon-stack-landscape-front.png",
+      "assets\\group-folders\\lagoon-stack-portrait-back.png",
+      "assets\\group-folders\\lagoon-stack-portrait-front.png"
+    ],
+    "cardFacesUnchanged": true,
+    "decorationsUnchanged": true
+  },
+  "typescript": "passed",
+  "focused": {
+    "passed": 76,
+    "total": 76
+  },
+  "fullRegression": {
+    "passed": 1040,
+    "total": 1040,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newTests": 13,
+  "hermes": {
+    "status": "passed",
+    "path": "output/group-folder-repair-android",
+    "bundle": "entry-b2b62838100218da863018d87e4143e4.hbc"
+  },
+  "lint": "unavailable; no installation attempted",
+  "shells": "4 exact copies of approved B / Lagoon Stack PNG exports",
+  "gapRule": "min(4dp,0.04*min(paintedWidth,paintedHeight))",
+  "review": "output/group-folder-repair/landscape-portrait-review.png",
+  "reviewType": "Pillow composition of production assets and layout; NOT native/browser screenshot",
+  "samsungVerified": false,
+  "realWalletAccessed": false,
+  "dependencyInstalls": false,
+  "commitPushDeploy": false
+}

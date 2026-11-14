@@ -1,0 +1,168 @@
+{
+  "shellLayers": 12,
+  "folderFootprints": [
+    "6x4",
+    "4x6"
+  ],
+  "maxMembers": 6,
+  "maxMiniatures": 4,
+  "countBadge": false,
+  "assets": [
+    {
+      "id": "A-landscape-back",
+      "size": [
+        580,
+        380
+      ],
+      "bytes": 42456,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "realAlpha": true
+    },
+    {
+      "id": "A-landscape-front",
+      "size": [
+        580,
+        380
+      ],
+      "bytes": 2098,
+      "alphaRange": [
+        0,
+        40
+      ],
+      "realAlpha": true
+    },
+    {
+      "id": "A-portrait-back",
+      "size": [
+        380,
+        580
+      ],
+      "bytes": 27188,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "realAlpha": true
+    },
+    {
+      "id": "A-portrait-front",
+      "size": [
+        380,
+        580
+      ],
+      "bytes": 2471,
+      "alphaRange": [
+        0,
+        40
+      ],
+      "realAlpha": true
+    },
+    {
+      "id": "B-landscape-back",
+      "size": [
+        580,
+        380
+      ],
+      "bytes": 29236,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "realAlpha": true
+    },
+    {
+      "id": "B-landscape-front",
+      "size": [
+        580,
+        380
+      ],
+      "bytes": 8648,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "realAlpha": true
+    },
+    {
+      "id": "B-portrait-back",
+      "size": [
+        380,
+        580
+      ],
+      "bytes": 28227,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "realAlpha": true
+    },
+    {
+      "id": "B-portrait-front",
+      "size": [
+        380,
+        580
+      ],
+      "bytes": 9498,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "realAlpha": true
+    },
+    {
+      "id": "C-landscape-back",
+      "size": [
+        580,
+        380
+      ],
+      "bytes": 44660,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "realAlpha": true
+    },
+    {
+      "id": "C-landscape-front",
+      "size": [
+        580,
+        380
+      ],
+      "bytes": 11044,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "realAlpha": true
+    },
+    {
+      "id": "C-portrait-back",
+      "size": [
+        380,
+        580
+      ],
+      "bytes": 25704,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "realAlpha": true
+    },
+    {
+      "id": "C-portrait-front",
+      "size": [
+        380,
+        580
+      ],
+      "bytes": 12361,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "realAlpha": true
+    }
+  ]
+}

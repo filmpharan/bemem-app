@@ -1,0 +1,325 @@
+{
+  "status": "design-preview-only / awaiting visual approval",
+  "masterSize": 1536,
+  "directions": {
+    "A": {
+      "name": "Soft Pastel Minimal",
+      "subtitle": "Quiet contours / open space",
+      "frame": "Pocket Stack"
+    },
+    "B": {
+      "name": "Cozy Cute",
+      "subtitle": "Paper warmth / a little botanical charm",
+      "frame": "Keepsake Pocket"
+    },
+    "C": {
+      "name": "Pearl Gray × Lagoon Glass",
+      "subtitle": "Soft light / a quieter glass fold",
+      "frame": "Pearl Sleeve"
+    }
+  },
+  "colorways": [
+    {
+      "id": "pink",
+      "label": "Pink pastel",
+      "base": "#f4dee2"
+    },
+    {
+      "id": "brown",
+      "label": "Brown pastel",
+      "base": "#e8dfd5"
+    },
+    {
+      "id": "green",
+      "label": "Light green pastel",
+      "base": "#e5edd9"
+    },
+    {
+      "id": "yellow",
+      "label": "Soft yellow pastel",
+      "base": "#f4edd1"
+    },
+    {
+      "id": "blue",
+      "label": "Soft blue pastel",
+      "base": "#deeaf0"
+    },
+    {
+      "id": "purple",
+      "label": "Soft lavender pastel",
+      "base": "#eae2ef"
+    }
+  ],
+  "presets": [
+    {
+      "id": "mini-landscape",
+      "w": 3,
+      "h": 2,
+      "col": 0,
+      "row": 6
+    },
+    {
+      "id": "card-landscape",
+      "w": 6,
+      "h": 4,
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "voucher-landscape",
+      "w": 7,
+      "h": 3,
+      "col": 0,
+      "row": 10
+    },
+    {
+      "id": "boarding-pass-landscape",
+      "w": 8,
+      "h": 4,
+      "col": 0,
+      "row": 15
+    },
+    {
+      "id": "mini-portrait",
+      "w": 2,
+      "h": 3,
+      "col": 4,
+      "row": 6
+    },
+    {
+      "id": "card-portrait",
+      "w": 4,
+      "h": 6,
+      "col": 8,
+      "row": 0
+    },
+    {
+      "id": "vaccine-passport-portrait",
+      "w": 5,
+      "h": 7,
+      "col": 7,
+      "row": 7
+    }
+  ],
+  "paintInset": 0.1,
+  "commonSafeRect": {
+    "x": 274.2857142857142,
+    "y": 451.7647058823529,
+    "width": 987.4285714285716,
+    "height": 632.470588235294
+  },
+  "assets": [
+    {
+      "id": "A-pink",
+      "direction": "A",
+      "color": "pink",
+      "label": "Pink pastel",
+      "svg": "masters/A-pink.svg",
+      "png": "masters/A-pink.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "A-brown",
+      "direction": "A",
+      "color": "brown",
+      "label": "Brown pastel",
+      "svg": "masters/A-brown.svg",
+      "png": "masters/A-brown.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "A-green",
+      "direction": "A",
+      "color": "green",
+      "label": "Light green pastel",
+      "svg": "masters/A-green.svg",
+      "png": "masters/A-green.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "A-yellow",
+      "direction": "A",
+      "color": "yellow",
+      "label": "Soft yellow pastel",
+      "svg": "masters/A-yellow.svg",
+      "png": "masters/A-yellow.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "A-blue",
+      "direction": "A",
+      "color": "blue",
+      "label": "Soft blue pastel",
+      "svg": "masters/A-blue.svg",
+      "png": "masters/A-blue.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "A-purple",
+      "direction": "A",
+      "color": "purple",
+      "label": "Soft lavender pastel",
+      "svg": "masters/A-purple.svg",
+      "png": "masters/A-purple.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "B-pink",
+      "direction": "B",
+      "color": "pink",
+      "label": "Pink pastel",
+      "svg": "masters/B-pink.svg",
+      "png": "masters/B-pink.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "B-brown",
+      "direction": "B",
+      "color": "brown",
+      "label": "Brown pastel",
+      "svg": "masters/B-brown.svg",
+      "png": "masters/B-brown.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "B-green",
+      "direction": "B",
+      "color": "green",
+      "label": "Light green pastel",
+      "svg": "masters/B-green.svg",
+      "png": "masters/B-green.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "B-yellow",
+      "direction": "B",
+      "color": "yellow",
+      "label": "Soft yellow pastel",
+      "svg": "masters/B-yellow.svg",
+      "png": "masters/B-yellow.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "B-blue",
+      "direction": "B",
+      "color": "blue",
+      "label": "Soft blue pastel",
+      "svg": "masters/B-blue.svg",
+      "png": "masters/B-blue.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "B-purple",
+      "direction": "B",
+      "color": "purple",
+      "label": "Soft lavender pastel",
+      "svg": "masters/B-purple.svg",
+      "png": "masters/B-purple.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "C-pink",
+      "direction": "C",
+      "color": "pink",
+      "label": "Pink pastel",
+      "svg": "masters/C-pink.svg",
+      "png": "masters/C-pink.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "C-brown",
+      "direction": "C",
+      "color": "brown",
+      "label": "Brown pastel",
+      "svg": "masters/C-brown.svg",
+      "png": "masters/C-brown.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "C-green",
+      "direction": "C",
+      "color": "green",
+      "label": "Light green pastel",
+      "svg": "masters/C-green.svg",
+      "png": "masters/C-green.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "C-yellow",
+      "direction": "C",
+      "color": "yellow",
+      "label": "Soft yellow pastel",
+      "svg": "masters/C-yellow.svg",
+      "png": "masters/C-yellow.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "C-blue",
+      "direction": "C",
+      "color": "blue",
+      "label": "Soft blue pastel",
+      "svg": "masters/C-blue.svg",
+      "png": "masters/C-blue.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    },
+    {
+      "id": "C-purple",
+      "direction": "C",
+      "color": "purple",
+      "label": "Soft lavender pastel",
+      "svg": "masters/C-purple.svg",
+      "png": "masters/C-purple.png",
+      "width": 1536,
+      "height": 1536,
+      "opaque": true
+    }
+  ],
+  "frameVariants": {
+    "compact": [
+      960,
+      720
+    ],
+    "wide": [
+      1152,
+      560
+    ],
+    "tall": [
+      800,
+      1152
+    ]
+  }
+}

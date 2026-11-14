@@ -1,0 +1,1635 @@
+{
+  "passed": 407,
+  "failed": 0,
+  "scope": "Standalone browser prototype, simulated CSS pixels. No native Samsung, filesystem or Wallet tests.",
+  "results": [
+    {
+      "name": "All local artwork decoded",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 360/A/landscape",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/A/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/A/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/A/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 360/A/portrait",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 360/B/landscape",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/B/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/B/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/B/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 360/B/portrait",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 360/C/landscape",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 360/C/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 360/C/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 360/C/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 360/C/portrait",
+      "passed": true
+    },
+    {
+      "name": "Long title clear of Close 360",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 393/A/landscape",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/A/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/A/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/A/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 393/A/portrait",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 393/B/landscape",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/B/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/B/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/B/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 393/B/portrait",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 393/C/landscape",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 393/C/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 393/C/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 393/C/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 393/C/portrait",
+      "passed": true
+    },
+    {
+      "name": "Long title clear of Close 393",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 412/A/landscape",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/A/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/A/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/A/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 412/A/portrait",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 412/B/landscape",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/B/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/B/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/B/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 412/B/portrait",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/landscape/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/landscape/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/landscape/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/landscape/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/landscape/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/landscape/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/landscape/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 412/C/landscape",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/portrait/0",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/portrait/1",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/portrait/2",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/portrait/3",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/portrait/4",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/portrait/5",
+      "passed": true
+    },
+    {
+      "name": "Canvas 412/C/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet members 412/C/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Sheet shapes 412/C/portrait/6",
+      "passed": true
+    },
+    {
+      "name": "Last member reachable 412/C/portrait",
+      "passed": true
+    },
+    {
+      "name": "Long title clear of Close 412",
+      "passed": true
+    },
+    {
+      "name": "Outside tap closes",
+      "passed": true
+    },
+    {
+      "name": "Escape closes",
+      "passed": true
+    },
+    {
+      "name": "Browser Back closes (native unverified)",
+      "passed": true
+    },
+    {
+      "name": "Seven members rejected",
+      "passed": true
+    },
+    {
+      "name": "No count badge on shells",
+      "passed": true
+    },
+    {
+      "name": "Loaded prototype operates without network",
+      "passed": true
+    },
+    {
+      "name": "Enlarged heading clear of Close",
+      "passed": true
+    }
+  ]
+}

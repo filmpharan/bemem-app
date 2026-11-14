@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-14",
+  "status": "implemented / awaiting Samsung acceptance",
+  "baselineCommit": "c500a015cfc80bd6a63c88d3848562b33f02faa3",
+  "checks": {
+    "typeScript": {
+      "command": "tsc --noEmit",
+      "exitCode": 0
+    },
+    "focused": {
+      "passed": 40,
+      "failed": 0,
+      "log": "output/group-folder-validation/folder.txt"
+    },
+    "regression": {
+      "passed": 1004,
+      "failed": 0,
+      "command": "node --test --test-isolation=none scripts/test-*.cjs",
+      "log": "output/group-folder-validation/regression.txt"
+    },
+    "androidHermes": {
+      "passed": true,
+      "bundle": "output/group-folder-android/_expo/static/js/android/entry-d75a5178595806838c75adffc8776de8.hbc",
+      "bytes": 3925948,
+      "log": "output/group-folder-validation/android-export.txt"
+    },
+    "lint": "Configured package script exists but ESLint CLI is not installed. No dependency installation attempted.",
+    "gitDiffWhitespace": "passed"
+  },
+  "data": {
+    "walletSchemaVersion": 2,
+    "optionalExtension": "canvas.folders version 1",
+    "legacyReads": "No folders property inserted on reads; existing snapshots retained",
+    "realWalletAccess": false,
+    "migrationRun": false,
+    "repositoryOrOwnerDuplicated": false,
+    "existingV2TransactionProtocolChanged": false,
+    "unrelatedAssetsAndPreviewHashes": "unchanged",
+    "packageAndAppConfig": "unchanged"
+  },
+  "sourceChanges": {
+    "changed": [
+      "src\\app\\index.tsx",
+      "src\\components\\bemem\\MembershipCard.tsx",
+      "src\\components\\bemem\\WalletCanvas.tsx",
+      "src\\hooks\\use-wallet-canvas.ts",
+      "src\\lib\\canvas-pages.ts",
+      "src\\lib\\card-editor-state.ts",
+      "src\\lib\\wallet-feature-commands.ts",
+      "src\\lib\\wallet-preparation.ts",
+      "src\\lib\\wallet-production-policy.ts",
+      "src\\lib\\wallet-storage-adapters.ts",
+      "src\\lib\\wallet-validation.ts",
+      "src\\types\\wallet-document.ts",
+      "src\\types\\wallet-ui.ts",
+      "scripts\\test-card-form.cjs"
+    ],
+    "added": [
+      "src\\components\\bemem\\FolderNameSheet.tsx",
+      "src\\components\\bemem\\GroupFolderCard.tsx",
+      "src\\components\\bemem\\GroupFolderSheet.tsx",
+      "src\\lib\\group-folder.ts",
+      "src\\types\\group-folder.ts",
+      "scripts\\test-group-folder.cjs"
+    ]
+  },
+  "documents": [
+    "GROUP-FOLDER-IMPLEMENTATION.md",
+    "GROUP-FOLDER-VALIDATION.json"
+  ],
+  "limitations": [
+    "Native Samsung not tested",
+    "SVG/image decoding, keyboard, safe area, font scale, drop accuracy, modal Back and native restart persistence require device verification",
+    "Ungroup uses deterministic first-free placement without global repacking; it can conservatively reject a crowded canvas",
+    "Native OS crash/multi-process atomicity not newly guaranteed",
+    "Pre-folder strict app readers cannot write new folder snapshots; no downgrade migration provided"
+  ],
+  "commitPushDeploy": false
+}

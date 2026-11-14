@@ -1,3 +1,8 @@
+> **HISTORICAL / SUPERSEDED - CI Phase5 documentation notice (2026-11-13).**
+> This preserved document describes an earlier design/implementation state, not current production instructions.
+> Read the [Current-Approved CI Master](../bemem-lagoon-glass-rc2/BEMEM-CI-CURRENT-APPROVED.md) first; its owner-approved working-tree specification takes precedence.
+> Original contents follow unchanged. Historical token files may still have runtime consumers; this notice does not authorize changing them.
+
 # bemem — Lagoon Glass
 
 **Version 2.0.0-rc.1 · 7 พฤศจิกายน 2026 · รออนุมัติรายละเอียดก่อน Implementation**

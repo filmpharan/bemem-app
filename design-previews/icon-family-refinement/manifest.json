@@ -1,0 +1,129 @@
+{
+  "targets": [
+    {
+      "id": "delete",
+      "svg": "svg/delete.svg",
+      "png": "png/delete.png",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2,
+      "ink": "#263943",
+      "note": "A separated lid, tapered bin and two slots distinguish a trash can from a generic container. Keep destructive confirmation and action text.",
+      "bytes": 310,
+      "sha256": "324f0175e6a235d6dc6f807432d61de9181ca0d7dad9cecc9824dafddb3c3659"
+    },
+    {
+      "id": "rotate",
+      "svg": "svg/rotate.svg",
+      "png": "png/rotate.png",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2,
+      "ink": "#263943",
+      "note": "A larger circular return and integrated arrowhead make the turn direction explicit; the inner right angle refers to the existing90-degree step, not Undo/Redo.",
+      "bytes": 330,
+      "sha256": "517cae3cabc04ab0cdf03e34f3421cd2aa30fa6a1622c2b3e312bf3bf4db50e3"
+    },
+    {
+      "id": "edit",
+      "svg": "svg/edit.svg",
+      "png": "png/edit.png",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2,
+      "ink": "#263943",
+      "note": "A familiar pencil entering a partial page/card adds a clear object-being-modified cue, instead of relying on the isolated diagonal shape.",
+      "bytes": 331,
+      "sha256": "dc38e9ade8c4bcbfc41f81c3fb825cba8a43cdc60efa638927e20c36feb1172c"
+    },
+    {
+      "id": "add-card",
+      "svg": "svg/add-card.svg",
+      "png": "png/add-card.png",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2,
+      "ink": "#263943",
+      "note": "A wide rounded card plus a clear addition mark; the short identity line distinguishes it from Add Image. It does not change the existing Create/Add navigation.",
+      "bytes": 291,
+      "sha256": "73eb525e7f0c376965b807643c1897a7fc22a5d46b3b08365c9f208d0a70dac7"
+    },
+    {
+      "id": "decorate",
+      "svg": "svg/decorate.svg",
+      "png": "png/decorate.png",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2,
+      "ink": "#263943",
+      "note": "Card-specific adjustment controls suggest styling/customization rather than drawing. Settings is still a possible interpretation, so retain the Decorate label.",
+      "bytes": 367,
+      "sha256": "c7f1c893494dbd426e87e55093f361f92d0e7612ca82fbb8000ca3feaa4f8df9"
+    },
+    {
+      "id": "policy",
+      "svg": "svg/policy.svg",
+      "png": "png/policy.png",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2,
+      "ink": "#263943",
+      "note": "A document with two rule/check lines communicates policy information. The checks are a document metaphor, not acceptance or a new consent flow.",
+      "bytes": 334,
+      "sha256": "f3a466a5e62d2e5de8a7a0a7b8f2e79d845d1880d98e38d89642819b7a3553eb"
+    },
+    {
+      "id": "login",
+      "svg": "svg/login.svg",
+      "png": "png/login.png",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2,
+      "ink": "#263943",
+      "note": "An inward arrow entering a rounded door is a conventional sign-in cue, clearly distinct from the Account portrait. Keep Login text and current Coming Soon behavior.",
+      "bytes": 276,
+      "sha256": "2211135c521a1d3b9df5f14bf047a3e5644f626536c7137deac8a330797a602b"
+    }
+  ],
+  "references": [
+    "camera",
+    "flip",
+    "share",
+    "close",
+    "search",
+    "account"
+  ],
+  "before": [
+    "edit",
+    "delete",
+    "rotate"
+  ]
+}

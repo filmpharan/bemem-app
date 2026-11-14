@@ -1,0 +1,23 @@
+<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>bemem · Original UI parity review</title><link rel="icon" href="data:,"><style>
+*{box-sizing:border-box}body{margin:0;padding:28px;background:#edf0f3;color:#18202b;font:15px/1.65 system-ui,sans-serif}main{max-width:1100px;margin:auto}h1{font-size:26px;margin:0 0 10px}h2{font-size:18px}a{color:#334f69}nav{display:flex;flex-wrap:wrap;gap:18px;margin:18px 0 26px}.columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}article{background:white;border:1px solid #d5dce3;border-radius:16px;padding:18px}article p{font-size:13px}img{width:100%;height:auto;border-radius:12px;border:1px solid #d5dce3}table{border-collapse:collapse;width:100%;margin-top:28px;background:white}td,th{padding:12px;border:1px solid #d5dce3;text-align:left;vertical-align:top}th{background:#e2e7ec}.note{padding:12px 16px;background:#fff;border-left:4px solid #768c9c;font-size:14px}.table-scroll{overflow:auto}code{overflow-wrap:anywhere}@media(max-width:800px){body{padding:18px}.columns{grid-template-columns:1fr}img{max-width:360px;display:block;margin:auto}}
+</style></head><body><main>
+<h1>bemem — Original Add Card reconstruction</h1>
+<p>ใช้โครงสร้างและสัดส่วนจาก Source เว็บเดิม ไม่ได้เปลี่ยน Design System หรือแก้ Expo App</p>
+<p class="note">ยังไม่ได้รับ Screenshot ต้นฉบับหรือ Screenshot React Native จาก Samsung ในข้อความนี้ ภาพ A จึงเป็นการถอด Source ลง HTML ไม่ใช่ภาพเว็บที่เปิดจริง ส่วน B เป็นการวิเคราะห์โค้ดปัจจุบัน ไม่สร้างภาพที่อ้างว่าเป็นผลจากโทรศัพท์</p>
+<nav><a href="index.html">เปิด Draft แบบ Sticky Footer</a><a href="index.html?footer=source">เปิด Footer ตาม Source</a><a href="UI_REVERSE_ENGINEERING.md">รายละเอียดจาก Source</a><a href="UI_PARITY_CHECKLIST.md">Parity checklist</a></nav>
+<div class="columns">
+<article><h2>A · Source reconstruction</h2><p>360×800 CSS px · Footer ไหลตามฟอร์ม ตามโครงสร้างเว็บที่ตรวจพบ ใช้ Font fallback ตามที่ระบุในเอกสาร</p><a href="index.html?footer=source"><img src="output/playwright/source-flow-360x800.png" alt="Source-derived Add Card layout at 360 by 800, with normal footer flow"></a></article>
+<article><h2>B · React Native ปัจจุบัน</h2><p>ไม่มี Screenshot ที่ยืนยันจาก Samsung ในรอบนี้</p><ul><li>Tools เป็นปุ่มข้อความอย่างน้อย 48px</li><li>Country และ Brand แยกเป็นหลายแถว</li><li>Brand suggestions เป็นชุดปุ่ม 6 รายการ</li><li>ฟอร์ม Gap 14px, Input ขั้นต่ำ 52px</li><li>มี Development banner และข้อความเทคนิคหลายส่วน</li><li>Preview อิงพื้นที่ยืดหยุ่น ไม่ใช่ 2/3 แบบเว็บ</li></ul><p>อ้างอิง <code>AddCardForm.tsx</code>, <code>AddCardSheet.tsx</code>, <code>CardAppearancePreview.tsx</code> และ <code>dev-add-card.tsx</code> ซึ่งไม่ได้แก้ในรอบนี้</p></article>
+<article><h2>C · Draft ใหม่</h2><p>360×800 CSS px · สัดส่วนจาก Source พร้อม Sticky Footer ตามคำขอ ไม่มี Development banner ในฟอร์ม</p><a href="index.html"><img src="output/playwright/draft-360x800.png" alt="Reconstructed draft at 360 by 800 with compact preview, vertical icons and sticky Add Card action"></a></article>
+</div>
+<div class="table-scroll"><table><thead><tr><th>องค์ประกอบ</th><th>A · เว็บ Source</th><th>B · Native ปัจจุบัน</th><th>C · Draft</th></tr></thead><tbody>
+<tr><td>Sheet</td><td>Max 92%, padding 20, radius 22</td><td>Max 92%, Header/body/footer แยก</td><td>ค่าหลักจาก Source</td></tr>
+<tr><td>Preview / Tools</td><td>2/3; 1.586; Icon 16 บนปุ่ม 36</td><td>Flex basis 200; ปุ่มข้อความ</td><td>2/3; 1.586; SVG เดิม 16/36</td></tr>
+<tr><td>Typography</td><td>Plus Jakarta Sans; H18/800, body14</td><td>Manrope; field16, heading20</td><td>กำหนด Font เดิม; ใช้ Arial fallback เมื่อไม่มี Font ในเครื่อง</td></tr>
+<tr><td>Density</td><td>Gap12, Country + Brand แถวเดียว, Input44 โดยคำนวณ</td><td>Gap14, Input52 และคำอธิบาย</td><td>Gap12, แถว Country/Brand เดียว, Input44</td></tr>
+<tr><td>Footer</td><td>Normal flow, h44</td><td>อยู่นอก Scroll body</td><td>CSS sticky ภายใน Scroll; source-flow toggle</td></tr>
+<tr><td>Responsive</td><td>Full screen; ≥640px Phone400×860 สูงไม่เกิน92vh</td><td>Native flexible width, max600</td><td>ตาม Source; ยังต้องเทียบ Screenshot และคีย์บอร์ดจริง</td></tr>
+</tbody></table></div>
+<h2>ภาพเพิ่มเติม</h2><p><a href="output/playwright/draft-412x915.png">Draft 412×915 PNG</a> · <a href="index.html">เปิดแบบกรอกข้อมูลและสลับด้านเพื่อดู Layout</a></p>
+<p>Visual draft เท่านั้น · Add Card ไม่บันทึก · Image/Camera ปิดใช้งาน · ไม่มี QR/Barcode จำลอง · ไม่มี Network/Storage</p>
+</main></body></html>

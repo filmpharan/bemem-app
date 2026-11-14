@@ -1,0 +1,147 @@
+{
+  "task": "Add Card default artwork reliability and performance repair",
+  "validation": {
+    "typescript": "passed",
+    "focused": {
+      "passed": 28,
+      "total": 28
+    },
+    "regression": {
+      "passed": 1027,
+      "total": 1027,
+      "failed": 0,
+      "skipped": 0
+    },
+    "hermes": {
+      "status": "passed",
+      "directory": "output/artwork-repair-android",
+      "bundle": "entry-9989f63050862d815f5d42c8037f1b18.hbc"
+    },
+    "lint": "Not run: ESLint executable/configuration unavailable; no installation attempted.",
+    "staticAssets": {
+      "decodedPngs": 14,
+      "width": 1536,
+      "height": 1536,
+      "totalEncodedBytes": 17080635,
+      "manifestChecksums": "passed"
+    }
+  },
+  "preservation": {
+    "changed": [
+      "src\\components\\bemem\\AddCardEditor.tsx",
+      "src\\components\\bemem\\AddCardForm.tsx",
+      "src\\components\\bemem\\CardArtworkImage.tsx",
+      "src\\constants\\default-card-artwork.ts",
+      "src\\lib\\card-artwork-store.ts",
+      "src\\lib\\default-card-artwork-assets.ts",
+      "src\\lib\\default-card-artwork-native.ts",
+      "scripts\\prepare-default-card-artwork.py",
+      "scripts\\test-default-card-artwork.cjs",
+      "assets\\card-faces\\MANIFEST.json"
+    ],
+    "added": [
+      "src\\lib\\artwork-performance.ts",
+      "assets\\card-faces\\art-bemem-spm1-back-orange.png"
+    ],
+    "original13": [
+      {
+        "path": "assets\\card-faces\\art-bemem-lg2-front-blush-pink.png",
+        "unchanged": true
+      },
+      {
+        "path": "assets\\card-faces\\art-bemem-lg2-front-coral-orange.png",
+        "unchanged": true
+      },
+      {
+        "path": "assets\\card-faces\\art-bemem-lg2-front-dream-purple.png",
+        "unchanged": true
+      },
+      {
+        "path": "assets\\card-faces\\art-bemem-lg2-front-fresh-green.png",
+        "unchanged": true
+      },
+      {
+        "path": "assets\\card-faces\\art-bemem-lg2-front-golden-yellow.png",
+        "unchanged": true
+      },
+      {
+        "path": "assets\\card-faces\\art-bemem-lg2-front-sky-blue.png",
+        "unchanged": true
+      },
+      {
+        "path": "assets\\card-faces\\art-bemem-lg2-front-warm-brown.png",
+        "unchanged": true
+      },
+      {
+        "path": "assets\\card-faces\\art-bemem-spm1-back-blue.png",
+        "unchanged": true
+      },
+      {
+        "path": "assets\\card-faces\\art-bemem-spm1-back-brown.png",
+        "unchanged": true
+      },
+      {
+        "path": "assets\\card-faces\\art-bemem-spm1-back-green.png",
+        "unchanged": true
+      },
+      {
+        "path": "assets\\card-faces\\art-bemem-spm1-back-pink.png",
+        "unchanged": true
+      },
+      {
+        "path": "assets\\card-faces\\art-bemem-spm1-back-purple.png",
+        "unchanged": true
+      },
+      {
+        "path": "assets\\card-faces\\art-bemem-spm1-back-yellow.png",
+        "unchanged": true
+      }
+    ]
+  },
+  "performance": {
+    "environment": "Windows Node; mocked native Asset/FileSystem; real public PNG read/hash; NOT Samsung measurements",
+    "selectionMs": 0.0592,
+    "resolutionMs": 0.0124,
+    "coldPreparationMs": 6.0839,
+    "cachedRevalidationMs": 2.5132,
+    "coldPair": {
+      "downloads": 2,
+      "copies": 2
+    },
+    "threeConcurrentSamePair": {
+      "downloads": 2,
+      "copies": 2
+    },
+    "twentyUnchangedRerendersIo": 0,
+    "nativeFirstVisibleMs": null,
+    "samsungBeforeAfter": null
+  },
+  "pairings": {
+    "Blush Pink": "Pink",
+    "Warm Brown": "Brown",
+    "Fresh Green": "Green",
+    "Golden Yellow": "Yellow",
+    "Sky Blue": "Blue",
+    "Dream Purple": "Purple",
+    "Coral Orange": "Orange"
+  },
+  "newArtwork": {
+    "source": "design-previews/soft-pastel-minimal-orange-back/masters/A-orange.svg",
+    "png": "assets/card-faces/art-bemem-spm1-back-orange.png",
+    "comparison": "design-previews/soft-pastel-minimal-orange-back/seven-back-comparison.png"
+  },
+  "safety": {
+    "savedCardReferencesRewritten": false,
+    "walletMigration": false,
+    "phoneDataAccessed": false,
+    "dependenciesInstalled": false,
+    "commitPushDeploy": false
+  },
+  "remainingDeviceChecks": [
+    "First-visible native latency, cache/memory pressure and actual stale bitmap behavior",
+    "Gallery/camera/crop priority and Cancel/Back rapid reopen",
+    "Seven footprints and Front/Back stability",
+    "Save/reopen/restart/offline and native Share output",
+    "Existing Coral/Brown saved cards and approved Group Folder preservation"
+  ]
+}

@@ -1,0 +1,1124 @@
+{
+  "groups": [
+    {
+      "id": "pets",
+      "name": "Pet & Care",
+      "prefix": "pet",
+      "focal": [
+        "Sleepy rabbit curled around a carrot",
+        "Round guinea pig with one cream ear patch",
+        "Gentle turtle carrying a tiny leaf",
+        "Hamster peeking from a teacup shaped nest",
+        "Small bird resting on a rounded perch",
+        "Kitten stretching both front paws",
+        "Puppy hugging a soft bone toy"
+      ],
+      "mini": [
+        "Tiny dog biscuit bone with bite marks",
+        "Cat food bowl with three kibbles",
+        "Soft pet brush with rounded wooden handle",
+        "Little yarn ball with a loose curled tail",
+        "Bell on a short fabric collar loop",
+        "Folded pet blanket with one stitched patch",
+        "Small pet shampoo bottle with paw drawing",
+        "Feather teaser toy on a short curved wand",
+        "Tiny carrier basket with cozy cushion",
+        "Heart shaped name tag with loop"
+      ],
+      "accent": [
+        "Pair of differently sized walking paw impressions",
+        "Three whisker strokes surrounding a blush nose",
+        "Single floppy puppy ear silhouette with tuft",
+        "Soft fish shaped cat toy with stitched eye",
+        "Warm fleece cushion shaped like a crescent",
+        "Tiny chew rope tied into two knots",
+        "Two tucked rabbit footprints in a trail",
+        "Pet care ribbon with a tiny plaster motif"
+      ],
+      "existingFocal": [
+        "pet-cat",
+        "pet-dog",
+        "pet-paw"
+      ]
+    },
+    {
+      "id": "travel",
+      "name": "Travel Diary",
+      "prefix": "travel",
+      "focal": [
+        "Tiny camper van with a cozy window",
+        "Cozy train engine with rounded front",
+        "Small sailboat with a patchwork sail",
+        "Mountain peak with little trail flag",
+        "Camera with a warm round lens and strap",
+        "Folded travel map with a winding trail",
+        "Hot air balloon with a tiny woven basket"
+      ],
+      "mini": [
+        "Passport booklet with leaf emblem no words",
+        "Rolled sleeping bag with two straps",
+        "Small hiking boot with rounded laces",
+        "Compass with a simple four point rose",
+        "Binoculars with soft sky blue barrels",
+        "Postcard with tiny mountain vignette",
+        "Round travel canteen and loop",
+        "Ticket stub with scalloped torn ends",
+        "Sun hat with sage band and folded brim",
+        "Folded beach parasol with wood handle"
+      ],
+      "accent": [
+        "Twin pebble cairn on a gentle curve",
+        "Three different cloud puffs in a small arch",
+        "A little airplane vapour curl shaped like a loop",
+        "Tiny seashell with five rounded ridges",
+        "Travel stamp shaped patch with a sail vignette",
+        "Two linked luggage label loops",
+        "Curving beach wave with a tiny foam crest",
+        "Small trail signpost with two blank wooden arrows"
+      ],
+      "existingFocal": [
+        "travel-suitcase",
+        "travel-plane",
+        "travel-cloud"
+      ]
+    },
+    {
+      "id": "wellness",
+      "name": "Wellness",
+      "prefix": "wellness",
+      "focal": [
+        "Rolled yoga mat tied with a fabric strap",
+        "Lit candle in a tiny ceramic dish",
+        "Gentle watering can holding a leafy stem",
+        "Cozy hot water bottle with knitted sleeve",
+        "Small lavender pot with three flower spikes",
+        "Bath sponge and shallow wooden soap dish",
+        "Open gratitude journal with a pressed leaf no text"
+      ],
+      "mini": [
+        "Tiny pear shaped aromatherapy bottle",
+        "Smooth massage stone with subtle cream vein",
+        "Soft sleep eye mask with folded elastic",
+        "Wooden hair comb with rounded teeth",
+        "Little fabric sachet tied with twine",
+        "Three rounded bath salt crystals in a scoop",
+        "Small ceramic incense holder with one curl",
+        "Single folded face towel with sage border",
+        "Tiny reusable water bottle with loop cap",
+        "A rounded herbal capsule shaped soap bar"
+      ],
+      "accent": [
+        "Asymmetric fern frond with five little leaves",
+        "Pair of rounded eucalyptus leaves on a fork",
+        "Sprig of tiny lavender buds with a bent stem",
+        "Little clover shaped four leaf plant",
+        "Two smooth pebbles and a single grass shoot",
+        "Simple morning sun disk behind one leaf",
+        "One tiny raindrop cradled by a leaf"
+      ],
+      "existingFocal": [
+        "wellness-flower",
+        "wellness-leaf",
+        "wellness-teacup"
+      ]
+    },
+    {
+      "id": "cafe",
+      "name": "Café Day",
+      "prefix": "cafe",
+      "focal": [
+        "Tiny strawberry tart on a scalloped paper liner",
+        "Coffee grinder with wooden handle and drawer",
+        "Cozy moka pot with rounded octagonal body",
+        "Little teapot with a biscuit lid",
+        "Cinnamon roll with a simple cream spiral",
+        "Thick toast slice with a small butter pat",
+        "Cute squat milk pitcher with one pouring lip"
+      ],
+      "mini": [
+        "Espresso tamper with mushroom shaped wood grip",
+        "Two roasted coffee beans in a paper scoop",
+        "Tiny cupcake with a warm blush frosting cap",
+        "Wrapped sugar cube with twisted paper ends",
+        "Small rounded jam jar with gingham lid",
+        "Cafe spoon with one cream coffee drop",
+        "Tea bag pouch with string and blank tag",
+        "Little stack of two macarons with uneven edges",
+        "Small scone with a single cream split",
+        "A paper coffee filter folded into a soft cone"
+      ],
+      "accent": [
+        "One coffee steam curl ending in a heart",
+        "Tiny checkered cafe napkin folded diagonally",
+        "Single oval biscotti with three almond pieces",
+        "Small cocoa dust rosette with four organic petals",
+        "Little splash of milk shaped like a flowing ribbon",
+        "Pair of leaves around a single cocoa pod",
+        "Cafe order clip holding a blank round card"
+      ],
+      "existingFocal": [
+        "cafe-coffee",
+        "cafe-cookie",
+        "cafe-croissant"
+      ]
+    },
+    {
+      "id": "shopping",
+      "name": "Shopping & Gifts",
+      "prefix": "shopping",
+      "focal": [
+        "Cozy woven market basket with a fabric lining",
+        "Small parcel wrapped in brown paper and twine",
+        "Tiny rounded mailbox holding a gift envelope",
+        "Fabric tote with a daisy stitched pocket",
+        "Small bouquet wrapped in muted cream paper",
+        "Round hatbox with a soft tied ribbon",
+        "Little wooden toy bear sitting beside a blank tag"
+      ],
+      "mini": [
+        "Pair of little paper gift tags tied together",
+        "Short roll of wrapping paper with folded end",
+        "Tiny wooden clothes peg with a blush spring",
+        "Scalloped greeting card with a heart cutout",
+        "Mini fabric coin purse with a kiss lock",
+        "Rounded reusable shopping trolley basket",
+        "Little spool of gift twine with one loose end",
+        "Soft knitted mitten with a decorative patch",
+        "Small velvet ring box with a simple flower inside",
+        "Tiny wax seal spoon with a rounded handle"
+      ],
+      "accent": [
+        "Asymmetric paper confetti trio with different shapes",
+        "Small folded ribbon rosette with a cream center",
+        "Gift wrap paper corner with a tiny scallop fold",
+        "A little bow shaped paperclip in warm cocoa",
+        "Two curled ribbon tails joined by a small knot",
+        "Tiny perforated kraft label with a leaf drawing",
+        "A soft zigzag tissue paper tuft"
+      ],
+      "existingFocal": [
+        "shopping-bag",
+        "shopping-gift",
+        "shopping-bow"
+      ]
+    },
+    {
+      "id": "savings",
+      "name": "Little Savings",
+      "prefix": "savings",
+      "focal": [
+        "Little glass savings jar with three visible coins",
+        "Rounded coin pouch with a friendly stitched face",
+        "Tiny ceramic lucky house with a coin slot",
+        "Small wooden treasure chest with soft hinges",
+        "Cozy calculator with big rounded blank keys",
+        "A little seedling growing from a terracotta savings pot",
+        "Tiny piggy bank sleeping under a folded cloth"
+      ],
+      "mini": [
+        "Single savings envelope sealed with a leaf",
+        "Three coins stacked with visibly different rim sizes",
+        "Small wooden abacus with two curved rods",
+        "Tiny purse clasp with two rounded metal beads",
+        "Little passbook booklet with a blank rounded label",
+        "Piggy bank stopper with a short cork stem",
+        "A small measuring scoop holding one coin",
+        "Soft fabric budget divider with three tabs no text",
+        "Tiny key for a rounded money box",
+        "A little ceramic coin dish shaped like a leaf"
+      ],
+      "accent": [
+        "A coin rolling with a short curved motion trail",
+        "Two little acorns with different caps",
+        "A tiny stitched pocket patch with a loose thread",
+        "Small seed pod opening around a butter seed",
+        "A smooth pebble with a little hand drawn star",
+        "Tiny linked loops of a purse chain",
+        "A little clinking pair of washer shaped tokens"
+      ],
+      "existingFocal": [
+        "savings-piggy",
+        "savings-coin",
+        "savings-wallet"
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "pet-focal-04",
+      "collection": "pets",
+      "category": "focal",
+      "subject": "Sleepy rabbit curled around a carrot"
+    },
+    {
+      "id": "pet-focal-05",
+      "collection": "pets",
+      "category": "focal",
+      "subject": "Round guinea pig with one cream ear patch"
+    },
+    {
+      "id": "pet-focal-06",
+      "collection": "pets",
+      "category": "focal",
+      "subject": "Gentle turtle carrying a tiny leaf"
+    },
+    {
+      "id": "pet-focal-07",
+      "collection": "pets",
+      "category": "focal",
+      "subject": "Hamster peeking from a teacup shaped nest"
+    },
+    {
+      "id": "pet-focal-08",
+      "collection": "pets",
+      "category": "focal",
+      "subject": "Small bird resting on a rounded perch"
+    },
+    {
+      "id": "pet-focal-09",
+      "collection": "pets",
+      "category": "focal",
+      "subject": "Kitten stretching both front paws"
+    },
+    {
+      "id": "pet-focal-10",
+      "collection": "pets",
+      "category": "focal",
+      "subject": "Puppy hugging a soft bone toy"
+    },
+    {
+      "id": "pet-mini-01",
+      "collection": "pets",
+      "category": "mini",
+      "subject": "Tiny dog biscuit bone with bite marks"
+    },
+    {
+      "id": "pet-mini-02",
+      "collection": "pets",
+      "category": "mini",
+      "subject": "Cat food bowl with three kibbles"
+    },
+    {
+      "id": "pet-mini-03",
+      "collection": "pets",
+      "category": "mini",
+      "subject": "Soft pet brush with rounded wooden handle"
+    },
+    {
+      "id": "pet-mini-04",
+      "collection": "pets",
+      "category": "mini",
+      "subject": "Little yarn ball with a loose curled tail"
+    },
+    {
+      "id": "pet-mini-05",
+      "collection": "pets",
+      "category": "mini",
+      "subject": "Bell on a short fabric collar loop"
+    },
+    {
+      "id": "pet-mini-06",
+      "collection": "pets",
+      "category": "mini",
+      "subject": "Folded pet blanket with one stitched patch"
+    },
+    {
+      "id": "pet-mini-07",
+      "collection": "pets",
+      "category": "mini",
+      "subject": "Small pet shampoo bottle with paw drawing"
+    },
+    {
+      "id": "pet-mini-08",
+      "collection": "pets",
+      "category": "mini",
+      "subject": "Feather teaser toy on a short curved wand"
+    },
+    {
+      "id": "pet-mini-09",
+      "collection": "pets",
+      "category": "mini",
+      "subject": "Tiny carrier basket with cozy cushion"
+    },
+    {
+      "id": "pet-mini-10",
+      "collection": "pets",
+      "category": "mini",
+      "subject": "Heart shaped name tag with loop"
+    },
+    {
+      "id": "pet-accent-01",
+      "collection": "pets",
+      "category": "accent",
+      "subject": "Pair of differently sized walking paw impressions"
+    },
+    {
+      "id": "pet-accent-02",
+      "collection": "pets",
+      "category": "accent",
+      "subject": "Three whisker strokes surrounding a blush nose"
+    },
+    {
+      "id": "pet-accent-03",
+      "collection": "pets",
+      "category": "accent",
+      "subject": "Single floppy puppy ear silhouette with tuft"
+    },
+    {
+      "id": "pet-accent-04",
+      "collection": "pets",
+      "category": "accent",
+      "subject": "Soft fish shaped cat toy with stitched eye"
+    },
+    {
+      "id": "pet-accent-05",
+      "collection": "pets",
+      "category": "accent",
+      "subject": "Warm fleece cushion shaped like a crescent"
+    },
+    {
+      "id": "pet-accent-06",
+      "collection": "pets",
+      "category": "accent",
+      "subject": "Tiny chew rope tied into two knots"
+    },
+    {
+      "id": "pet-accent-07",
+      "collection": "pets",
+      "category": "accent",
+      "subject": "Two tucked rabbit footprints in a trail"
+    },
+    {
+      "id": "pet-accent-08",
+      "collection": "pets",
+      "category": "accent",
+      "subject": "Pet care ribbon with a tiny plaster motif"
+    },
+    {
+      "id": "travel-focal-04",
+      "collection": "travel",
+      "category": "focal",
+      "subject": "Tiny camper van with a cozy window"
+    },
+    {
+      "id": "travel-focal-05",
+      "collection": "travel",
+      "category": "focal",
+      "subject": "Cozy train engine with rounded front"
+    },
+    {
+      "id": "travel-focal-06",
+      "collection": "travel",
+      "category": "focal",
+      "subject": "Small sailboat with a patchwork sail"
+    },
+    {
+      "id": "travel-focal-07",
+      "collection": "travel",
+      "category": "focal",
+      "subject": "Mountain peak with little trail flag"
+    },
+    {
+      "id": "travel-focal-08",
+      "collection": "travel",
+      "category": "focal",
+      "subject": "Camera with a warm round lens and strap"
+    },
+    {
+      "id": "travel-focal-09",
+      "collection": "travel",
+      "category": "focal",
+      "subject": "Folded travel map with a winding trail"
+    },
+    {
+      "id": "travel-focal-10",
+      "collection": "travel",
+      "category": "focal",
+      "subject": "Hot air balloon with a tiny woven basket"
+    },
+    {
+      "id": "travel-mini-01",
+      "collection": "travel",
+      "category": "mini",
+      "subject": "Passport booklet with leaf emblem no words"
+    },
+    {
+      "id": "travel-mini-02",
+      "collection": "travel",
+      "category": "mini",
+      "subject": "Rolled sleeping bag with two straps"
+    },
+    {
+      "id": "travel-mini-03",
+      "collection": "travel",
+      "category": "mini",
+      "subject": "Small hiking boot with rounded laces"
+    },
+    {
+      "id": "travel-mini-04",
+      "collection": "travel",
+      "category": "mini",
+      "subject": "Compass with a simple four point rose"
+    },
+    {
+      "id": "travel-mini-05",
+      "collection": "travel",
+      "category": "mini",
+      "subject": "Binoculars with soft sky blue barrels"
+    },
+    {
+      "id": "travel-mini-06",
+      "collection": "travel",
+      "category": "mini",
+      "subject": "Postcard with tiny mountain vignette"
+    },
+    {
+      "id": "travel-mini-07",
+      "collection": "travel",
+      "category": "mini",
+      "subject": "Round travel canteen and loop"
+    },
+    {
+      "id": "travel-mini-08",
+      "collection": "travel",
+      "category": "mini",
+      "subject": "Ticket stub with scalloped torn ends"
+    },
+    {
+      "id": "travel-mini-09",
+      "collection": "travel",
+      "category": "mini",
+      "subject": "Sun hat with sage band and folded brim"
+    },
+    {
+      "id": "travel-mini-10",
+      "collection": "travel",
+      "category": "mini",
+      "subject": "Folded beach parasol with wood handle"
+    },
+    {
+      "id": "travel-accent-01",
+      "collection": "travel",
+      "category": "accent",
+      "subject": "Twin pebble cairn on a gentle curve"
+    },
+    {
+      "id": "travel-accent-02",
+      "collection": "travel",
+      "category": "accent",
+      "subject": "Three different cloud puffs in a small arch"
+    },
+    {
+      "id": "travel-accent-03",
+      "collection": "travel",
+      "category": "accent",
+      "subject": "A little airplane vapour curl shaped like a loop"
+    },
+    {
+      "id": "travel-accent-04",
+      "collection": "travel",
+      "category": "accent",
+      "subject": "Tiny seashell with five rounded ridges"
+    },
+    {
+      "id": "travel-accent-05",
+      "collection": "travel",
+      "category": "accent",
+      "subject": "Travel stamp shaped patch with a sail vignette"
+    },
+    {
+      "id": "travel-accent-06",
+      "collection": "travel",
+      "category": "accent",
+      "subject": "Two linked luggage label loops"
+    },
+    {
+      "id": "travel-accent-07",
+      "collection": "travel",
+      "category": "accent",
+      "subject": "Curving beach wave with a tiny foam crest"
+    },
+    {
+      "id": "travel-accent-08",
+      "collection": "travel",
+      "category": "accent",
+      "subject": "Small trail signpost with two blank wooden arrows"
+    },
+    {
+      "id": "wellness-focal-04",
+      "collection": "wellness",
+      "category": "focal",
+      "subject": "Rolled yoga mat tied with a fabric strap"
+    },
+    {
+      "id": "wellness-focal-05",
+      "collection": "wellness",
+      "category": "focal",
+      "subject": "Lit candle in a tiny ceramic dish"
+    },
+    {
+      "id": "wellness-focal-06",
+      "collection": "wellness",
+      "category": "focal",
+      "subject": "Gentle watering can holding a leafy stem"
+    },
+    {
+      "id": "wellness-focal-07",
+      "collection": "wellness",
+      "category": "focal",
+      "subject": "Cozy hot water bottle with knitted sleeve"
+    },
+    {
+      "id": "wellness-focal-08",
+      "collection": "wellness",
+      "category": "focal",
+      "subject": "Small lavender pot with three flower spikes"
+    },
+    {
+      "id": "wellness-focal-09",
+      "collection": "wellness",
+      "category": "focal",
+      "subject": "Bath sponge and shallow wooden soap dish"
+    },
+    {
+      "id": "wellness-focal-10",
+      "collection": "wellness",
+      "category": "focal",
+      "subject": "Open gratitude journal with a pressed leaf no text"
+    },
+    {
+      "id": "wellness-mini-01",
+      "collection": "wellness",
+      "category": "mini",
+      "subject": "Tiny pear shaped aromatherapy bottle"
+    },
+    {
+      "id": "wellness-mini-02",
+      "collection": "wellness",
+      "category": "mini",
+      "subject": "Smooth massage stone with subtle cream vein"
+    },
+    {
+      "id": "wellness-mini-03",
+      "collection": "wellness",
+      "category": "mini",
+      "subject": "Soft sleep eye mask with folded elastic"
+    },
+    {
+      "id": "wellness-mini-04",
+      "collection": "wellness",
+      "category": "mini",
+      "subject": "Wooden hair comb with rounded teeth"
+    },
+    {
+      "id": "wellness-mini-05",
+      "collection": "wellness",
+      "category": "mini",
+      "subject": "Little fabric sachet tied with twine"
+    },
+    {
+      "id": "wellness-mini-06",
+      "collection": "wellness",
+      "category": "mini",
+      "subject": "Three rounded bath salt crystals in a scoop"
+    },
+    {
+      "id": "wellness-mini-07",
+      "collection": "wellness",
+      "category": "mini",
+      "subject": "Small ceramic incense holder with one curl"
+    },
+    {
+      "id": "wellness-mini-08",
+      "collection": "wellness",
+      "category": "mini",
+      "subject": "Single folded face towel with sage border"
+    },
+    {
+      "id": "wellness-mini-09",
+      "collection": "wellness",
+      "category": "mini",
+      "subject": "Tiny reusable water bottle with loop cap"
+    },
+    {
+      "id": "wellness-mini-10",
+      "collection": "wellness",
+      "category": "mini",
+      "subject": "A rounded herbal capsule shaped soap bar"
+    },
+    {
+      "id": "wellness-accent-02",
+      "collection": "wellness",
+      "category": "accent",
+      "subject": "Asymmetric fern frond with five little leaves"
+    },
+    {
+      "id": "wellness-accent-03",
+      "collection": "wellness",
+      "category": "accent",
+      "subject": "Pair of rounded eucalyptus leaves on a fork"
+    },
+    {
+      "id": "wellness-accent-04",
+      "collection": "wellness",
+      "category": "accent",
+      "subject": "Sprig of tiny lavender buds with a bent stem"
+    },
+    {
+      "id": "wellness-accent-05",
+      "collection": "wellness",
+      "category": "accent",
+      "subject": "Little clover shaped four leaf plant"
+    },
+    {
+      "id": "wellness-accent-06",
+      "collection": "wellness",
+      "category": "accent",
+      "subject": "Two smooth pebbles and a single grass shoot"
+    },
+    {
+      "id": "wellness-accent-07",
+      "collection": "wellness",
+      "category": "accent",
+      "subject": "Simple morning sun disk behind one leaf"
+    },
+    {
+      "id": "wellness-accent-08",
+      "collection": "wellness",
+      "category": "accent",
+      "subject": "One tiny raindrop cradled by a leaf"
+    },
+    {
+      "id": "cafe-focal-04",
+      "collection": "cafe",
+      "category": "focal",
+      "subject": "Tiny strawberry tart on a scalloped paper liner"
+    },
+    {
+      "id": "cafe-focal-05",
+      "collection": "cafe",
+      "category": "focal",
+      "subject": "Coffee grinder with wooden handle and drawer"
+    },
+    {
+      "id": "cafe-focal-06",
+      "collection": "cafe",
+      "category": "focal",
+      "subject": "Cozy moka pot with rounded octagonal body"
+    },
+    {
+      "id": "cafe-focal-07",
+      "collection": "cafe",
+      "category": "focal",
+      "subject": "Little teapot with a biscuit lid"
+    },
+    {
+      "id": "cafe-focal-08",
+      "collection": "cafe",
+      "category": "focal",
+      "subject": "Cinnamon roll with a simple cream spiral"
+    },
+    {
+      "id": "cafe-focal-09",
+      "collection": "cafe",
+      "category": "focal",
+      "subject": "Thick toast slice with a small butter pat"
+    },
+    {
+      "id": "cafe-focal-10",
+      "collection": "cafe",
+      "category": "focal",
+      "subject": "Cute squat milk pitcher with one pouring lip"
+    },
+    {
+      "id": "cafe-mini-01",
+      "collection": "cafe",
+      "category": "mini",
+      "subject": "Espresso tamper with mushroom shaped wood grip"
+    },
+    {
+      "id": "cafe-mini-02",
+      "collection": "cafe",
+      "category": "mini",
+      "subject": "Two roasted coffee beans in a paper scoop"
+    },
+    {
+      "id": "cafe-mini-03",
+      "collection": "cafe",
+      "category": "mini",
+      "subject": "Tiny cupcake with a warm blush frosting cap"
+    },
+    {
+      "id": "cafe-mini-04",
+      "collection": "cafe",
+      "category": "mini",
+      "subject": "Wrapped sugar cube with twisted paper ends"
+    },
+    {
+      "id": "cafe-mini-05",
+      "collection": "cafe",
+      "category": "mini",
+      "subject": "Small rounded jam jar with gingham lid"
+    },
+    {
+      "id": "cafe-mini-06",
+      "collection": "cafe",
+      "category": "mini",
+      "subject": "Cafe spoon with one cream coffee drop"
+    },
+    {
+      "id": "cafe-mini-07",
+      "collection": "cafe",
+      "category": "mini",
+      "subject": "Tea bag pouch with string and blank tag"
+    },
+    {
+      "id": "cafe-mini-08",
+      "collection": "cafe",
+      "category": "mini",
+      "subject": "Little stack of two macarons with uneven edges"
+    },
+    {
+      "id": "cafe-mini-09",
+      "collection": "cafe",
+      "category": "mini",
+      "subject": "Small scone with a single cream split"
+    },
+    {
+      "id": "cafe-mini-10",
+      "collection": "cafe",
+      "category": "mini",
+      "subject": "A paper coffee filter folded into a soft cone"
+    },
+    {
+      "id": "cafe-accent-02",
+      "collection": "cafe",
+      "category": "accent",
+      "subject": "One coffee steam curl ending in a heart"
+    },
+    {
+      "id": "cafe-accent-03",
+      "collection": "cafe",
+      "category": "accent",
+      "subject": "Tiny checkered cafe napkin folded diagonally"
+    },
+    {
+      "id": "cafe-accent-04",
+      "collection": "cafe",
+      "category": "accent",
+      "subject": "Single oval biscotti with three almond pieces"
+    },
+    {
+      "id": "cafe-accent-05",
+      "collection": "cafe",
+      "category": "accent",
+      "subject": "Small cocoa dust rosette with four organic petals"
+    },
+    {
+      "id": "cafe-accent-06",
+      "collection": "cafe",
+      "category": "accent",
+      "subject": "Little splash of milk shaped like a flowing ribbon"
+    },
+    {
+      "id": "cafe-accent-07",
+      "collection": "cafe",
+      "category": "accent",
+      "subject": "Pair of leaves around a single cocoa pod"
+    },
+    {
+      "id": "cafe-accent-08",
+      "collection": "cafe",
+      "category": "accent",
+      "subject": "Cafe order clip holding a blank round card"
+    },
+    {
+      "id": "shopping-focal-04",
+      "collection": "shopping",
+      "category": "focal",
+      "subject": "Cozy woven market basket with a fabric lining"
+    },
+    {
+      "id": "shopping-focal-05",
+      "collection": "shopping",
+      "category": "focal",
+      "subject": "Small parcel wrapped in brown paper and twine"
+    },
+    {
+      "id": "shopping-focal-06",
+      "collection": "shopping",
+      "category": "focal",
+      "subject": "Tiny rounded mailbox holding a gift envelope"
+    },
+    {
+      "id": "shopping-focal-07",
+      "collection": "shopping",
+      "category": "focal",
+      "subject": "Fabric tote with a daisy stitched pocket"
+    },
+    {
+      "id": "shopping-focal-08",
+      "collection": "shopping",
+      "category": "focal",
+      "subject": "Small bouquet wrapped in muted cream paper"
+    },
+    {
+      "id": "shopping-focal-09",
+      "collection": "shopping",
+      "category": "focal",
+      "subject": "Round hatbox with a soft tied ribbon"
+    },
+    {
+      "id": "shopping-focal-10",
+      "collection": "shopping",
+      "category": "focal",
+      "subject": "Little wooden toy bear sitting beside a blank tag"
+    },
+    {
+      "id": "shopping-mini-01",
+      "collection": "shopping",
+      "category": "mini",
+      "subject": "Pair of little paper gift tags tied together"
+    },
+    {
+      "id": "shopping-mini-02",
+      "collection": "shopping",
+      "category": "mini",
+      "subject": "Short roll of wrapping paper with folded end"
+    },
+    {
+      "id": "shopping-mini-03",
+      "collection": "shopping",
+      "category": "mini",
+      "subject": "Tiny wooden clothes peg with a blush spring"
+    },
+    {
+      "id": "shopping-mini-04",
+      "collection": "shopping",
+      "category": "mini",
+      "subject": "Scalloped greeting card with a heart cutout"
+    },
+    {
+      "id": "shopping-mini-05",
+      "collection": "shopping",
+      "category": "mini",
+      "subject": "Mini fabric coin purse with a kiss lock"
+    },
+    {
+      "id": "shopping-mini-06",
+      "collection": "shopping",
+      "category": "mini",
+      "subject": "Rounded reusable shopping trolley basket"
+    },
+    {
+      "id": "shopping-mini-07",
+      "collection": "shopping",
+      "category": "mini",
+      "subject": "Little spool of gift twine with one loose end"
+    },
+    {
+      "id": "shopping-mini-08",
+      "collection": "shopping",
+      "category": "mini",
+      "subject": "Soft knitted mitten with a decorative patch"
+    },
+    {
+      "id": "shopping-mini-09",
+      "collection": "shopping",
+      "category": "mini",
+      "subject": "Small velvet ring box with a simple flower inside"
+    },
+    {
+      "id": "shopping-mini-10",
+      "collection": "shopping",
+      "category": "mini",
+      "subject": "Tiny wax seal spoon with a rounded handle"
+    },
+    {
+      "id": "shopping-accent-02",
+      "collection": "shopping",
+      "category": "accent",
+      "subject": "Asymmetric paper confetti trio with different shapes"
+    },
+    {
+      "id": "shopping-accent-03",
+      "collection": "shopping",
+      "category": "accent",
+      "subject": "Small folded ribbon rosette with a cream center"
+    },
+    {
+      "id": "shopping-accent-04",
+      "collection": "shopping",
+      "category": "accent",
+      "subject": "Gift wrap paper corner with a tiny scallop fold"
+    },
+    {
+      "id": "shopping-accent-05",
+      "collection": "shopping",
+      "category": "accent",
+      "subject": "A little bow shaped paperclip in warm cocoa"
+    },
+    {
+      "id": "shopping-accent-06",
+      "collection": "shopping",
+      "category": "accent",
+      "subject": "Two curled ribbon tails joined by a small knot"
+    },
+    {
+      "id": "shopping-accent-07",
+      "collection": "shopping",
+      "category": "accent",
+      "subject": "Tiny perforated kraft label with a leaf drawing"
+    },
+    {
+      "id": "shopping-accent-08",
+      "collection": "shopping",
+      "category": "accent",
+      "subject": "A soft zigzag tissue paper tuft"
+    },
+    {
+      "id": "savings-focal-04",
+      "collection": "savings",
+      "category": "focal",
+      "subject": "Little glass savings jar with three visible coins"
+    },
+    {
+      "id": "savings-focal-05",
+      "collection": "savings",
+      "category": "focal",
+      "subject": "Rounded coin pouch with a friendly stitched face"
+    },
+    {
+      "id": "savings-focal-06",
+      "collection": "savings",
+      "category": "focal",
+      "subject": "Tiny ceramic lucky house with a coin slot"
+    },
+    {
+      "id": "savings-focal-07",
+      "collection": "savings",
+      "category": "focal",
+      "subject": "Small wooden treasure chest with soft hinges"
+    },
+    {
+      "id": "savings-focal-08",
+      "collection": "savings",
+      "category": "focal",
+      "subject": "Cozy calculator with big rounded blank keys"
+    },
+    {
+      "id": "savings-focal-09",
+      "collection": "savings",
+      "category": "focal",
+      "subject": "A little seedling growing from a terracotta savings pot"
+    },
+    {
+      "id": "savings-focal-10",
+      "collection": "savings",
+      "category": "focal",
+      "subject": "Tiny piggy bank sleeping under a folded cloth"
+    },
+    {
+      "id": "savings-mini-01",
+      "collection": "savings",
+      "category": "mini",
+      "subject": "Single savings envelope sealed with a leaf"
+    },
+    {
+      "id": "savings-mini-02",
+      "collection": "savings",
+      "category": "mini",
+      "subject": "Three coins stacked with visibly different rim sizes"
+    },
+    {
+      "id": "savings-mini-03",
+      "collection": "savings",
+      "category": "mini",
+      "subject": "Small wooden abacus with two curved rods"
+    },
+    {
+      "id": "savings-mini-04",
+      "collection": "savings",
+      "category": "mini",
+      "subject": "Tiny purse clasp with two rounded metal beads"
+    },
+    {
+      "id": "savings-mini-05",
+      "collection": "savings",
+      "category": "mini",
+      "subject": "Little passbook booklet with a blank rounded label"
+    },
+    {
+      "id": "savings-mini-06",
+      "collection": "savings",
+      "category": "mini",
+      "subject": "Piggy bank stopper with a short cork stem"
+    },
+    {
+      "id": "savings-mini-07",
+      "collection": "savings",
+      "category": "mini",
+      "subject": "A small measuring scoop holding one coin"
+    },
+    {
+      "id": "savings-mini-08",
+      "collection": "savings",
+      "category": "mini",
+      "subject": "Soft fabric budget divider with three tabs no text"
+    },
+    {
+      "id": "savings-mini-09",
+      "collection": "savings",
+      "category": "mini",
+      "subject": "Tiny key for a rounded money box"
+    },
+    {
+      "id": "savings-mini-10",
+      "collection": "savings",
+      "category": "mini",
+      "subject": "A little ceramic coin dish shaped like a leaf"
+    },
+    {
+      "id": "savings-accent-02",
+      "collection": "savings",
+      "category": "accent",
+      "subject": "A coin rolling with a short curved motion trail"
+    },
+    {
+      "id": "savings-accent-03",
+      "collection": "savings",
+      "category": "accent",
+      "subject": "Two little acorns with different caps"
+    },
+    {
+      "id": "savings-accent-04",
+      "collection": "savings",
+      "category": "accent",
+      "subject": "A tiny stitched pocket patch with a loose thread"
+    },
+    {
+      "id": "savings-accent-05",
+      "collection": "savings",
+      "category": "accent",
+      "subject": "Small seed pod opening around a butter seed"
+    },
+    {
+      "id": "savings-accent-06",
+      "collection": "savings",
+      "category": "accent",
+      "subject": "A smooth pebble with a little hand drawn star"
+    },
+    {
+      "id": "savings-accent-07",
+      "collection": "savings",
+      "category": "accent",
+      "subject": "Tiny linked loops of a purse chain"
+    },
+    {
+      "id": "savings-accent-08",
+      "collection": "savings",
+      "category": "accent",
+      "subject": "A little clinking pair of washer shaped tokens"
+    }
+  ]
+}

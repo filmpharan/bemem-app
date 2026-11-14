@@ -1,0 +1,29 @@
+{
+  "newAssets": 30,
+  "totalAssets": 270,
+  "existing240HashesUnchanged": true,
+  "uniqueD4PixelHashes": 270,
+  "silhouetteReviewCandidates": [],
+  "connections": [
+    {
+      "family": "pets",
+      "pairs": 882,
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "family": "wellness",
+      "pairs": 882,
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    },
+    {
+      "family": "savings",
+      "pairs": 882,
+      "maxAlphaDifference": 0,
+      "maxRgbDifference": 0
+    }
+  ],
+  "newRuntimeBytes": 277296,
+  "samsungVerified": false
+}

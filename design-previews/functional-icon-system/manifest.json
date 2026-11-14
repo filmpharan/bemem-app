@@ -1,0 +1,1841 @@
+{
+  "icons": [
+    {
+      "direction": "a",
+      "name": "search",
+      "svg": "svg/a/search.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "account",
+      "svg": "svg/a/account.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "previous",
+      "svg": "svg/a/previous.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "next",
+      "svg": "svg/a/next.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "close",
+      "svg": "svg/a/close.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "home",
+      "svg": "svg/a/home.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "add-card",
+      "svg": "svg/a/add-card.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "edit",
+      "svg": "svg/a/edit.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "delete",
+      "svg": "svg/a/delete.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "share",
+      "svg": "svg/a/share.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "camera",
+      "svg": "svg/a/camera.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "gallery",
+      "svg": "svg/a/gallery.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "view-image",
+      "svg": "svg/a/view-image.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "flip-front",
+      "svg": "svg/a/flip-front.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "flip-back",
+      "svg": "svg/a/flip-back.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "qr",
+      "svg": "svg/a/qr.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "barcode",
+      "svg": "svg/a/barcode.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "decorate",
+      "svg": "svg/a/decorate.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "undo",
+      "svg": "svg/a/undo.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "redo",
+      "svg": "svg/a/redo.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "rotate",
+      "svg": "svg/a/rotate.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "save",
+      "svg": "svg/a/save.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "policy",
+      "svg": "svg/a/policy.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "login",
+      "svg": "svg/a/login.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "cloud-info",
+      "svg": "svg/a/cloud-info.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "add-photo",
+      "svg": "svg/a/add-photo.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "journal",
+      "svg": "svg/a/journal.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "select",
+      "svg": "svg/a/select.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "select-all",
+      "svg": "svg/a/select-all.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "check",
+      "svg": "svg/a/check.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "more",
+      "svg": "svg/a/more.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "chevron-down",
+      "svg": "svg/a/chevron-down.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "location",
+      "svg": "svg/a/location.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "landscape",
+      "svg": "svg/a/landscape.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "portrait",
+      "svg": "svg/a/portrait.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "palette",
+      "svg": "svg/a/palette.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "calendar",
+      "svg": "svg/a/calendar.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "zoom-in",
+      "svg": "svg/a/zoom-in.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "zoom-out",
+      "svg": "svg/a/zoom-out.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "crop",
+      "svg": "svg/a/crop.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "refresh",
+      "svg": "svg/a/refresh.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "warning",
+      "svg": "svg/a/warning.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "a",
+      "name": "info",
+      "svg": "svg/a/info.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.85,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "search",
+      "svg": "svg/b/search.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "account",
+      "svg": "svg/b/account.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "previous",
+      "svg": "svg/b/previous.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "next",
+      "svg": "svg/b/next.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "close",
+      "svg": "svg/b/close.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "home",
+      "svg": "svg/b/home.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "add-card",
+      "svg": "svg/b/add-card.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "edit",
+      "svg": "svg/b/edit.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "delete",
+      "svg": "svg/b/delete.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "share",
+      "svg": "svg/b/share.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "camera",
+      "svg": "svg/b/camera.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "gallery",
+      "svg": "svg/b/gallery.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "view-image",
+      "svg": "svg/b/view-image.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "flip-front",
+      "svg": "svg/b/flip-front.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "flip-back",
+      "svg": "svg/b/flip-back.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "qr",
+      "svg": "svg/b/qr.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "barcode",
+      "svg": "svg/b/barcode.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "decorate",
+      "svg": "svg/b/decorate.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "undo",
+      "svg": "svg/b/undo.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "redo",
+      "svg": "svg/b/redo.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "rotate",
+      "svg": "svg/b/rotate.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "save",
+      "svg": "svg/b/save.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "policy",
+      "svg": "svg/b/policy.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "login",
+      "svg": "svg/b/login.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "cloud-info",
+      "svg": "svg/b/cloud-info.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "add-photo",
+      "svg": "svg/b/add-photo.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "journal",
+      "svg": "svg/b/journal.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "select",
+      "svg": "svg/b/select.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "select-all",
+      "svg": "svg/b/select-all.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "check",
+      "svg": "svg/b/check.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "more",
+      "svg": "svg/b/more.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "chevron-down",
+      "svg": "svg/b/chevron-down.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "location",
+      "svg": "svg/b/location.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "landscape",
+      "svg": "svg/b/landscape.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "portrait",
+      "svg": "svg/b/portrait.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "palette",
+      "svg": "svg/b/palette.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "calendar",
+      "svg": "svg/b/calendar.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "zoom-in",
+      "svg": "svg/b/zoom-in.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "zoom-out",
+      "svg": "svg/b/zoom-out.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "crop",
+      "svg": "svg/b/crop.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "refresh",
+      "svg": "svg/b/refresh.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "warning",
+      "svg": "svg/b/warning.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "b",
+      "name": "info",
+      "svg": "svg/b/info.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 2.0,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "search",
+      "svg": "svg/c/search.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "account",
+      "svg": "svg/c/account.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "previous",
+      "svg": "svg/c/previous.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "next",
+      "svg": "svg/c/next.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "close",
+      "svg": "svg/c/close.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "home",
+      "svg": "svg/c/home.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "add-card",
+      "svg": "svg/c/add-card.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "edit",
+      "svg": "svg/c/edit.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "delete",
+      "svg": "svg/c/delete.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "share",
+      "svg": "svg/c/share.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "camera",
+      "svg": "svg/c/camera.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "gallery",
+      "svg": "svg/c/gallery.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "view-image",
+      "svg": "svg/c/view-image.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "flip-front",
+      "svg": "svg/c/flip-front.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "flip-back",
+      "svg": "svg/c/flip-back.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "qr",
+      "svg": "svg/c/qr.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "barcode",
+      "svg": "svg/c/barcode.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "decorate",
+      "svg": "svg/c/decorate.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "undo",
+      "svg": "svg/c/undo.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "redo",
+      "svg": "svg/c/redo.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "rotate",
+      "svg": "svg/c/rotate.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "save",
+      "svg": "svg/c/save.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "policy",
+      "svg": "svg/c/policy.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "login",
+      "svg": "svg/c/login.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "cloud-info",
+      "svg": "svg/c/cloud-info.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "add-photo",
+      "svg": "svg/c/add-photo.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "journal",
+      "svg": "svg/c/journal.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "select",
+      "svg": "svg/c/select.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "select-all",
+      "svg": "svg/c/select-all.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "check",
+      "svg": "svg/c/check.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "more",
+      "svg": "svg/c/more.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "chevron-down",
+      "svg": "svg/c/chevron-down.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "location",
+      "svg": "svg/c/location.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "landscape",
+      "svg": "svg/c/landscape.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "portrait",
+      "svg": "svg/c/portrait.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "palette",
+      "svg": "svg/c/palette.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "calendar",
+      "svg": "svg/c/calendar.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "zoom-in",
+      "svg": "svg/c/zoom-in.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "zoom-out",
+      "svg": "svg/c/zoom-out.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "crop",
+      "svg": "svg/c/crop.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "refresh",
+      "svg": "svg/c/refresh.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "warning",
+      "svg": "svg/c/warning.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    },
+    {
+      "direction": "c",
+      "name": "info",
+      "svg": "svg/c/info.svg",
+      "viewBox": [
+        0,
+        0,
+        24,
+        24
+      ],
+      "strokeWidth": 1.9,
+      "color": "currentColor",
+      "method": "Original code-drawn geometry; familiar functional metaphors, no stock path imports"
+    }
+  ],
+  "aliases": {
+    "back": "previous",
+    "forward": "next",
+    "cancel": "close",
+    "remove-decoration": "delete",
+    "delete-selected": "delete",
+    "clear-history": "delete",
+    "discard": "delete",
+    "back-to-card": "previous",
+    "back-to-history": "previous",
+    "back-to-home": "home",
+    "use-image": "check",
+    "cancel-selection": "close",
+    "share-receipt": "share",
+    "reinspect": "refresh"
+  },
+  "ink": "#263943",
+  "directions": {
+    "a": [
+      "Precision Rounded",
+      1.85
+    ],
+    "b": [
+      "Soft Organic",
+      2.0
+    ],
+    "c": [
+      "bemem Signature",
+      1.9
+    ]
+  }
+}

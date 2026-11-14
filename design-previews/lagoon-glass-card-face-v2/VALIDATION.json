@@ -1,0 +1,114 @@
+{
+  "status": "design-review-only / awaiting visual approval",
+  "date": "2026-11-14",
+  "productionIntegration": false,
+  "masters": {
+    "count": 7,
+    "dimensions": [
+      1536,
+      1536
+    ],
+    "editable": "SVG",
+    "raster": "PNG",
+    "opaque": true
+  },
+  "derivedCrops": 49,
+  "browser": {
+    "passed": 138,
+    "failed": 0,
+    "widthsCssPixels": [
+      360,
+      393,
+      412
+    ],
+    "nativeSamsungVerified": false
+  },
+  "localAssets": {
+    "passed": 130,
+    "failed": 0,
+    "checks": "LOCAL-VALIDATION.json"
+  },
+  "productionTypeScript": "tsc --noEmit: passed",
+  "lint": "ESLint CLI not installed; no installation attempted",
+  "expoBuild": "Not run: isolated static artwork only",
+  "safety": {
+    "protectedFilesUnchanged": true,
+    "originalFolderAssetsAndCSSAndJS": "byte-identical copies, originals untouched",
+    "walletAccess": false,
+    "randomizationImplemented": false,
+    "appRoutesAdded": false,
+    "dependenciesInstalled": false,
+    "commitPushDeploy": false
+  },
+  "before": {
+    "src": {
+      "count": 154,
+      "hash": "041467c54543846e60879227974ed962248ccc500582816a0b90f6dbd484ca81"
+    },
+    "scripts": {
+      "count": 48,
+      "hash": "875bfb596ee1e787691c6fcbd2380bbbf5811bfd6db7a95f5c7b5d7df52871c8"
+    },
+    "assets": {
+      "count": 303,
+      "hash": "072e2c7511482f2a7c646424e6194ac0010d2e79a332e016314e525b9f29bfca"
+    },
+    "design-system": {
+      "count": 18,
+      "hash": "ed7ed2d16b0c0ac5991bf0b65e94edda97cc837ac1931da41ce0c698de293a8e"
+    },
+    "design-previews": {
+      "count": 646,
+      "hash": "28941af5438b3587fa2683c65a60a1be148fb4828607af3f218ecf78daef4f8d"
+    },
+    "artwork-trials": {
+      "count": 1107,
+      "hash": "a8db088204879b016deda3ec9d241c346d14b6b54dee76c5b4671bd8dc0ecddd"
+    },
+    "package.json": "555d1d0e683918519135cc68eab9d421b7b1d83297610f3339943965c61ae074",
+    "package-lock.json": "b9b951c6ebfe86290015cf53e27baf11eb06c6bbb2bc11f7daf0280446f35673",
+    "app.json": "e7555411b7d62c5fc44c17075f4cf12aa2edc0bbab7cdcfd7496c6e74dc6461b",
+    "skills-lock.json": "037161c65d16d84e3abc5854532e7f9b5f04d184a751635194d959944a36e4f2",
+    "AGENTS.md": "b7d381dd55800d242252e8bf89a40b026586d254e34908210931bc35582396a3",
+    "DEV-HANDOFF.md": "3e32db007e614dd180e07eff9ca49ea9385749b51cb13d86638e2542ec67fa8f"
+  },
+  "after": {
+    "src": {
+      "count": 154,
+      "hash": "041467c54543846e60879227974ed962248ccc500582816a0b90f6dbd484ca81"
+    },
+    "scripts": {
+      "count": 48,
+      "hash": "875bfb596ee1e787691c6fcbd2380bbbf5811bfd6db7a95f5c7b5d7df52871c8"
+    },
+    "assets": {
+      "count": 303,
+      "hash": "072e2c7511482f2a7c646424e6194ac0010d2e79a332e016314e525b9f29bfca"
+    },
+    "design-system": {
+      "count": 18,
+      "hash": "ed7ed2d16b0c0ac5991bf0b65e94edda97cc837ac1931da41ce0c698de293a8e"
+    },
+    "design-previews": {
+      "count": 646,
+      "hash": "28941af5438b3587fa2683c65a60a1be148fb4828607af3f218ecf78daef4f8d"
+    },
+    "artwork-trials": {
+      "count": 1107,
+      "hash": "a8db088204879b016deda3ec9d241c346d14b6b54dee76c5b4671bd8dc0ecddd"
+    },
+    "package.json": "555d1d0e683918519135cc68eab9d421b7b1d83297610f3339943965c61ae074",
+    "package-lock.json": "b9b951c6ebfe86290015cf53e27baf11eb06c6bbb2bc11f7daf0280446f35673",
+    "app.json": "e7555411b7d62c5fc44c17075f4cf12aa2edc0bbab7cdcfd7496c6e74dc6461b",
+    "skills-lock.json": "037161c65d16d84e3abc5854532e7f9b5f04d184a751635194d959944a36e4f2",
+    "AGENTS.md": "b7d381dd55800d242252e8bf89a40b026586d254e34908210931bc35582396a3",
+    "DEV-HANDOFF.md": "3e32db007e614dd180e07eff9ca49ea9385749b51cb13d86638e2542ec67fa8f"
+  },
+  "remainingApproval": [
+    "Palette/material quality",
+    "Production text contrast, especially Golden Yellow",
+    "Runtime image budget and appearance mapping",
+    "Future per-new-card-session selection"
+  ],
+  "scopeLimit": "Offline HTML/CSS/JS browser review; not a native production implementation or Samsung verification"
+}

@@ -30,6 +30,24 @@
         {
           "backgroundColor": "#f1f5f9"
         }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Allow bemem to photograph your membership card.",
+          "photosPermission": "Allow bemem to choose artwork for your membership card.",
+          "microphonePermission": false
+        }
+      ],
+      "expo-sharing",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow bemem to scan membership codes and photograph your membership cards.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": true
+        }
       ]
     ],
     "experiments": {

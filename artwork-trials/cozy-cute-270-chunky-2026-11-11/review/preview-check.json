@@ -1,0 +1,45 @@
+{
+  "status": "pass",
+  "collections": 6,
+  "assetCounts": [
+    50,
+    40,
+    50,
+    40,
+    40,
+    50
+  ],
+  "pages": [
+    [
+      23,
+      22,
+      5
+    ],
+    [
+      23,
+      17
+    ],
+    [
+      23,
+      22,
+      5
+    ],
+    [
+      23,
+      17
+    ],
+    [
+      23,
+      17
+    ],
+    [
+      23,
+      22,
+      5
+    ]
+  ],
+  "cellsPerPage": 24,
+  "localImageLinksExist": true,
+  "realBrowser": false,
+  "samsungVerified": false
+}

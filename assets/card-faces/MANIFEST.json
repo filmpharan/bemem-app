@@ -1,0 +1,168 @@
+{
+  "artworks": [
+    {
+      "assetId": "art-bemem-lg2-front-blush-pink.png",
+      "side": "front",
+      "color": "blush-pink",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 2394132,
+      "md5": "be9455f76055c3fa950ea918f3fc8d3c",
+      "sha256": "7e0e354fb75bae1bf49ed7a53d8d160d848ac69504972bd27a892b8e0642f489",
+      "source": "design-previews/lagoon-glass-card-face-v2/masters/png/blush-pink.png"
+    },
+    {
+      "assetId": "art-bemem-lg2-front-warm-brown.png",
+      "side": "front",
+      "color": "warm-brown",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 2392750,
+      "md5": "12f215149dd9c9d1af9536f932aeb513",
+      "sha256": "80a09c6c83a19cecd955d832b206aa53fad994d173cb5d635166cd0491963984",
+      "source": "design-previews/lagoon-glass-card-face-v2/masters/png/warm-brown.png"
+    },
+    {
+      "assetId": "art-bemem-lg2-front-fresh-green.png",
+      "side": "front",
+      "color": "fresh-green",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 2390695,
+      "md5": "82211de055ff52e316fe8c5633a48973",
+      "sha256": "36bfe156212b33da981d1e6d8950ef5b41a976a7120b20e4353f3861ff9ff0d7",
+      "source": "design-previews/lagoon-glass-card-face-v2/masters/png/fresh-green.png"
+    },
+    {
+      "assetId": "art-bemem-lg2-front-golden-yellow.png",
+      "side": "front",
+      "color": "golden-yellow",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 2367255,
+      "md5": "d83395af56656c45aaaae809e65b1f30",
+      "sha256": "2c9dbee1ccdd0502dffb5b49de6baa54eb72d610311093b23a7f21afc4225e35",
+      "source": "design-previews/lagoon-glass-card-face-v2/masters/png/golden-yellow.png"
+    },
+    {
+      "assetId": "art-bemem-lg2-front-sky-blue.png",
+      "side": "front",
+      "color": "sky-blue",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 2367995,
+      "md5": "0ace098123923815f363844bd90bcd73",
+      "sha256": "9375988c1feba1f02f4afe9b738a6576ec70bc9e0d1c088a63b2eba816b94505",
+      "source": "design-previews/lagoon-glass-card-face-v2/masters/png/sky-blue.png"
+    },
+    {
+      "assetId": "art-bemem-lg2-front-dream-purple.png",
+      "side": "front",
+      "color": "dream-purple",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 2400310,
+      "md5": "7c1163ce086f3209a50fb8ff16977d67",
+      "sha256": "d9cc003fd5f8f05eb26e5cbb44bd2d93e8c42e85c182e33877a7ebd8078dd712",
+      "source": "design-previews/lagoon-glass-card-face-v2/masters/png/dream-purple.png"
+    },
+    {
+      "assetId": "art-bemem-lg2-front-coral-orange.png",
+      "side": "front",
+      "color": "coral-orange",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 2399167,
+      "md5": "4debe610d3dca822ce47a1df41ecffed",
+      "sha256": "4678afd2ba32d0850080783fe6b80eb9c6de0a7aa45dee548684506347339071",
+      "source": "design-previews/lagoon-glass-card-face-v2/masters/png/coral-orange.png"
+    },
+    {
+      "assetId": "art-bemem-spm1-back-pink.png",
+      "side": "back",
+      "color": "pink",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 50386,
+      "md5": "5d9dd2e7a4533c6995f2aad23dc6f8ca",
+      "sha256": "468a9ae2c8d22b18dd6a9cd1dbc09f0dbe3d1b19513da071e24949ade241447f",
+      "source": "design-previews/card-face-and-group-frame/masters/A-pink.png"
+    },
+    {
+      "assetId": "art-bemem-spm1-back-brown.png",
+      "side": "back",
+      "color": "brown",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 54262,
+      "md5": "1fa65474c7289e5c93268b97a68bca5e",
+      "sha256": "24ec6ccc32a39899f59d843ced8e1dc1fa9bad36b5f348055ba91acaf6e3386c",
+      "source": "design-previews/card-face-and-group-frame/masters/A-brown.png"
+    },
+    {
+      "assetId": "art-bemem-spm1-back-green.png",
+      "side": "back",
+      "color": "green",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 53021,
+      "md5": "409835e8bfa60ecc23d0f6238293473e",
+      "sha256": "dc0f156e9ead080e0bfc454e257bfd38cadfb82f397642b6f469f7d936223d0d",
+      "source": "design-previews/card-face-and-group-frame/masters/A-green.png"
+    },
+    {
+      "assetId": "art-bemem-spm1-back-yellow.png",
+      "side": "back",
+      "color": "yellow",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 53004,
+      "md5": "d540597c482c107b0ec31774ea96f1b0",
+      "sha256": "b1490ef2cfe32d4b3c52f33ab5cb28ccfbf4db47e2494ff481aa01861e013ae2",
+      "source": "design-previews/card-face-and-group-frame/masters/A-yellow.png"
+    },
+    {
+      "assetId": "art-bemem-spm1-back-blue.png",
+      "side": "back",
+      "color": "blue",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 51351,
+      "md5": "cde8d16967dc83048feec0e2d3ebe262",
+      "sha256": "39e5c86aeafac0469ff39e2f7c011aa62388444f09b905b303dd71076199af92",
+      "source": "design-previews/card-face-and-group-frame/masters/A-blue.png"
+    },
+    {
+      "assetId": "art-bemem-spm1-back-purple.png",
+      "side": "back",
+      "color": "purple",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 50812,
+      "md5": "b15bffa7a48477c4e04d4e5f2763a6f6",
+      "sha256": "3b128c56002306c7d079c7169b740f6b73278c9590be31282b98df671fca02b3",
+      "source": "design-previews/card-face-and-group-frame/masters/A-purple.png"
+    },
+    {
+      "assetId": "art-bemem-spm1-back-orange.png",
+      "side": "back",
+      "color": "orange",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 55495,
+      "md5": "50ae2eb71b78124f5521a3644ef79bf2",
+      "sha256": "ed1d6561fcf47898f64f763e574d2787fa48a28b4241e5c94820f9b7a6d32442",
+      "source": "design-previews/soft-pastel-minimal-orange-back/masters/A-orange.png"
+    }
+  ],
+  "frontToBack": {
+    "blush-pink": "pink",
+    "warm-brown": "brown",
+    "fresh-green": "green",
+    "golden-yellow": "yellow",
+    "sky-blue": "blue",
+    "dream-purple": "purple",
+    "coral-orange": "orange"
+  },
+  "totalBundledBytes": 17080635
+}

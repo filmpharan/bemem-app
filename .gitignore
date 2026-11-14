@@ -58,3 +58,15 @@ example
 # generated native folders
 /ios
 /android
+
+# Local artwork/browser tooling and regenerable validation output
+/.artwork-tools/
+/.playwright-cli/
+**/.tools/
+**/.playwright-cli/
+__pycache__/
+*.py[cod]
+/output/*
+# Required input for scripts/validate-artwork-raster.py (not a build output)
+!/output/artwork-wysiwyg-fixtures.json
+/.vscode/settings.json

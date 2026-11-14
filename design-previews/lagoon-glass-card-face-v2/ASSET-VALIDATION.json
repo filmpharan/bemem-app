@@ -1,0 +1,88 @@
+{
+  "productionPresetSource": "src/lib/card-size-presets.ts",
+  "masterCount": 7,
+  "cropCount": 49,
+  "crop": "centered uniform cover, zoom 1",
+  "rasterCropUnit": 64,
+  "displayUnit": 32,
+  "cornerRadiusRaster": 28,
+  "assets": [
+    {
+      "id": "blush-pink",
+      "masterSize": [
+        1536,
+        1536
+      ],
+      "opaqueBackgroundIntentional": true,
+      "embeddedTextOrLogo": false,
+      "masterBytes": 2394132,
+      "sha256": "7e0e354fb75bae1bf49ed7a53d8d160d848ac69504972bd27a892b8e0642f489"
+    },
+    {
+      "id": "warm-brown",
+      "masterSize": [
+        1536,
+        1536
+      ],
+      "opaqueBackgroundIntentional": true,
+      "embeddedTextOrLogo": false,
+      "masterBytes": 2392750,
+      "sha256": "80a09c6c83a19cecd955d832b206aa53fad994d173cb5d635166cd0491963984"
+    },
+    {
+      "id": "fresh-green",
+      "masterSize": [
+        1536,
+        1536
+      ],
+      "opaqueBackgroundIntentional": true,
+      "embeddedTextOrLogo": false,
+      "masterBytes": 2390695,
+      "sha256": "36bfe156212b33da981d1e6d8950ef5b41a976a7120b20e4353f3861ff9ff0d7"
+    },
+    {
+      "id": "golden-yellow",
+      "masterSize": [
+        1536,
+        1536
+      ],
+      "opaqueBackgroundIntentional": true,
+      "embeddedTextOrLogo": false,
+      "masterBytes": 2367255,
+      "sha256": "2c9dbee1ccdd0502dffb5b49de6baa54eb72d610311093b23a7f21afc4225e35"
+    },
+    {
+      "id": "sky-blue",
+      "masterSize": [
+        1536,
+        1536
+      ],
+      "opaqueBackgroundIntentional": true,
+      "embeddedTextOrLogo": false,
+      "masterBytes": 2367995,
+      "sha256": "9375988c1feba1f02f4afe9b738a6576ec70bc9e0d1c088a63b2eba816b94505"
+    },
+    {
+      "id": "dream-purple",
+      "masterSize": [
+        1536,
+        1536
+      ],
+      "opaqueBackgroundIntentional": true,
+      "embeddedTextOrLogo": false,
+      "masterBytes": 2400310,
+      "sha256": "d9cc003fd5f8f05eb26e5cbb44bd2d93e8c42e85c182e33877a7ebd8078dd712"
+    },
+    {
+      "id": "coral-orange",
+      "masterSize": [
+        1536,
+        1536
+      ],
+      "opaqueBackgroundIntentional": true,
+      "embeddedTextOrLogo": false,
+      "masterBytes": 2399167,
+      "sha256": "4678afd2ba32d0850080783fe6b80eb9c6de0a7aa45dee548684506347339071"
+    }
+  ]
+}

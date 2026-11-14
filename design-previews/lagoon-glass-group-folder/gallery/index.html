@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>bemem — Lagoon Glass Group Folder</title><link rel="icon" href="data:,"><link rel="stylesheet" href="style.css"></head>
+<body><main id="review">
+<header class="intro"><span class="wordmark">bemem.</span><span class="eyebrow">DESIGN REVIEW · GROUP FOLDER</span><h1>A little place for your everyday.</h1><p>Three tangible Lagoon Glass folders. One calm Pearl Gray canvas.</p></header>
+<section aria-labelledby="land-title"><div class="section-heading"><h2 id="land-title">Landscape <small>6 × 4 blocks</small></h2><span>Tap a folder to look inside</span></div><div id="landscape-board" class="comparison"></div></section>
+<section aria-labelledby="port-title"><div class="section-heading"><h2 id="port-title">Portrait <small>4 × 6 blocks</small></h2><span>Same block unit · a narrower, taller silhouette</span></div><div id="portrait-board" class="comparison"></div></section>
+<section class="interactive" aria-labelledby="try-title"><div class="section-heading"><h2 id="try-title">Try it at canvas size</h2><span>Isolated prototype · nothing is saved</span></div><div class="playground"><form id="controls" onsubmit="return false">
+<fieldset><legend>Folder concept</legend><div class="choices" id="concept-controls"></div></fieldset>
+<fieldset><legend>Folder footprint</legend><div class="choices"><button type="button" data-orientation="landscape">6 × 4</button><button type="button" data-orientation="portrait">4 × 6</button></div></fieldset>
+<fieldset><legend>Sample contents</legend><div class="choices" id="count-controls"></div></fieldset>
+<label class="input-label" for="folder-name">Folder name</label><input id="folder-name" value="Everyday essentials" maxlength="120"><button class="quiet" type="button" id="long-name">Try a long name</button>
+<fieldset><legend>Representative viewport</legend><div class="choices" id="width-controls"></div></fieldset>
+<p class="note">Local synthetic images and fictional cards only. Tap a folder, then try Close, outside tap or browser Back. Native Android Back is not verified.</p><p class="note">Full-width canvas: <a href="?phone=360">360</a> · <a href="?phone=393">393</a> · <a href="?phone=412">412</a> <span>(use matching browser viewport)</span></p>
+</form><div class="device-wrap"><div id="device" class="device"><div class="device-header"><span class="wordmark">bemem.</span><span class="canvas-label">Canvas preview</span></div><div id="canvas" class="canvas"></div><p class="device-hint">Tap your folder to look inside</p></div></div></div></section>
+<section><div class="section-heading"><h2>From empty to full</h2><span>Miniatures stop at four · the sheet shows every member</span></div><div id="states-board" class="states"></div></section>
+<footer>Design exploration only. No production integration. Photo fixture: AI-generated still life; no real membership information. <a href="../REVIEW.md">Review &amp; limitations</a></footer>
+</main>
+<div id="overlay" hidden><div class="scrim" data-dismiss="true"></div><section id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" tabindex="-1"><div class="handle" aria-hidden="true"></div><header class="sheet-header"><div><span class="sheet-kicker">YOUR FOLDER</span><h2 id="sheet-title"></h2></div><button id="close-sheet" aria-label="Close folder" class="close"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></header><div id="sheet-body" class="sheet-body" role="region" aria-label="Folder contents" tabindex="0"></div><div class="sheet-foot">A quiet place to keep related cards together.</div></section></div>
+<script src="data.js"></script><script src="prototype.js"></script></body></html>

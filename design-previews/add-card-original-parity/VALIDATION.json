@@ -1,0 +1,25 @@
+{
+  "status": "draft-awaiting-visual-approval",
+  "evidence": "Local HTML reconstruction in installed Microsoft Edge using existing Playwright CLI; not a Samsung or original website capture",
+  "originalScreenshotsProvided": false,
+  "nativeScreenshotProvided": false,
+  "originalFontBundled": false,
+  "sourceValues": { "rootPx": 16, "radiusBasePx": 10, "sheetRadiusPx": 22, "cardInputRadiusPx": 14, "buttonRadiusPx": 8, "sheetPaddingPx": 20, "formGapPx": 12, "previewRailGapPx": 16, "iconPx": 16, "iconButtonPx": 36, "brandOptionCount": 50 },
+  "measurements": [
+    { "viewport": [412, 915], "card": [248, 156.359375], "toolWidth": 36, "footer": "sticky" },
+    { "viewport": [320, 740], "scrollWidth": 320, "card": [186.65625, 117.6875], "iconWidth": 16, "buttonWidth": 36 },
+    { "viewport": [360, 800], "orientation": "portrait", "card": [144, 216], "scrollWidth": 360 },
+    { "viewport": [360, 500], "scrollRequired": true, "footerTop": 424, "footerBottom": 500 }
+  ],
+  "lastComparisonConsole": { "errors": 0, "warnings": 0 },
+  "realWalletAccess": false,
+  "appRuntimeChanged": false,
+  "sourceHashComparison": {
+    "beforeEqualsAfter": true,
+    "appSrcSHA256": "44CB8BBE90788E306914180E435E10FAE6E743E647F2FC448244513E6A567189",
+    "appScriptsSHA256": "0313223BA8B64C4A20BA61A69979176C948ED597ADA25A84101676ECE4CE9053",
+    "websiteSrcSHA256": "507872CEFC97EC2D4486F6DEEBFB233CEC333577E3238B3DFC31C3362E520A7B",
+    "method": "SHA256 of sorted absolute-path:file-SHA256 records joined with LF, for local before/after verification"
+  },
+  "dependenciesInstalled": false
+}

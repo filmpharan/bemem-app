@@ -23,21 +23,21 @@ const { searchReflow } = load('src/lib/search-reflow.ts');
 const { PREVIEW_CARDS: cards, INITIAL_LAYOUT: saved } = load('src/data/wallet-preview.ts');
 const { canPlace, cardSize, canvasMetrics, COLUMNS } = load('src/lib/canvas-layout.ts');
 
-test('Every individual name match is first and starts at grid origin; every other card remains', () => {
+test('Only the individual name match is shown and starts at the grid origin', () => {
   for (const card of cards) {
     const result = searchReflow(cards, saved, card.name, true);
     assert.equal(result.cards[0], card);
     assert.deepEqual(result.layout[card.id], { col: 0, row: 0 });
-    assert.equal(result.cards.length, cards.length);
-    assert.deepEqual(new Set(result.cards.map(c => c.id)), new Set(cards.map(c => c.id)));
+    assert.equal(result.cards.length, 1);
+    assert.deepEqual(result.cards, [card]);
     assert.equal(result.matchCount, 1);
   }
 });
 
-test('Multiple matches precede nonmatches with stable ties, visually and in render order', () => {
+test('Multiple matches hide nonmatches and preserve stable input order', () => {
   const mixed = cards.map((c, i) => ({ ...c, name: i === 1 || i === 3 ? `Match ${i}` : c.name }));
   const result = searchReflow(mixed, saved, 'match', true);
-  assert.deepEqual(result.cards.map(c => c.id), [mixed[1].id, mixed[3].id, mixed[0].id, mixed[2].id]);
+  assert.deepEqual(result.cards.map(c => c.id), [mixed[1].id, mixed[3].id]);
   const positions = result.cards.map(c => result.layout[c.id]);
   for (let i = 1; i < positions.length; i++) {
     assert.ok(positions[i].row > positions[i - 1].row || positions[i].row === positions[i - 1].row && positions[i].col > positions[i - 1].col);
@@ -45,12 +45,12 @@ test('Multiple matches precede nonmatches with stable ties, visually and in rend
   assert.deepEqual(searchReflow(mixed, saved, 'MATCH', true).layout, result.layout);
 });
 
-test('No matches retains every card in original stable order and reports zero matches', () => {
+test('No matches returns an empty presentation without altering the saved layout', () => {
   const result = searchReflow(cards, saved, 'unmatched-card-name', true);
   assert.equal(result.active, true);
   assert.equal(result.matchCount, 0);
-  assert.deepEqual(result.cards, cards);
-  assert.equal(Object.keys(result.layout).length, cards.length);
+  assert.deepEqual(result.cards, []);
+  assert.deepEqual(result.layout, {});
 });
 
 test('Clear, whitespace-only, and closed Search return the exact Saved Layout, not a reset or copy', () => {
@@ -84,7 +84,7 @@ test('All 16 orientation combinations stay collision-free, in bounds, and retain
       }
       for (const width of [208, 248, 288, 328, 568]) {
         const metrics = canvasMetrics(width, 300, mixed, result.layout, false);
-        for (const c of mixed) {
+        for (const c of result.cards) {
           const p = result.layout[c.id], size = cardSize(c);
           assert.ok((p.col + size.cols) * metrics.unit <= width + 1e-8);
           assert.ok((p.row + size.rows) * metrics.unit <= metrics.height + 1e-8);

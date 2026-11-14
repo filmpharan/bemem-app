@@ -24,6 +24,7 @@ function load(relative) {
     if (name === 'react-native') return native;
     if (name === 'react/jsx-runtime') return { jsx, jsxs: jsx, Fragment: 'Fragment' };
     if (name === './MembershipCard') return { MembershipCard: 'MembershipCard' };
+    if (name === './MembershipCardDetail') return { MembershipCardDetail: 'MembershipCardDetail' };
     return name.startsWith('.') ? load(path.resolve(path.dirname(file), name)) : require(name);
   }
   vm.runInThisContext(`(function(require,module,exports){${code}\n})`, { filename: file })(localRequire, module, module.exports);

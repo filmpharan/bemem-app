@@ -1,0 +1,8 @@
+{
+  "src/lib/decoration-catalog.ts": "17085b6b98e124005754d944c43e7d08b6bd97a448c0ac46188e99f8a53412ef",
+  "src/constants/decoration-images.ts": "5ce51faceed3a306d4142456e3d9cab38a7aef3c63d4f5af4b2d0f7963d1932a",
+  "src/constants/decoration-paint.ts": "45f6e7770a6e4d69347e790edfb024179c6818c6029b36de3feae49b2dd7c687",
+  "src/components/bemem/DecorationImage.tsx": "f446c8ed261f0ae1878dab7f8ebc06fe1c4559697f030a32598dc148057e9a37",
+  "src/components/bemem/WalletCanvas.tsx": "67726e024b51196141fc39c607ab169922775397031ffa62c787fab25f9cef78",
+  "src/lib/decorate-session.ts": "d0fbcf5071d337e264ee9a699a3d01796a99035b5a42cea09b551885ebebfaf0"
+}

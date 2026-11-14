@@ -1,0 +1,36 @@
+{
+  "task": "Group Folder Decorate drag and Sheet refinement",
+  "preservation": {
+    "changed": [
+      "src\\lib\\decorate-session.ts",
+      "src\\components\\bemem\\GroupFolderSheet.tsx",
+      "src\\components\\bemem\\WalletCanvas.tsx",
+      "scripts\\test-decorate.cjs",
+      "scripts\\test-group-folder.cjs"
+    ],
+    "added": [],
+    "assetsUnchanged": true,
+    "folderVisualsUnchanged": true
+  },
+  "typescript": "passed",
+  "focused": {
+    "passed": 133,
+    "total": 133
+  },
+  "fullRegression": {
+    "passed": 1053,
+    "total": 1053,
+    "failed": 0,
+    "skipped": 0
+  },
+  "newTests": 13,
+  "hermes": {
+    "status": "passed",
+    "directory": "output/group-folder-drag-android",
+    "bundle": "entry-5f7b7904da065af6faa869149b468383.hbc"
+  },
+  "lint": "Unavailable; no dependency installation",
+  "nativeSamsungValidation": "awaiting user",
+  "realDataAccessed": false,
+  "commitPushDeploy": false
+}

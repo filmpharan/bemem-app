@@ -1,0 +1,595 @@
+{
+  "passed": 130,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "Seven presets exactly match current production definitions",
+      "passed": true
+    },
+    {
+      "name": "Current inset is 0.1 block",
+      "passed": true
+    },
+    {
+      "name": "Current card radius is 14dp",
+      "passed": true
+    },
+    {
+      "name": "Exactly seven SVG and seven PNG masters",
+      "passed": true
+    },
+    {
+      "name": "Exactly forty-nine cropped files",
+      "passed": true
+    },
+    {
+      "name": "blush-pink master 1536 square",
+      "passed": true
+    },
+    {
+      "name": "blush-pink opaque face intentional",
+      "passed": true
+    },
+    {
+      "name": "blush-pink no embedded text or external artwork",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/mini-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/mini-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/card-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/card-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/voucher-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/voucher-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/boarding-pass-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/boarding-pass-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/mini-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/mini-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/card-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/card-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/vaccine-passport-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "blush-pink/vaccine-passport-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "warm-brown master 1536 square",
+      "passed": true
+    },
+    {
+      "name": "warm-brown opaque face intentional",
+      "passed": true
+    },
+    {
+      "name": "warm-brown no embedded text or external artwork",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/mini-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/mini-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/card-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/card-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/voucher-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/voucher-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/boarding-pass-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/boarding-pass-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/mini-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/mini-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/card-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/card-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/vaccine-passport-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "warm-brown/vaccine-passport-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "fresh-green master 1536 square",
+      "passed": true
+    },
+    {
+      "name": "fresh-green opaque face intentional",
+      "passed": true
+    },
+    {
+      "name": "fresh-green no embedded text or external artwork",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/mini-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/mini-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/card-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/card-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/voucher-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/voucher-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/boarding-pass-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/boarding-pass-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/mini-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/mini-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/card-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/card-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/vaccine-passport-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "fresh-green/vaccine-passport-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow master 1536 square",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow opaque face intentional",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow no embedded text or external artwork",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/mini-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/mini-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/card-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/card-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/voucher-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/voucher-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/boarding-pass-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/boarding-pass-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/mini-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/mini-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/card-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/card-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/vaccine-passport-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "golden-yellow/vaccine-passport-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "sky-blue master 1536 square",
+      "passed": true
+    },
+    {
+      "name": "sky-blue opaque face intentional",
+      "passed": true
+    },
+    {
+      "name": "sky-blue no embedded text or external artwork",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/mini-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/mini-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/card-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/card-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/voucher-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/voucher-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/boarding-pass-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/boarding-pass-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/mini-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/mini-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/card-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/card-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/vaccine-passport-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "sky-blue/vaccine-passport-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "dream-purple master 1536 square",
+      "passed": true
+    },
+    {
+      "name": "dream-purple opaque face intentional",
+      "passed": true
+    },
+    {
+      "name": "dream-purple no embedded text or external artwork",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/mini-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/mini-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/card-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/card-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/voucher-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/voucher-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/boarding-pass-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/boarding-pass-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/mini-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/mini-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/card-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/card-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/vaccine-passport-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "dream-purple/vaccine-passport-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "coral-orange master 1536 square",
+      "passed": true
+    },
+    {
+      "name": "coral-orange opaque face intentional",
+      "passed": true
+    },
+    {
+      "name": "coral-orange no embedded text or external artwork",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/mini-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/mini-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/card-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/card-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/voucher-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/voucher-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/boarding-pass-landscape crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/boarding-pass-landscape center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/mini-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/mini-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/card-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/card-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/vaccine-passport-portrait crop size and real corner alpha",
+      "passed": true
+    },
+    {
+      "name": "coral-orange/vaccine-passport-portrait center-cover retains source center",
+      "passed": true
+    },
+    {
+      "name": "All twelve folder shell layers byte-identical",
+      "passed": true
+    },
+    {
+      "name": "Original folder geometry and interaction code reused unchanged",
+      "passed": true
+    },
+    {
+      "name": "Actual rejected pink preserved byte-for-byte",
+      "passed": true
+    },
+    {
+      "name": "Actual rejected brown preserved byte-for-byte",
+      "passed": true
+    },
+    {
+      "name": "Actual rejected blue preserved byte-for-byte",
+      "passed": true
+    },
+    {
+      "name": "Gallery has no storage, fetch or randomization calls",
+      "passed": true
+    }
+  ],
+  "colors": [
+    {
+      "id": "blush-pink",
+      "meanRGB": [
+        204.77,
+        101.69,
+        134.42
+      ],
+      "masterBytes": 2394132
+    },
+    {
+      "id": "warm-brown",
+      "meanRGB": [
+        163.17,
+        114.27,
+        81.6
+      ],
+      "masterBytes": 2392750
+    },
+    {
+      "id": "fresh-green",
+      "meanRGB": [
+        93.3,
+        153.39,
+        102.43
+      ],
+      "masterBytes": 2390695
+    },
+    {
+      "id": "golden-yellow",
+      "meanRGB": [
+        211.39,
+        163.21,
+        69.08
+      ],
+      "masterBytes": 2367255
+    },
+    {
+      "id": "sky-blue",
+      "meanRGB": [
+        69.14,
+        144.31,
+        185.6
+      ],
+      "masterBytes": 2367995
+    },
+    {
+      "id": "dream-purple",
+      "meanRGB": [
+        133.13,
+        107.43,
+        181.36
+      ],
+      "masterBytes": 2400310
+    },
+    {
+      "id": "coral-orange",
+      "meanRGB": [
+        211.82,
+        129.69,
+        87.91
+      ],
+      "masterBytes": 2399167
+    }
+  ],
+  "pngComparisons": 33,
+  "nativeSamsungVerified": false,
+  "opaqueMastersExpected": true,
+  "transparentCropCornersExpected": true
+}

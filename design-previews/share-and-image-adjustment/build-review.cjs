@@ -1,0 +1,22 @@
+// Review assets only. Reads production sources; never changes them or opens Wallet files.
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),ts=require('typescript');
+const dir=__dirname,root=path.resolve(dir,'../..');fs.mkdirSync(path.join(dir,'assets'),{recursive:true});
+const cache=new Map();function load(file){file=path.resolve(file);if(!path.extname(file))file+='.ts';if(cache.has(file))return cache.get(file).exports;
+ const mod={exports:{}};cache.set(file,mod);const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText;
+ vm.runInThisContext(`(function(require,module,exports){${code}\n})`,{filename:file})(n=>n.startsWith('.')?load(path.resolve(path.dirname(file),n)):require(n),mod,mod.exports);return mod.exports;}
+const {encodeCardCode}=load(path.join(root,'src/lib/card-code.ts'));
+const {code128DisplaySvg}=load(path.join(root,'src/lib/code128-display.ts'));
+for(const format of ['qr','code128']){const code=encodeCardCode({kind:'membership',memberNumber:'00123456'},format);if(!code.ok)throw Error(code.message);
+ fs.writeFileSync(path.join(dir,`assets/sample-${format}.svg`),format==='qr'?code.svg:code128DisplaySvg(code,{width:code.width*3,height:135,pixelsPerModule:3,scroll:false},1));}
+const unicode=encodeCardCode({kind:'membership',memberNumber:'0012 สมาชิก'},'qr');if(!unicode.ok)throw Error(unicode.message);
+fs.writeFileSync(path.join(dir,'assets/sample-qr-unicode.svg'),unicode.svg);
+const iconSource=fs.readFileSync(path.join(root,'src/components/bemem/AddCardIcon.tsx'),'utf8'),icons={};
+for(const match of iconSource.matchAll(/^\s+(?:'([^']+)'|(\w+)): '([^']+)',?$/gm))icons[match[1]||match[2]]=match[3];
+fs.writeFileSync(path.join(dir,'icons.js'),'/* Existing bemem functional paths, copied for isolated review only. */\nwindow.ReviewIcons='+JSON.stringify(icons)+';\n');
+for(const [name,w,h] of [['wide',1600,1000],['tall',1000,1600],['square',1200,1200]]){
+ const sx=w/1600,sy=h/1000;
+ const body=`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><defs><linearGradient id="sky" x2="0.2" y2="1"><stop stop-color="#b7cccd"/><stop offset="1" stop-color="#f5e6ce"/></linearGradient><linearGradient id="lake" x2="1" y2="1"><stop stop-color="#467b87"/><stop offset="1" stop-color="#274e64"/></linearGradient></defs><rect width="${w}" height="${h}" fill="url(#sky)"/><g transform="scale(${sx} ${sy})"><circle cx="1190" cy="210" r="102" fill="#f9efcc"/><path d="M0 620L270 260L550 620L890 325L1250 640L1600 410V1000H0Z" fill="#91aaa5"/><path d="M0 700L400 420L750 780L1190 440L1600 720V1000H0Z" fill="#537f80"/><path d="M0 805Q430 680 800 805T1600 810V1000H0Z" fill="url(#lake)"/><path d="M0 970Q300 850 530 930T1100 970T1600 900V1000H0Z" fill="#cfbfa2"/><path d="M100 850Q420 790 700 845M860 900L1300 900M1020 850H1410" stroke="#aac9c9" stroke-width="5" fill="none" opacity=".6"/><rect x="75" y="75" width="210" height="6" rx="3" fill="#263943"/><text x="75" y="150" fill="#263943" font-family="sans-serif" font-size="42" letter-spacing="8">FIELD NOTES</text><text x="75" y="222" fill="#263943" font-family="sans-serif" font-size="65" font-weight="700">A little escape.</text><text x="75" y="275" fill="#38555c" font-family="sans-serif" font-size="23" letter-spacing="4">SYNTHETIC REVIEW ARTWORK</text><circle cx="1450" cy="875" r="48" fill="none" stroke="#f6eee1" stroke-width="3"/><path d="M1450 840V910M1415 875H1485" stroke="#f6eee1" stroke-width="3"/></g></svg>`;
+ fs.writeFileSync(path.join(dir,`assets/source-${name}.svg`),body);
+}
+fs.writeFileSync(path.join(dir,'assets/card-back.svg'),'<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600"><rect width="900" height="600" fill="#365361"/><path d="M0 430Q200 310 440 430T900 430" stroke="#84a2a5" stroke-width="2" fill="none"/><circle cx="450" cy="200" r="60" stroke="#e4e0d2" stroke-width="2" fill="none"/><path d="M450 160V240M410 200H490" stroke="#e4e0d2" stroke-width="2"/><text x="450" y="330" text-anchor="middle" font-family="sans-serif" font-size="25" letter-spacing="5" fill="#f1ede2">THE NEXT CHAPTER</text><text x="450" y="520" text-anchor="middle" font-family="sans-serif" font-size="16" letter-spacing="2" fill="#c2d4d4">SAMPLE BACK ARTWORK</text></svg>');
+console.log('Review assets generated from synthetic data and existing local code/icon sources.');

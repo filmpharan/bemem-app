@@ -1,0 +1,564 @@
+{
+  "passed": 138,
+  "failed": 0,
+  "widthsCssPx": [
+    360,
+    393,
+    412
+  ],
+  "nativeSamsungVerified": false,
+  "results": [
+    {
+      "name": "Folder A/landscape has four previews",
+      "passed": true
+    },
+    {
+      "name": "Folder B/landscape has four previews",
+      "passed": true
+    },
+    {
+      "name": "Folder C/landscape has four previews",
+      "passed": true
+    },
+    {
+      "name": "Folder A/portrait has four previews",
+      "passed": true
+    },
+    {
+      "name": "Folder B/portrait has four previews",
+      "passed": true
+    },
+    {
+      "name": "Folder C/portrait has four previews",
+      "passed": true
+    },
+    {
+      "name": "Open sheet resolves six members",
+      "passed": true
+    },
+    {
+      "name": "Sixth member reachable",
+      "passed": true
+    },
+    {
+      "name": "Folder first member uses blush-pink",
+      "passed": true
+    },
+    {
+      "name": "Folder first member uses warm-brown",
+      "passed": true
+    },
+    {
+      "name": "Folder first member uses fresh-green",
+      "passed": true
+    },
+    {
+      "name": "Folder first member uses golden-yellow",
+      "passed": true
+    },
+    {
+      "name": "Folder first member uses sky-blue",
+      "passed": true
+    },
+    {
+      "name": "Folder first member uses dream-purple",
+      "passed": true
+    },
+    {
+      "name": "Folder first member uses coral-orange",
+      "passed": true
+    },
+    {
+      "name": "Seven overview colors",
+      "passed": true
+    },
+    {
+      "name": "Selected blush-pink/360",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry blush-pink/360",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven blush-pink/360",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow blush-pink/360",
+      "passed": true
+    },
+    {
+      "name": "Selected warm-brown/360",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry warm-brown/360",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven warm-brown/360",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow warm-brown/360",
+      "passed": true
+    },
+    {
+      "name": "Selected fresh-green/360",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry fresh-green/360",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven fresh-green/360",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow fresh-green/360",
+      "passed": true
+    },
+    {
+      "name": "Selected golden-yellow/360",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry golden-yellow/360",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven golden-yellow/360",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow golden-yellow/360",
+      "passed": true
+    },
+    {
+      "name": "Selected sky-blue/360",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry sky-blue/360",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven sky-blue/360",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow sky-blue/360",
+      "passed": true
+    },
+    {
+      "name": "Selected dream-purple/360",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry dream-purple/360",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven dream-purple/360",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow dream-purple/360",
+      "passed": true
+    },
+    {
+      "name": "Selected coral-orange/360",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry coral-orange/360",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven coral-orange/360",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow coral-orange/360",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry A/landscape/360",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet A/landscape/360",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry A/portrait/360",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet A/portrait/360",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry B/landscape/360",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet B/landscape/360",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry B/portrait/360",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet B/portrait/360",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry C/landscape/360",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet C/landscape/360",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry C/portrait/360",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet C/portrait/360",
+      "passed": true
+    },
+    {
+      "name": "Selected blush-pink/393",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry blush-pink/393",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven blush-pink/393",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow blush-pink/393",
+      "passed": true
+    },
+    {
+      "name": "Selected warm-brown/393",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry warm-brown/393",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven warm-brown/393",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow warm-brown/393",
+      "passed": true
+    },
+    {
+      "name": "Selected fresh-green/393",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry fresh-green/393",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven fresh-green/393",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow fresh-green/393",
+      "passed": true
+    },
+    {
+      "name": "Selected golden-yellow/393",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry golden-yellow/393",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven golden-yellow/393",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow golden-yellow/393",
+      "passed": true
+    },
+    {
+      "name": "Selected sky-blue/393",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry sky-blue/393",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven sky-blue/393",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow sky-blue/393",
+      "passed": true
+    },
+    {
+      "name": "Selected dream-purple/393",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry dream-purple/393",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven dream-purple/393",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow dream-purple/393",
+      "passed": true
+    },
+    {
+      "name": "Selected coral-orange/393",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry coral-orange/393",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven coral-orange/393",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow coral-orange/393",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry A/landscape/393",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet A/landscape/393",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry A/portrait/393",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet A/portrait/393",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry B/landscape/393",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet B/landscape/393",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry B/portrait/393",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet B/portrait/393",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry C/landscape/393",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet C/landscape/393",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry C/portrait/393",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet C/portrait/393",
+      "passed": true
+    },
+    {
+      "name": "Selected blush-pink/412",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry blush-pink/412",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven blush-pink/412",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow blush-pink/412",
+      "passed": true
+    },
+    {
+      "name": "Selected warm-brown/412",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry warm-brown/412",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven warm-brown/412",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow warm-brown/412",
+      "passed": true
+    },
+    {
+      "name": "Selected fresh-green/412",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry fresh-green/412",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven fresh-green/412",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow fresh-green/412",
+      "passed": true
+    },
+    {
+      "name": "Selected golden-yellow/412",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry golden-yellow/412",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven golden-yellow/412",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow golden-yellow/412",
+      "passed": true
+    },
+    {
+      "name": "Selected sky-blue/412",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry sky-blue/412",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven sky-blue/412",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow sky-blue/412",
+      "passed": true
+    },
+    {
+      "name": "Selected dream-purple/412",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry dream-purple/412",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven dream-purple/412",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow dream-purple/412",
+      "passed": true
+    },
+    {
+      "name": "Selected coral-orange/412",
+      "passed": true
+    },
+    {
+      "name": "Seven crops keep block geometry coral-orange/412",
+      "passed": true
+    },
+    {
+      "name": "Canvas all seven coral-orange/412",
+      "passed": true
+    },
+    {
+      "name": "No document horizontal overflow coral-orange/412",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry A/landscape/412",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet A/landscape/412",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry A/portrait/412",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet A/portrait/412",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry B/landscape/412",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet B/landscape/412",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry B/portrait/412",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet B/portrait/412",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry C/landscape/412",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet C/landscape/412",
+      "passed": true
+    },
+    {
+      "name": "Folder geometry C/portrait/412",
+      "passed": true
+    },
+    {
+      "name": "Six member sheet C/portrait/412",
+      "passed": true
+    },
+    {
+      "name": "All gallery images decoded",
+      "passed": true
+    },
+    {
+      "name": "Loaded gallery controls work offline",
+      "passed": true
+    }
+  ]
+}

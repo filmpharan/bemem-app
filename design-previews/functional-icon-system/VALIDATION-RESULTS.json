@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "sourceBackedActionGroups": 72,
+  "canonicalPerDirection": 43,
+  "editableSvgFiles": 129,
+  "uniqueSvgHashes": 129,
+  "svgTotalBytes": 38416,
+  "largestSvgBytes": 450,
+  "transparentRgbaRasters": 129,
+  "smallSizeDecodeChecks": 516,
+  "clipped": 0,
+  "monochromeInk": "#263943",
+  "lightCanvasContrast": 11.01,
+  "mockupPanels": 6,
+  "productionProtectedHashesUnchanged": 432,
+  "realBrowserScreenshot": false,
+  "nativeDeviceRenderingVerified": false,
+  "comprehensionStudy": false
+}

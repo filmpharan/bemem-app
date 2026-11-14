@@ -1,0 +1,182 @@
+[
+  {
+    "id": "pet-rope-straight",
+    "beforePaintPixels": 3830,
+    "afterPaintPixels": 9725,
+    "paintAreaRatio": 2.539
+  },
+  {
+    "id": "pet-rope-corner",
+    "beforePaintPixels": 3148,
+    "afterPaintPixels": 8182,
+    "paintAreaRatio": 2.599
+  },
+  {
+    "id": "pet-rope-end",
+    "beforePaintPixels": 1909,
+    "afterPaintPixels": 8140,
+    "paintAreaRatio": 4.264
+  },
+  {
+    "id": "pet-rope-tee",
+    "beforePaintPixels": 5524,
+    "afterPaintPixels": 13150,
+    "paintAreaRatio": 2.381
+  },
+  {
+    "id": "pet-rope-cross",
+    "beforePaintPixels": 6606,
+    "afterPaintPixels": 16700,
+    "paintAreaRatio": 2.528
+  },
+  {
+    "id": "pet-rope-short-detail",
+    "beforePaintPixels": 2949,
+    "afterPaintPixels": 9688,
+    "paintAreaRatio": 3.285
+  },
+  {
+    "id": "pet-rope-long-detail",
+    "beforePaintPixels": 3669,
+    "afterPaintPixels": 11066,
+    "paintAreaRatio": 3.016
+  },
+  {
+    "id": "pet-rope-ornamental-corner",
+    "beforePaintPixels": 4054,
+    "afterPaintPixels": 13519,
+    "paintAreaRatio": 3.335
+  },
+  {
+    "id": "pet-rope-connector",
+    "beforePaintPixels": 5102,
+    "afterPaintPixels": 10899,
+    "paintAreaRatio": 2.136
+  },
+  {
+    "id": "pet-rope-special-end",
+    "beforePaintPixels": 3950,
+    "afterPaintPixels": 10150,
+    "paintAreaRatio": 2.57
+  },
+  {
+    "id": "wellness-sprig-straight",
+    "beforePaintPixels": 4104,
+    "afterPaintPixels": 9575,
+    "paintAreaRatio": 2.333
+  },
+  {
+    "id": "wellness-sprig-corner",
+    "beforePaintPixels": 3980,
+    "afterPaintPixels": 6875,
+    "paintAreaRatio": 1.727
+  },
+  {
+    "id": "wellness-sprig-end",
+    "beforePaintPixels": 2153,
+    "afterPaintPixels": 7956,
+    "paintAreaRatio": 3.695
+  },
+  {
+    "id": "wellness-sprig-tee",
+    "beforePaintPixels": 6176,
+    "afterPaintPixels": 12357,
+    "paintAreaRatio": 2.001
+  },
+  {
+    "id": "wellness-sprig-cross",
+    "beforePaintPixels": 7286,
+    "afterPaintPixels": 14523,
+    "paintAreaRatio": 1.993
+  },
+  {
+    "id": "wellness-sprig-short-detail",
+    "beforePaintPixels": 3768,
+    "afterPaintPixels": 9404,
+    "paintAreaRatio": 2.496
+  },
+  {
+    "id": "wellness-sprig-long-detail",
+    "beforePaintPixels": 4724,
+    "afterPaintPixels": 9868,
+    "paintAreaRatio": 2.089
+  },
+  {
+    "id": "wellness-sprig-ornamental-corner",
+    "beforePaintPixels": 4492,
+    "afterPaintPixels": 11335,
+    "paintAreaRatio": 2.523
+  },
+  {
+    "id": "wellness-sprig-connector",
+    "beforePaintPixels": 5077,
+    "afterPaintPixels": 10018,
+    "paintAreaRatio": 1.973
+  },
+  {
+    "id": "wellness-sprig-special-end",
+    "beforePaintPixels": 5381,
+    "afterPaintPixels": 9000,
+    "paintAreaRatio": 1.673
+  },
+  {
+    "id": "savings-chain-straight",
+    "beforePaintPixels": 3683,
+    "afterPaintPixels": 8392,
+    "paintAreaRatio": 2.279
+  },
+  {
+    "id": "savings-chain-corner",
+    "beforePaintPixels": 3119,
+    "afterPaintPixels": 6730,
+    "paintAreaRatio": 2.158
+  },
+  {
+    "id": "savings-chain-end",
+    "beforePaintPixels": 3028,
+    "afterPaintPixels": 8081,
+    "paintAreaRatio": 2.669
+  },
+  {
+    "id": "savings-chain-tee",
+    "beforePaintPixels": 5324,
+    "afterPaintPixels": 11601,
+    "paintAreaRatio": 2.179
+  },
+  {
+    "id": "savings-chain-cross",
+    "beforePaintPixels": 7088,
+    "afterPaintPixels": 14359,
+    "paintAreaRatio": 2.026
+  },
+  {
+    "id": "savings-chain-short-detail",
+    "beforePaintPixels": 4011,
+    "afterPaintPixels": 9081,
+    "paintAreaRatio": 2.264
+  },
+  {
+    "id": "savings-chain-long-detail",
+    "beforePaintPixels": 4436,
+    "afterPaintPixels": 10057,
+    "paintAreaRatio": 2.267
+  },
+  {
+    "id": "savings-chain-ornamental-corner",
+    "beforePaintPixels": 4977,
+    "afterPaintPixels": 10951,
+    "paintAreaRatio": 2.2
+  },
+  {
+    "id": "savings-chain-connector",
+    "beforePaintPixels": 5438,
+    "afterPaintPixels": 10744,
+    "paintAreaRatio": 1.976
+  },
+  {
+    "id": "savings-chain-special-end",
+    "beforePaintPixels": 4790,
+    "afterPaintPixels": 9485,
+    "paintAreaRatio": 1.98
+  }
+]

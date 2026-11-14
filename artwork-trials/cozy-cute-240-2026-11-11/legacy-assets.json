@@ -1,0 +1,206 @@
+[
+  {
+    "id": "cafe-coffee",
+    "label": "Coffee cup",
+    "path": "assets/decorations/cozy-cute-v1/cafe-coffee.png",
+    "sha256": "f77901796a2df4fe0f8941d21a007a661c255cce1672064aceaf37921c3da445"
+  },
+  {
+    "id": "cafe-cookie",
+    "label": "Tiny cookie",
+    "path": "assets/decorations/cozy-cute-v1/cafe-cookie.png",
+    "sha256": "84e1eb66377cbb0a35bbc91bf72cf120c47f81508c1aefb648ad26c3114f6396"
+  },
+  {
+    "id": "cafe-croissant",
+    "label": "Cozy croissant",
+    "path": "assets/decorations/cozy-cute-v1/cafe-croissant.png",
+    "sha256": "7541d471cea95d053099d807f81abfa14bd4e53dde6c3aeb9f0fdfc61ac0985f"
+  },
+  {
+    "id": "coffee-accent",
+    "label": "Coffee bean accent",
+    "path": "assets/decorations/cozy-cute-v1/coffee-accent.png",
+    "sha256": "459cf8489db7715da720b9841225c5576fc8f661a05962d5b735046e82bbc249"
+  },
+  {
+    "id": "coffee-corner",
+    "label": "Coffee vine corner",
+    "path": "assets/decorations/cozy-cute-v1/coffee-corner.png",
+    "sha256": "833db98fd1c72cfda2452351a7f28bc0b453cf85683e2c34ae8a1cc0b8c059d0"
+  },
+  {
+    "id": "coffee-end",
+    "label": "Coffee vine end cap",
+    "path": "assets/decorations/cozy-cute-v1/coffee-end.png",
+    "sha256": "846f127a37b8d96580a15ce208ba3eee19d577e9b7f140c7aaea95cb70180272"
+  },
+  {
+    "id": "coffee-straight",
+    "label": "Coffee vine straight",
+    "path": "assets/decorations/cozy-cute-v1/coffee-straight.png",
+    "sha256": "da934f4a2abe93a514de5d3fbdda16ec3745bf58eb422df3a22b942ebe49cba3"
+  },
+  {
+    "id": "pet-cat",
+    "label": "Cozy cat",
+    "path": "assets/decorations/cozy-cute-v1/pet-cat.png",
+    "sha256": "996ccec2af981c43e823333cd4c526bf533622d97171a3a7616fa630ec58ba3b"
+  },
+  {
+    "id": "pet-dog",
+    "label": "Friendly dog",
+    "path": "assets/decorations/cozy-cute-v1/pet-dog.png",
+    "sha256": "e60ed6d8ba3b44e2ad96694f301c7d3ceb1ac69c7453ffeae06fce5f25f56353"
+  },
+  {
+    "id": "pet-paw",
+    "label": "Paw print",
+    "path": "assets/decorations/cozy-cute-v1/pet-paw.png",
+    "sha256": "9474bdf7272219a73d03cfd1bfc4c4e535c951546e4c96e2366a7c1cbb5832e3"
+  },
+  {
+    "id": "ribbon-accent",
+    "label": "Ribbon knot",
+    "path": "assets/decorations/cozy-cute-v1/ribbon-accent.png",
+    "sha256": "9f7da6d93e4445f5fc7be973e3107f42535b464bbe845059dfb0ee5692329231"
+  },
+  {
+    "id": "ribbon-corner",
+    "label": "Ribbon corner",
+    "path": "assets/decorations/cozy-cute-v1/ribbon-corner.png",
+    "sha256": "55609ff34de4b474cf5fd7cc06bfa545da347742ef8ba6e5733be001f49672c9"
+  },
+  {
+    "id": "ribbon-end",
+    "label": "Ribbon end cap",
+    "path": "assets/decorations/cozy-cute-v1/ribbon-end.png",
+    "sha256": "9d2536a797fd86aa638c33aae60a53f877b439b84662355f20e3f2144600aa8d"
+  },
+  {
+    "id": "ribbon-straight",
+    "label": "Ribbon straight",
+    "path": "assets/decorations/cozy-cute-v1/ribbon-straight.png",
+    "sha256": "095618f2a49aca434e04dea84a4b69c36dc1fa1f6b1f32c69cc6a855573ba436"
+  },
+  {
+    "id": "savings-accent",
+    "label": "Savings coin accent",
+    "path": "assets/decorations/cozy-cute-v1/savings-accent.png",
+    "sha256": "239c5c8ef97a78b0fc5e89bd41df72087dac8744375d928c05b2970b7a681124"
+  },
+  {
+    "id": "savings-coin",
+    "label": "Small coin",
+    "path": "assets/decorations/cozy-cute-v1/savings-coin.png",
+    "sha256": "77e0f3c429c99b173ba02bfb518993b3a8e836f11ed501a8104604e24fcf5ea4"
+  },
+  {
+    "id": "savings-corner",
+    "label": "Savings line corner",
+    "path": "assets/decorations/cozy-cute-v1/savings-corner.png",
+    "sha256": "8883bc1f530d2ff23e7e8627936bd4e8c647acc52809af1f53863f7ca2393915"
+  },
+  {
+    "id": "savings-end",
+    "label": "Savings line end cap",
+    "path": "assets/decorations/cozy-cute-v1/savings-end.png",
+    "sha256": "68b4276b74230397ad27f981237be1f9419d821ad5030bf57e95ec0e0918b663"
+  },
+  {
+    "id": "savings-piggy",
+    "label": "Piggy bank",
+    "path": "assets/decorations/cozy-cute-v1/savings-piggy.png",
+    "sha256": "2a862f6ea9362c6a6657bdd11f56b75f0a779913375e223e74f8aa00e5c93067"
+  },
+  {
+    "id": "savings-straight",
+    "label": "Savings line straight",
+    "path": "assets/decorations/cozy-cute-v1/savings-straight.png",
+    "sha256": "8edf966db6ce3469d61ce67d4fb2b4ed4c2740020f10fa313848b7936b971a5c"
+  },
+  {
+    "id": "savings-wallet",
+    "label": "Cozy wallet",
+    "path": "assets/decorations/cozy-cute-v1/savings-wallet.png",
+    "sha256": "cfee1d68ce97774e0a4e80e9e83e5b377c73b74ff95e1b1ae0a5a389ebfc8a84"
+  },
+  {
+    "id": "shopping-bag",
+    "label": "Shopping bag",
+    "path": "assets/decorations/cozy-cute-v1/shopping-bag.png",
+    "sha256": "58284eaa4427d3f0a6798e1c2617b8536d898390fbc94e5127d17f89aa15b9b8"
+  },
+  {
+    "id": "shopping-bow",
+    "label": "Ribbon bow",
+    "path": "assets/decorations/cozy-cute-v1/shopping-bow.png",
+    "sha256": "0a980d5de6c19988aa5c8655e9f313a98232b164855d82f1b65095beadc42191"
+  },
+  {
+    "id": "shopping-gift",
+    "label": "Gift box",
+    "path": "assets/decorations/cozy-cute-v1/shopping-gift.png",
+    "sha256": "0be4a3aaf13c430c4740bb13286bcab7fe43081a948acb56fb94d8bd2765ea73"
+  },
+  {
+    "id": "travel-cloud",
+    "label": "Soft cloud",
+    "path": "assets/decorations/cozy-cute-v1/travel-cloud.png",
+    "sha256": "5fd3dbb5ab88ab03cff02dc51acc77ae823e0316eb8f7746858342a3955768bc"
+  },
+  {
+    "id": "travel-plane",
+    "label": "Small airplane",
+    "path": "assets/decorations/cozy-cute-v1/travel-plane.png",
+    "sha256": "1e740998d0bea535cd70224fb897bb62915e1da5d868e2e84af71e29ecada0ab"
+  },
+  {
+    "id": "travel-suitcase",
+    "label": "Tiny suitcase",
+    "path": "assets/decorations/cozy-cute-v1/travel-suitcase.png",
+    "sha256": "e61b9d01d35f5e139ee08109b9c50f4a07c511d2454154337012bdb6bfc72be3"
+  },
+  {
+    "id": "vine-corner",
+    "label": "Vine corner",
+    "path": "assets/decorations/cozy-cute-v1/vine-corner.png",
+    "sha256": "387cee88ddfb1c52174f7b13ad08e454389a90032a7f48a30c28da935257b80a"
+  },
+  {
+    "id": "vine-end",
+    "label": "Vine end cap",
+    "path": "assets/decorations/cozy-cute-v1/vine-end.png",
+    "sha256": "2e2685753d872e52436e0b59e5b37c40fe7fe56a5ea663fdf6b7653bcc94120d"
+  },
+  {
+    "id": "vine-flower-accent",
+    "label": "Vine flower",
+    "path": "assets/decorations/cozy-cute-v1/vine-flower-accent.png",
+    "sha256": "80ebb34efb11d870d1768240d1c63034b942f5636efdcaa5468af64c45f7cd57"
+  },
+  {
+    "id": "vine-straight",
+    "label": "Vine straight",
+    "path": "assets/decorations/cozy-cute-v1/vine-straight.png",
+    "sha256": "3d1429e2d25d79da8d4fa92d14bdd740b92d5d26206bfdf087dd625f60fd8215"
+  },
+  {
+    "id": "wellness-flower",
+    "label": "Tiny flower",
+    "path": "assets/decorations/cozy-cute-v1/wellness-flower.png",
+    "sha256": "03669193f7c49c3963b8ed50a19214461fb0d5b384890d4bcb02c478dd2b3210"
+  },
+  {
+    "id": "wellness-leaf",
+    "label": "Little leaf",
+    "path": "assets/decorations/cozy-cute-v1/wellness-leaf.png",
+    "sha256": "02dd6234c9583139167315673371ad4795759c47c9e8ae7d0fb7c7d21835e47f"
+  },
+  {
+    "id": "wellness-teacup",
+    "label": "Cozy tea cup",
+    "path": "assets/decorations/cozy-cute-v1/wellness-teacup.png",
+    "sha256": "c2cf4e3e36f35caed57c09ec033fd31e0648d93a53b30ed9bee38931477e0735"
+  }
+]

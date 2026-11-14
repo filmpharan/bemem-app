@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "targetActions": 7,
+  "uniqueTargetPngHashes": 7,
+  "smallSizeChecks": 28,
+  "sourceBasedReferences": 6,
+  "beforeExamples": 3,
+  "placementMockups": 3,
+  "productionHashesUnchanged": 432,
+  "existingAppDataAccessed": false,
+  "nativeDeviceRenderingVerified": false
+}

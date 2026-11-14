@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "pet-cat",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v1/pet-cat.png",
+    "sha256": "996ccec2af981c43e823333cd4c526bf533622d97171a3a7616fa630ec58ba3b"
+  },
+  {
+    "id": "pet-dog",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v1/pet-dog.png",
+    "sha256": "e60ed6d8ba3b44e2ad96694f301c7d3ceb1ac69c7453ffeae06fce5f25f56353"
+  },
+  {
+    "id": "pet-focal-04",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-focal-04.png",
+    "sha256": "045dd57078b5ef0c682bb1c3995710b3739a52aad5aa139678809c456782436b"
+  },
+  {
+    "id": "pet-focal-05",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-focal-05.png",
+    "sha256": "acef177d258732114fa62bb5869d95d4fd7e336c180172d56e75b67893903144"
+  },
+  {
+    "id": "pet-focal-06",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-focal-06.png",
+    "sha256": "b82db49949e2a4bbe5a9a997da5db8c814cb5932b5f78d21c0f59df9418755b9"
+  },
+  {
+    "id": "pet-focal-07",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-focal-07.png",
+    "sha256": "1c3714f9577f8373d215b5df21bddaf4aae013cb1b8d8fa0f5281f5bb5808ae1"
+  },
+  {
+    "id": "pet-focal-08",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-focal-08.png",
+    "sha256": "0cd082392e30d49e3d581e730e10985453a1f9070682a37693e19ba9cc1f8229"
+  },
+  {
+    "id": "pet-focal-09",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-focal-09.png",
+    "sha256": "fd610a04e01e0e09093b13c884d344d515993e91a2c2c280143e1fa624c3e141"
+  },
+  {
+    "id": "pet-focal-10",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-focal-10.png",
+    "sha256": "f9b0bb9cf34072cdff02aa7485b94ed233fde58416c49f1726591b8f7aa60b4d"
+  },
+  {
+    "id": "pet-paw",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v1/pet-paw.png",
+    "sha256": "9474bdf7272219a73d03cfd1bfc4c4e535c951546e4c96e2366a7c1cbb5832e3"
+  },
+  {
+    "id": "pet-mini-01",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-mini-01.png",
+    "sha256": "6beacbd989903357f2096a252c0c8cfb0becddf445c95ed46fda73bffd672533"
+  },
+  {
+    "id": "pet-mini-02",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-mini-02.png",
+    "sha256": "0d5d37ef51fd4b010137d8b6a0aeaf1fcdb74ccd59587fa1c3933ad785e148c5"
+  },
+  {
+    "id": "pet-mini-03",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-mini-03.png",
+    "sha256": "91a01c73dce680dcca6111122f6e04e7a391b5f76d006970680de0841844dee3"
+  },
+  {
+    "id": "pet-mini-04",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-mini-04.png",
+    "sha256": "30f6dc84490b08dbddb91eadd0c2237d8578792a7846042ec2e58481c5410f6b"
+  },
+  {
+    "id": "pet-mini-05",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-mini-05.png",
+    "sha256": "029212bc28ae30be46fde11127f7890936c395f143a0f219acbbafbba535529c"
+  },
+  {
+    "id": "pet-mini-06",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-mini-06.png",
+    "sha256": "c85932295cb9833270452fefcfe6272f5360f2fb7ce0b12cb5ae1214fc48ae06"
+  },
+  {
+    "id": "pet-mini-07",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-mini-07.png",
+    "sha256": "ccad6dd989448c97045d779cfde084f85eb7c046b0ea2d4e6db7a887fa868e6a"
+  },
+  {
+    "id": "pet-mini-08",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-mini-08.png",
+    "sha256": "bd8f94ab0b1bfb1804d704b77e9e7b6d5e5b3e0d03918bb0940a906d6f66f633"
+  },
+  {
+    "id": "pet-mini-09",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-mini-09.png",
+    "sha256": "aff3e2332217bddc5f37954fc1cd13de05feab4daf245ccd65c4612135156992"
+  },
+  {
+    "id": "pet-mini-10",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-mini-10.png",
+    "sha256": "f1b4ff4531d083c3d45277abdc8cc0586fc904ff13ffc561cb94ef4ba9ab31c1"
+  },
+  {
+    "id": "pet-frame-01",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-frame-01.png",
+    "sha256": "d37aad3ab4da4baef07853dd0c5185ff7491b9809e1311cce5201c61d84afb7d"
+  },
+  {
+    "id": "pet-frame-02",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-frame-02.png",
+    "sha256": "b72573c114cb45c44d9391140f0d9ff915ca89799015f4ed79b72df6831984ff"
+  },
+  {
+    "id": "pet-frame-03",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-frame-03.png",
+    "sha256": "0316db5927472cde1fc8291111ee168ee7c556284c7998b704620b2d36fbdd5d"
+  },
+  {
+    "id": "pet-frame-04",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-frame-04.png",
+    "sha256": "aed004aaa1198efd582f930f763ce7cd08ba3e3ede420a479335883b1984cd15"
+  },
+  {
+    "id": "pet-frame-05",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-frame-05.png",
+    "sha256": "78cffe4730fd8b2f23834755b4e6a7c0fe5a1347e32f4c636ef5d4dbd12de2c9"
+  },
+  {
+    "id": "pet-frame-06",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-frame-06.png",
+    "sha256": "57fa8ad9154a635c9e1190071f5314cf0a92a100d3d3ea775daf54644371e96d"
+  },
+  {
+    "id": "pet-frame-07",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-frame-07.png",
+    "sha256": "b51a1e58f522cd9355f82fec5b4d8b92bc9528bb29b1d1293f746b07b348d321"
+  },
+  {
+    "id": "pet-frame-08",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-frame-08.png",
+    "sha256": "a5791ef359422b944560784f915f42420c550d0a14e6bd904164b3c58209f0da"
+  },
+  {
+    "id": "pet-frame-09",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-frame-09.png",
+    "sha256": "cfb06de4ee12b3aa0a0e3eb8e578d6491d077467505f3b352e7e3ddeb9da7e06"
+  },
+  {
+    "id": "pet-frame-10",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-frame-10.png",
+    "sha256": "f5a1d89c8ff25ee7ba18509d3ea5e90c7b1a312efc1a65c188f2fcf79f6320ef"
+  },
+  {
+    "id": "pet-frame-11",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-frame-11.png",
+    "sha256": "c8a4b3ff3b5405693da6f1f9f346547556700a207a8436fc98ffe8fc9fa45601"
+  },
+  {
+    "id": "pet-frame-12",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-frame-12.png",
+    "sha256": "e3f5f32ee5b38335db4d7d1ce532e2608b596dbb07134fee486b427c527b64e9"
+  },
+  {
+    "id": "pet-accent-01",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-accent-01.png",
+    "sha256": "0955308d024bdf908dd48916213faaab6f70fb1fbd102c72a87b73f90280d2d7"
+  },
+  {
+    "id": "pet-accent-02",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-accent-02.png",
+    "sha256": "3af365de09dfd8aff82e9a3cc9d438c9163363a8f2d0e175968c0ac1e51b3329"
+  },
+  {
+    "id": "pet-accent-03",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-accent-03.png",
+    "sha256": "13ac3da557901650dcac11688d7b7a6f3b1ea181af25ac9d35b7991ba4ff02f5"
+  },
+  {
+    "id": "pet-accent-04",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-accent-04.png",
+    "sha256": "51e4948602ea4e4d1a22146501568146fef372a7804694dadf69980b718f816e"
+  },
+  {
+    "id": "pet-accent-05",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-accent-05.png",
+    "sha256": "f5bde84aede083d29a78e70f7b81b2d2b5ecfe803b77ddba7c799aa094dee82b"
+  },
+  {
+    "id": "pet-accent-06",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-accent-06.png",
+    "sha256": "0cf11641897057f5fea1c44f03cc71708620696a63a59a5b1fe3ae4e20ca9c57"
+  },
+  {
+    "id": "pet-accent-07",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-accent-07.png",
+    "sha256": "a5feeabf5c2839698708714262d73b9e8eb49b9d39161edaceb267491105c545"
+  },
+  {
+    "id": "pet-accent-08",
+    "collection": "pets",
+    "path": "assets/decorations/cozy-cute-v2/pet-accent-08.png",
+    "sha256": "ef2e3e6355bd6a5dc78b76843923488470d544967eb620e48e046b1efd47dba6"
+  },
+  {
+    "id": "travel-cloud",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v1/travel-cloud.png",
+    "sha256": "5fd3dbb5ab88ab03cff02dc51acc77ae823e0316eb8f7746858342a3955768bc"
+  },
+  {
+    "id": "travel-focal-04",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-focal-04.png",
+    "sha256": "18d3fc6fd3dd54f29fb32c865c8c81b3f9fa518ad6283e93d71730f943896085"
+  },
+  {
+    "id": "travel-focal-05",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-focal-05.png",
+    "sha256": "4c34f22e6c4befb409496ba6096295c7c55550f8ddbcb6b042211ce9df4d4484"
+  },
+  {
+    "id": "travel-focal-06",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-focal-06.png",
+    "sha256": "7b7d557b4c6dcf17c2e74ad5d4c0ea43506a69c9deb69090357ed18728eeae0e"
+  },
+  {
+    "id": "travel-focal-07",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-focal-07.png",
+    "sha256": "b5fed8374760c567eed1002412c31d5a91f7d34e9ecbf65aa021662afd9e7820"
+  },
+  {
+    "id": "travel-focal-08",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-focal-08.png",
+    "sha256": "156a0ff64f8ec1f2198b507dc2fe3dec1c5536a2b5e8a567a47bedb09a9aaf55"
+  },
+  {
+    "id": "travel-focal-09",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-focal-09.png",
+    "sha256": "80be9aadbc71f4d059677101097ea3dc22b140629170e3667a27905809c57e9b"
+  },
+  {
+    "id": "travel-focal-10",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-focal-10.png",
+    "sha256": "020c5209d3592941e67cae0fa9f46cce4099f0031945dcf218f39c6008cb1a0b"
+  },
+  {
+    "id": "travel-plane",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v1/travel-plane.png",
+    "sha256": "1e740998d0bea535cd70224fb897bb62915e1da5d868e2e84af71e29ecada0ab"
+  },
+  {
+    "id": "travel-suitcase",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v1/travel-suitcase.png",
+    "sha256": "e61b9d01d35f5e139ee08109b9c50f4a07c511d2454154337012bdb6bfc72be3"
+  },
+  {
+    "id": "travel-mini-01",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-mini-01.png",
+    "sha256": "44c74a9ab30f94a76271396ad0144f207df6f128d993ba896e4071ed31cf0274"
+  },
+  {
+    "id": "travel-mini-02",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-mini-02.png",
+    "sha256": "a3360001f1b95e0d01af33503c38964a09c60040fe1f0b9c3eadade92d7ea3d6"
+  },
+  {
+    "id": "travel-mini-03",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-mini-03.png",
+    "sha256": "c3bc45f2b839fa223d021f89a4216915dc7255289e3f6159f044fc2a451dbe7d"
+  },
+  {
+    "id": "travel-mini-04",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-mini-04.png",
+    "sha256": "7c33c0bab8fc893edf92d423d5e9c38aeeb5e2bfa6e0205ceb6bf31f4257bdbc"
+  },
+  {
+    "id": "travel-mini-05",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-mini-05.png",
+    "sha256": "f1b790d384339debf8d2905a1a8277c9a6798f37ae4e426d6d2c75b5bacbb3e7"
+  },
+  {
+    "id": "travel-mini-06",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-mini-06.png",
+    "sha256": "af0802cdd36dde01117e633527a4d2b1d4464a9b12c2704adbeae9462e61b60c"
+  },
+  {
+    "id": "travel-mini-07",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-mini-07.png",
+    "sha256": "585440e31562aee367665e53249546f0a150a34cc797abce4c822945cfa36db8"
+  },
+  {
+    "id": "travel-mini-08",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-mini-08.png",
+    "sha256": "50d4e5a839e5ae847de4b93bc5b7e2ab79f907c7a25ab205c1cd2cf2cf86dd34"
+  },
+  {
+    "id": "travel-mini-09",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-mini-09.png",
+    "sha256": "fd1a40a88e3309ff569aa1e6a5fe2e3de024c9ab6a5ab07942502216afe8f158"
+  },
+  {
+    "id": "travel-mini-10",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-mini-10.png",
+    "sha256": "365930b67b8910eb8fdc198b5cdc2674e66cc562a0aee2decb016640ca16cef4"
+  },
+  {
+    "id": "travel-frame-01",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-frame-01.png",
+    "sha256": "1f888c7591d9b58f305337e2304478ff8ee2f99b6835ce5579e792b38bba5484"
+  },
+  {
+    "id": "travel-frame-02",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-frame-02.png",
+    "sha256": "da796c7a599f611fad7e30eb69f809fb61f62da05cd51a47eb993b906af2b986"
+  },
+  {
+    "id": "travel-frame-03",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-frame-03.png",
+    "sha256": "73b5adc5bcaaf52356b66769d2bffe2866ca1dd2b9e8ea2b3db217faa1454949"
+  },
+  {
+    "id": "travel-frame-04",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-frame-04.png",
+    "sha256": "f36b8a53c61bad32e12e73bbe98b83504de043d7d8aa1f94312062df28abfb0b"
+  },
+  {
+    "id": "travel-frame-05",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-frame-05.png",
+    "sha256": "aa8fb72a7455c6483718cc7037895c75ccd6a5040a97d913037656faba027514"
+  },
+  {
+    "id": "travel-frame-06",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-frame-06.png",
+    "sha256": "4c08676694e3e955ba8138a7acd71e4d36ce89a367c3b142a13bde8b137bacc2"
+  },
+  {
+    "id": "travel-frame-07",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-frame-07.png",
+    "sha256": "3ad2862d97e235cb2bc960095bf35aa177d135879271b88ff8da7fbc55abed5a"
+  },
+  {
+    "id": "travel-frame-08",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-frame-08.png",
+    "sha256": "0ac3ad6dc0b157152c72ee6f58a909a12217a74511c969852e7f91b404174655"
+  },
+  {
+    "id": "travel-frame-09",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-frame-09.png",
+    "sha256": "e74413c7d0bd82153bda943e62c91be85c445301b8d5980ad38ada4a2a62eac1"
+  },
+  {
+    "id": "travel-frame-10",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-frame-10.png",
+    "sha256": "1b55b231293c821e6998d52a608d5077333b75c2ead14e4d0c34675298c7c6bd"
+  },
+  {
+    "id": "travel-frame-11",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-frame-11.png",
+    "sha256": "4b149728640c22c0d088b36ccb170486c67994eb1f523b255195919d8595394d"
+  },
+  {
+    "id": "travel-frame-12",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-frame-12.png",
+    "sha256": "a1762b5e510ed1b02f66f19264043350b6fdd96303bcd297b126f1d4be1f068f"
+  },
+  {
+    "id": "travel-accent-01",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-accent-01.png",
+    "sha256": "2e49227423974bd58bef730153f05cfdac21e5d43a2d9cced741f89dc6433fa3"
+  },
+  {
+    "id": "travel-accent-02",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-accent-02.png",
+    "sha256": "94ed3723324c4e6105b425e1bec1071bea88bf64ed3a95f34229d5bbf675bf06"
+  },
+  {
+    "id": "travel-accent-03",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-accent-03.png",
+    "sha256": "f44204f4aebbe90359055eb3414fcd1b2a36fcc3e256cd6f4e2638d30cc4d008"
+  },
+  {
+    "id": "travel-accent-04",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-accent-04.png",
+    "sha256": "a81fd1152212b7951f33a85c0ef58a902093364b5ea737ddf5b8c4701efa9220"
+  },
+  {
+    "id": "travel-accent-05",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-accent-05.png",
+    "sha256": "b660ad55d1252e44fcaec7920f4ef4ac247b6d2240f22c26b2c5f1fe3117b6d7"
+  },
+  {
+    "id": "travel-accent-06",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-accent-06.png",
+    "sha256": "f5fa1b77a8ddcb6b6653485b280989ab5b947225e5bb7a84cbf9bc44cbfa902f"
+  },
+  {
+    "id": "travel-accent-07",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-accent-07.png",
+    "sha256": "7d9101259d4153f8236c56a66288de37a2ab45ee87f0b7fdd65fbb81184fe8d8"
+  },
+  {
+    "id": "travel-accent-08",
+    "collection": "travel",
+    "path": "assets/decorations/cozy-cute-v2/travel-accent-08.png",
+    "sha256": "8294c054e1215a8346043990653d830f19322e46c01c41f1e6395d31442a89ce"
+  },
+  {
+    "id": "wellness-flower",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v1/wellness-flower.png",
+    "sha256": "03669193f7c49c3963b8ed50a19214461fb0d5b384890d4bcb02c478dd2b3210"
+  },
+  {
+    "id": "wellness-focal-04",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-focal-04.png",
+    "sha256": "7118cb9821f6059c58d730d854e20d9255363e99389f6bcf10a5740c84873ee6"
+  },
+  {
+    "id": "wellness-focal-05",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-focal-05.png",
+    "sha256": "35e8de34c33309a09425a1b260804d0dc8b41ebdcac9fd189b9a91f0da9e7192"
+  },
+  {
+    "id": "wellness-focal-06",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-focal-06.png",
+    "sha256": "30b720585b2035fd493ac615c1abff84d8501d449ebde2d1c895dbf10adafd92"
+  },
+  {
+    "id": "wellness-focal-07",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-focal-07.png",
+    "sha256": "b339ee90bf8335c2b11d617396709e6316a382e04ae933fc1b6064862b520340"
+  },
+  {
+    "id": "wellness-focal-08",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-focal-08.png",
+    "sha256": "9c2182c2906ece450379b8461fb3c8a76eac2eb5e56ee94f10c72ea670eca8f2"
+  },
+  {
+    "id": "wellness-focal-09",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-focal-09.png",
+    "sha256": "d93cc3b1a46b13fd032c5f1038b2e745554eb47548c27dd327a20a5999042254"
+  },
+  {
+    "id": "wellness-focal-10",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-focal-10.png",
+    "sha256": "fe0a019217bc5114d8b11a7ef0abcfc01382aeb2dcf61e7bb27727148868fcb8"
+  },
+  {
+    "id": "wellness-leaf",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v1/wellness-leaf.png",
+    "sha256": "02dd6234c9583139167315673371ad4795759c47c9e8ae7d0fb7c7d21835e47f"
+  },
+  {
+    "id": "wellness-teacup",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v1/wellness-teacup.png",
+    "sha256": "c2cf4e3e36f35caed57c09ec033fd31e0648d93a53b30ed9bee38931477e0735"
+  },
+  {
+    "id": "wellness-mini-01",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-mini-01.png",
+    "sha256": "2c1d777a8dbd83610630e09a2cb9ee0415006a9d6da05792c83202c707c580ce"
+  },
+  {
+    "id": "wellness-mini-02",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-mini-02.png",
+    "sha256": "d347af13399f9d2fe0b42e81b9561e502bdaf8dc2fe0213dadc9f792f2a8d244"
+  },
+  {
+    "id": "wellness-mini-03",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-mini-03.png",
+    "sha256": "07f82104139f14077ab366a725b8780706529f2608f2af017a7b58d791dc972d"
+  },
+  {
+    "id": "wellness-mini-04",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-mini-04.png",
+    "sha256": "25962b2298261c1b8de9d9523909668df50eac02d08b267858ae0fe48be4e7d8"
+  },
+  {
+    "id": "wellness-mini-05",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-mini-05.png",
+    "sha256": "52c656d7db44c400205d025155608974031bd78768f902c77a168fa6fc85e2ac"
+  },
+  {
+    "id": "wellness-mini-06",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-mini-06.png",
+    "sha256": "d4e70df266a0c19bc7395ef049982ec17bfbdf82c74566046094010d9d1e03c2"
+  },
+  {
+    "id": "wellness-mini-07",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-mini-07.png",
+    "sha256": "b7d55ae901b8b5cc4c34b2b6f8648cb825774f1c54c1ff876ebe2cd4b1f943d8"
+  },
+  {
+    "id": "wellness-mini-08",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-mini-08.png",
+    "sha256": "a54e4fb85ab44a477920fcefed85d0c4f372bf0e6c6b002b2413c0e843f5243a"
+  },
+  {
+    "id": "wellness-mini-09",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-mini-09.png",
+    "sha256": "73d6494ba546b526b283e71d83659f09d6ffbddf55b02e3a62fa3140957c4054"
+  },
+  {
+    "id": "wellness-mini-10",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-mini-10.png",
+    "sha256": "7e15ac21aa2f84be2479fa27f66cbd10e8d101a22d355ed59446643e5712fea0"
+  },
+  {
+    "id": "vine-corner",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v1/vine-corner.png",
+    "sha256": "387cee88ddfb1c52174f7b13ad08e454389a90032a7f48a30c28da935257b80a"
+  },
+  {
+    "id": "vine-end",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v1/vine-end.png",
+    "sha256": "2e2685753d872e52436e0b59e5b37c40fe7fe56a5ea663fdf6b7653bcc94120d"
+  },
+  {
+    "id": "vine-straight",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v1/vine-straight.png",
+    "sha256": "3d1429e2d25d79da8d4fa92d14bdd740b92d5d26206bfdf087dd625f60fd8215"
+  },
+  {
+    "id": "wellness-frame-04",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-frame-04.png",
+    "sha256": "8b3a0138d1298ffbf28dda25fb8faadfe530cf1cb01a649e3c794646519b3648"
+  },
+  {
+    "id": "wellness-frame-05",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-frame-05.png",
+    "sha256": "6324b220bc9fea83f8cec16e6271041d6c6b605712d51c1d8f7cbbe6b306f90f"
+  },
+  {
+    "id": "wellness-frame-06",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-frame-06.png",
+    "sha256": "c050ce3a63a201dc191cedf9b2a44fb4608cbea5bb68f4b037ba9e067d4b43a4"
+  },
+  {
+    "id": "wellness-frame-07",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-frame-07.png",
+    "sha256": "5bb696f1e04b4cf43c07d760dda973c855a491117b1cb189d703c2354ff264cf"
+  },
+  {
+    "id": "wellness-frame-08",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-frame-08.png",
+    "sha256": "b38ebd193a63a343e6d51a27cf7019d6348843917b64495de941bdac4723d2e2"
+  },
+  {
+    "id": "wellness-frame-09",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-frame-09.png",
+    "sha256": "5f80ab27314524b4a30614f1fe883f67007848acb08ffbdf4203709769bb7f85"
+  },
+  {
+    "id": "wellness-frame-10",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-frame-10.png",
+    "sha256": "1a7f3ecba60180ce6c4c3a0f71f87a94867aa78ddbfc45fbecc69d7778bb972c"
+  },
+  {
+    "id": "wellness-frame-11",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-frame-11.png",
+    "sha256": "f1d220958b76fd0683f5f20b24303a364fac397641f3c08b6f7570a8fdb4287a"
+  },
+  {
+    "id": "wellness-frame-12",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-frame-12.png",
+    "sha256": "cdc7de3e2468794666aa11a55900ad9c076e07175c0b50e2f25be937f389bd5a"
+  },
+  {
+    "id": "vine-flower-accent",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v1/vine-flower-accent.png",
+    "sha256": "80ebb34efb11d870d1768240d1c63034b942f5636efdcaa5468af64c45f7cd57"
+  },
+  {
+    "id": "wellness-accent-02",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-accent-02.png",
+    "sha256": "0e550fb7e631b85d9b11807916883221b65c5574fefbf14e733bf60193aa7f45"
+  },
+  {
+    "id": "wellness-accent-03",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-accent-03.png",
+    "sha256": "30160fd0dbef282d2e969fc21806da0b370baaccfff0304370c029eff362832f"
+  },
+  {
+    "id": "wellness-accent-04",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-accent-04.png",
+    "sha256": "9ae7c87b0eff7e6bd4f871ac7c3bc7f29ea53163e5a38c9de5ac36be09882b8f"
+  },
+  {
+    "id": "wellness-accent-05",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-accent-05.png",
+    "sha256": "3c185aa9df62b38ed248a534ab75a0a1a92839ead30776d36e8a9269836437fd"
+  },
+  {
+    "id": "wellness-accent-06",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-accent-06.png",
+    "sha256": "2422388a5b1e8dfc7cc85e4ac2d8fac34dc165693343061f6409670aa694898e"
+  },
+  {
+    "id": "wellness-accent-07",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-accent-07.png",
+    "sha256": "ff9103ffed413c9f0d4a8499cfbb12dfdb94a2cd240c2152658885faafe8bde7"
+  },
+  {
+    "id": "wellness-accent-08",
+    "collection": "wellness",
+    "path": "assets/decorations/cozy-cute-v2/wellness-accent-08.png",
+    "sha256": "6dd16f6b0750b99d6f68a99f70b500c2179efa6dceff037c34da4a391b1a0ba5"
+  },
+  {
+    "id": "cafe-coffee",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v1/cafe-coffee.png",
+    "sha256": "f77901796a2df4fe0f8941d21a007a661c255cce1672064aceaf37921c3da445"
+  },
+  {
+    "id": "cafe-cookie",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v1/cafe-cookie.png",
+    "sha256": "84e1eb66377cbb0a35bbc91bf72cf120c47f81508c1aefb648ad26c3114f6396"
+  },
+  {
+    "id": "cafe-croissant",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v1/cafe-croissant.png",
+    "sha256": "7541d471cea95d053099d807f81abfa14bd4e53dde6c3aeb9f0fdfc61ac0985f"
+  },
+  {
+    "id": "cafe-focal-04",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-focal-04.png",
+    "sha256": "592c0bbed11c45e7f3157b6f6f9e00bdca38b204dfb83ff9bc8582e005b50576"
+  },
+  {
+    "id": "cafe-focal-05",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-focal-05.png",
+    "sha256": "42a3e4c10fde6399143375745563d8cdf2eeb454c63833814b85ae20aa2b4d2c"
+  },
+  {
+    "id": "cafe-focal-06",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-focal-06.png",
+    "sha256": "599287de6dfb4f28fd2201a251c855987a0d77e35c54ecd1aefaba0176f5218f"
+  },
+  {
+    "id": "cafe-focal-07",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-focal-07.png",
+    "sha256": "2a7d12abaf2fcdf36dadd45084464b6c3154df2a9156a06b8ee982c7737d7a71"
+  },
+  {
+    "id": "cafe-focal-08",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-focal-08.png",
+    "sha256": "7ec7d806fea3bd605489fa73e0fa692d5e06e1fa83c3d64a120836bbc2126483"
+  },
+  {
+    "id": "cafe-focal-09",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-focal-09.png",
+    "sha256": "f4151859e77aaa7ed64dff7dd120d222cb7bb484dcbb8c8eedf80589eb7f25e6"
+  },
+  {
+    "id": "cafe-focal-10",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-focal-10.png",
+    "sha256": "d6bdc4f7054601c9fff07fe7e1f2691f19b0845dee1c9347e9c4673f48a992fe"
+  },
+  {
+    "id": "cafe-mini-01",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-mini-01.png",
+    "sha256": "e4411cd1d371e291c295c83c02bc304c6ff277f7537e9e1ca370cdbe9669c348"
+  },
+  {
+    "id": "cafe-mini-02",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-mini-02.png",
+    "sha256": "e079076fee2abf0fdfdc611ad45aa47962e796c040a2dfd893611ecc248cc8b9"
+  },
+  {
+    "id": "cafe-mini-03",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-mini-03.png",
+    "sha256": "220d663bcee7a1506b7cc29ced10b53f6cddf04c783a2340e91105d68bc4ce2a"
+  },
+  {
+    "id": "cafe-mini-04",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-mini-04.png",
+    "sha256": "7ff3f155160c0f4fcfbe09231ebcc81ca0333fc2d3c14d973bf6ef09baa4723c"
+  },
+  {
+    "id": "cafe-mini-05",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-mini-05.png",
+    "sha256": "9fa2552b1dfa563ecd496bf06ad4ced48f8fab3724c5717bf975caecfc7ec713"
+  },
+  {
+    "id": "cafe-mini-06",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-mini-06.png",
+    "sha256": "2acb54d6d192bae432bf924bed1f1fc679d29e5e13966a6238abaea3a2dc86a1"
+  },
+  {
+    "id": "cafe-mini-07",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-mini-07.png",
+    "sha256": "ca8933160729801be0d26ac7e55ab4b0463ed1b5f67123d47bfc276ff6e2c84c"
+  },
+  {
+    "id": "cafe-mini-08",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-mini-08.png",
+    "sha256": "1455e68269ae96e9ab2fcf2ec2be3f2d45fd8b7a45c95414c728973b09b44076"
+  },
+  {
+    "id": "cafe-mini-09",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-mini-09.png",
+    "sha256": "24f1a81a5d4a3497dc15f87b137f317626c336da189ee5c647a5aefe76105cd6"
+  },
+  {
+    "id": "cafe-mini-10",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-mini-10.png",
+    "sha256": "16955e3a5b886e0081228dfb06176deef4fdef08d1d88e1869b44b30b9604629"
+  },
+  {
+    "id": "cafe-frame-04",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-frame-04.png",
+    "sha256": "565a37c413bd217d1b96ddb81b8dc724a0b67fe25cd11877639729b2684766f4"
+  },
+  {
+    "id": "cafe-frame-05",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-frame-05.png",
+    "sha256": "b3e0640aaf7379a51243ed2f247380a74b506b08e588f52e1c3b12f1c7813945"
+  },
+  {
+    "id": "cafe-frame-06",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-frame-06.png",
+    "sha256": "33837d7c63879ceeb89c7a884e724fda60d480a6de7484d8fc81d449490d40dc"
+  },
+  {
+    "id": "cafe-frame-07",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-frame-07.png",
+    "sha256": "51b197773f48f98cedfdf99216f7ddc7c8f2a9c8a5bc4a8d5411de11f9a759e8"
+  },
+  {
+    "id": "cafe-frame-08",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-frame-08.png",
+    "sha256": "0b6efdfc6b258a4a0ed02c797f756db63f3c7340470de5360748f86cdae41b06"
+  },
+  {
+    "id": "cafe-frame-09",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-frame-09.png",
+    "sha256": "e84299f80549f891f0eee6afe7e71a1f4c4f9d1ee824d615eb514c68e09f63ac"
+  },
+  {
+    "id": "cafe-frame-10",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-frame-10.png",
+    "sha256": "e273fdcf6be65ec43dac3331cdd41eccbed416df0dbd21d150024f06cec5fb0e"
+  },
+  {
+    "id": "cafe-frame-11",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-frame-11.png",
+    "sha256": "54223e494e06f25891dea01bf58cb1344f16523573bde27cdabbf51d684b0896"
+  },
+  {
+    "id": "cafe-frame-12",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-frame-12.png",
+    "sha256": "355a8f5b001e8ee544fa70030685358ce52ad7e3308078550e10a76d9b98d8ad"
+  },
+  {
+    "id": "coffee-corner",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v1/coffee-corner.png",
+    "sha256": "833db98fd1c72cfda2452351a7f28bc0b453cf85683e2c34ae8a1cc0b8c059d0"
+  },
+  {
+    "id": "coffee-end",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v1/coffee-end.png",
+    "sha256": "846f127a37b8d96580a15ce208ba3eee19d577e9b7f140c7aaea95cb70180272"
+  },
+  {
+    "id": "coffee-straight",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v1/coffee-straight.png",
+    "sha256": "da934f4a2abe93a514de5d3fbdda16ec3745bf58eb422df3a22b942ebe49cba3"
+  },
+  {
+    "id": "cafe-accent-02",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-accent-02.png",
+    "sha256": "1f34abc65620840a0ae3c0142b30574fa6b92848753c6d792f34a738b230cf14"
+  },
+  {
+    "id": "cafe-accent-03",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-accent-03.png",
+    "sha256": "e86530c9ec0bb1dd9687865a97df12fb3463d906b88f72682dd85c40b4a16e92"
+  },
+  {
+    "id": "cafe-accent-04",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-accent-04.png",
+    "sha256": "b3342475ea52217e2e07574e99a553d22d51aaaad5d78f55f990db655b321cb1"
+  },
+  {
+    "id": "cafe-accent-05",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-accent-05.png",
+    "sha256": "31df21a64b88fc6f3f2ff25d14fce9c097a9cc1f793a802acc940d980af0c770"
+  },
+  {
+    "id": "cafe-accent-06",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-accent-06.png",
+    "sha256": "8617b8fe938f7757001d24f2775b22a2ffc5e0170b4c55c76782187d5ef55c3d"
+  },
+  {
+    "id": "cafe-accent-07",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-accent-07.png",
+    "sha256": "646739cd14b9267afa071223bb38512d0aa571b8ebd143f3053a57f402ec567e"
+  },
+  {
+    "id": "cafe-accent-08",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v2/cafe-accent-08.png",
+    "sha256": "2c9816b589528123036ced6ad82e605c93aed95eeb3a7da401cabae270c1a6ba"
+  },
+  {
+    "id": "coffee-accent",
+    "collection": "cafe",
+    "path": "assets/decorations/cozy-cute-v1/coffee-accent.png",
+    "sha256": "459cf8489db7715da720b9841225c5576fc8f661a05962d5b735046e82bbc249"
+  },
+  {
+    "id": "shopping-bag",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v1/shopping-bag.png",
+    "sha256": "58284eaa4427d3f0a6798e1c2617b8536d898390fbc94e5127d17f89aa15b9b8"
+  },
+  {
+    "id": "shopping-bow",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v1/shopping-bow.png",
+    "sha256": "0a980d5de6c19988aa5c8655e9f313a98232b164855d82f1b65095beadc42191"
+  },
+  {
+    "id": "shopping-focal-04",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-focal-04.png",
+    "sha256": "52f22e7b08fea526a3abd8334be644bb0a41ad1712844a893a931605d7834c64"
+  },
+  {
+    "id": "shopping-focal-05",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-focal-05.png",
+    "sha256": "d43af0df60ac2bfca1eaf51a333eb1ac3abe9c8cede5fdac6aae9a56237889fc"
+  },
+  {
+    "id": "shopping-focal-06",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-focal-06.png",
+    "sha256": "b3270d2b4a2998af7d41e2e7540b40c437605c2b82085a543a91adfeb3a732ef"
+  },
+  {
+    "id": "shopping-focal-07",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-focal-07.png",
+    "sha256": "e1bfdea6708d4ff5ff399263743d2f6635fdfffd5642b3107ac4f6849175007a"
+  },
+  {
+    "id": "shopping-focal-08",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-focal-08.png",
+    "sha256": "38dc322e47a99813bfdceb7219541ce3051dec70dc03a5a5a5edecd00d450358"
+  },
+  {
+    "id": "shopping-focal-09",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-focal-09.png",
+    "sha256": "b0d0bf39db18a3ad25701c4de5784025dd7ab17456e12bda9612111de957042c"
+  },
+  {
+    "id": "shopping-focal-10",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-focal-10.png",
+    "sha256": "dbcbeb161e5757561e2532c69f688450a847dedddfbabcddfaf68f5904790bfa"
+  },
+  {
+    "id": "shopping-gift",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v1/shopping-gift.png",
+    "sha256": "0be4a3aaf13c430c4740bb13286bcab7fe43081a948acb56fb94d8bd2765ea73"
+  },
+  {
+    "id": "shopping-mini-01",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-mini-01.png",
+    "sha256": "cbd6ff410fe91e592f54ce1269f2fb3bd7e9ba694ed8517c7b3a041fdf53e887"
+  },
+  {
+    "id": "shopping-mini-02",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-mini-02.png",
+    "sha256": "869f0003f5978652e5006dbab59cec7d1de52e256c3c5d412123134df9954f5a"
+  },
+  {
+    "id": "shopping-mini-03",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-mini-03.png",
+    "sha256": "b97d39060a7f46fcce43c64e09921e1be0da9fb10911c12dd4030fb9369c51a8"
+  },
+  {
+    "id": "shopping-mini-04",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-mini-04.png",
+    "sha256": "7b962c0213b61cc918647070cc40e764d152830dc40b9a83152d940d7c85d58b"
+  },
+  {
+    "id": "shopping-mini-05",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-mini-05.png",
+    "sha256": "dcb016e26a549b8541d20294e8f0ec67424ef1fc62d9d2c1c9adcf8d3e66cfaf"
+  },
+  {
+    "id": "shopping-mini-06",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-mini-06.png",
+    "sha256": "03b8d970bf15f31bd670476be0c0b5eb18e1d6a0be26ff8f046284e3e216f13f"
+  },
+  {
+    "id": "shopping-mini-07",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-mini-07.png",
+    "sha256": "fa637f6de45d6dcd07ec82359b289497e6d8a6d7c032a9301dd14a5a270fa358"
+  },
+  {
+    "id": "shopping-mini-08",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-mini-08.png",
+    "sha256": "8c8275b51786ee51557717750c7308d09c2a907461220cfa92f7fa822d542031"
+  },
+  {
+    "id": "shopping-mini-09",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-mini-09.png",
+    "sha256": "ecbc0634e71e9c899c876061a113de33ac9fa69b5b527a574c4abab0338277e8"
+  },
+  {
+    "id": "shopping-mini-10",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-mini-10.png",
+    "sha256": "cd63c460a14012e2902574599410204fa8b9671a7248dcd438221d6aa062112f"
+  },
+  {
+    "id": "ribbon-corner",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v1/ribbon-corner.png",
+    "sha256": "55609ff34de4b474cf5fd7cc06bfa545da347742ef8ba6e5733be001f49672c9"
+  },
+  {
+    "id": "ribbon-end",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v1/ribbon-end.png",
+    "sha256": "9d2536a797fd86aa638c33aae60a53f877b439b84662355f20e3f2144600aa8d"
+  },
+  {
+    "id": "ribbon-straight",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v1/ribbon-straight.png",
+    "sha256": "095618f2a49aca434e04dea84a4b69c36dc1fa1f6b1f32c69cc6a855573ba436"
+  },
+  {
+    "id": "shopping-frame-04",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-frame-04.png",
+    "sha256": "a2d90f7512844da85af3ad1820456eac69022c454fc6e1b6e7ac202e158c66fa"
+  },
+  {
+    "id": "shopping-frame-05",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-frame-05.png",
+    "sha256": "a0c9056aa8d6444450772b2f8a558a49b3d2fd0f524b2fbb3a038170e14d3f7b"
+  },
+  {
+    "id": "shopping-frame-06",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-frame-06.png",
+    "sha256": "cc26577d1ada08ef4ba542cd28196e9667a71a7af398f607999a71cb3a3c79a3"
+  },
+  {
+    "id": "shopping-frame-07",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-frame-07.png",
+    "sha256": "5432047a26ade3a1392f228ecf85b8dd1e4968e494c3f197d6d3bae6c98eb810"
+  },
+  {
+    "id": "shopping-frame-08",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-frame-08.png",
+    "sha256": "1c7fd4707e2d96932e03128f12526b082fc2c4052d9dcb41022e540ab0687d24"
+  },
+  {
+    "id": "shopping-frame-09",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-frame-09.png",
+    "sha256": "5baae8f7eab5f0b6be35fa349c7255b6759789843ab21c7882e3ece67568f29c"
+  },
+  {
+    "id": "shopping-frame-10",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-frame-10.png",
+    "sha256": "9081fa66c866d12779b9810a1e6e5c9206c6aab2654c65a865290fc204b62043"
+  },
+  {
+    "id": "shopping-frame-11",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-frame-11.png",
+    "sha256": "16eac247497593f1b2e259c63d019813ea39c7cda744d357554ea827295175c8"
+  },
+  {
+    "id": "shopping-frame-12",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-frame-12.png",
+    "sha256": "f23a6d7dd8aabef58fb2c7660fdb39885c604ae74e15460ff884ecd20423ad42"
+  },
+  {
+    "id": "ribbon-accent",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v1/ribbon-accent.png",
+    "sha256": "9f7da6d93e4445f5fc7be973e3107f42535b464bbe845059dfb0ee5692329231"
+  },
+  {
+    "id": "shopping-accent-02",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-accent-02.png",
+    "sha256": "6dbce5ab420bd6f0bedb2f817cad48d977b99a7c8bad0a40bf862e6d0d641174"
+  },
+  {
+    "id": "shopping-accent-03",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-accent-03.png",
+    "sha256": "696b591e005a56e27dfe51043691a61034d2228927f130b7967e08ed2d09f73f"
+  },
+  {
+    "id": "shopping-accent-04",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-accent-04.png",
+    "sha256": "c94c6d17c5d2c051233df2d943ca310e3de2c871e4675655a080d82bfc84a016"
+  },
+  {
+    "id": "shopping-accent-05",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-accent-05.png",
+    "sha256": "9d302a427492c73ce35d3094b88c6a90d1a1fa882236940a5eb0d7e6da4f9e27"
+  },
+  {
+    "id": "shopping-accent-06",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-accent-06.png",
+    "sha256": "2e80fe6e30bd60d980d548cd3da4e5ea5d99f31cd0bfe0f438190d7739f5dea6"
+  },
+  {
+    "id": "shopping-accent-07",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-accent-07.png",
+    "sha256": "95fbc68fc8ef558f67d3f85faff9ee106177c0662561d1a7fcd01f19b7acab0d"
+  },
+  {
+    "id": "shopping-accent-08",
+    "collection": "shopping",
+    "path": "assets/decorations/cozy-cute-v2/shopping-accent-08.png",
+    "sha256": "ecb73e3e41cec97ec2b3aa8f680900edc80e52acbb3425aae71b7015cd9a21ca"
+  },
+  {
+    "id": "savings-coin",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v1/savings-coin.png",
+    "sha256": "77e0f3c429c99b173ba02bfb518993b3a8e836f11ed501a8104604e24fcf5ea4"
+  },
+  {
+    "id": "savings-focal-04",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-focal-04.png",
+    "sha256": "dc916c8bc6aa543eb423bc6e49e1c088c4f9635091c3ab05f9e2f65fb62ef48f"
+  },
+  {
+    "id": "savings-focal-05",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-focal-05.png",
+    "sha256": "9d9977e9e7e17db8f7eac7e8c54c34b09ae0063b034bb53f5ba67d82be4540b9"
+  },
+  {
+    "id": "savings-focal-06",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-focal-06.png",
+    "sha256": "0554f63e9f6380bed00e951ab6a924463a2fd69a9cf7340f2b3f6113fef9f131"
+  },
+  {
+    "id": "savings-focal-07",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-focal-07.png",
+    "sha256": "728e45f560b2002448d3824227e927671ea171910a7beeceb44979c8641c3beb"
+  },
+  {
+    "id": "savings-focal-08",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-focal-08.png",
+    "sha256": "fe21f4e4ebe63d169b4f163e4c58fd49355bea67e381ab9f5d4afe8f4b127e8a"
+  },
+  {
+    "id": "savings-focal-09",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-focal-09.png",
+    "sha256": "ba395eb258a183833bcb929e7e3d04b97c833760d97b63ba3e589f689583e944"
+  },
+  {
+    "id": "savings-focal-10",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-focal-10.png",
+    "sha256": "325b54e6112c0c323131d799a2c1c643060a1b3132a44802544b4ca5e8369c7c"
+  },
+  {
+    "id": "savings-piggy",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v1/savings-piggy.png",
+    "sha256": "2a862f6ea9362c6a6657bdd11f56b75f0a779913375e223e74f8aa00e5c93067"
+  },
+  {
+    "id": "savings-wallet",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v1/savings-wallet.png",
+    "sha256": "cfee1d68ce97774e0a4e80e9e83e5b377c73b74ff95e1b1ae0a5a389ebfc8a84"
+  },
+  {
+    "id": "savings-mini-01",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-mini-01.png",
+    "sha256": "fb60023b73257e639e653ba1b80fb32b9870681e76267b1e2a2587c1bd81c5ad"
+  },
+  {
+    "id": "savings-mini-02",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-mini-02.png",
+    "sha256": "fe76e3427161600bdb1396d073b9d0272cec3741401d2605b4301d8550b6cf10"
+  },
+  {
+    "id": "savings-mini-03",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-mini-03.png",
+    "sha256": "18e3e825d4bfc163739266c30e003fef339441ba94a62ec5ecdb949d82397664"
+  },
+  {
+    "id": "savings-mini-04",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-mini-04.png",
+    "sha256": "8dfdb2d6f874558102ce59f7b41e527ec52a83f89794cd4a054de08a1ff39de5"
+  },
+  {
+    "id": "savings-mini-05",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-mini-05.png",
+    "sha256": "bf3e94e2b425e277eb891061c7482503d1f3c12ece155b8df8ce1f3b8da6bc1e"
+  },
+  {
+    "id": "savings-mini-06",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-mini-06.png",
+    "sha256": "dda25fd143ee254afc78bb1a49d5f6dc4f3235730ad16ab9be7f434a297f99d5"
+  },
+  {
+    "id": "savings-mini-07",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-mini-07.png",
+    "sha256": "80731678a068d7e038c36c8f898296173e5504f94fd55ae97eea8be063a40fb2"
+  },
+  {
+    "id": "savings-mini-08",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-mini-08.png",
+    "sha256": "e096ff9a0dd773755e9fe5fbde34b04c927f3e1967024d97c30d95663f3bf6ab"
+  },
+  {
+    "id": "savings-mini-09",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-mini-09.png",
+    "sha256": "e5343bdcc2929e9aedc261cdb4266dca681b7124148aaa8676944dbb7218f8db"
+  },
+  {
+    "id": "savings-mini-10",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-mini-10.png",
+    "sha256": "0684f5f0bcd5dd277377c6dda016d967c0731b6c4c24142c38dcf0f56535a3bd"
+  },
+  {
+    "id": "savings-corner",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v1/savings-corner.png",
+    "sha256": "8883bc1f530d2ff23e7e8627936bd4e8c647acc52809af1f53863f7ca2393915"
+  },
+  {
+    "id": "savings-end",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v1/savings-end.png",
+    "sha256": "68b4276b74230397ad27f981237be1f9419d821ad5030bf57e95ec0e0918b663"
+  },
+  {
+    "id": "savings-frame-04",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-frame-04.png",
+    "sha256": "9a62ae9e09978748b9c892cb9de91119d506ada9029434a31e5c0e9f44023874"
+  },
+  {
+    "id": "savings-frame-05",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-frame-05.png",
+    "sha256": "79834c892499e017326d4e4e88c0f74308aed2fc3797a4999b45a86c997beff0"
+  },
+  {
+    "id": "savings-frame-06",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-frame-06.png",
+    "sha256": "c624a09ba5307036b5ee3bc67b887156a696f1a27db4bbcb79b7a3d71dc61284"
+  },
+  {
+    "id": "savings-frame-07",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-frame-07.png",
+    "sha256": "0b1efa64132cbe5e9e7c9796cdaa559842f9840e17f3b70de6006f9682abf46b"
+  },
+  {
+    "id": "savings-frame-08",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-frame-08.png",
+    "sha256": "e6a73176543ca03351446aa6743a5d07b2a1f0a882dd53034df0a59b77e61bea"
+  },
+  {
+    "id": "savings-frame-09",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-frame-09.png",
+    "sha256": "f51f084685eeaf4c5bde9b61cabfa5c71e7a29e30abc3895bec7852353b277e6"
+  },
+  {
+    "id": "savings-frame-10",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-frame-10.png",
+    "sha256": "c28112c99f2365ce8154418ffd9140cf4c8fc779bf75b48518f5852e2ad7d3f0"
+  },
+  {
+    "id": "savings-frame-11",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-frame-11.png",
+    "sha256": "9036878336555f6e0e1c3744f48fc6de8e4f45548bc721becb22d21777e94868"
+  },
+  {
+    "id": "savings-frame-12",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-frame-12.png",
+    "sha256": "45cc5e14a9672605b00911efcbc2412b6c92855d1e9fc5383a71d254d9c6a4ca"
+  },
+  {
+    "id": "savings-straight",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v1/savings-straight.png",
+    "sha256": "8edf966db6ce3469d61ce67d4fb2b4ed4c2740020f10fa313848b7936b971a5c"
+  },
+  {
+    "id": "savings-accent",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v1/savings-accent.png",
+    "sha256": "239c5c8ef97a78b0fc5e89bd41df72087dac8744375d928c05b2970b7a681124"
+  },
+  {
+    "id": "savings-accent-02",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-accent-02.png",
+    "sha256": "5abdf124a356f9c69e23fab5ae351ace83abc995d8c58e2826e9ae30d04aa501"
+  },
+  {
+    "id": "savings-accent-03",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-accent-03.png",
+    "sha256": "c20c5aa3b1824d427a87d3a425a0637e72aaf17fd9ec2133d56c9a2f42991ccd"
+  },
+  {
+    "id": "savings-accent-04",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-accent-04.png",
+    "sha256": "dc9adfbb3cfb5fd217673d49b093248ea0685cc71362750955fa0437a6d5bf0e"
+  },
+  {
+    "id": "savings-accent-05",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-accent-05.png",
+    "sha256": "883454a22f16bdd08327468c8696e3feaa3ce2fa86a9c730419f1efda966e2c5"
+  },
+  {
+    "id": "savings-accent-06",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-accent-06.png",
+    "sha256": "20b900bd331dc3d5e123beb033ae48040e35363343f5ee07a12ebd93076a8647"
+  },
+  {
+    "id": "savings-accent-07",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-accent-07.png",
+    "sha256": "98617c949f7e6a071212c2160483b4d5f787f924bacc11da7813356f9ded6262"
+  },
+  {
+    "id": "savings-accent-08",
+    "collection": "savings",
+    "path": "assets/decorations/cozy-cute-v2/savings-accent-08.png",
+    "sha256": "0fd11bd859cbd4e245545bf2bbbb3249fe22f0fb4318a03ef7406f00b69e7948"
+  }
+]

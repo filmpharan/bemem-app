@@ -1,5 +1,5 @@
+import { ciColors,ciTypography } from '../../constants/ci-theme';
 import { StyleSheet, Text, View } from 'react-native';
-import { bemem } from '../../constants/bemem-theme';
 
 export function WalletEmptyState({ emptyWallet }: { emptyWallet: boolean }) {
   return <View style={styles.container}>
@@ -9,6 +9,6 @@ export function WalletEmptyState({ emptyWallet }: { emptyWallet: boolean }) {
 }
 const styles = StyleSheet.create({
   container: { paddingTop: 64, paddingHorizontal: 24, alignItems: 'center' },
-  text: { color: bemem.muted, fontSize: 14, textAlign: 'center' },
-  hint: { marginTop: 8, color: bemem.muted, fontSize: 12, lineHeight: 19, textAlign: 'center' },
+  text: { fontFamily:ciTypography.body.fontFamily, color:ciColors.text.secondary, fontSize:14, textAlign: 'center' },
+  hint: { ...ciTypography.supporting, fontWeight:'400', marginTop:8, color:ciColors.text.supporting, lineHeight:19, textAlign: 'center' },
 });

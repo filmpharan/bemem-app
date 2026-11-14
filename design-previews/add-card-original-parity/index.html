@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' file:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'none'">
+  <title>bemem — Original Add Card reconstruction</title><link rel="icon" href="data:,">
+  <link rel="stylesheet" href="parity.css">
+  <script src="draft.js" defer></script>
+</head>
+<body>
+  <nav class="review-nav" aria-label="Design review"><strong>Original Add Card · Reconstruction</strong><a href="comparison.html">Review &amp; comparison</a><a href="?footer=source">Source footer flow</a><a href="?">Requested sticky footer</a></nav>
+  <main class="phone">
+    <div class="wallet-background" aria-hidden="true"><header><b>bemem.</b><span>⌕ &nbsp; Create</span></header><div class="background-card"></div><div class="background-card second"></div></div>
+    <div class="overlay" id="overlay">
+      <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+        <div class="sheet-scroll">
+          <header class="sheet-header"><h1 id="sheet-title">Add Card</h1><button class="icon-button close" aria-label="Close Add Card" id="close"><svg><use href="#icon-x"/></svg></button></header>
+          <form id="card-form" novalidate autocomplete="off">
+            <div class="preview-row">
+              <div class="preview-width" id="preview-width"><div class="card-face" id="card-face"><div class="card-shade"></div><p id="face-name">Card name</p><p id="back-number" hidden>0000</p></div></div>
+              <div class="tools"><button type="button" class="icon-button" id="flip" aria-label="Front / Back" aria-pressed="false"><svg><use href="#icon-flip"/></svg></button><span id="side-label">Front</span><button type="button" class="icon-button" disabled title="Gallery — Coming soon" aria-label="Gallery — Coming soon"><svg><use href="#icon-image"/></svg></button><button type="button" class="icon-button" disabled title="Camera — Coming soon" aria-label="Camera — Coming soon"><svg><use href="#icon-camera"/></svg></button></div>
+            </div>
+            <div class="orientation" role="group" aria-label="Card size and orientation">
+              <select id="landscape-size" aria-label="Select Landscape Size"><option value="landscape">Card 6x4</option><option value="voucher">Voucher 7x3</option><option value="boarding-pass">Boarding Pass 8x4</option></select>
+              <button type="button" class="orientation-button" id="landscape-button" hidden>Landscape</button>
+              <select id="portrait-size" aria-label="Select Portrait Size" hidden><option value="portrait">Card 4x6</option><option value="vaccine-passport">Vaccine Passport 5x7</option></select>
+              <button type="button" class="orientation-button" id="portrait-button">Portrait</button>
+            </div>
+            <div class="country-brand"><div class="country">📍 Thailand</div><input id="brand" list="brand-list" placeholder="Find or select a brand" aria-label="Find or select a brand"><datalist id="brand-list"><option value="366 วัน การ์ด (Foodland)"></option><option value="All Member (7-Eleven)"></option><option value="Bangchak GreenMiles (บางจาก)"></option><option value="Beautrium Member (บิวเทรี่ยม)"></option><option value="Big Point (Big C)"></option><option value="Boots Advantage Card (บู๊ทส์)"></option><option value="Caltex Rewards (คาลเท็กซ์)"></option><option value="ChaTraMue Member (ชาตรามือ)"></option><option value="Chester&#x27;s Member (เชสเตอร์)"></option><option value="CRG Plus (มิสเตอร์ โดนัท, อานตี้ แอนส์, คัตสึยะ)"></option><option value="Dairy Queen Member (แดรี่ควีน)"></option><option value="DD Card (ดังกิ้น โดนัท)"></option><option value="Decathlon Member (ดีแคทลอน)"></option><option value="EVEANDBOY Member (อีฟแอนด์บอย)"></option><option value="Fuji Smart Card (ภัตตาคารญี่ปุ่นฟูจิ)"></option><option value="GON Gang Club (บาร์บีคิวพลาซ่า)"></option><option value="Gourmet Market (สะสมผ่าน M Card)"></option><option value="HomePro Card (โฮมโปร)"></option><option value="IKEA Family (อิเกีย)"></option><option value="Index Joy Card (อินเด็กซ์ ลิฟวิ่งมอลล์)"></option><option value="Joy Card (S&amp;P)"></option><option value="KFC Member Thailand (เคเอฟซี)"></option><option value="KOI Card (โคอิ เตะ)"></option><option value="Lawson 108 Member"></option><option value="Lotus&#x27;s (เดิม Clubcard / Lotus&#x27;s Smart Life)"></option><option value="M Card (เดอะมอลล์, เอ็มโพเรียม, เอ็มควอเทียร์, เอ็มสเฟียร์, พารากอน)"></option><option value="Major M GEN (ตั๋วหนังและป๊อปคอร์น เครือเมเจอร์)"></option><option value="Makro PRO Point (แม็คโคร)"></option><option value="MK Member Card (เอ็มเค สุกี้ - Red / Black / Gold)"></option><option value="MUJI Passport (มูจิ)"></option><option value="Oishi Pointo (โออิชิ, ชาบูชิ, ราเมน)"></option><option value="ONESIAM Member (สยามพารากอน, สยามเซ็นเตอร์, สยามดิสคัฟเวอรี, ไอคอนสยาม)"></option><option value="Oriental Princess Society (โอเรียนทอล พริ้นเซส)"></option><option value="PT Max Card (ปั๊ม PT, กาแฟพันธุ์ไทย, แมกซ์มาร์ท)"></option><option value="PTT Blue Card (ปตท. / OR, คาเฟ่ อเมซอน)"></option><option value="Sephora Beauty Pass (เซโฟรา - White / Black / Gold)"></option><option value="SF+ (เอสเอฟ พลัส) (ตั๋วหนังและคอมโบเซ็ต เครือเอสเอฟ)"></option><option value="Shell GO+ (เชลล์)"></option><option value="Starbucks Rewards (สตาร์บัคส์)"></option><option value="Susco Smart Member (ซัสโก้)"></option><option value="Swensen&#x27;s Member Card (สเวนเซ่นส์)"></option><option value="The 1 (เครือเซ็นทรัล, โรบินสัน, เพาเวอร์บาย, ซูเปอร์สปอร์ต)"></option><option value="The 1112 Member / 1 แถม 1 (The Pizza Company)"></option><option value="Tops / Central Food Hall (สะสมผ่าน The 1)"></option><option value="Uniqlo App Member (ยูนิโคล่)"></option><option value="Villa Rewards (Villa Market)"></option><option value="Watsons Club (วัตสัน)"></option><option value="Yayoi Member (ยาโยอิ)"></option><option value="สบายการ์ด (CJ MORE)"></option><option value="ไทวัสดุ / BnB home Member (เครือ The 1)"></option></datalist></div>
+            <input id="card-name" aria-label="Card / Store name" placeholder="Card / Store name">
+            <label>Membership number / Phone number<input id="member-number" placeholder="Membership number / Phone number" type="text" inputmode="text" autocapitalize="off" spellcheck="false"></label>
+            <label>Expiration date (optional)<input id="expiry" aria-label="Expiration date" type="month"></label>
+            <footer class="action-footer"><button class="add-card" type="button" disabled title="Visual draft only — no card is saved">Add Card</button></footer>
+          </form>
+        </div>
+      </section>
+    </div>
+    <button class="reopen" id="reopen" hidden>Review Add Card again</button>
+  </main>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="icon-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="icon-flip" viewBox="0 0 24 24"><path d="m3 7 5 5-5 5V7m18 0-5 5 5 5V7M12 20v2m0-8v2m0-8v2m0-8v2"/></symbol>
+    <symbol id="icon-image" viewBox="0 0 24 24"><path d="M16 5h6m-3-3v6m2 3.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7.5M21 15l-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/><circle cx="9" cy="9" r="2"/></symbol>
+    <symbol id="icon-camera" viewBox="0 0 24 24"><path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"/><circle cx="12" cy="13" r="3"/></symbol>
+  </defs></svg>
+</body></html>

@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "mobile-design": {
+      "source": "RubenGlez/mobile-design",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "4971a065a7fb7154793a9debef1323cb5962335daf1ebc9e90112265d6f315cd"
+    },
     "ui-ux-pro-max": {
       "source": "nextlevelbuilder/ui-ux-pro-max-skill",
       "ref": "b7d5353e0130feb8c5574ef1251f8a1db1873ccb",
