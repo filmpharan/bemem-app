@@ -1,79 +1,272 @@
 {
-  "baseline": "bemem â€” Samsung Accepted Baseline â€” 2026-11-14",
-  "acceptance": "Owner-reported Samsung acceptance; development baseline, not store release",
-  "status": "Post-cleanup local validation passed; private upload awaits owner review and approval",
-  "quarantineSibling": "../bemem-handoff-quarantine/20261114-samsung-baseline-899d0bf7",
-  "cleanup": {
-    "removedFiles": 1637,
-    "removedBytes": 124780210,
-    "verifiedCopies": 1637,
-    "category": "F only; exact per-file manifest outside project",
-    "retainedReferencedSheets": 27,
-    "approvedMastersPreservedInPlace": true
+  "recordedAt": "2026-11-23T20:21:40.429156+07:00",
+  "scope": "Owner-authorized developer review pre-commit validation; actual commit/push identity is verified separately in Git and the owner report",
+  "currentHead": "3ec5a45bd9765594f5901b8ab196ba2f8950bde4",
+  "workingTreeCommitted": false,
+  "stagingPerformed": false,
+  "commitPushDeployPerformed": false,
+  "historicalEvidence": {
+    "prePhase": {
+      "fullTests": 1504,
+      "passed": 1504,
+      "testFiles": 60,
+      "source": "output/keep-media-full-tests.txt",
+      "phase1ReranTests": false
+    },
+    "legacy20261114": {
+      "baseline": "bemem â€” Samsung Accepted Baseline â€” 2026-11-14",
+      "acceptance": "Owner-reported Samsung acceptance; development baseline, not store release",
+      "status": "Post-cleanup local validation passed; private upload awaits owner review and approval",
+      "quarantineSibling": "../bemem-handoff-quarantine/20261114-samsung-baseline-899d0bf7",
+      "cleanup": {
+        "removedFiles": 1637,
+        "removedBytes": 124780210,
+        "verifiedCopies": 1637,
+        "category": "F only; exact per-file manifest outside project",
+        "retainedReferencedSheets": 27,
+        "approvedMastersPreservedInPlace": true
+      },
+      "validation": {
+        "typescript": "passed",
+        "focused": {
+          "passed": 133,
+          "total": 133
+        },
+        "fullRegression": {
+          "passed": 1053,
+          "total": 1053,
+          "failed": 0,
+          "skipped": 0
+        },
+        "hermes": {
+          "status": "passed",
+          "bundle": "entry-5f7b7904da065af6faa869149b468383.hbc",
+          "output": "external quarantine validation/android"
+        },
+        "markdownLinks": {
+          "checked": 298,
+          "missing": 0
+        },
+        "json": {
+          "parsed": 270,
+          "invalid": 0
+        },
+        "assetRequires": {
+          "checked": 288,
+          "missing": 0
+        },
+        "faceSourcesVerified": 14,
+        "folderShellSourcesVerified": 4,
+        "gitDiffCheckExit": 0,
+        "lint": "unavailable; no install attempted"
+      },
+      "preservation": {
+        "sourceScriptsAssetsCIChanged": 0,
+        "runtimeVersionChanged": false,
+        "dependenciesChanged": false,
+        "realDeviceDataAccessed": false
+      },
+      "security": {
+        "scan": "Basic filename/text patterns, not full secret/binary audit",
+        "highConfidencePatternsFound": 0,
+        "forbiddenProposedPaths": 0,
+        "proposedFilesOver10MB": 0,
+        "retainedJpegPrivacyReview": [
+          "design-previews/card-detail-ux/references/reference-code128.jpg",
+          "design-previews/card-detail-ux/references/reference-qr.jpg"
+        ]
+      },
+      "git": {
+        "head": "c500a015cfc80bd6a63c88d3848562b33f02faa3",
+        "modifiedTracked": 26,
+        "untracked": 2346,
+        "staged": 0,
+        "trackedDeleted": 0,
+        "remotes": 0,
+        "commitTagPushDeploy": false
+      },
+      "remainingDecisions": [
+        "Historical screenshot privacy/rights review",
+        "Reviewed staging and baseline commit approval",
+        "Optional development tag approval",
+        "Verified private repository ownership/URL and push approval"
+      ]
+    },
+    "phase2Preparation": {
+      "typescript": {
+        "command": "node node_modules/typescript/bin/tsc --noEmit",
+        "exitCode": 0,
+        "status": "passed",
+        "log": "output/handoff-phase2-20261123-141630/typescript.txt"
+      },
+      "focused": {
+        "command": "node --test --test-isolation=none scripts/test-keeps.cjs scripts/test-keep-media.cjs scripts/test-keep-recovery.cjs",
+        "exitCode": 0,
+        "status": "passed",
+        "passed": 127,
+        "failed": 0,
+        "skipped": 0,
+        "log": "output/handoff-phase2-20261123-141630/focused.txt"
+      },
+      "fullRegression": {
+        "command": "$tests = Get-ChildItem scripts -Filter test-*.cjs | Sort-Object Name; foreach ($file in $tests) { node $file.FullName }",
+        "execution": "Sequential per-file Node execution with stdout/stderr capture and every exit code checked; no failed files",
+        "status": "passed",
+        "failedFiles": [],
+        "passed": 1504,
+        "failed": 0,
+        "skipped": 0,
+        "files": 60,
+        "log": "output/handoff-phase2-20261123-141630/full.txt"
+      },
+      "hermes": {
+        "command": "node node_modules/expo/bin/cli export --platform android --output-dir output/handoff-phase2-20261123-141630/android --max-workers 1",
+        "exitCode": 0,
+        "status": "passed",
+        "bundle": "entry-9c0deeeb9d330828bf304ccb9818a606.hbc",
+        "log": "output/handoff-phase2-20261123-141630/hermes.txt"
+      },
+      "gitDiffCheck": {
+        "command": "git diff --check",
+        "exitCode": 0,
+        "status": "passed",
+        "log": "output/handoff-phase2-20261123-141630/diff-check.txt"
+      },
+      "lint": {
+        "status": "not_run",
+        "reason": "No installed project ESLint/config; no auto-install or borrowing external tools performed"
+      },
+      "freshCheckout": {
+        "status": "not_run"
+      }
+    }
   },
-  "validation": {
-    "typescript": "passed",
-    "focused": {
-      "passed": 133,
-      "total": 133
+  "newlyExecuted": {
+    "freshInstall": {
+      "status": "passed",
+      "command": "npm ci --no-audit --no-fund",
+      "packagesAdded": 602,
+      "isolatedSourceSnapshot": true,
+      "mainProjectNodeModulesUntouched": true
+    },
+    "startup": {
+      "status": "passed",
+      "command": "node node_modules/expo/bin/cli start --offline --port 8089",
+      "stoppedAfterReadiness": true,
+      "deviceOpened": false
+    },
+    "typescript": {
+      "status": "passed",
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "exitCode": 0,
+      "setupNote": "Initial pristine pre-start typecheck lacked ignored expo-env.d.ts CSS declarations; normal Expo startup generated it, then typecheck passed. No source/type patch."
+    },
+    "dependencies": {
+      "manifestLockMatch": true,
+      "expoAssetRootResolvedVersion": "58.0.20",
+      "dependencyChanges": false
     },
     "fullRegression": {
-      "passed": 1053,
-      "total": 1053,
+      "status": "passed",
+      "files": 61,
+      "tests": 1575,
+      "passed": 1575,
       "failed": 0,
-      "skipped": 0
+      "excludedTests": [
+        "Export a geometry-only review from production carousel cells and approved artwork, without claiming native pixels"
+      ],
+      "reportWrites": "Four incidental JSON reports captured in memory; normal assertions retained; no protected preview writes",
+      "location": "isolated review snapshot with fresh npm ci"
+    },
+    "focused": {
+      "test-card-carousel.cjs": {
+        "passed": 15,
+        "failed": 0
+      },
+      "test-card-detail-motion.cjs": {
+        "passed": 16,
+        "failed": 0
+      },
+      "test-footer-motion.cjs": {
+        "passed": 14,
+        "failed": 0
+      },
+      "test-header-layout.cjs": {
+        "passed": 11,
+        "failed": 0
+      },
+      "test-keep-media.cjs": {
+        "passed": 13,
+        "failed": 0
+      },
+      "test-keep-recovery.cjs": {
+        "passed": 22,
+        "failed": 0
+      },
+      "test-keeps.cjs": {
+        "passed": 130,
+        "failed": 0
+      },
+      "test-production-integration.cjs": {
+        "passed": 143,
+        "failed": 0
+      },
+      "test-profile-sheet.cjs": {
+        "passed": 17,
+        "failed": 0
+      }
     },
     "hermes": {
       "status": "passed",
-      "bundle": "entry-5f7b7904da065af6faa869149b468383.hbc",
-      "output": "external quarantine validation/android"
+      "platform": "android",
+      "bundle": "entry-eaf37b9e6cdd903117a2ae00e19ae978.hbc",
+      "location": "isolated review snapshot/new output directory",
+      "nativeBuildOrDeploy": false
     },
-    "markdownLinks": {
-      "checked": 298,
-      "missing": 0
+    "lint": {
+      "status": "unavailable",
+      "reason": "No installed ESLint/config; no dependency installed"
     },
-    "json": {
-      "parsed": 270,
-      "invalid": 0
-    },
-    "assetRequires": {
-      "checked": 288,
-      "missing": 0
-    },
-    "faceSourcesVerified": 14,
-    "folderShellSourcesVerified": 4,
-    "gitDiffCheckExit": 0,
-    "lint": "unavailable; no install attempted"
+    "gitDiffCheck": {
+      "status": "pending final staged check"
+    }
+  },
+  "notVerified": [
+    "Native Samsung notification delivery",
+    "Crash/process-kill and multi-process guarantees",
+    "iOS and actual native APK/AAB/development build",
+    "Whole-history binary privacy/redistribution certification"
+  ],
+  "remote": {
+    "url": "https://github.com/filmpharan/bemem-app.git",
+    "mainVerifiedBeforeCommit": "3ec5a45bd9765594f5901b8ab196ba2f8950bde4",
+    "reviewBranch": "developer-review/2026-11-23-motion-handoff",
+    "existingVisibilityAcceptedByOwner": true,
+    "privacyChangeRequired": false
   },
   "preservation": {
-    "sourceScriptsAssetsCIChanged": 0,
-    "runtimeVersionChanged": false,
+    "baselineSnapshot": "output/handoff-phase2-20261123-141630/before.json",
+    "productionSourceChanged": false,
+    "testsChanged": false,
     "dependenciesChanged": false,
-    "realDeviceDataAccessed": false
+    "deviceDataAccessed": false,
+    "artworkChanged": false,
+    "gitignoreChanged": false,
+    "baselineExistingFiles": 2693,
+    "changedExistingFiles": [
+      "ARCHITECTURE.md",
+      "DEV-HANDOFF.md",
+      "GITHUB-READY-CHECKLIST.md",
+      "HANDOFF-VALIDATION.json",
+      "README.md"
+    ],
+    "proof": "SHA256 comparison of every existing tracked/untracked file against before.json; only the five approved existing documentation files changed",
+    "reviewUpload": "Only existing handoff documents are updated by this phase; all application source/tests/assets retain pre-phase bytes, and protected geometry outputs remain unchanged."
   },
+  "approvalQueue": [],
   "security": {
-    "scan": "Basic filename/text patterns, not full secret/binary audit",
-    "highConfidencePatternsFound": 0,
-    "forbiddenProposedPaths": 0,
-    "proposedFilesOver10MB": 0,
-    "retainedJpegPrivacyReview": [
-      "design-previews/card-detail-ux/references/reference-code128.jpg",
-      "design-previews/card-detail-ux/references/reference-qr.jpg"
-    ]
-  },
-  "git": {
-    "head": "c500a015cfc80bd6a63c88d3848562b33f02faa3",
-    "modifiedTracked": 26,
-    "untracked": 2346,
-    "staged": 0,
-    "trackedDeleted": 0,
-    "remotes": 0,
-    "commitTagPushDeploy": false
-  },
-  "remainingDecisions": [
-    "Historical screenshot privacy/rights review",
-    "Reviewed staging and baseline commit approval",
-    "Optional development tag approval",
-    "Verified private repository ownership/URL and push approval"
-  ]
+    "currentHighConfidenceSecretHits": 0,
+    "credentialFilenames": 0,
+    "scope": "Reasonable candidate filename/text scan; no secrets printed. Existing history preserved as instructed; not blanket binary/history certification."
+  }
 }
