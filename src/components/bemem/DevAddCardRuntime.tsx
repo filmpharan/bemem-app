@@ -61,7 +61,8 @@ export function DevAddCardRuntime() {
     <CardPreview card={opened} fromCreate membership={session?.draft.cards.find(card => card.id === opened?.id) ?? null} onClose={() => setOpened(null)} />
   </SafeAreaView>;
   if (!open) return screen;
-  return <AddCardSheet onClose={close} background={screen} footer={<>
+  return <AddCardSheet onClose={close} background={screen}
+    face={{side:presentation.side,disabled,onToggle:()=>{if(!disabled)setPresentation(previous=>({...previous,side:previous.side==='front'?'back':'front'}));}}} footer={<>
     <GlassButton kind="action" disabled={disabled} style={styles.action}
       onLayout={event => setActionWidth(event.nativeEvent.layout.width)} accessibilityLabel="Add Card to test draft only"
       onPress={() => {

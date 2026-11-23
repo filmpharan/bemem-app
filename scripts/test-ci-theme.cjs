@@ -1,12 +1,12 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),ts=require('typescript');
-const root=path.resolve(__dirname,'..'),tokens=require('../design-system/bemem-lagoon-glass-rc2/TOKENS.json');
-const {ciColors,ciTypography,ciStates,fontForUiText}=require('./ci-theme-fixture.cjs');
-const palette=tokens.palettes['pearl-gray'].colors;
+const root=path.resolve(__dirname,'..'),tokens=require('../design-system/bemem-vivid-lagoon/TOKENS.json');
+const {ciColors,ciTypography,ciButtons,ciStates,fontForUiText}=require('./ci-theme-fixture.cjs');
+const palette=tokens.palettes[tokens.metadata.defaultThemeId].colors;
 const flat=s=>Object.assign({},...[s].flat(Infinity).filter(Boolean));
 function styles(file){const sf=ts.createSourceFile(file,fs.readFileSync(path.join(root,file),'utf8'),ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);
  let expression;for(const s of sf.statements)if(ts.isVariableStatement(s))for(const d of s.declarationList.declarations)if(d.name.getText(sf)==='styles')expression=d.initializer.arguments[0].getText(sf);
  assert.ok(expression,file);const code=ts.transpileModule(`const result=${expression};result;`,{compilerOptions:{target:ts.ScriptTarget.ES2022}}).outputText;
- return vm.runInNewContext(code,{...require('./sheet-visual-fixture.cjs'),ciColors,ciTypography,ciStates,lagoon:palette,lagoonFonts:{latin:'BememManrope',thai:'BememThai'},core:tokens.core,
+ return vm.runInNewContext(code,{...require('./sheet-visual-fixture.cjs'),ciColors,ciTypography,ciButtons,ciStates,lagoon:palette,lagoonFonts:{latin:'BememManrope',thai:'BememThai'},core:tokens.core,
   StyleSheet:{absoluteFill:{position:'absolute',left:0,right:0,top:0,bottom:0},hairlineWidth:1},alpha:(h,a)=>h+Math.round(a*255).toString(16).padStart(2,'0'),
   bemem:{foreground:palette.text.primary,background:palette.canvas.base,border:palette.rim.inner,primary:palette.action.primary,muted:palette.text.secondary,error:'#b42318'},
   layout:{padding:20,gap:12,previewGap:16,toolSize:36,iconSize:16,inputHeight:44,selectorHeight:36,sheetRadius:22,fieldRadius:14,buttonRadius:8},CARD_CORNER_RADIUS:14});
@@ -20,9 +20,9 @@ test('Five explicit typography roles have current sizes and no layout or global 
  assert.equal(ciTypography.title.fontWeight,'800');assert.equal(ciTypography.button.fontWeight,'600');
  const source=fs.readFileSync(path.join(root,'src/constants/ci-theme.ts'),'utf8');assert.doesNotMatch(source,/Text\.defaultProps|setNativeProps|prototype\./);
 });
-test('Semantic roles reuse Pearl palette and keep approved Save/danger distinct from status success and neutral',()=>{
+test('Semantic roles reuse Vivid Lagoon palette and keep approved Save/danger distinct from status success and neutral',()=>{
  assert.equal(ciColors.surface.canvas,palette.canvas.base);assert.equal(ciColors.surface.elevated,palette.surface.base);assert.equal(ciColors.text.primary,palette.text.primary);assert.equal(ciColors.text.secondary,palette.text.secondary);
- assert.equal(ciColors.action.primary,'#405764');assert.equal(ciColors.action.positiveSave,'#26734d');assert.equal(ciColors.status.success,'#176b4a');
+ assert.equal(ciColors.action.primary,palette.action.primary);assert.equal(ciColors.action.positiveSave,'#26734d');assert.equal(ciColors.status.success,'#176b4a');
  for(const key of ['back','discard','destructive'])assert.equal(ciColors.action[key],'#b42318');assert.equal(ciColors.status.error,'#b42318');assert.equal(ciColors.action.neutral,'#263943');assert.equal(ciColors.status.disabled,palette.text.disabled);
 });
 test('English uses Manrope; Thai and mixed UI strings use one Noto family without changing their text',()=>{
@@ -42,17 +42,17 @@ test('Bundled Noto actually contains Latin, Thai bases and combining marks plus 
 test('Approved confirmation geometry, typography, states and safe/destructive hierarchy survive role migration',()=>{
  const s=styles('src/components/bemem/ConfirmationDialog.tsx');assert.equal(s.dialog.borderRadius,20);assert.equal(s.dialog.maxWidth,400);assert.equal(s.content.padding,20);assert.equal(s.content.gap,12);
  assert.equal(s.title.fontSize,18);assert.equal(s.title.lineHeight,26);assert.equal(s.label.fontSize,14);assert.equal(s.label.lineHeight,22);assert.equal(s.button.minHeight,48);
- assert.equal(s.primary.backgroundColor,'#405764');assert.equal(s.destructive.color,'#b42318');assert.equal(s.disabled.opacity,.65);assert.equal(s.pressed.opacity,.8);
+ assert.equal(s.primary.backgroundColor,palette.action.primary);assert.equal(s.destructive.color,'#b42318');assert.equal(s.disabled.opacity,.65);assert.equal(s.pressed.opacity,.8);
 });
 test('Sheet and compact form exceptions preserve approved line heights, bounds and small labels',()=>{
  const sheet=styles('src/components/bemem/AddCardSheet.tsx'),form=styles('src/components/bemem/AddCardForm.tsx');assert.equal(sheet.title.fontSize,18);assert.equal(sheet.title.lineHeight,28);assert.equal(sheet.sheet.borderTopLeftRadius,22);assert.equal(sheet.content.padding,20);
- assert.equal(form.sideLabel.fontSize,10);assert.equal(form.sideLabel.lineHeight,15);assert.equal(form.label.lineHeight,16);assert.equal(form.input.minHeight,44);assert.equal(form.input.lineHeight,20);assert.equal(form.tool.width,36);
+ assert.equal(form.sideLabel.fontSize,10);assert.equal(form.sideLabel.lineHeight,15);assert.equal(form.label.lineHeight,16);assert.equal(form.input.minHeight,48);assert.equal(form.input.lineHeight,20);assert.equal(form.tool.width,36);
  assert.equal(form.error.color,ciColors.status.error);assert.equal(form.hint.fontFamily,ciTypography.supporting.fontFamily);
 });
 test('Add/Edit actions, History body/status and general feedback have explicit roles while exceptions stay compact',()=>{
  const edit=styles('src/components/bemem/EditMembershipCardEditor.tsx'),add=styles('src/components/bemem/AddCardEditor.tsx'),history=styles('src/components/bemem/CardHistorySheet.tsx'),home=styles('src/app/index.tsx');
  for(const s of [edit,add]){assert.equal(s.actionText.fontFamily,'BememManrope');assert.equal(s.actionText.lineHeight,20);assert.equal(s.notice.fontSize,10);assert.equal(s.action.minHeight,48);}
- assert.equal(edit.deleteText.color,'#b42318');assert.equal(edit.deleteText.fontSize,14);assert.equal(history.text.lineHeight,22);assert.equal(history.heading.fontSize,16);assert.equal(history.helper.lineHeight,19);assert.equal(home.error.fontFamily,'BememManrope');assert.equal(home.loadingText.fontFamily,'BememManrope');
+ const detail=styles('src/components/bemem/MembershipCardDetail.tsx');assert.equal(edit.deleteText,undefined);assert.equal(detail.deleteText.color,'#b42318');assert.equal(detail.deleteText.fontSize,14);assert.equal(history.text.lineHeight,22);assert.equal(history.heading.fontSize,16);assert.equal(history.helper.lineHeight,19);assert.equal(home.error.fontFamily,'BememManrope');assert.equal(home.loadingText.fontFamily,'BememManrope');
 });
 test('Policy reading size and empty-state wording remain intentional exceptions',()=>{
  const account=styles('src/components/bemem/HomeAccountMenu.tsx');assert.equal(account.body.fontSize,15);assert.equal(account.body.lineHeight,24);assert.equal(account.closeText.fontSize,15);
@@ -63,7 +63,7 @@ function measuredText(){const frames=[],cache={},registered=[];let cursor=0,scal
  const jsx=(type,props)=>({type,props}),file=path.join(root,'src/components/bemem/AddCardText.tsx'),m={exports:{}};
  const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,esModuleInterop:true}}).outputText;
  vm.runInThisContext(`(function(require,module,exports){${code}\n})`)(name=>{
-  if(name==='react')return{useState(v){const i=cursor++;if(!(i in frames))frames[i]=v;return[frames[i],v=>frames[i]=typeof v==='function'?v(frames[i]):v];}};
+  if(name==='react')return{useState(v){const i=cursor++;if(!(i in frames))frames[i]=v;return[frames[i],v=>frames[i]=typeof v==='function'?v(frames[i]):v];},useRef(v){const i=cursor++;return frames[i]??={current:v};}};
   if(name==='react-native')return native;if(name==='react/jsx-runtime')return{jsx,jsxs:jsx};if(name==='expo-font')return{useFonts:map=>{registered.push(map);return[ready];}};if(name.endsWith('.ttf'))return name;if(name.endsWith('/ci-theme'))return require('./ci-theme-fixture.cjs');throw Error(name);
  },m,m.exports);
  return{registered,render(text,maxWidth,fontScale=1,fontReady=true){cursor=0;scale=fontScale;ready=fontReady;return m.exports.AddCardText({children:text,maxWidth,style:ciTypography.button});}};

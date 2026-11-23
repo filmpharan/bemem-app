@@ -238,3 +238,14 @@ test('Full shared editor code value round-trips through QR and Code128 with zero
  const result=editor.prepareFullMembershipEdit(original,form,'2026-11-08T01:00:00.000Z');
  for(const format of ['qr','code128']){const encoded=encodeCardCode(result.card,format);assert.equal(encoded.ok,true);assert.equal(decode(encoded.svg,format).getText(),payload);}
 });
+
+
+test('Compact Detail QR retains four-module borders and exact independent pixel decoding at device densities',()=>{
+ for(const payload of ['00123456',' 000Ab c ','00123456789012345678901234567890'])for(const density of [1,2.625,3]){
+  const code=encodeCardCode(card(payload),'qr'),frame=cardCodeFrame(code,304,density,224);
+  assert.equal(frame.width,frame.height);assert.ok(frame.height<=224);assert.equal(frame.pixelsPerModule,Math.floor(224*density/code.width));
+  const svg=code.svg.replace(`width="${code.width}" height="${code.height}"`,`width="${Math.round(frame.width*density)}" height="${Math.round(frame.height*density)}"`);
+  assert.equal(decode(svg,'qr',frame.pixelsPerModule).getText(),payload);
+  assert.equal(code.width,code.height);assert.match(svg,/fill="#ffffff"/);
+ }
+});

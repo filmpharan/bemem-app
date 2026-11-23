@@ -16,7 +16,7 @@ export function membershipEditorState(card: Readonly<MembershipCard>): CardEdito
     payloadEdited: false, preferredDisplayFormat: 'qr',
     orientation: card.orientation, colorId: color?.id ?? 'saved' },
   presentation: { ...emptyCardPresentation(), brandId: card.brandId ?? null, brandQuery: card.brandQuery ?? '',
-    expiryMonth: card.expiryMonth ?? '', sizePresetId: card.sizePresetId ?? (card.orientation === 'portrait' ? 'card-portrait' : 'card-landscape'),
+    sheetDisplayMode: card.sheetDisplayMode ?? 'cardcode', expiryMonth: card.expiryMonth ?? '', sizePresetId: card.sizePresetId ?? (card.orientation === 'portrait' ? 'card-portrait' : 'card-landscape'),
     gradientPresetId: card.appearance.gradientPresetId ?? null,
     ...(card.appearance.artwork !== undefined ? { artwork: card.appearance.artwork } : {}) } };
 }
@@ -24,9 +24,20 @@ export function editorChanged(a: CardEditorState, b: CardEditorState) {
   const content = (s: CardEditorState) => ({ values: { ...s.values, payloadEdited: false }, presentation: { ...s.presentation, side: 'front' } });
   return !same(content(a), content(b));
 }
+/** Display-only edits must not trigger historical content cleanup or code normalization. */
+export function isSheetModeOnlyEdit(card: Readonly<MembershipCard>, form: CardEditorState) {
+  const initial = membershipEditorState(card);
+  return form.presentation.sheetDisplayMode !== initial.presentation.sheetDisplayMode
+    && !editorChanged(initial, {...form, presentation: {...form.presentation, sheetDisplayMode: initial.presentation.sheetDisplayMode}});
+}
 /** Patch only changed controls. Legacy fields stay absent unless the user actually changes them. */
 export function prepareFullMembershipEdit(card: Readonly<MembershipCard>, form: CardEditorState, time: string) {
   const initial = membershipEditorState(card), { values: v, presentation: p } = form;
+  if (isSheetModeOnlyEdit(card, form)) {
+    const next = validateWalletCard({...card, sheetDisplayMode:p.sheetDisplayMode, updatedAt:time});
+    if (next.kind !== 'membership') throw Error('Only membership cards can be edited.');
+    return {ok:true as const,card:next,changed:true};
+  }
   if (!v.name.trim() || (v.memberNumber !== initial.values.memberNumber && !v.memberNumber.trim())) throw Error('Enter a card name, membership number and code value.');
   const expiration = expiryMonthError(p.expiryMonth); if (expiration) throw Error(expiration);
   const next: MembershipCard = { ...card, appearance: { ...card.appearance } };
@@ -35,6 +46,7 @@ export function prepareFullMembershipEdit(card: Readonly<MembershipCard>, form: 
   // Required compatibility fields are derived, never independent user settings.
   if (v.memberNumber.length) next.payload = v.memberNumber;
   next.preferredDisplayFormat = 'qr';
+  if (p.sheetDisplayMode !== initial.presentation.sheetDisplayMode) next.sheetDisplayMode = p.sheetDisplayMode;
   if (p.expiryMonth !== initial.presentation.expiryMonth) next.expiryMonth = p.expiryMonth;
   if (p.sizePresetId !== initial.presentation.sizePresetId || v.orientation !== initial.values.orientation) {
     const preset = cardSizePreset(p.sizePresetId);

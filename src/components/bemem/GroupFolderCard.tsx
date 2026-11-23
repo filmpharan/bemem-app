@@ -15,10 +15,10 @@ function FrontRegion({card}:{card:PreviewCard}){
   {image&&<Image source={{uri:artworkUri(image.assetId)}} contentFit="cover" contentPosition="center" transition={0} style={StyleSheet.absoluteFill} accessible={false}/>}
  </View>;
 }
-// Exact approved Lagoon Stack exports. Static PNGs avoid the runtime SVG data-URI decoder.
+// Versioned yellow shell + thin flap. Original Lagoon Stack assets remain untouched.
 const shells={
- landscape:{back:require('../../../assets/group-folders/lagoon-stack-landscape-back.png'),front:require('../../../assets/group-folders/lagoon-stack-landscape-front.png')},
- portrait:{back:require('../../../assets/group-folders/lagoon-stack-portrait-back.png'),front:require('../../../assets/group-folders/lagoon-stack-portrait-front.png')},
+ landscape:{back:require('../../../assets/group-folders/yellow-top-flap-v1/landscape-back.png'),front:require('../../../assets/group-folders/yellow-top-flap-v1/landscape-front.png')},
+ portrait:{back:require('../../../assets/group-folders/yellow-top-flap-v1/portrait-back.png'),front:require('../../../assets/group-folders/yellow-top-flap-v1/portrait-front.png')},
 };
 export function GroupFolderCard({card}:{card:PreviewCard}){
  const [size,setSize]=useState({width:0,height:0}),{fontScale}=useWindowDimensions(),members=card.folder?.members??[];
@@ -27,13 +27,13 @@ export function GroupFolderCard({card}:{card:PreviewCard}){
  return <View pointerEvents="none" style={styles.root} onLayout={e=>{const {width,height}=e.nativeEvent.layout;setSize(old=>old.width===width&&old.height===height?old:{width,height});}}>
   <Image source={shell.back} contentFit="fill" transition={0} style={styles.back} accessible={false}/>
   {size.width>0&&size.height>0&&<View style={[styles.well,visual.well]}>{visual.cells.map((cell,i)=><View key={members[i].id} style={[styles.cell,cell]}><FrontRegion card={members[i]}/></View>)}</View>}
-  <Image source={shell.front} contentFit="fill" transition={0} style={styles.front} accessible={false}/>
-  <Text numberOfLines={2} maxFontSizeMultiplier={1.3} style={[styles.name,{bottom:visual.titleBottom,fontFamily:fontForUiText(card.name)}]}>{card.name}</Text>
+  <Image source={shell.front} contentFit="fill" transition={0} style={[styles.front,{height:visual.flapHeight}]} accessible={false}/>
+  <Text numberOfLines={1} ellipsizeMode="tail" maxFontSizeMultiplier={1.3} style={[styles.name,{top:visual.titleTop,height:visual.titleHeight,left:visual.titleInset,right:visual.titleInset,fontFamily:fontForUiText(card.name)}]}>{card.name}</Text>
  </View>;
 }
 const styles=StyleSheet.create({
  root:{flex:1},back:{...StyleSheet.absoluteFill,zIndex:0},
  well:{position:'absolute',zIndex:1,borderRadius:5,overflow:'hidden'},
- cell:{position:'absolute',overflow:'hidden'},front:{...StyleSheet.absoluteFill,zIndex:2},
- name:{position:'absolute',zIndex:3,left:'9%',right:'9%',fontSize:12,lineHeight:16,fontWeight:'700',color:'#ffffff',includeFontPadding:false},
+ cell:{position:'absolute',overflow:'hidden'},front:{position:'absolute',top:0,left:0,right:0,zIndex:2},
+ name:{position:'absolute',zIndex:3,fontSize:12,lineHeight:16,fontWeight:'700',color:'#60451D',includeFontPadding:false},
 });

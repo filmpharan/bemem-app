@@ -1,6 +1,7 @@
 import { Pressable, StyleSheet, TextInput, View } from 'react-native';
 import { bemem } from '../../constants/bemem-theme';
 import { core, lagoon, lagoonFonts } from '../../constants/lagoon-theme';
+import { ciButtons } from '../../constants/ci-theme';
 import { BememIcon } from './BememIcon';
 
 export function SearchField({ value, onChange }: { value: string; onChange: (text: string) => void }) {
@@ -19,5 +20,5 @@ const styles = StyleSheet.create({
     backgroundColor: lagoon.surface.base, borderRadius: core.radius.utility, paddingLeft: 12, paddingRight: 4, minHeight: 48,
     boxShadow: '0 4px 12px -8px rgba(15,23,42,0.25)' },
   input: { flex: 1, paddingVertical: 10, fontSize: 14, color: bemem.foreground, fontFamily: lagoonFonts.latin },
-  clear: { width: 40, height: 44, justifyContent: 'center', alignItems: 'center' },
+  clear: { width: 40, height: 44, borderRadius: core.radius.utility, justifyContent: 'center', alignItems: 'center' },
 });

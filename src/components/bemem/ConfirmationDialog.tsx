@@ -1,4 +1,4 @@
-import { ciColors,ciTypography,ciStates,fontForUiText } from '../../constants/ci-theme';
+import { ciColors,ciTypography,ciButtons,ciStates,fontForUiText } from '../../constants/ci-theme';
 import { useEffect,useRef,useState,type ComponentRef,type RefObject } from 'react';
 import { AccessibilityInfo,ActivityIndicator,Keyboard,Modal,Pressable,ScrollView,StyleSheet,Text,View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -42,7 +42,7 @@ function ConfirmationSurface({request,busy,dismissRef}:{request:ConfirmationRequ
     <View style={styles.actions}>{request.actions.map((action,index)=><Pressable key={`${index}-${action.label}`} accessibilityRole="button"
      accessibilityLabel={action.label} accessibilityState={{disabled:locked||!!action.disabled||!!failure,busy:locked}}
      disabled={locked||!!action.disabled||!!failure} onPress={()=>{void choose(index);}}
-     style={({pressed})=>[styles.button,action.role==='primary'&&styles.primary,(locked||action.disabled)&&styles.disabled,pressed&&styles.pressed]}>
+     style={({pressed})=>[styles.button,action.role==='primary'?styles.primary:action.role==='neutral'?styles.secondary:undefined,(locked||action.disabled)&&styles.disabled,pressed&&styles.pressed,pressed&&!locked&&!action.disabled&&{backgroundColor:action.role==='primary'?ciButtons.primaryPressed:ciButtons.secondaryPressed}]}>
      <Text style={[styles.label,action.role==='primary'&&styles.onPrimary,action.role==='destructive'&&styles.destructive,{fontFamily:fontForUiText(action.label)}]}>{action.label}</Text>
     </Pressable>)}</View>
     {locked&&<View accessibilityLiveRegion="polite" style={styles.progress}><ActivityIndicator color={lagoon.text.primary}/><Text style={styles.body}>Working…</Text></View>}
@@ -55,7 +55,7 @@ const styles=StyleSheet.create({
  dialog:{width:'100%',maxWidth:400,maxHeight:'100%',flexShrink:1,borderRadius:20,backgroundColor:ciColors.surface.sheet,overflow:'hidden'},scroll:{flexShrink:1},
  content:{padding:20,gap:12},title:{...ciTypography.title,color:ciColors.text.primary},
  body:{...ciTypography.body,color:ciColors.text.secondary},actions:{gap:4,marginTop:8},
- button:{minHeight:48,paddingHorizontal:12,paddingVertical:12,borderRadius:12,alignItems:'center',justifyContent:'center'},primary:{backgroundColor:ciColors.action.primary},
+ button:{minHeight:48,paddingHorizontal:12,paddingVertical:12,borderRadius:12,alignItems:'center',justifyContent:'center'},primary:{backgroundColor:ciButtons.primary},secondary:{backgroundColor:ciButtons.secondary},
  label:{...ciTypography.button,color:ciColors.action.neutral,textAlign:'center',flexShrink:1},
  onPrimary:{color:ciColors.text.onAction},destructive:{color:ciColors.action.destructive},disabled:{opacity:ciStates.confirmationDisabled},pressed:{opacity:ciStates.confirmationPressed},
  error:{...ciTypography.body,color:ciColors.status.error},progress:{flexDirection:'row',gap:8,alignItems:'center',justifyContent:'center'},

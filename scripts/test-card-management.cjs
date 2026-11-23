@@ -2,9 +2,9 @@
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),ts=require('typescript'),crypto=require('node:crypto');
 const root=path.resolve(__dirname,'..');
 function environment(){
- const cache=new Map(),frames=new Map(),alerts=[],pickerCalls=[];let slots=[],cursor=0,permission=true,pickerResult={canceled:true,assets:null};
+ const cache=new Map(),frames=new Map(),alerts=[],pickerCalls=[],pickerOptions=[];let slots=[],cursor=0,permission=true,pickerResult={canceled:true,assets:null};
  const react={useState(initial){const i=cursor++;if(!(i in slots))slots[i]=typeof initial==='function'?initial():initial;return[slots[i],v=>{slots[i]=typeof v==='function'?v(slots[i]):v;}];},useRef(v){const i=cursor++;return slots[i]??={current:v};},useEffect(){},useMemo:fn=>fn()};
- const picker={UIImagePickerPreferredAssetRepresentationMode:{Compatible:'compatible'},requestCameraPermissionsAsync:async()=>{pickerCalls.push('permission');return{granted:permission};},launchCameraAsync:async()=>{pickerCalls.push('camera');return pickerResult;},launchImageLibraryAsync:async()=>{pickerCalls.push('gallery');return pickerResult;}};
+ const picker={UIImagePickerPreferredAssetRepresentationMode:{Compatible:'compatible'},requestCameraPermissionsAsync:async()=>{pickerCalls.push('permission');return{granted:permission};},launchCameraAsync:async options=>{pickerOptions.push(options);pickerCalls.push('camera');return pickerResult;},launchImageLibraryAsync:async options=>{pickerOptions.push(options);pickerCalls.push('gallery');return pickerResult;}};
  function load(relative){let file=path.resolve(root,relative);if(!/\.tsx?$/.test(file))file+=fs.existsSync(file+'.ts')?'.ts':'.tsx';if(cache.has(file))return cache.get(file).exports;
  const mod={exports:{}};cache.set(file,mod);const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText;
  vm.runInThisContext(`(function(require,module,exports){${code}\n})`,{filename:file})(name=>{
@@ -18,7 +18,7 @@ function environment(){
  assert.ok(name.startsWith('.'),'No uncontrolled dependency '+name);return load(path.resolve(path.dirname(file),name));
  },mod,mod.exports);return mod.exports;}
  const render=(component,props,key='main')=>{slots=frames.get(key)??[];frames.set(key,slots);cursor=0;return component(props);};
- return{load,render,alerts,pickerCalls,permission:v=>{permission=v;},result:v=>{pickerResult=v;}};
+ return{load,render,alerts,pickerCalls,pickerOptions,permission:v=>{permission=v;},result:v=>{pickerResult=v;}};
 }
 const env=environment(),art=env.load('src/lib/card-artwork.ts'),validation=env.load('src/lib/wallet-validation.ts'),state=env.load('src/lib/card-editor-state.ts');
 const sizes=env.load('src/lib/card-size-presets.ts').CARD_SIZE_PRESETS;
@@ -133,4 +133,14 @@ test('Camera success and Back-side gallery changes preserve the other side and n
 test('Camera cancellation returns to the unchanged form without image copy or automatic save',async()=>{
  const h=controls(),before=clone(h.draft());control(h.render(),'Take Photo').props.onPress();await tick();
  assert.deepEqual(h.e.pickerCalls,['permission','camera']);assert.deepEqual(h.draft(),before);assert.equal(h.retains(),0);assert.equal(h.busy(),false);
+});
+
+for(const action of ['Take Photo','Choose from Gallery'])test(`${action} requests original-quality acquisition once and cancellation does no retention/crop`,async()=>{
+ const h=controls(),before=clone(h.draft());control(h.render(),action).props.onPress();control(h.render(),action).props.onPress();await tick();
+ assert.equal(h.e.pickerOptions.length,1);assert.deepEqual(h.e.pickerOptions[0],{mediaTypes:['images'],allowsEditing:false,quality:1,base64:false,exif:false,preferredAssetRepresentationMode:'compatible'});
+ assert.equal(h.retains(),0);assert.deepEqual(h.draft(),before);assert.equal(nodes(h.render()).some(n=>typeof n.type==='function'&&n.type.name==='ArtworkCrop'),false);
+ h.e.result({canceled:false,assets:[{uri:'file:///synthetic.jpg',width:4000,height:3000,type:'image'}]});control(h.render(),action).props.onPress();await tick();
+ assert.equal(h.retains(),1);const crop=nodes(h.render()).find(n=>typeof n.type==='function'&&n.type.name==='ArtworkCrop');assert.ok(crop);
+ const tree=h.e.render(crop.type,crop.props,'capture-crop');assert.equal(nodes(tree).find(n=>n.type==='CardArtworkImage').props.displayPreview,'crop');
+ crop.props.onConfirm({...image,crop:{x:.23,y:.78,zoom:2.1}});for(let n=0;n<15;n++)h.render();assert.equal(h.retains(),1);assert.deepEqual(h.draft().artwork.front.crop,{x:.23,y:.78,zoom:2.1});
 });

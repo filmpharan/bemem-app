@@ -8,10 +8,10 @@ export function CanvasActions({ editing, empty, disabled, onAdd }: {
 }) {
   if(editing||!empty)return null;
   return <View pointerEvents="box-none" style={styles.actions}>
-    <GlassButton kind="gel" accessibilityLabel="Add Card"
+    <GlassButton kind="action" accessibilityLabel="Add Card"
       disabled={disabled} onPress={onAdd}
       style={[styles.fab, styles.right]}>
-      <BememIcon name="plus" color={lagoon.text.primary} />
+      <BememIcon name="plus" color={lagoon.text.onAction} />
     </GlassButton>
   </View>;
 }

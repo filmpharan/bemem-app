@@ -1,7 +1,7 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),ts=require('typescript');
 const root=path.resolve(__dirname,'..');
 function env(){const cache=new Map(),slots=[];let cursor=0;
- const react={useState(v){const i=cursor++;if(!(i in slots))slots[i]=typeof v==='function'?v():v;return[slots[i],v=>{slots[i]=typeof v==='function'?v(slots[i]):v;}];},useRef(v){const i=cursor++;return slots[i]??={current:v};},useMemo(fn,deps){const i=cursor++;if(!slots[i]||!deps.every((v,j)=>v===slots[i].deps[j]))slots[i]={deps,value:fn()};return slots[i].value;},useEffect(){}};
+ const react={memo:fn=>fn,useState(v){const i=cursor++;if(!(i in slots))slots[i]=typeof v==='function'?v():v;return[slots[i],v=>{slots[i]=typeof v==='function'?v(slots[i]):v;}];},useRef(v){const i=cursor++;return slots[i]??={current:v};},useMemo(fn,deps){const i=cursor++;if(!slots[i]||!deps.every((v,j)=>v===slots[i].deps[j]))slots[i]={deps,value:fn()};return slots[i].value;},useEffect(){}};
  function load(file){file=path.resolve(root,file);if(!/\.tsx?$/.test(file))file+=fs.existsSync(file+'.ts')?'.ts':'.tsx';if(cache.has(file))return cache.get(file).exports;const mod={exports:{}};cache.set(file,mod);
   const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2022}}).outputText;
   vm.runInThisContext(`(function(require,module,exports){${code}\n})`,{filename:file})(n=>{

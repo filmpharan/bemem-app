@@ -1,52 +1,81 @@
 import { ciColors,ciTypography } from '../../constants/ci-theme';
 import { useState, type ReactNode } from 'react';
-import { KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { Keyboard, KeyboardAvoidingView, Modal, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { sheetVisual } from '../../constants/sheet-visual';
 import { GlassButton } from './GlassButton';
 import { AddCardIcon } from './AddCardIcon';
 import { AddCardText } from './AddCardText';
 import { addCardLayout as layout } from './add-card-layout';
+import type {KeepsSheetMotion} from './keeps-motion';
+import type {KeepsContentMotion} from './keeps-editor-motion';
 
 export const supportsSheetBackgroundBlur = () => Platform.OS === 'android' && Number(Platform.Version) >= 31;
 
 /** Source-flow footer: header, form and CTA all belong to the same scroll content. */
-export function AddCardSheet({ children, footer, background, onClose, title = 'Add Card', closeDisabled = false, modalOnly = false, virtualized = false, fixedFooter = false,confirmation }: {
+export function AddCardSheet({ children, footer, background, onClose, title = 'Add Card', closeDisabled = false, modalOnly = false, virtualized = false, fixedFooter = false,confirmation,presentation = 'modal', face,onContentViewportLayout,contentScrollEnabled = true, keepsMotion, keepsContentMotion }: {
+  keepsMotion?:KeepsSheetMotion; keepsContentMotion?:KeepsContentMotion;
   children: ReactNode; footer: ReactNode; background?: ReactNode; onClose: () => void;
   title?: string; closeDisabled?: boolean; modalOnly?: boolean; virtualized?: boolean;
-  fixedFooter?: boolean;
+  contentScrollEnabled?:boolean;fixedFooter?: boolean;presentation?:'modal'|'inline';
   confirmation?:{content:ReactNode;onRequestClose:()=>void};
+  /** Optional read-only measurement of the fixed-footer content viewport. */
+  onContentViewportLayout?:(size:{width:number;height:number})=>void;
+  face?: { side: 'front'|'back'; disabled: boolean; onToggle: () => void };
 }) {
   const [headerWidth, setHeaderWidth] = useState(320);
+  const [titleWidth, setTitleWidth] = useState(title.length*12), [faceWidth, setFaceWidth] = useState(76);
+  const stackedFace = headerWidth < titleWidth * 2 + faceWidth + 24;
   const requestClose = closeDisabled ? () => {} : onClose;
-  const header = <View style={styles.header} onLayout={event => setHeaderWidth(event.nativeEvent.layout.width)}>
+  function requestBack() {
+    if (Keyboard.isVisible?.()) { Keyboard.dismiss(); return; }
+    (confirmation?.onRequestClose ?? requestClose)();
+  }
+  const faceButton = face && <GlassButton accessibilityLabel="Switch card front and back" disabled={face.disabled}
+    accessibilityValue={{text:face.side==='front'?'Front':'Back'}} accessibilityState={{ selected: face.side==='back' }}
+    onPress={face.onToggle} style={{minHeight:48,width:faceWidth,borderRadius:layout.buttonRadius}}>
+    <AddCardText maxWidth={faceWidth-12} onMeasure={width=>setFaceWidth(Math.max(64,width+20))}
+      style={{...ciTypography.button,color:ciColors.text.primary}}>{face.side==='front'?'Front':'Back'}</AddCardText>
+  </GlassButton>;
+  const header = face ? <View testID="card-form-header" onLayout={event=>setHeaderWidth(event.nativeEvent.layout.width)} style={{marginBottom:10}}>
+    <View style={{minHeight:48,flexDirection:'row',alignItems:'center',justifyContent:'space-between'}}>
+      <AddCardText accessibilityRole="header" onMeasure={setTitleWidth}
+        maxWidth={Math.max(1,stackedFace?headerWidth-60:(headerWidth-faceWidth)/2-12)} style={styles.title}>{title}</AddCardText>
+      <View style={{width:48,minHeight:48,alignItems:'center',justifyContent:'center'}}>
+        <GlassButton tone="tertiary" accessibilityLabel={`Close ${title}`} disabled={closeDisabled} hitSlop={6} onPress={requestClose} style={styles.close}><AddCardIcon name="close" /></GlassButton>
+      </View>
+    </View>
+    <View testID="card-form-face-control" style={stackedFace?{alignSelf:'center'}:{position:'absolute',left:(headerWidth-faceWidth)/2,top:0}}>{faceButton}</View>
+  </View> : <View style={styles.header} onLayout={event => setHeaderWidth(event.nativeEvent.layout.width)}>
     <AddCardText accessibilityRole="header" maxWidth={Math.max(1, headerWidth - 12 - layout.toolSize - 8)} style={styles.title}>{title}</AddCardText>
-    <GlassButton accessibilityLabel={`Close ${title}`} disabled={closeDisabled} hitSlop={6} onPress={requestClose} style={styles.close}><AddCardIcon name="close" /></GlassButton>
+    <GlassButton tone="tertiary" accessibilityLabel={`Close ${title}`} disabled={closeDisabled} hitSlop={6} onPress={requestClose} style={styles.close}><AddCardIcon name="close" /></GlassButton>
   </View>;
-  const sheet = <Modal visible transparent animationType="none" onRequestClose={confirmation?.onRequestClose??requestClose} statusBarTranslucent navigationBarTranslucent>
-      <SafeAreaView style={styles.overlay}>
-        <Pressable accessibilityElementsHidden={!!confirmation} importantForAccessibility={confirmation?'no-hide-descendants':'auto'} accessibilityLabel={`Close ${title}`} accessibilityRole="button" disabled={closeDisabled||!!confirmation} onPress={requestClose} style={StyleSheet.absoluteFill} />
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.keyboard} pointerEvents="box-none">
-          <View accessibilityElementsHidden={!!confirmation} importantForAccessibility={confirmation?'no-hide-descendants':'auto'} accessibilityViewIsModal={!confirmation} style={[styles.sheet, (virtualized || fixedFooter) && { height: '92%' }]}>
-            <View pointerEvents="none" accessible={false} style={styles.rim} />
-            {fixedFooter ? <View style={{flex:1}}>
+  const fields=fixedFooter ? <View style={{flex:1}}>
               <View style={[styles.content,{paddingBottom:0}]}>{header}</View>
-              <ScrollView style={{flex:1}} keyboardShouldPersistTaps="handled" contentContainerStyle={[styles.content,{paddingTop:0}]}>{children}</ScrollView>
+              <ScrollView scrollEnabled={contentScrollEnabled} onLayout={event=>onContentViewportLayout?.(event.nativeEvent.layout)} style={{flex:1}} keyboardShouldPersistTaps="handled" contentContainerStyle={[styles.content,{paddingTop:0}]}>{children}</ScrollView>
               <View style={[styles.content,{paddingTop:12}]}>{footer}</View>
             </View> : virtualized ? <View style={{ flex: 1 }}>
               <View style={[styles.content, { paddingBottom: 0 }]}>{header}</View>
               {children}
               <ScrollView style={{ flexGrow: 0, maxHeight: '40%' }} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">{footer}</ScrollView>
-            </View> : <ScrollView keyboardShouldPersistTaps="handled" keyboardDismissMode="on-drag" automaticallyAdjustKeyboardInsets={Platform.OS === 'ios'} contentContainerStyle={styles.content}>
-              {header}
-              {children}
-              <View style={styles.footer}>{footer}</View>
-            </ScrollView>}
-          </View>
+            </View> : <ScrollView scrollEnabled={contentScrollEnabled} keyboardShouldPersistTaps="handled" keyboardDismissMode="on-drag" automaticallyAdjustKeyboardInsets={Platform.OS==='ios'} contentContainerStyle={styles.content}>
+              {header}{children}<View style={styles.footer}>{footer}</View>
+            </ScrollView>;
+  const body=<View accessibilityElementsHidden={!!confirmation} importantForAccessibility={confirmation?'no-hide-descendants':'auto'} accessibilityViewIsModal={!confirmation&&presentation!=='inline'} style={[styles.sheet, (virtualized || fixedFooter) && { height: '92%' }]}>
+            <View pointerEvents="none" accessible={false} style={styles.rim} />
+            {keepsContentMotion?keepsContentMotion.renderContent(fields,virtualized||fixedFooter):fields}
+          </View>;
+  const Container=presentation==='inline'?View:SafeAreaView;
+  const content=<Container style={presentation==='inline'?[styles.overlay,styles.inline]:keepsMotion?[styles.overlay,{backgroundColor:'transparent'}]:styles.overlay}>
+        {keepsMotion?.scrim}
+        <Pressable accessibilityElementsHidden={!!confirmation} importantForAccessibility={confirmation?'no-hide-descendants':'auto'} accessibilityLabel={`Close ${title}`} accessibilityRole="button" disabled={closeDisabled||!!confirmation} onPress={requestClose} style={StyleSheet.absoluteFill} />
+        <KeyboardAvoidingView behavior={Platform.OS==='ios'?'padding':'height'} style={styles.keyboard} pointerEvents="box-none">
+          {keepsMotion?keepsMotion.renderSheet(body):body}
           {confirmation?.content}
         </KeyboardAvoidingView>
-      </SafeAreaView>
-    </Modal>;
+      </Container>;
+  if(presentation==='inline')return content;
+  const sheet=<Modal visible transparent animationType="none" {...(keepsMotion||keepsContentMotion?{onShow:()=>{keepsMotion?.onShow();keepsContentMotion?.onShow();}}:{})} onRequestClose={requestBack} statusBarTranslucent navigationBarTranslucent>{content}</Modal>;
   return modalOnly ? sheet : <View style={styles.screen}>
     <View importantForAccessibility="no-hide-descendants" accessibilityElementsHidden pointerEvents="none"
       style={[StyleSheet.absoluteFill, supportsSheetBackgroundBlur() && { filter: [{ blur: 5 }] }]}>{background}</View>
@@ -54,6 +83,7 @@ export function AddCardSheet({ children, footer, background, onClose, title = 'A
   </View>;
 }
 const styles = StyleSheet.create({
+  inline:{...StyleSheet.absoluteFill,zIndex:5},
   screen: { flex: 1, backgroundColor: sheetVisual.surface },
   overlay: { flex: 1, backgroundColor: sheetVisual.scrim },
   keyboard: { flex: 1, justifyContent: 'flex-end' },

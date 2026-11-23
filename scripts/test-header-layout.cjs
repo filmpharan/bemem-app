@@ -1,83 +1,137 @@
-// Actual shared/header components; native geometry is mocked, Samsung appearance is not claimed.
+// Navigation foundation: actual components with mocked native rendering, no device IO.
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),ts=require('typescript');
-const root=path.resolve(__dirname,'..'),tokens=require('../design-system/bemem-lagoon-glass-rc2/TOKENS.json');
-const flatten=x=>Object.assign({},...[x].flat(Infinity).filter(Boolean));
-const text=x=>Array.isArray(x)?x.map(text).join(''):typeof x==='string'?x:x?.props?text(x.props.children):'';
-const nodes=(t,out=[])=>{if(!t||typeof t!=='object')return out;if(Array.isArray(t)){t.forEach(n=>nodes(n,out));return out;}out.push(t);nodes(t.props?.children,out);if(t.props?.slots)nodes(Object.values(t.props.slots),out);return out;};
-function headerHarness(fontScale=1,editing=false){const cache=new Map(),states=[];let cursor=0,ready=false;
- function load(file){file=path.resolve(root,file);if(!path.extname(file))file+='.tsx';if(cache.has(file))return cache.get(file).exports;const m={exports:{}};cache.set(file,m);
+const root=path.resolve(__dirname,'..');
+const flatten=s=>Object.assign({},...[s].flat(Infinity).filter(Boolean));
+const nodes=(tree,out=[])=>{if(!tree||typeof tree!=='object')return out;if(Array.isArray(tree)){tree.forEach(t=>nodes(t,out));return out;}out.push(tree);nodes(tree.props?.children,out);return out;};
+function harness(dimensions={width:360,fontScale:1},insets={left:0,right:0}){const cache=new Map(),slots=[];let cursor=0,effects=[];const alerts=[];
+ const react={useState(initial){const i=cursor++;if(!(i in slots))slots[i]=typeof initial==='function'?initial():initial;return[slots[i],next=>slots[i]=typeof next==='function'?next(slots[i]):next];},useRef(initial){const i=cursor++;return slots[i]??={current:initial};},useImperativeHandle(ref,create){if(ref)ref.current=create();},useEffect(fn,deps){const i=cursor++;if(!slots[i]||!deps||deps.some((x,j)=>x!==slots[i][j])){slots[i]=deps;effects.push(fn);}}};
+ function load(file){file=path.resolve(root,file);if(!path.extname(file))file+=fs.existsSync(file+'.ts')?'.ts':'.tsx';if(cache.has(file))return cache.get(file).exports;const module={exports:{}};cache.set(file,module);
+  const jsx=(type,props)=>({type,props}),deps={'react':react,'react/jsx-runtime':{jsx,jsxs:jsx},'react-native':{Keyboard:{dismiss(){}},AccessibilityInfo:{isReduceMotionEnabled:async()=>true,addEventListener:()=>({remove(){}})},useWindowDimensions:()=>dimensions,View:'View',Text:'Text',Pressable:'Pressable',ActivityIndicator:'ActivityIndicator',Alert:{alert:(...args)=>alerts.push(args)},StyleSheet:{create:s=>s,hairlineWidth:1}},'../../constants/ci-theme':require('./ci-theme-fixture.cjs'),'react-native-safe-area-context':{useSafeAreaInsets:()=>insets}};
+  for(const name of ['BememIcon','AddCardIcon','CanvasPageGlyph','HomeAccountMenu','AddCardText'])deps['./'+name]={[name]:name};
+  deps['./FooterMotion']={FooterItemVisual:'FooterItemVisual',CanvasSelectionPill:'CanvasSelectionPill',CanvasSelectorVisual:'CanvasSelectorVisual',footerVisual:{duration:200}};
   const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText;
-  const jsx=(type,props)=>({type,props});
-  vm.runInThisContext(`(function(require,module,exports){${code}\n})`)(n=>{
-   if(n==='react')return{useState(v){const i=cursor++;if(!(i in states))states[i]=typeof v==='function'?v():v;return[states[i],next=>states[i]=typeof next==='function'?next(states[i]):next];}};
-   if(n==='react-native')return{Pressable:'Pressable',Text:'Text',View:'View',ActivityIndicator:'ActivityIndicator',StyleSheet:{create:v=>v},useWindowDimensions:()=>({fontScale})};
-   if(n==='react/jsx-runtime')return{jsx,jsxs:jsx};if(n==='expo-font')return{useFonts:()=>[ready]};if(n.endsWith('.ttf'))return 1;
- if(n.endsWith('/ci-theme'))return require('./ci-theme-fixture.cjs');
-   if(n.endsWith('lagoon-theme'))return{core:tokens.core,lagoon:tokens.palettes['pearl-gray'].colors,lagoonFonts:{latin:'BememManrope'}};
-   const component=n.slice(2);if(['AddCardIcon','BememIcon','CanvasPageSelector','HomeAccountMenu'].includes(component))return{[component]:component};
-   assert.ok(n.startsWith('.'));return load(path.resolve(path.dirname(file),n));
-  },m,m.exports);return m.exports;
+  vm.runInThisContext(`(function(require,module,exports){${code}\n})`,{filename:file})(name=>deps[name]??load(path.resolve(path.dirname(file),name)),module,module.exports);return module.exports;
  }
- const Header=load('src/components/bemem/HomeHeader.tsx').HomeHeader;
- return{loaded(){ready=true;},render(overrides={}){cursor=0;const declaration=Header({editing,searchOpen:false,disabled:false,onBack(){},onSearch(){},onCreate(){},onDecorate(){},onAdd(){},onLogo(){},page:1,pageDestinations:[],onPage(){},...overrides});return{declaration,tree:declaration.type(declaration.props)};}};
+ return{load,alerts,render(Component,props){cursor=0;effects=[];const tree=Component(props);effects.forEach(fn=>fn());return tree;}};
 }
+const access=()=>Array.from({length:5},(_,i)=>({page:i+1,visible:true,readable:true,editable:true,preview:false}));
+const byLabel=(tree,label)=>nodes(tree).find(n=>n.props?.accessibilityLabel===label);
 
-test('Shared header uses exactly eight equal columns at360/393/412dp,50dp high without wrapping or overlapping targets',()=>{
- for(const width of [280,320,360,393,412,600])for(const scale of [0.85,1,1.25,2])for(const editing of [false,true]){
-  const h=headerHarness(scale,editing);let {tree}=h.render();tree.props.onLayout({nativeEvent:{layout:{width}}});h.loaded();const result=h.render();tree=result.tree;
-  assert.equal(tree.props.style.height,50);assert.equal(tree.props.style.minHeight,50);assert.equal(tree.props.style.flexDirection,'row');assert.notEqual(tree.props.style.flexWrap,'wrap');assert.equal(tree.props.style.paddingHorizontal,undefined);
-  const columns=nodes(tree).filter(n=>n.props?.nativeID?.startsWith('header-slot'));assert.equal(columns.length,6);
-  assert.equal(columns[0].props.nativeID,'header-slots-1-3');assert.equal(columns[0].props.style.width,'37.5%');
-  assert.deepEqual(columns.slice(1).map(n=>n.props.nativeID),[4,5,6,7,8].map(n=>'header-slot-'+n));
-  for(const column of columns.slice(1)){assert.equal(column.props.style.width,'12.5%');assert.equal(column.props.style.height,50);assert.equal(column.props.style.overflow,'hidden');}
-  const target=Math.min(48,width/8);for(let slot=4;slot<=8;slot++){const center=(slot-0.5)*width/8,left=center-target/2,right=center+target/2;assert.ok(left>=(slot-1)*width/8);assert.ok(right<=slot*width/8);}
-  const logo=nodes(tree).find(n=>n.type==='Text'&&text(n)==='bemem.');assert.equal(logo.props.numberOfLines,1);assert.equal(logo.props.adjustsFontSizeToFit,true);assert.equal(logo.props.ellipsizeMode,'clip');assert.equal(logo.props.maxFontSizeMultiplier,1.15);
-  const font=flatten(logo.props.style);assert.equal(font.fontSize,width<320?22:24);assert.equal(font.lineHeight,30);assert.equal(font.fontFamily,'BememManrope');
+
+test('Every Header uses the same full-width centre anchor with independent bounded profile and actions',()=>{
+ for(const mode of ['Home','Create','Decorate']){
+  const h=harness(),Header=h.load('src/components/bemem/NavigationHeader.tsx').NavigationHeader,calls=[];
+  const tree=h.render(Header,{mode,onSearch:()=>calls.push('search'),onCancel:()=>calls.push('cancel'),onSave:()=>calls.push('save')});
+  const [left,center,right]=tree.props.children[0].props.children;assert.equal(flatten(tree.props.style).minHeight,48);
+  assert.equal(left.props.style.left,12);assert.equal(right.props.style.right,12);assert.equal(center.props.style.left,0);assert.equal(center.props.style.right,0);assert.equal(center.props.style.alignItems,'center');
+  assert.equal(left.props.children.props.navigationActions,false);assert.equal(nodes(center).find(n=>n.type==='Text').props.children,'bemem.');
+  if(mode==='Home'){byLabel(tree,'Search cards').props.onPress();assert.deepEqual(calls,['search']);}
+  else{for(const label of ['Cancel','Save']){const b=byLabel(tree,label),style=flatten(b.props.style({pressed:false}));assert.ok(style.width>=48);assert.ok(style.minHeight>=48);assert.equal(style.boxSizing,'border-box');b.props.onPress();}assert.deepEqual(calls,['cancel','save']);}
  }
 });
 
-test('Approved Home/Create slot mapping keeps empty slots and conditional Save',()=>{
- const home=headerHarness(1,false).render().declaration.props.slots;
- assert.equal(home[4],null);assert.equal(home[5],undefined);assert.equal(home[6].props.accessibilityLabel,'Search cards');assert.equal(home[7].type,'HomeAccountMenu');assert.equal(home[7].props.compact,true);
- assert.equal(home[8].type,'CanvasPageSelector');assert.equal(home[8].props.context,'home');
- const h=headerHarness(1,true),clean=h.render().declaration.props.slots;
- assert.equal(clean[4].props.accessibilityLabel,'Back');assert.equal(clean[4].props.children.props.name,'chevron-left');assert.equal(clean[4].props.children.props.color,'#b42318');
- assert.equal(clean[5],undefined);assert.equal(clean[6],null);assert.equal(clean[7].props.accessibilityLabel,'Add Card');assert.equal(clean[8].type,'CanvasPageSelector');assert.equal(clean[8].props.context,'editor');
- let saves=0;const dirty=h.render({saveRequired:true,onSave(){saves++;}}).declaration.props.slots;
- assert.equal(dirty[6].props.accessibilityLabel,'Save canvas');assert.equal(dirty[6].props.children.props.name,'check');assert.equal(dirty[6].props.children.props.color,'#26734d');dirty[6].props.onPress();assert.equal(saves,1);
- const busy=h.render({saveRequired:true,saving:true,onSave(){}}).declaration.props.slots[6];assert.equal(busy.props.disabled,true);assert.equal(busy.props.accessibilityState.busy,true);assert.equal(busy.props.children.type,'ActivityIndicator');
- assert.equal(h.render({saveRequired:false,onSave(){}}).declaration.props.slots[6],null);
- assert.equal(h.render({saveRequired:true,saveDisabled:true,onSave(){}}).declaration.props.slots[6].props.disabled,true);
+test('Narrow editor uses a second action row rather than clipping or shrinking tap targets',()=>{
+ const h=harness({width:393,fontScale:1}),Header=h.load('src/components/bemem/NavigationHeader.tsx').NavigationHeader,props={mode:'Create'};
+ let t=h.render(Header,props);t.props.onLayout({nativeEvent:{layout:{width:320}}});t=h.render(Header,props);assert.equal(flatten(t.props.style).minHeight,96);
+ for(const label of ['Cancel','Save'])assert.equal(flatten(byLabel(t,label).props.style({pressed:false})).minHeight,48);
+ t.props.onLayout({nativeEvent:{layout:{width:393}}});assert.equal(flatten(h.render(Header,props).props.style).minHeight,48);
+});
+test('Permanent five-action icon Footer has identical labels, equal targets and all destinations in every mode',()=>{
+ for(const mode of ['Home','Create','Decorate']){
+  const h=harness(),Footer=h.load('src/components/bemem/ContextualFooter.tsx').ContextualFooter,calls=[];
+  const props={mode,page:1,destinations:access(),onPage(){},onCanvasRequest:()=>calls.push('Canvas'),onHome:()=>calls.push('Home'),onDecorate:()=>calls.push('Decorate'),onCreate:()=>calls.push('Create'),onAdd:()=>calls.push('Add')};
+  const t=h.render(Footer,props),row=byLabel(t,'Main navigation');assert.equal(row.props.children.length,5);assert.equal(row.props.style.minHeight,56);assert.equal(row.props.style.paddingVertical,4);
+  const labels=['Decorate','Arrange','Home','Canvas 1. Choose canvas','Add Card'];
+  for(let i=0;i<5;i++){const slot=row.props.children[i];assert.equal(slot.props.style.width,'20%');const button=slot.props.children;assert.equal(button.props.accessibilityLabel,labels[i]);assert.equal(button.props.disabled,false);assert.ok(flatten(button.props.style({pressed:false})).minHeight>=48);button.props.onPress();}
+  assert.deepEqual(calls,['Decorate','Create','Home','Canvas','Add']);assert.deepEqual(nodes(t).filter(n=>n.type==='FooterItemVisual').map(n=>n.props.name),['decorate','create','home','canvas','add']);
+ }
 });
 
-test('Header actions remain frameless, accessible and disabled while Save is busy',()=>{
- const h=headerHarness(1,true),calls=[],handlers={saveRequired:true,onBack:()=>calls.push('back'),onSave:()=>calls.push('save'),onAdd:()=>calls.push('add'),onLogo:()=>calls.push('logo')};
- const {declaration}=h.render(handlers);for(const slot of [4,6,7]){const b=declaration.props.slots[slot];b.props.onPress();const s=flatten(b.props.style({pressed:false}));assert.equal(s.width,'100%');assert.equal(s.maxWidth,48);assert.equal(s.height,48);assert.equal(s.borderWidth,undefined);assert.equal(b.props.accessibilityRole,'button');assert.notEqual(b.props.children.type,'View');}
- declaration.props.onLogo();assert.deepEqual(calls,['back','save','add','logo']);assert.equal(h.render({addDisabled:true}).declaration.props.slots[7].props.disabled,true);
- for(const slot of [4,6,7]){const b=h.render({...handlers,disabled:true}).declaration.props.slots[slot];assert.equal(b.props.disabled,true);assert.equal(b.props.accessibilityState.disabled,true);}
- const home=headerHarness(1,false).render({searchOpen:true});assert.equal(home.declaration.props.slots[6].props.accessibilityLabel,'Close search');assert.equal(home.declaration.props.slots[6].props.accessibilityState.expanded,true);
+test('Canvas capsule reserves space above the compact Footer; current/outside/Back collapse and Locked2 navigates without an automatic alert',()=>{
+ const h=harness(),Footer=h.load('src/components/bemem/ContextualFooter.tsx').ContextualFooter,ref={current:null},selected=[];
+ const props={mode:'Home',page:1,destinations:access(),ref,onPage:p=>selected.push(p)};
+ let t=h.render(Footer,props);byLabel(t,'Canvas 1. Choose canvas').props.onPress();t=h.render(Footer,props);
+ const menu=byLabel(t,'Canvas page choices');assert.equal(menu.props.style.position,undefined);assert.equal(menu.props.style.borderRadius,999);assert.ok(menu.props.style.marginBottom>0);assert.equal(byLabel(t,'Main navigation').props.children.length,5);
+ assert.deepEqual(nodes(menu).filter(n=>n.type==='Pressable').map(n=>n.props.disabled),[false,false,false,false,false]);
+ byLabel(t,'Canvas 2').props.onPress();assert.equal(h.alerts.length,0);assert.deepEqual(selected,[2]);
+ byLabel(h.render(Footer,props),'Canvas 1. Choose canvas').props.onPress();t=h.render(Footer,props);byLabel(t,'Canvas 1').props.onPress();assert.equal(ref.current.dismiss(),false);
+ byLabel(h.render(Footer,props),'Canvas 1. Choose canvas').props.onPress();assert.equal(ref.current.dismiss(),true);assert.equal(ref.current.dismiss(),false);
+});
+test('Stale callback cannot switch edit modes; busy controls cannot save; blocked writer still permits Home/Cancel',()=>{
+ const h=harness(),Footer=h.load('src/components/bemem/ContextualFooter.tsx').ContextualFooter;let calls=0;
+ const p={mode:'Home',page:1,destinations:access(),onPage(){},onCreate:()=>calls++,onHome:()=>calls++};let t=h.render(Footer,p);const stale=byLabel(t,'Arrange').props.onPress;
+ h.render(Footer,{...p,mode:'Decorate',disabled:true});stale();assert.equal(calls,0);
+ t=h.render(Footer,{...p,saving:true});byLabel(t,'Home').props.onPress();assert.equal(calls,0);
+ t=h.render(Footer,{...p,actionsBlocked:true});assert.equal(byLabel(t,'Home').props.disabled,false);byLabel(t,'Home').props.onPress();assert.equal(calls,1);assert.equal(byLabel(t,'Arrange').props.disabled,true);
+ const hh=harness(),Header=hh.load('src/components/bemem/NavigationHeader.tsx').NavigationHeader;
+ t=hh.render(Header,{mode:'Create',disabled:true,cancelDisabled:false,onSave:()=>calls++,onCancel:()=>calls++});byLabel(t,'Save').props.onPress();assert.equal(calls,1);byLabel(t,'Cancel').props.onPress();assert.equal(calls,2);
+});
+test('Temporary restrictions preserve entitled/readable/current content in every mode without changing entitlement',()=>{
+ for(const mode of ['Home','Create','Decorate']){
+  const h=harness(),Footer=h.load('src/components/bemem/ContextualFooter.tsx').ContextualFooter,choose=h.load('src/lib/footer-navigation.ts').footerCanvasChoices,selected=[];
+  assert.deepEqual(choose(1,access(),mode!=='Home').map(c=>c.kind),['current','select','select','select','select']);
+  assert.equal(choose(4,access(),true)[3].kind,'current');
+  const props={mode,page:1,destinations:access('active'),onPage:p=>selected.push(p)};
+  byLabel(h.render(Footer,props),'Canvas 1. Choose canvas').props.onPress();const t=h.render(Footer,props);byLabel(t,'Canvas 3').props.onPress();assert.deepEqual(selected,[3]);
+ }
 });
 
-// Actual bottom rail: Create mounts nothing; only empty Home retains the FAB.
-test('Create bottom Save and its touch-blocking rail are absent; empty Home retains only FAB', () => {
-  const module = { exports: {} }, jsx = (type, props) => ({ type, props });
-  const code = ts.transpileModule(fs.readFileSync(path.join(root, 'src/components/bemem/CanvasActions.tsx'), 'utf8'), {
-    compilerOptions: { module: ts.ModuleKind.CommonJS, jsx: ts.JsxEmit.ReactJSX },
-  }).outputText;
-  const deps = { 'react/jsx-runtime': { jsx, jsxs: jsx }, 'react-native': { View: 'View', Text: 'Text', StyleSheet: { create: s => s } },
-    '../../constants/lagoon-theme': { core: tokens.core, lagoon: tokens.palettes['pearl-gray'].colors, lagoonFonts: { latin: 'BememManrope' } },
-    './GlassButton': { GlassButton: 'GlassButton' }, './BememIcon': { BememIcon: 'BememIcon' } };
-  vm.runInThisContext(`(function(require,module,exports){${code}\n})`)(name => { assert.ok(deps[name]); return deps[name]; }, module, module.exports);
-  const save = () => {}, add = () => {};
-  for (const editing of [true, false]) for (const empty of [true, false]) {
-    const tree = module.exports.CanvasActions({ editing, empty, dirty: true, disabled: false, saving: false, onAdd: add, onSave: save });
-    if(editing||!empty){assert.equal(tree,null);continue;}
-    const controls = [tree.props.children].flat().filter(Boolean);
-    const adds = controls.filter(c => c.props.accessibilityLabel === 'Add Card');
-    assert.equal(adds.length, !editing && empty ? 1 : 0);
-    if (adds.length) { assert.equal(adds[0].props.onPress, add); assert.equal(flatten(adds[0].props.style).right, 0); }
-    const saves = controls.filter(c => c.props.onPress === save);
-    assert.equal(saves.length,0);
 
-  }
+test('Measured text can trigger fallback above 360dp and never escapes the parent at large font scales',()=>{
+ const h=harness({width:393,fontScale:1}),geometry=h.load('src/lib/navigation-text-layout.ts').navigationTextLayout;
+ for(const width of [280,320,360,393,412,600])for(const fontScale of [1,1.3,2,3]){
+  const g=geometry(width,fontScale,46*fontScale,35*fontScale,110);
+  assert.ok(g.cancelWidth>=48&&g.saveWidth>=48);assert.ok(g.groupWidth<=width-24);assert.ok(g.actionHeight>=48);
+  if(!g.stacked)assert.ok(g.sideWidth*2+110+16<=width);
+  if(!g.vertical)assert.equal(g.cancelWidth+g.saveWidth+4,g.groupWidth);
+  else assert.equal(g.height,48+g.actionHeight*2+4);
+ }
+ const Header=h.load('src/components/bemem/NavigationHeader.tsx').NavigationHeader,props={mode:'Create'};
+ let tree=h.render(Header,props);tree.props.onLayout({nativeEvent:{layout:{width:393}}});tree=h.render(Header,props);assert.equal(flatten(tree.props.style).minHeight,48);
+ nodes(byLabel(tree,'Cancel')).find(n=>n.type==='AddCardText').props.onMeasure(100);
+ nodes(byLabel(tree,'Save')).find(n=>n.type==='AddCardText').props.onMeasure(80);
+ tree=h.render(Header,props);assert.equal(flatten(tree.props.style).minHeight,96);
+ assert.ok(flatten(byLabel(tree,'Save').props.style({pressed:false})).width>=88);
+});
+test('Footer removes unnecessary label padding and uses full measured words with an unrestricted wrapping fallback',()=>{
+ for(const width of [320,360,393,412]){
+  const h=harness(),Footer=h.load('src/components/bemem/ContextualFooter.tsx').ContextualFooter,p={mode:'Home',page:1,destinations:access(),onPage(){}};
+  let tree=h.render(Footer,p);byLabel(tree,'Main navigation').props.onLayout({nativeEvent:{layout:{width}}});tree=h.render(Footer,p);
+  const button=byLabel(tree,'Decorate'),label=nodes(button).find(n=>n.type==='FooterItemVisual');
+  assert.equal(label.props.label,'Decorate');assert.equal(label.props.width,width/5-2);assert.equal(label.props.numberOfLines,undefined);
+  assert.equal(flatten(button.props.style({pressed:false})).paddingHorizontal,0);
+ }
+});
+
+
+test('First and measured Header frames share the same centre and pin Save inside safe bounds at Samsung widths and font scales',()=>{
+ for(const width of [360,393,412])for(const fontScale of [1,1.3,2,3])for(const mode of ['Home','Create','Decorate']){
+  const h=harness({width,fontScale},{left:8,right:8}),Header=h.load('src/components/bemem/NavigationHeader.tsx').NavigationHeader,props={mode};
+  const check=tree=>{
+   const [left,brand,right]=tree.props.children[0].props.children;
+   assert.equal(brand.props.style.left,0);assert.equal(brand.props.style.right,0);assert.equal(brand.props.style.alignItems,'center');assert.equal(left.props.style.left,12);assert.equal(right.props.style.right,12);
+   if(mode==='Home')return;
+   const actions=nodes(tree).filter(n=>n.type==='Pressable'&&['Cancel','Save'].includes(n.props.accessibilityLabel));assert.equal(actions.length,2);
+   const group=nodes(tree).find(n=>n.props?.style&&flatten(n.props.style).gap===4),g=flatten(group.props.style),targetWidths=actions.map(n=>flatten(n.props.style({pressed:false})).width),usable=width-16;
+   assert.ok(g.width<=usable-24);assert.equal(g.boxSizing,'border-box');assert.ok(targetWidths.every(w=>w>=48));
+   if(g.flexDirection==='row')assert.equal(targetWidths[0]+4+targetWidths[1],g.width);
+   else assert.ok(Math.max(...targetWidths)<=g.width);
+  };
+  let tree=h.render(Header,props);check(tree);tree.props.onLayout({nativeEvent:{layout:{width:width-16}}});tree=h.render(Header,props);check(tree);
+  if(mode!=='Home'){nodes(byLabel(tree,'Cancel')).find(n=>n.type==='AddCardText').props.onMeasure(48*fontScale);nodes(byLabel(tree,'Save')).find(n=>n.type==='AddCardText').props.onMeasure(36*fontScale);check(h.render(Header,props));}
+ }
+});
+
+test('Footer colors follow actual mode without an underline while Canvas labels change without creating an independent selected item',()=>{
+ const h=harness(),Footer=h.load('src/components/bemem/ContextualFooter.tsx').ContextualFooter,p={mode:'Home',page:1,destinations:access(),onPage(){}};
+ for(const [mode,index]of [['Home',2],['Create',1],['Decorate',0]])for(const page of [1,5]){const tree=h.render(Footer,{...p,mode,page}),visuals=nodes(tree).filter(n=>n.type==='FooterItemVisual');assert.equal(visuals.filter(n=>n.props.active).length,1);assert.equal(visuals[index].props.active,true);assert.equal(visuals[3].props.label,'Canvas '+page);assert.equal(nodes(tree).some(n=>n.type==='FooterActiveIndicator'||n.props?.testID==='footer-active-indicator'),false);assert.equal(byLabel(tree,'Canvas '+page+'. Choose canvas').props.accessibilityState.selected,false);}
+});
+
+test('Canvas capsule tracks actual page and keeps selection unchanged while navigation is blocked by a guard',()=>{
+ const h=harness(),Footer=h.load('src/components/bemem/ContextualFooter.tsx').ContextualFooter,ref={current:null},requested=[],p={mode:'Create',page:1,destinations:access(),ref,onPage:page=>requested.push(page)};
+ let tree=h.render(Footer,p);byLabel(tree,'Canvas 1. Choose canvas').props.onPress();tree=h.render(Footer,p);let menu=byLabel(tree,'Canvas page choices');assert.equal(nodes(menu).find(n=>n.type==='CanvasSelectionPill').props.page,1);const stale=byLabel(menu,'Canvas 5').props.onPress;stale();stale();assert.deepEqual(requested,[5]);
+ // Guard has not approved a page change: reopen still highlights Canvas 1.
+ tree=h.render(Footer,p);byLabel(tree,'Canvas 1. Choose canvas').props.onPress();tree=h.render(Footer,p);menu=byLabel(tree,'Canvas page choices');assert.equal(byLabel(menu,'Canvas 1').props.accessibilityState.selected,true);assert.equal(byLabel(menu,'Canvas 5').props.accessibilityState.selected,false);
+ tree=h.render(Footer,{...p,page:5});tree=h.render(Footer,{...p,page:5});byLabel(tree,'Canvas 5. Choose canvas').props.onPress();tree=h.render(Footer,{...p,page:5});menu=byLabel(tree,'Canvas page choices');assert.equal(nodes(menu).find(n=>n.type==='CanvasSelectionPill').props.page,5);assert.equal(byLabel(menu,'Canvas 5').props.accessibilityState.selected,true);
+ const track=nodes(menu).find(n=>n.props?.testID==='canvas-segment-track');track.props.onLayout({nativeEvent:{layout:{width:294}}});menu=byLabel(h.render(Footer,{...p,page:5}),'Canvas page choices');assert.equal(nodes(menu).find(n=>n.type==='CanvasSelectionPill').props.width,294);assert.equal(nodes(menu).filter(n=>n.type==='Pressable').length,5);assert.ok(nodes(menu).filter(n=>n.type==='Pressable').every(n=>flatten(n.props.style).minHeight>=48));
 });

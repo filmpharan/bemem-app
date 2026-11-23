@@ -6,7 +6,7 @@ import { prepareProductionCardDraft } from './wallet-production-policy';
 import { WalletCoordinatorFailure } from './wallet-coordinator';
 import { membershipEditValues, prepareMembershipEdit, type MembershipEditValues } from './membership-card-edit';
 import type { MembershipCard } from '../types/membership-card';
-import { membershipResizePlan, prepareFullMembershipEdit, type CardEditorState } from './card-editor-state';
+import { isSheetModeOnlyEdit, membershipResizePlan, prepareFullMembershipEdit, type CardEditorState } from './card-editor-state';
 import type { Position } from '../types/wallet-ui';
 import { WalletValidationError } from './wallet-validation';
 import type { CardHistoryDeletePolicy, DeleteHistoryReview } from './card-history-deletion';
@@ -25,6 +25,24 @@ export function createWalletFeatureCommands(owner: ReturnType<typeof createPrepa
   const epoch=()=>owner.pages?.generation()??0;
   const editable=(id?:string)=>id?(owner.pages?.canEditCard(id)??true):(owner.pages?.access().find(p=>p.page===owner.pages.current())?.editable??true);
   const equal = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
+  const arrangeEdits=new Map<string,{cardId:string;generation:number;revision:number;pageEpoch:number;draft:string;card:string}>();
+  let resolvingArrange=false;
+  function openEdit(cardId: string) {
+      if(!editable(cardId))return {ok:false as const,message:'This canvas is read-only.'};
+      const current = owner.getSnapshot(), card = current.session?.saved.cards.find(item => item.id === cardId);
+      if (current.state.source !== 'v2' || !current.state.editsAllowed || !current.session) return { ok: false as const, message: 'Editing requires an active, unlocked Wallet v2.' };
+      if (!card || card.kind !== 'membership') return { ok: false as const, message: 'Only saved membership cards can be edited. Demo cards are unchanged.' };
+      if (current.state.saving) return {ok:false as const,message:'The wallet is saving. Wait before editing.'};
+      if (current.state.dirty) {
+        const token=`arrange-edit-${prefix}-${++sequence}`;
+        arrangeEdits.set(token,{cardId,generation:current.state.generation,revision:current.session.revision,pageEpoch:epoch(),draft:JSON.stringify(current.session.draft),card:JSON.stringify(card)});
+        return {ok:false as const,message:'Save or discard your canvas changes before editing a saved card.',arrangeToken:token};
+      }
+      const token = `edit-${prefix}-${++sequence}`;
+      edits.set(token, { generation: current.state.generation, revision: current.session.revision,
+        card: JSON.parse(JSON.stringify(card)) as MembershipCard, attempted: false,pageEpoch:epoch() });
+      return { ok: true as const, session: { token, values: membershipEditValues(card) } satisfies MembershipEditSession };
+    }
   return {
     deleteReviewRequired: !!historyPolicy,
     async reviewDelete(token: string) {
@@ -96,16 +114,30 @@ export function createWalletFeatureCommands(owner: ReturnType<typeof createPrepa
       };
       return historyPolicy ? historyPolicy.execute(deletion.review!, deletion.card, writeCard) : writeCard();
     },
-    openEdit(cardId: string) {
-      if(!editable(cardId))return {ok:false as const,message:'This canvas is read-only.'};
-      const current = owner.getSnapshot(), card = current.session?.saved.cards.find(item => item.id === cardId);
-      if (current.state.source !== 'v2' || !current.state.editsAllowed || !current.session) return { ok: false as const, message: 'Editing requires an active, unlocked Wallet v2.' };
-      if (current.state.dirty) return { ok: false as const, message: 'Save or discard your canvas changes before editing a saved card.' };
-      if (!card || card.kind !== 'membership') return { ok: false as const, message: 'Only saved membership cards can be edited. Demo cards are unchanged.' };
-      const token = `edit-${prefix}-${++sequence}`;
-      edits.set(token, { generation: current.state.generation, revision: current.session.revision,
-        card: JSON.parse(JSON.stringify(card)) as MembershipCard, attempted: false,pageEpoch:epoch() });
-      return { ok: true as const, session: { token, values: membershipEditValues(card) } satisfies MembershipEditSession };
+    openEdit,
+    cancelArrangeEdit(token:string){arrangeEdits.delete(token);},
+    async resolveArrangeEdit(token:string,action:'save'|'discard'){
+      const intent=arrangeEdits.get(token),current=owner.getSnapshot();
+      const fail=(message:string,requiresReinspection=false)=>({ok:false as const,message,requiresReinspection});
+      if(resolvingArrange)return fail('Another Arrange action is in progress.');
+      arrangeEdits.delete(token);
+      if(!intent||!['save','discard'].includes(action)||!current.session||current.state.source!=='v2'||!current.state.editsAllowed||current.state.saving||!current.state.dirty
+        ||current.state.generation!==intent.generation||current.session.revision!==intent.revision||epoch()!==intent.pageEpoch||!editable(intent.cardId)
+        ||JSON.stringify(current.session.draft)!==intent.draft||JSON.stringify(current.session.saved.cards.find(c=>c.id===intent.cardId))!==intent.card)
+        return fail('The Arrange draft or wallet changed. Review the card and try Edit again.');
+      resolvingArrange=true;
+      try{
+        const result=action==='save'?await owner.commands.save(intent.generation):owner.commands.updateDraft(intent.generation,JSON.parse(JSON.stringify(current.session.saved)));
+        if(!result.ok)return fail('Arrange changes were not confirmed. The editor was not opened. Review wallet status before continuing. No automatic retry was made.',true);
+        const latest=owner.getSnapshot();
+        if(!latest.session||latest.state.source!=='v2'||!latest.state.editsAllowed||latest.state.saving||latest.state.dirty||latest.state.generation!==intent.generation
+          ||epoch()!==intent.pageEpoch||latest.session.revision!==intent.revision+(action==='save'?1:0)||!editable(intent.cardId)
+          ||JSON.stringify(latest.session.saved.cards.find(c=>c.id===intent.cardId))!==intent.card)
+          return fail('The wallet changed before Edit could open. Reinspect the wallet before continuing.',true);
+        const opened=openEdit(intent.cardId);
+        return opened.ok?opened:fail(opened.message);
+      }catch{return fail('Arrange save was not confirmed. The editor was not opened. Reinspect the wallet before continuing. No automatic retry was made.',true);}
+      finally{resolvingArrange=false;}
     },
     reviewEdit(token: string, form: CardEditorState) {
       const edit = edits.get(token), current = owner.getSnapshot();
@@ -126,7 +158,9 @@ export function createWalletFeatureCommands(owner: ReturnType<typeof createPrepa
       try { prepared = full ? prepareFullMembershipEdit(edit.card, full, new Date().toISOString()) : prepareMembershipEdit(edit.card, values, new Date().toISOString()); }
       catch { return fail('Check card fields, code compatibility and appearance. Nothing was saved.'); }
       if (!prepared.ok) return { ...prepared, message: 'Check the highlighted fields.', requiresReinspection: false };
-      const cleaned = withoutObsoleteCardBrand(prepared.card);
+      const modeOnly = !!full && isSheetModeOnlyEdit(edit.card, full);
+      const cleanWallet = (wallet: Parameters<typeof withoutObsoleteBrands>[0]) => modeOnly ? wallet : withoutObsoleteBrands(wallet,owner.pages?.current()??1);
+      const cleaned = modeOnly ? prepared.card : withoutObsoleteCardBrand(prepared.card);
       prepared = { ...prepared, card: cleaned, changed: prepared.changed || !equal(cleaned, edit.card) };
       if (current.state.source !== 'v2' || !current.state.editsAllowed || !current.session || current.state.dirty
         || current.state.generation !== edit.generation || current.session.revision !== edit.revision
@@ -143,8 +177,8 @@ export function createWalletFeatureCommands(owner: ReturnType<typeof createPrepa
         } catch { return fail('There is no space for this size. No cards were moved.'); }
       }
       edit.attempted = true; // Synchronous double-submit barrier before any update or await.
-      const draft = withoutObsoleteBrands({ ...current.session.saved, cards: current.session.saved.cards.map(card => card.id === edit.card.id ? prepared.card : card),
-        canvas: { ...current.session.saved.canvas, layout: { ...current.session.saved.canvas.layout, [edit.card.id]: position } } },owner.pages?.current()??1);
+      const draft = cleanWallet({ ...current.session.saved, cards: current.session.saved.cards.map(card => card.id === edit.card.id ? prepared.card : card),
+        canvas: { ...current.session.saved.canvas, layout: { ...current.session.saved.canvas.layout, [edit.card.id]: position } } });
       const admitted = owner.commands.updateDraft(edit.generation, draft);
       if (!admitted.ok) return fail('Editing was not admitted. No save was started. Close and check wallet status.', true);
       try {
@@ -153,7 +187,7 @@ export function createWalletFeatureCommands(owner: ReturnType<typeof createPrepa
         if (!result.ok || latest.state.source !== 'v2' || latest.state.phase !== 'ready_v2'
           || latest.session?.revision !== edit.revision + 1 || !equal(written, prepared.card)
           || !equal(latest.session.saved.canvas, draft.canvas)
-          || !equal(latest.session.saved.cards.filter(card => card.id !== edit.card.id), withoutObsoleteBrands(current.session.saved as Parameters<typeof withoutObsoleteBrands>[0],owner.pages?.current()??1).cards.filter(card => card.id !== edit.card.id))) {
+          || !equal(latest.session.saved.cards.filter(card => card.id !== edit.card.id), cleanWallet(current.session.saved as Parameters<typeof withoutObsoleteBrands>[0]).cards.filter(card => card.id !== edit.card.id))) {
           return fail('Save was not confirmed. Your input is retained. Close and use Reinspect wallet before editing again. No automatic retry was made.', true);
         }
         edits.delete(token); return { ok: true as const, card: prepared.card };

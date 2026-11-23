@@ -23,6 +23,7 @@ export function createHistoryDeletion(ports: {
   repository: ReturnType<typeof createHistoryRepository>; nextId: () => string;
   intents: { list: () => Promise<HistoryDeleteIntent[]>; write: (intent: HistoryDeleteIntent) => Promise<void>; remove: (id: string) => Promise<void> };
   verify: (document: HistoryDocument) => void;
+  canRecoverCard?: (cardId: string) => boolean;
   cleanup: (before: HistoryDocument, after: HistoryDocument) => Promise<void>;
   wallet: () => { ready: boolean; generation: number; revision: number; cards: readonly Readonly<MembershipCard>[] };
 }) {
@@ -39,7 +40,7 @@ export function createHistoryDeletion(ports: {
     cancel(review) { reviews.delete(review.token); },
     async review(card) {
       await list();
-      if (!allowed(card.id)) throw new HistoryError('blocked', 'An interrupted deletion needs review in History & Receipts before deleting again.');
+      if (!allowed(card.id)) throw new HistoryError('blocked', 'An interrupted deletion needs review in My Keeps before deleting again.');
       const state = ports.wallet(), document = await ports.repository.load();
       if (!state.ready || !equal(state.cards.find(item => item.id === card.id), card)) throw new HistoryError('blocked', 'Check wallet status before deleting this card.');
       ports.verify(document);
@@ -67,14 +68,14 @@ export function createHistoryDeletion(ports: {
         const after = await ports.repository.save({ ...before, records: before.records.filter(record => record.cardId !== card.id) }, before.revision, admission);
         if (!admission()) throw new HistoryError('blocked', 'Wallet changed after history removal. Preserved history is available for recovery.');
         const result = await writer(); // Existing Wallet Single Writer + exact readback.
-        if (!result.ok) return { ...result, message: `${result.message} Preserved history is available in History & Receipts recovery.`, requiresReinspection: true };
+        if (!result.ok) return { ...result, message: `${result.message} Preserved history is available in My Keeps recovery.`, requiresReinspection: true };
         if (ports.wallet().cards.some(item => item.id === card.id)) throw new HistoryError('commit_uncertain', 'Card deletion readback is not confirmed.');
         try {
           await ports.cleanup(before, after); await ports.intents.remove(intent.id); unresolved.delete(card.id);
           return result;
-        } catch { return { ok: true, warning: 'Card and history deletion were verified. Receipt cleanup is incomplete or unconfirmed. Open History & Receipts on another card to review recovery status.' }; }
+        } catch { return { ok: true, warning: 'Card and history deletion were verified. Receipt cleanup is incomplete or unconfirmed. Open My Keeps on another card to review recovery status.' }; }
       } catch (error) {
-        return { ok: false, requiresReinspection: true, message: `${error instanceof HistoryError ? error.message : 'Deletion could not be confirmed.'} No automatic retry was made. Open History & Receipts to review recovery.` };
+        return { ok: false, requiresReinspection: true, message: `${error instanceof HistoryError ? error.message : 'Deletion could not be confirmed.'} No automatic retry was made. Open My Keeps to review recovery.` };
       } finally { locked.delete(card.id); }
     },
   };
@@ -84,15 +85,20 @@ export function createHistoryDeletion(ports: {
       if (!intent || locked.has(intent.cardId)) throw new HistoryError('blocked', 'Recovery is unavailable or already running.');
       const state = ports.wallet(); if (!state.ready) throw new HistoryError('blocked', 'Reinspect wallet and resolve canvas changes before recovery.');
       locked.add(intent.cardId);
-      const unchanged = () => { const current = ports.wallet(); return current.ready && current.generation === state.generation && current.revision === state.revision; };
+      const unchanged = () => { const current = ports.wallet(); return current.ready && current.generation === state.generation && current.revision === state.revision
+        && (!state.cards.some(card => card.id === intent.cardId) || !ports.canRecoverCard || ports.canRecoverCard(intent.cardId)); };
       try {
         const current = await ports.repository.load(), existing = current.records.filter(record => record.cardId === intent.cardId);
         if (state.cards.some(card => card.id === intent.cardId)) {
+          if (ports.canRecoverCard && !ports.canRecoverCard(intent.cardId)) throw new HistoryError('blocked', 'Unlock the parent canvas before restoring its history.');
           if (existing.length && !equal(existing, intent.records)) throw new HistoryError('blocked', 'History changed. Recovery will not overwrite existing records.');
           if (!existing.length) {
             if (intent.records.some(record => current.records.some(item => item.id === record.id))) throw new HistoryError('blocked', 'A preserved record identifier conflicts. Nothing was restored.');
             await ports.repository.save({ ...current, records: [...current.records, ...intent.records] }, current.revision, unchanged);
           }
+          const readback = await ports.repository.load(); ports.verify(readback);
+          if (!equal(readback.records.filter(record => record.cardId === intent.cardId), intent.records))
+            throw new HistoryError('commit_uncertain', 'Restored history readback was not confirmed. Recovery was preserved.');
           if (!unchanged()) throw new HistoryError('blocked', 'Wallet changed during recovery. Review again.');
           await ports.intents.remove(intent.id); unresolved.delete(intent.cardId);
           return 'Preserved history restored. The membership card is unchanged.';

@@ -6,10 +6,13 @@ export function folderVisualLayout(width:number,height:number,orientation:Orient
   const partitions=folderPreviewRegions(orientation,count);
   const columns=new Set(partitions.map(p=>p.left)).size,rows=new Set(partitions.map(p=>p.top)).size;
   const gap=Math.min(4,Math.min(width,height)*.04);
-  const titleBottom=height*.07,titleHeight=32*Math.min(1.3,Math.max(1,fontScale));
-  const left=width*.07,top=height*(orientation==='portrait'?.18:.24);
-  const wellWidth=width-left*2,wellHeight=Math.max(0,height-top-Math.max(height*.24,titleBottom+titleHeight+gap));
+  const titleHeight=16*Math.min(1.3,Math.max(1,fontScale));
+  // One thin top flap inside the existing footprint; a little more room for enlarged text.
+  const flapHeight=Math.min(height*.26,Math.max(Math.min(width,height)*.1875,titleHeight+4));
+  const titleTop=Math.max(0,(flapHeight-titleHeight)/2),titleInset=width*.075;
+  const left=width*.055,top=flapHeight+gap,bottom=Math.min(width,height)*.055;
+  const wellWidth=width-left*2,wellHeight=Math.max(0,height-top-bottom);
   const cellWidth=Math.max(0,(wellWidth-gap*(columns-1))/columns),cellHeight=Math.max(0,(wellHeight-gap*(rows-1))/rows);
   const cells=partitions.map(p=>({left:p.left*columns*(cellWidth+gap),top:p.top*rows*(cellHeight+gap),width:cellWidth,height:cellHeight}));
-  return {gap,well:{left,top,width:wellWidth,height:wellHeight},cells,titleBottom,titleHeight};
+  return {gap,well:{left,top,width:wellWidth,height:wellHeight},cells,flapHeight,titleTop,titleHeight,titleInset};
 }

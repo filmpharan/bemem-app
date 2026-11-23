@@ -1,6 +1,7 @@
+import { MATTE_CARD_ARTWORK, MATTE_CARD_FACES } from './matte-card-artwork';
 // Generated from the approved PNG bytes by scripts/prepare-default-card-artwork.py.
 // Versioned IDs are immutable; future artwork changes require new IDs.
-export const DEFAULT_CARD_ARTWORK = {
+export const LEGACY_CARD_ARTWORK = {
   "art-bemem-lg2-front-blush-pink.png": {
     "assetId": "art-bemem-lg2-front-blush-pink.png",
     "width": 1536,
@@ -100,7 +101,7 @@ export const DEFAULT_CARD_ARTWORK = {
     "md5": "50ae2eb71b78124f5521a3644ef79bf2"
   }
 } as const;
-export const DEFAULT_CARD_FACES = [
+export const LEGACY_CARD_FACES = [
   {
     "id": "blush-pink",
     "front": "art-bemem-lg2-front-blush-pink.png",
@@ -144,3 +145,7 @@ export const DEFAULT_CARD_FACES = [
     "formColorId": "slate"
   }
 ] as const;
+
+// New Add sessions only; existing stored IDs always resolve through the complete registry.
+export const DEFAULT_CARD_ARTWORK = { ...LEGACY_CARD_ARTWORK, ...MATTE_CARD_ARTWORK } as const;
+export const DEFAULT_CARD_FACES = MATTE_CARD_FACES;

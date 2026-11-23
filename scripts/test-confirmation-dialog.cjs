@@ -4,10 +4,11 @@ const nodes=(t,out=[])=>{if(!t||typeof t!=='object')return out;if(Array.isArray(
 const find=(t,label)=>nodes(t).find(n=>n.props?.accessibilityLabel===label);
 const flat=s=>Object.assign({},...[s].flat(Infinity).filter(Boolean)),tick=()=>new Promise(r=>setImmediate(r));
 function harness(){const frames=new Map(),cache=new Map(),focus=[],keyboard=[];let slots,cursor,effects;
- const react={useRef(v){const i=cursor++;return slots[i]??={current:v};},useState(v){const i=cursor++,own=slots;if(!(i in own))own[i]=typeof v==='function'?v():v;return[own[i],v=>own[i]=typeof v==='function'?v(own[i]):v];},useEffect(fn,deps){const i=cursor++,old=slots[i];if(!old||deps.some((v,j)=>v!==old.deps[j])){const item=slots[i]={deps};effects.push(()=>{item.cleanup=fn();});}}};
+ const react={useCallback:fn=>fn,useRef(v){const i=cursor++;return slots[i]??={current:v};},useState(v){const i=cursor++,own=slots;if(!(i in own))own[i]=typeof v==='function'?v():v;return[own[i],v=>own[i]=typeof v==='function'?v(own[i]):v];},useEffect(fn,deps){const i=cursor++,old=slots[i];if(!old||deps.some((v,j)=>v!==old.deps[j])){const item=slots[i]={deps};effects.push(()=>{item.cleanup=fn();});}}};
  function load(relative){const file=path.resolve(root,relative);if(cache.has(file))return cache.get(file);const m={exports:{}};
  const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText;
  vm.runInThisContext(`(function(require,module,exports){${code}\n})`,{filename:file})(name=>{
+  if(name.endsWith('/keyboard-layout'))return load('src/lib/keyboard-layout.ts');
   if(name==='react')return react;if(name==='react/jsx-runtime')return{jsx:(type,props,key)=>({type,props,key}),jsxs:(type,props,key)=>({type,props,key})};
   if(name==='react-native')return{...Object.fromEntries(['View','Text','Pressable','ScrollView','Modal','ActivityIndicator','KeyboardAvoidingView'].map(n=>[n,n])),Platform:{OS:'android',Version:36},Keyboard:{dismiss:()=>keyboard.push('dismiss')},AccessibilityInfo:{sendAccessibilityEvent:(...a)=>focus.push(a)},StyleSheet:{create:s=>s,flatten:flat,absoluteFill:{position:'absolute',left:0,right:0,top:0,bottom:0},hairlineWidth:1}};
   if(name==='react-native-safe-area-context')return{SafeAreaView:'SafeAreaView'};
@@ -27,12 +28,12 @@ function harness(){const frames=new Map(),cache=new Map(),focus=[],keyboard=[];l
 }
 const request=(patch={})=>({id:'fixture',title:'Delete this card?',description:'Synthetic Test Member will be removed.',onDismiss(){},actions:[{label:'Cancel',role:'primary',onPress(){}},{label:'Delete Card',role:'destructive',onPress(){}}],...patch});
 
-test('Shared Pearl dialog renders role colors, Manrope, safe primary and destructive text without glass',()=>{
+test('Shared Vivid Lagoon dialog renders role colors, Manrope, safe primary and destructive text without glass',()=>{
  const h=harness(),t=h.dialog(request()).surface,surface=nodes(t).find(n=>n.props?.testID==='confirmation-surface');
- assert.equal(surface.props.style.backgroundColor,'#eceff1');assert.equal(surface.props.style.borderRadius,20);assert.equal(surface.props.style.maxWidth,400);
+ assert.equal(surface.props.style.backgroundColor,'#F5F8F8');assert.equal(surface.props.style.borderRadius,20);assert.equal(surface.props.style.maxWidth,400);
  const scroll=nodes(t).find(n=>n.type==='ScrollView');assert.equal(scroll.props.contentContainerStyle.padding,20);
  const title=nodes(t).find(n=>n.props?.accessibilityRole==='header');assert.equal(flat(title.props.style).fontFamily,'BememManrope');assert.equal(flat(title.props.style).fontSize,18);assert.equal(flat(title.props.style).lineHeight,26);
- const primary=find(t,'Cancel'),danger=find(t,'Delete Card');assert.equal(flat(primary.props.style({pressed:false})).backgroundColor,'#405764');assert.equal(flat(danger.props.style({pressed:false})).backgroundColor,undefined);
+ const primary=find(t,'Cancel'),danger=find(t,'Delete Card');assert.equal(flat(primary.props.style({pressed:false})).backgroundColor,'#00786F');assert.equal(flat(danger.props.style({pressed:false})).backgroundColor,undefined);
  assert.equal(flat(danger.props.children.props.style).color,'#b42318');for(const b of [primary,danger])assert.equal(flat(b.props.style({pressed:false})).minHeight,48);
  assert.equal(nodes(t).some(n=>n.type==='GlassButton'),false);
 });

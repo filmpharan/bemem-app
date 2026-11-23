@@ -5,6 +5,13 @@ import { addCardLayout } from './add-card-layout';
 // Existing Lucide paths (ISC) retain their reconstruction-folder license.
 // Refined bemem sources: assets/icons/bemem-functional/ (24-unit grid).
 const paths = {
+  calendar:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3V7M17 3V7M3 10H21"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 6V12H17"/>',
+  keep:'<rect x="4" y="5" width="16" height="16" rx="3"/><path d="M4 9H20M10 12H14V16H10Z"/>',
+  bell:'<path d="M5 16V10a7 7 0 0 1 14 0v6l2 3H3ZM10 22H14M12 1V3"/>',
+  note:'<rect x="3" y="4" width="18" height="17" rx="3"/><path d="M7 9H15M7 13H12M15 18L18 15M18 15L20 13"/>',
+  plus:'<circle cx="12" cy="12" r="9"/><path d="M12 7V17M7 12H17"/>',
+  crown: '<path d="M4 7L8 11L12 4L16 11L20 7L18 18H6L4 7ZM6 21H18"/>',
   lock: '<rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/>',
   // Existing bemem Signature outlines; button surfaces remain outside the SVG.
   undo: '<path d="M4 9H12Q20 9 20 17V19M4 9L8 5M4 9L8 13"/>',

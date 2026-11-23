@@ -95,20 +95,19 @@ test('Add, move, four rotations and delete are draft-only; membership metadata s
   assert.deepEqual(s.snapshot().document.cards,e.first.cards);assert.equal(s.apply({type:'delete',id}).ok,true);
   assert.equal(s.snapshot().document.canvas.decorations.items.length,0);assert.deepEqual(e.owner.getSnapshot().session.saved,e.first);assert.equal(e.events.length,0);
 });
-test('Undo/Redo each action, including a completed membership drag, one action per step',async()=>{
-  const e=await environment(),s=e.newSession();let before=s.snapshot().document;
-  const actions=[{type:'add',assetId:'vine-corner',position:{col:8,row:0}},{type:'move',id:'synthetic-member',position:{col:0,row:8}}];
-  for(const action of actions){assert.equal(s.apply(action).ok,true);const after=s.snapshot().document;assert.equal(s.undo().ok,true);assert.deepEqual(s.snapshot().document,before);
-    assert.equal(s.redo().ok,true);assert.deepEqual(s.snapshot().document,after);before=after;}
-  const id=before.canvas.decorations.items[0].id;
-  for(const action of [{type:'move',id,position:{col:9,row:0}},{type:'rotate',id},{type:'delete',id}]){
-    assert.equal(s.apply(action).ok,true);const after=s.snapshot().document;s.undo();assert.deepEqual(s.snapshot().document,before);s.redo();assert.deepEqual(s.snapshot().document,after);before=after;
-  }
+test('Forward actions remain draft-only without Undo/Redo; Cancel restores the entry snapshot',async()=>{
+ const e=await environment(),s=e.newSession();
+ for(const action of [{type:'add',assetId:'vine-corner',position:{col:8,row:0}},{type:'move',id:'synthetic-member',position:{col:0,row:8}}])assert.equal(s.apply(action).ok,true);
+ const id=s.snapshot().document.canvas.decorations.items[0].id;
+ for(const action of [{type:'move',id,position:{col:9,row:0}},{type:'rotate',id},{type:'delete',id}])assert.equal(s.apply(action).ok,true);
+ assert.equal(s.undo,undefined);assert.equal(s.redo,undefined);assert.equal('canUndo' in s.snapshot(),false);assert.equal('canRedo' in s.snapshot(),false);
+ assert.deepEqual(e.owner.getSnapshot().session.saved,e.first);assert.equal(e.events.length,0);
+ assert.equal(s.cancel().ok,true);assert.deepEqual(e.owner.getSnapshot().session.draft,e.first);
 });
-test('A new action after Undo clears only the Redo branch; no-op movement adds no history',async()=>{
-  const e=await environment(),s=e.newSession();s.apply({type:'move',id:'synthetic-member',position:{col:0,row:8}});s.undo();assert.equal(s.snapshot().canRedo,true);
-  s.apply({type:'add',assetId:'pet-paw',position:{col:10,row:2}});assert.equal(s.snapshot().canRedo,false);s.undo();assert.deepEqual(s.snapshot().document,e.first);
-  s.apply({type:'move',id:'synthetic-member',position:{col:0,row:0}});assert.equal(s.snapshot().canUndo,false);
+test('No-op movement retains the draft and exposes no obsolete history controls',async()=>{
+ const e=await environment(),s=e.newSession(),before=s.snapshot();
+ assert.equal(s.apply({type:'move',id:'synthetic-member',position:{col:0,row:0}}).ok,true);
+ assert.deepEqual(s.snapshot(),before);assert.equal(s.undo,undefined);assert.equal(s.redo,undefined);assert.equal(e.events.length,0);
 });
 test('Occupied and outside drops keep every unrelated item and history unchanged',async()=>{
   const e=await environment(decorated()),s=e.newSession(),before=s.snapshot();
@@ -124,7 +123,7 @@ test('Cancel restores the entry Create draft without writing; no inherited unsav
 test('Save commits moved cards and decorations together, verifies readback, then a new repository reloads exact state',async()=>{
   const e=await environment(),s=e.newSession();s.apply({type:'add',assetId:'vine-corner',position:{col:8,row:0}});const id=s.snapshot().document.canvas.decorations.items[0].id;
   s.apply({type:'rotate',id});s.apply({type:'move',id:'synthetic-member',position:{col:0,row:8}});const expected=s.snapshot().document;
-  assert.equal((await s.save()).ok,true);assert.equal(s.snapshot().closed,true);assert.equal(s.snapshot().canUndo,false);
+  assert.equal((await s.save()).ok,true);assert.equal(s.snapshot().closed,true);assert.equal('canUndo' in s.snapshot(),false);
   const reloaded=(await e.repository().load()).document;assert.equal(reloaded.revision,2);assert.deepEqual(reloaded.canvas,expected.canvas);assert.deepEqual(reloaded.cards,expected.cards);
   assert.equal(e.events.filter(e=>e[0]==='write').length,1);assert.equal(e.events.filter(e=>e[0]==='promote').length,1);
 });
@@ -161,7 +160,7 @@ test('Search hides decorations, reflows matching cards, and clearing restores ex
 });
 test('Add and Resize respect decoration occupancy while preserving all existing decoration data',()=>{
   const doc=decorated();doc.canvas.layout['synthetic-member']={col:0,row:10};doc.canvas.decorations.items[0].position={col:0,row:0};
-  const sizes=load('src/lib/card-size-presets.ts');const preset=sizes.CARD_SIZE_PRESETS[0];
+  const sizes=load('src/lib/card-size-presets.ts');const preset=sizes.CARD_SIZE_PRESETS.find(p=>p.id==='mini-landscape');
   const next={...card('new-card'),sizePresetId:preset.id,widthBlocks:preset.ratioWidth,heightBlocks:preset.ratioHeight,orientation:preset.orientation,country:'TH',brandId:null,brandQuery:'',expiryMonth:'',appearance:{...card().appearance,gradientPresetId:null}};
   const added=prepareProductionCardDraft(doc,next);assert.deepEqual(added.canvas.decorations,doc.canvas.decorations);assert.notDeepEqual(added.canvas.layout['new-card'],{col:0,row:0});
   assert.deepEqual(membershipResizePlan(doc,doc.cards[0]).position,doc.canvas.layout['synthetic-member']);
@@ -176,9 +175,9 @@ test('Render DTO preserves one full square tile with zero inset and does not exp
   assert.deepEqual(grid.cardSize(deco),{cols:1,rows:1});const frame=grid.canvasItemFrame(deco,{col:8,row:0},28);assert.deepEqual(frame,{left:224,top:0,width:28,height:28});assert.equal('payload' in v.cards[0],false);
 });
 
-function nodes(tree,out=[]) {if(!tree||typeof tree!=='object')return out;if(Array.isArray(tree)){tree.forEach(x=>nodes(x,out));return out;}out.push(tree);nodes(tree.props?.children,out);if(tree.props?.slots)nodes(Object.values(tree.props.slots),out);return out;}
+function nodes(tree,out=[]) {if(!tree||typeof tree!=='object')return out;if(Array.isArray(tree)){tree.forEach(x=>nodes(x,out));return out;}out.push(tree);nodes(tree.props?.children,out);if(tree.props?.slots)nodes(Object.values(tree.props.slots),out);if(tree.type==='NavigationHeader'){for(const [label,prop] of [['Back','onCancel'],['Save','onSave']])out.push({type:'Pressable',props:{accessibilityLabel:label,onPress:tree.props[prop],disabled:label==='Back'?tree.props.cancelDisabled:tree.props.disabled,accessibilityState:{disabled:label==='Back'?tree.props.cancelDisabled:tree.props.disabled,busy:label==='Save'&&tree.props.saving}}});}return out;}
 function folderView(){const d=wallet();d.cards.push(card('second'));d.canvas.layout.second={col:6,row:0};return walletCanvasPresentation(load('src/lib/group-folder.ts').createGroupFolder(d,'folder-test','Test Folder','landscape',['synthetic-member','second'],1));}
-test('Actual Decorate screen folder move triggers existing Back protection; Keep and Undo/Redo retain history',async()=>{
+test('Actual Decorate screen folder move triggers existing Back protection; Keep retains the moved draft',async()=>{
  const doc=wallet();doc.cards.push(card('second'));doc.canvas.layout.second={col:6,row:0};
  const e=await environment(load('src/lib/group-folder.ts').createGroupFolder(doc,'folder-test','Test Folder','landscape',['synthetic-member','second'],1));
  const h=nativeHarness('src/components/bemem/DecorateMode.tsx','EditableDecorateMode');let closed=0;
@@ -188,8 +187,7 @@ test('Actual Decorate screen folder move triggers existing Back protection; Keep
  canvas.props.onMove('folder-test',{col:0,row:8});tree=render();assert.equal(e.owner.getSnapshot().state.dirty,true);assert.equal(e.events.length,0);
  const moved=clone(e.owner.getSnapshot().session.draft);tree.props.onRequestClose();let request=nodes(render()).find(n=>n.type==='ConfirmationDialog').props.request;
  assert.equal(request.title,'Discard decoration changes?');request.actions[0].onPress();assert.deepEqual(e.owner.getSnapshot().session.draft,moved);
- nodes(render()).find(n=>n.props?.accessibilityLabel==='Undo').props.onPress();assert.deepEqual(e.owner.getSnapshot().session.draft,before);
- nodes(render()).find(n=>n.props?.accessibilityLabel==='Redo').props.onPress();assert.deepEqual(e.owner.getSnapshot().session.draft,moved);
+ assert.equal(nodes(render()).some(n=>['Undo','Redo'].includes(n.props?.accessibilityLabel)),false);assert.deepEqual(e.owner.getSnapshot().session.draft,moved);
  render().props.onRequestClose();request=nodes(render()).find(n=>n.type==='ConfirmationDialog').props.request;request.actions[1].onPress();assert.equal(closed,1);assert.deepEqual(e.owner.getSnapshot().session.draft,before);assert.equal(e.events.length,0);
 });
 test('Home/Create/Decorate render the same folder but only editing modes mount the existing drag responder',()=>{
@@ -225,14 +223,14 @@ test('Folder drag collision and boundary rejection do not emit a move or sheet o
   tree.props.onPanResponderGrant(null,{...g,dx:0,dy:0});h.advance(350);tree.props.onPanResponderMove(null,g);tree.props.onPanResponderRelease(null,g);assert.deepEqual(events,[]);
  }
 });
-function nativeHarness(relative,exportName,initialSlots={},dimensions={width:390,height:844,fontScale:1}) {
-  const slots=[],alerts=[],responders=[];let cursor=0;
+function nativeHarness(relative,exportName,initialSlots={},dimensions={width:390,height:844,fontScale:1},runEffects=false) {
+  const slots=[],alerts=[],responders=[],backs=[];let cursor=0;
   let tick=0;const timers=[];
   const react={useState(initial){const i=cursor++;if(!(i in slots))slots[i]=Object.hasOwn(initialSlots,i)?initialSlots[i]:typeof initial==='function'?initial():initial;
     return [slots[i],value=>{slots[i]=typeof value==='function'?value(slots[i]):value;}];},useRef(value){const i=cursor++;slots[i]??={current:value};return slots[i];},
-    useMemo:fn=>fn(),useCallback:fn=>fn,useEffect(){},memo:fn=>fn};
+    useMemo:fn=>fn(),useCallback:fn=>fn,useEffect(fn){if(runEffects)fn();},memo:fn=>fn};
   const native=Object.fromEntries(['View','Text','ScrollView','Modal','Pressable','ActivityIndicator'].map(x=>[x,x]));
-  Object.assign(native,{StyleSheet:{create:x=>x,absoluteFill:{}},useWindowDimensions:()=>dimensions,
+  Object.assign(native,{BackHandler:{addEventListener(name,fn){backs.push(fn);return{remove(){}};}},StyleSheet:{create:x=>x,absoluteFill:{}},useWindowDimensions:()=>dimensions,
     Alert:{alert:(...args)=>alerts.push(args)},PanResponder:{create:options=>{responders.push(options);return {panHandlers:options};}}});
   const dependencies={react,'react-native':native,'react-native-safe-area-context':{SafeAreaView:'SafeAreaView'},
     'react/jsx-runtime':{jsx:(type,props)=>({type,props}),jsxs:(type,props)=>({type,props})},
@@ -243,7 +241,7 @@ function nativeHarness(relative,exportName,initialSlots={},dimensions={width:390
   dependencies['./BememIcon']={BememIcon:'BememIcon'};
   dependencies['../../constants/ci-theme']=require('./ci-theme-fixture.cjs');
   dependencies['./ConfirmationDialog']={ConfirmationDialog:'ConfirmationDialog'};
-  dependencies['./AddCardIcon']={AddCardIcon:'AddCardIcon'};
+  dependencies['./AddCardIcon']={AddCardIcon:'AddCardIcon'};dependencies['./NavigationHeader']={NavigationHeader:'NavigationHeader'};dependencies['./ContextualFooter']={ContextualFooter:'ContextualFooter'};
   dependencies['./CanvasPageSelector']={CanvasPageSelector:'CanvasPageSelector'};dependencies['./LockedCanvas']={LockedCanvas:'LockedCanvas'};
   dependencies['./EightSlotHeader']={EightSlotHeader:'EightSlotHeader',compactHeaderStyles:{target:{width:'100%',maxWidth:48,height:48},circle:{width:32,aspectRatio:1,borderRadius:16,borderWidth:1}}};
   dependencies['./CanvasPagePopoverHost']={CanvasPagePopoverHost:'CanvasPagePopoverHost'};
@@ -251,11 +249,16 @@ function nativeHarness(relative,exportName,initialSlots={},dimensions={width:390
   dependencies['../../constants/decoration-images']={decorationImages:Object.fromEntries(DECORATION_ASSETS.map((a,i)=>[a.id,i+1]))};
   dependencies['../../lib/card-interaction']={createCardInteraction:callbacks=>load('src/lib/card-interaction.ts').createCardInteraction(callbacks,{schedule(fn,ms){
     const t={fn,at:tick+ms,cancelled:false};timers.push(t);return()=>{t.cancelled=true;};}})};
+  let frameId=0;
+  dependencies['../../lib/canvas-drag-scroll']={createCanvasEdgeScroll:(bounds,step)=>load('src/lib/canvas-drag-scroll.ts').createCanvasEdgeScroll(bounds,step,{
+    request(fn){const id=++frameId;timers.push({id,at:tick+16,cancelled:false,fn:()=>fn(tick)});return id;},
+    cancel(id){const t=timers.find(t=>t.id===id);if(t)t.cancelled=true;}
+  })};
   const module={exports:{}},file=path.resolve(root,relative),code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText;
   vm.runInThisContext(`(function(require,module,exports){${code}\nif(typeof DrawerAsset==='function')module.exports.__DrawerAsset=DrawerAsset;\nif(typeof DraggableCard==='function')module.exports.__DraggableCard=DraggableCard;\n})`,{filename:file})(name=>dependencies[name]??load(path.resolve(path.dirname(file),name)),module,module.exports);
-  return {alerts,responders,render(props){cursor=0;return module.exports[exportName](props);},advance(ms){tick+=ms;for(const t of timers)if(!t.cancelled&&t.at<=tick){t.cancelled=true;t.fn();}}};
+  return {alerts,responders,backs,render(props){cursor=0;return module.exports[exportName](props);},advance(ms){tick+=ms;for(const t of timers)if(!t.cancelled&&t.at<=tick){t.cancelled=true;t.fn();}}};
 }
-async function editorHarness(dimensions={width:390,height:844,fontScale:1}) {
+async function editorHarness(dimensions={width:390,height:844,fontScale:1},runEffects=false) {
   const e=await environment(),h=nativeHarness('src/components/bemem/DecorateMode.tsx','EditableDecorateMode',{},dimensions);let closed=0,saved=0;
   const render=()=>h.render({wallet:{runtime:e.owner,snapshot:e.owner.getSnapshot()},onClose(){closed++;},onSaved(){saved++;}});
   return {e,h,render,closed:()=>closed,saved:()=>saved};
@@ -288,7 +291,7 @@ test('Selecting an asset never reintroduces a visible instruction/footer; real e
  assert.equal(drawer.props.children[0].props.accessibilityRole,'alert');assert.equal(drawer.props.children[0].props.accessibilityLiveRegion,'assertive');
  assert.equal(x.e.events.length,0);
 });
-test('Drawer drag/drop callbacks show a candidate, add one draft item, then select/rotate/delete/Undo restore it',async()=>{
+test('Drawer drag/drop callbacks show a candidate, add one draft item, then select/rotate/delete remain draft-only',async()=>{
   const x=await editorHarness();let tree=x.render(),canvas=nodes(tree).find(n=>n.type==='WalletCanvas');
   canvas.props.onGeometry({pageX:16,pageY:100,width:336,height:280,unit:28,scrollY:0});tree=x.render();
   let asset=nodes(tree).find(n=>typeof n.type==='function'&&n.props.assetId==='pet-cat');asset.props.onDrag('pet-cat',{x:254,y:114});tree=x.render();
@@ -298,8 +301,7 @@ test('Drawer drag/drop callbacks show a candidate, add one draft item, then sele
   canvas=nodes(tree).find(n=>n.type==='WalletCanvas');assert.equal(canvas.props.selectedDecoration,deco.id);canvas.props.onRotateDecoration(deco.id);
   tree=x.render();canvas=nodes(tree).find(n=>n.type==='WalletCanvas');assert.equal(canvas.props.cards.find(c=>c.id===deco.id).decoration.rotation,90);
   canvas.props.onDeleteDecoration(deco.id);tree=x.render();assert.equal(nodes(tree).find(n=>n.type==='WalletCanvas').props.cards.length,1);
-  nodes(tree).find(n=>n.props?.accessibilityLabel==='Undo').props.onPress();tree=x.render();
-  assert.equal(nodes(tree).find(n=>n.type==='WalletCanvas').props.cards.length,2);assert.equal(x.e.events.length,0);
+  assert.equal(nodes(tree).some(n=>['Undo','Redo'].includes(n.props?.accessibilityLabel)),false);assert.equal(x.e.events.length,0);
 });
 test('Tap-placement is an alternative to drag; card taps do not open details in Decorate',async()=>{
   const x=await editorHarness();let tree=x.render();nodes(tree).find(n=>typeof n.type==='function').props.onSelect('pet-cat');tree=x.render();
@@ -434,7 +436,7 @@ test('Collection artwork fits six equal squares at narrow, Samsung and tablet wi
  }
 });
 
-test('New30 frame IDs use the existing placement, collision, rotation, undo/redo and verified Save/readback flow',async()=>{
+test('New30 frame IDs use the existing placement, collision, rotation and verified Save/readback flow',async()=>{
  const manifest=JSON.parse(fs.readFileSync(path.join(root,'artwork-trials/cozy-cute-270-2026-11-11/review/manifest.json')));
  const e=await environment(),s=e.newSession();assert.equal(manifest.assets.length,30);
  for(let i=0;i<30;i++){
@@ -447,8 +449,7 @@ test('New30 frame IDs use the existing placement, collision, rotation, undo/redo
  }
  const item=s.snapshot().document.canvas.decorations.items.at(-1);
  assert.equal(s.apply({type:'move',id:item.id,position:{col:11,row:20}}).ok,true);
- assert.equal(s.apply({type:'delete',id:item.id}).ok,true);assert.equal(s.undo().ok,true);
- assert.equal(s.redo().ok,true);assert.equal(s.undo().ok,true);
+ assert.equal(s.undo,undefined);assert.equal(s.redo,undefined);
  assert.equal(e.events.length,0);assert.equal((await s.save()).ok,true);
  const read=await e.repo.load();assert.equal(read.document.canvas.decorations.items.length,30);
  assert.deepEqual(read.document.cards,[card()]);assert.deepEqual(read.document.canvas.layout,{'synthetic-member':{col:0,row:0}});
@@ -456,34 +457,24 @@ test('New30 frame IDs use the existing placement, collision, rotation, undo/redo
 });
 
 const flatStyle = style => Object.assign({}, ...(Array.isArray(style) ? style.flat(Infinity) : [style]).filter(Boolean));
-const actionButtons = tree => {const header=nodes(tree).find(n=>n.type==='EightSlotHeader');return [4,5,6,7].map(slot=>header.props.slots[slot]);};
+const actionButtons = tree => ['Back','Save'].map(label=>nodes(tree).find(n=>n.type==='Pressable'&&n.props?.accessibilityLabel===label));
 
-test('Decorate has one frameless command set in slots4-7 and selector8; no bottom actions or extra mode-title row',async()=>{
- for(const width of [288,320,360,393,412,600])for(const fontScale of [1,2]){
+test('Decorate mounts a three-part Header and one contextual Footer after the unchanged drawer',async()=>{
+ for(const width of [320,360,393,412,600])for(const fontScale of [1,2]){
   const x=await editorHarness({width,height:844,fontScale}),tree=x.render();
-  const header=nodes(tree).find(n=>n.type==='EightSlotHeader');assert.equal(header.props.mode,'Decorate');
-  assert.equal(nodes(tree).some(n=>n.props?.children==='Cozy Cute'||n.props?.children==='Decorate'),false);
-  assert.equal(header.props.slots[8].type,'CanvasPageSelector');
-  const buttons=actionButtons(tree);assert.deepEqual(buttons.map(n=>n.props.accessibilityLabel),['Back','Undo','Redo','Save']);
-  const drawer=nodes(tree).find(n=>n.props?.accessibilityLabel==='Decoration drawer');assert.equal(nodes(drawer).some(n=>['Back','Undo','Redo','Save'].includes(n.props?.accessibilityLabel)),false);
-  for(const b of buttons){const s=flatStyle(b.props.style);assert.equal(b.type,'Pressable');assert.equal(s.width,'100%');assert.equal(s.maxWidth,48);assert.equal(s.height,48);assert.equal(s.borderWidth,undefined);
-   assert.notEqual(b.props.children.type,'View');assert.equal(s.backgroundColor,undefined);assert.equal(s.borderRadius,undefined);
-   assert.equal(nodes(b).some(n=>n.type==='Text'),false);
-  }
-  assert.deepEqual(buttons.map(b=>b.props.children.props.name),['chevron-left','undo','redo','check']);
-  assert.deepEqual(buttons.map(b=>b.props.children.props.color),['#b42318','#203138','#203138','#26734d']);
+  assert.equal(nodes(tree).find(n=>n.type==='NavigationHeader').props.mode,'Decorate');
+  assert.equal(nodes(tree).find(n=>n.type==='ContextualFooter').props.mode,'Decorate');assert.equal(nodes(tree).some(n=>n.type==='EightSlotHeader'),false);
+  assert.deepEqual(actionButtons(tree).map(b=>b.props.accessibilityLabel),['Back','Save']);
+  const drawer=nodes(tree).find(n=>n.props?.accessibilityLabel==='Decoration drawer');assert.deepEqual(nodes(drawer).filter(n=>n.type==='Pressable'&&['Back','Undo','Redo','Save'].includes(n.props?.accessibilityLabel)).map(n=>n.props.accessibilityLabel),[]);
  }
 });
 
-test('Frameless Undo/Redo preserve disabled states, draft history and clearing Redo after a new action',async()=>{
- const x=await editorHarness();let tree=x.render(),buttons=actionButtons(tree);
- assert.equal(buttons[1].props.disabled,true);assert.equal(buttons[2].props.disabled,true);
- const add=()=>{nodes(tree).find(n=>typeof n.type==='function').props.onSelect('pet-cat');tree=x.render();
-  nodes(tree).find(n=>n.type==='WalletCanvas').props.onCanvasPress({col:8,row:0});tree=x.render();};
- add();buttons=actionButtons(tree);assert.equal(buttons[1].props.disabled,false);
- buttons[1].props.onPress();tree=x.render();buttons=actionButtons(tree);
- assert.equal(buttons[1].props.disabled,true);assert.equal(buttons[2].props.disabled,false);
- add();assert.equal(actionButtons(tree)[2].props.disabled,true);assert.equal(x.e.events.length,0);
+test('Decorate has no Undo/Redo controls or reserved history toolbar before or after placement',async()=>{
+ const x=await editorHarness();let tree=x.render();
+ const absent=()=>{assert.equal(nodes(tree).some(n=>['Undo','Redo','Decoration history controls'].includes(n.props?.accessibilityLabel)),false);};absent();
+ nodes(tree).find(n=>typeof n.type==='function').props.onSelect('pet-cat');tree=x.render();
+ nodes(tree).find(n=>n.type==='WalletCanvas').props.onCanvasPress({col:8,row:0});tree=x.render();absent();
+ assert.equal(nodes(tree).find(n=>n.type==='WalletCanvas').props.cards.length,2);assert.equal(x.e.events.length,0);
 });
 
 test('Red Back preserves clean exit, dirty confirmation and no implicit Save',async()=>{
@@ -497,10 +488,10 @@ test('Red Back preserves clean exit, dirty confirmation and no implicit Save',as
 test('Frameless Save remains busy and locks actions until readback; duplicate callback cannot add a second transaction',async()=>{
  const x=await editorHarness();let tree=x.render();nodes(tree).find(n=>typeof n.type==='function').props.onSelect('pet-cat');tree=x.render();
  nodes(tree).find(n=>n.type==='WalletCanvas').props.onCanvasPress({col:8,row:0});tree=x.render();
- let resume;x.e.pause(new Promise(resolve=>{resume=resolve;}));const save=actionButtons(tree)[3];save.props.onPress();
+ let resume;x.e.pause(new Promise(resolve=>{resume=resolve;}));const save=actionButtons(tree)[1];save.props.onPress();
  tree=x.render();assert.equal(x.saved(),0);const buttons=actionButtons(tree);
- assert.ok(buttons.every(b=>b.props.disabled));assert.equal(buttons[3].props.accessibilityState.busy,true);assert.equal(buttons[3].props.children.type,'ActivityIndicator');
- assert.equal(buttons[3].props.accessibilityLabel,'Save');assert.equal(buttons[3].props.accessibilityHint,'Saving decorations');
+ assert.ok(buttons.every(b=>b.props.disabled));assert.equal(buttons[1].props.accessibilityState.busy,true);assert.equal(nodes(tree).find(n=>n.type==='ContextualFooter').props.saving,true);
+ assert.equal(buttons[1].props.accessibilityLabel,'Save');assert.equal(nodes(tree).find(n=>n.type==='ContextualFooter').props.disabled,true);
  save.props.onPress();await new Promise(r=>setImmediate(r));assert.equal(x.e.events.filter(e=>e[0]==='write').length,1);
  resume();await new Promise(r=>setImmediate(r));assert.equal(x.saved(),1);
  assert.equal((await x.e.repo.load()).document.canvas.decorations.items.length,1);
@@ -509,7 +500,7 @@ test('Frameless Save remains busy and locks actions until readback; duplicate ca
 test('Save failure keeps Decorate open with existing error feedback and unchanged committed snapshot',async()=>{
  const x=await editorHarness();let tree=x.render();nodes(tree).find(n=>typeof n.type==='function').props.onSelect('pet-cat');tree=x.render();
  nodes(tree).find(n=>n.type==='WalletCanvas').props.onCanvasPress({col:8,row:0});tree=x.render();
- const before=clone(x.e.owner.getSnapshot().session.saved);x.e.failWrite();actionButtons(tree)[3].props.onPress();
+ const before=clone(x.e.owner.getSnapshot().session.saved);x.e.failWrite();actionButtons(tree)[1].props.onPress();
  await new Promise(r=>setImmediate(r));tree=x.render();assert.equal(x.saved(),0);assert.equal(x.closed(),0);
  assert.ok(nodes(tree).some(n=>n.props?.accessibilityRole==='alert'));assert.deepEqual(x.e.owner.getSnapshot().session.saved,before);
 });
@@ -541,8 +532,132 @@ test('Pagination paints smaller light circles inside full unchanged nonoverlappi
 });
 
 
-test('Inline Decorate Keep/Back preserve session Undo history and leave the outer Modal and Status Bar flags unchanged',async()=>{
+test('Inline Decorate Keep/Back preserve the session draft and leave the outer Modal and Status Bar flags unchanged',async()=>{
  const x=await editorHarness();let tree=x.render();nodes(tree).find(n=>typeof n.type==='function').props.onSelect('pet-cat');tree=x.render();nodes(tree).find(n=>n.type==='WalletCanvas').props.onCanvasPress({col:8,row:0});tree=x.render();const before=clone(x.e.owner.getSnapshot().session.draft);
  actionButtons(tree)[0].props.onPress();tree=x.render();const dialog=nodes(tree).find(n=>n.type==='ConfirmationDialog').props;assert.equal(dialog.presentation,'inline');assert.deepEqual(dialog.request.actions.map(a=>a.label),['Keep Decorating','Discard Changes']);assert.equal(nodes(tree).filter(n=>n.type==='Modal').length,1);assert.equal(tree.props.statusBarTranslucent,true);assert.equal(tree.props.navigationBarTranslucent,true);
  dialog.request.actions[0].onPress();tree=x.render();assert.equal(x.closed(),0);assert.deepEqual(x.e.owner.getSnapshot().session.draft,before);assert.equal(actionButtons(tree)[1].props.disabled,false);actionButtons(tree)[0].props.onPress();tree=x.render();tree.props.onRequestClose();tree=x.render();assert.equal(nodes(tree).find(n=>n.type==='ConfirmationDialog').props.request,null);assert.deepEqual(x.e.owner.getSnapshot().session.draft,before);assert.equal(x.e.events.length,0);
+});
+
+
+for(const destination of ['home','create','add'])for(const choice of ['clean','save','discard','stay','failure'])test(`Decorate -> ${destination}: ${choice} resolves once, preserves draft safety and rejects competing navigation`,async()=>{
+ const x=await editorHarness(),arrivals=[];
+ const render=()=>x.h.render({wallet:{runtime:x.e.owner,snapshot:x.e.owner.getSnapshot(),page:1},onClose(){assert.fail('Footer must use its explicit destination');},onSaved(){assert.fail('Footer Save must not use direct Header Save');},onNavigate:d=>arrivals.push(d)});
+ let tree=render();const original=clone(x.e.owner.getSnapshot().session.saved);
+ if(choice!=='clean'){nodes(tree).find(n=>n.type==='WalletCanvas').props.onMove('synthetic-member',{col:0,row:8});tree=render();}
+ const draft=clone(x.e.owner.getSnapshot().session.draft),footer=nodes(tree).find(n=>n.type==='ContextualFooter');
+ footer.props.onDecorate();assert.deepEqual(x.e.owner.getSnapshot().session.draft,draft);
+ const key={home:'onHome',create:'onCreate',add:'onAdd'}[destination];footer.props[key]();footer.props[key]();tree=render();
+ if(choice!=='clean'){
+  const request=nodes(tree).find(n=>n.type==='ConfirmationDialog').props.request;assert.deepEqual(request.actions.map(a=>a.label),['Save','Discard','Stay']);
+  const action=choice==='save'||choice==='failure'?0:choice==='discard'?1:2;
+  if(choice==='failure')x.e.failWrite();request.actions[action].onPress();request.actions[action].onPress();
+  await new Promise(r=>setImmediate(r));tree=render();
+  if(choice==='stay'){request.actions[0].onPress();assert.deepEqual(x.e.owner.getSnapshot().session.draft,draft);assert.equal(x.e.events.length,0);}
+ }
+ await new Promise(r=>setImmediate(r));
+ assert.deepEqual(arrivals,['clean','save','discard'].includes(choice)?[destination]:[]);
+ if(choice==='save')assert.deepEqual(x.e.owner.getSnapshot().session.saved.canvas.layout['synthetic-member'],{col:0,row:8});
+ else assert.deepEqual(x.e.owner.getSnapshot().session.saved,original);
+ if(choice==='discard'||choice==='clean')assert.deepEqual(x.e.owner.getSnapshot().session.draft,original);
+ if(choice==='failure'||choice==='stay')assert.deepEqual(x.e.owner.getSnapshot().session.draft,draft);
+});
+
+
+test('Same-window Decorate seeds drawer and Canvas from the measured shell, has one Header/Footer and owns safe Android Back',async()=>{
+ for(const width of [360,393,412]){
+  const x=await editorHarness({width,height:844,fontScale:1}),props=()=>({presentation:'screen',availableWidth:width,initialScrollY:120,wallet:{runtime:x.e.owner,snapshot:x.e.owner.getSnapshot()},onClose(){},onSaved(){}}),render=()=>x.h.render(props());
+  let tree=render();assert.equal(tree.type,'SafeAreaView');assert.equal(nodes(tree).some(n=>n.type==='Modal'),false);assert.equal(nodes(tree).filter(n=>n.type==='NavigationHeader').length,1);assert.equal(nodes(tree).filter(n=>n.type==='ContextualFooter').length,1);
+  const canvas=nodes(tree).find(n=>n.type==='WalletCanvas');assert.equal(canvas.props.initialViewportWidth,width-32);assert.equal(canvas.props.initialScrollY,120);assert.ok(canvas.props.cards.length>0);
+  const grid=nodes(tree).find(n=>n.props?.accessibilityLabel==='Decoration grid. Eight columns, three rows.'),before=clone(grid.props.style);
+  grid.props.onLayout({nativeEvent:{layout:{width:width-2}}});tree=render();assert.deepEqual(nodes(tree).find(n=>n.props?.accessibilityLabel==='Decoration grid. Eight columns, three rows.').props.style,before);
+ }
+});
+
+test('Measured Canvas width shows saved cards on first Decorate render and native measurement leaves positions unchanged',()=>{
+ const view=folderView(),h=nativeHarness('src/components/bemem/WalletCanvas.tsx','WalletCanvas'),props={...view,allCards:view.cards,editing:true,decorating:true,disabled:false,initialViewportWidth:361,onMove(){},onOpen(){},onDragging(){}};
+ let tree=h.render(props);assert.ok(nodes(tree).some(n=>n.type==='ScrollView'));const before=JSON.stringify(view.layout);
+ tree.props.onLayout({nativeEvent:{layout:{width:361,height:400}}});tree=h.render(props);assert.ok(nodes(tree).some(n=>n.type==='ScrollView'));assert.equal(JSON.stringify(view.layout),before);
+});
+
+
+test('Same-window Android Back opens the existing discard protection and Keep retains the exact Decorate draft',async()=>{
+ const e=await environment(),h=nativeHarness('src/components/bemem/DecorateMode.tsx','EditableDecorateMode',{}, {width:393,height:844,fontScale:1},true);let closed=0;
+ const render=()=>h.render({presentation:'screen',availableWidth:393,wallet:{runtime:e.owner,snapshot:e.owner.getSnapshot()},onClose(){closed++;},onSaved(){}});
+ let tree=render();nodes(tree).find(n=>n.type==='WalletCanvas').props.onMove('synthetic-member',{col:0,row:8});tree=render();const draft=clone(e.owner.getSnapshot().session.draft);assert.ok(h.backs.length>0);
+ assert.equal(h.backs.at(-1)(),true);tree=render();const request=nodes(tree).find(n=>n.type==='ConfirmationDialog').props.request;assert.equal(request.title,'Discard decoration changes?');request.actions[0].onPress();tree=render();assert.equal(closed,0);assert.deepEqual(e.owner.getSnapshot().session.draft,draft);assert.equal(e.events.length,0);
+ h.backs.at(-1)();tree=render();nodes(tree).find(n=>n.type==='ConfirmationDialog').props.request.actions[1].onPress();assert.equal(closed,1);assert.deepEqual(e.owner.getSnapshot().session.draft,e.first);
+});
+
+
+test('Crowded Create auto-scrolls only existing rows, preserves anchor through scroll, then drops once and unlocks scrolling',()=>{
+ const member={id:'drag-card',name:'Test',orientation:'landscape',colors:['#123456','#234567']},layout={'drag-card':{col:0,row:8}},events=[],scrolls=[];
+ const h=nativeHarness('src/components/bemem/WalletCanvas.tsx','WalletCanvas',{3:336,4:400});
+ const props={cards:[member],allCards:[member],layout,editing:true,disabled:false,onMove:(...a)=>events.push(['move',...a]),onOpen(){assert.fail('Drag cannot preview');},onDragging:v=>events.push(['drag',v])};
+ let tree=h.render(props),scroll=nodes(tree).find(n=>n.type==='ScrollView');assert.equal(scroll.props.scrollEnabled,true);
+ scroll.props.ref.current={scrollTo:p=>{scrolls.push(p.y);scroll.props.onScroll({nativeEvent:{contentOffset:{y:p.y}}});}};
+ const item=nodes(tree).find(n=>typeof n.type==='function'&&n.props.card?.id===member.id),cardUI=nativeHarness('src/components/bemem/WalletCanvas.tsx','__DraggableCard');
+ let root=cardUI.render(item.props),g={dx:0,dy:0,numberActiveTouches:1};const handlers=root.props;handlers.onPanResponderGrant({nativeEvent:{locationY:14}},g);cardUI.advance(350);
+ assert.equal(nodes(h.render(props)).find(n=>n.type==='ScrollView').props.scrollEnabled,false);
+ handlers.onPanResponderMove(null,{...g,dy:150});for(let i=0;i<70;i++)h.advance(16);
+ const y=item.props.dragScroll.getY();assert.ok(y>0);const metrics=load('src/lib/canvas-layout.ts').canvasMetrics(336,290,[member],layout,true);assert.ok(y<=metrics.height-400);
+ root=cardUI.render(item.props);const frame=root.props.style[1],expected=load('src/lib/canvas-layout.ts').dropPosition(member,layout[member.id],0,150+y,28);
+ assert.equal(frame.top,expected.row*28+2.8);assert.ok(Math.abs((frame.top-y)-(8*28+2.8+150))<=14,'Existing grid snap is the only finger-anchor deviation');
+ const upY=y;handlers.onPanResponderMove(null,{...g,dy:-230});for(let i=0;i<70;i++)h.advance(16);assert.ok(item.props.dragScroll.getY()<upY);
+ const finalY=item.props.dragScroll.getY();handlers.onPanResponderRelease(null,{...g,dy:-230});
+ assert.equal(events.filter(e=>e[0]==='move').length,1);assert.deepEqual(events.find(e=>e[0]==='move').slice(1),[member.id,load('src/lib/canvas-layout.ts').dropPosition(member,layout[member.id],0,-230+finalY,28)]);
+ const count=scrolls.length;h.advance(1000);assert.equal(scrolls.length,count);assert.equal(nodes(h.render(props)).find(n=>n.type==='ScrollView').props.scrollEnabled,true);
+ assert.deepEqual(layout,{'drag-card':{col:0,row:8}},'Gesture cannot mutate caller layout before an approved move');
+});
+
+test('Create drag cancellation stops edge work and a scrolled invalid collision emits no move',()=>{
+ const member={id:'drag',name:'Test',orientation:'landscape',colors:['#123456','#234567']},blocker={...member,id:'blocker'},layout={drag:{col:0,row:0},blocker:{col:0,row:4}},events=[];
+ let y=112,refresh;const dragScroll={getY:()=>y,start(_p,r){refresh=r;},move(){},stop(){events.push('stop');}};
+ const h=nativeHarness('src/components/bemem/WalletCanvas.tsx','__DraggableCard'),p={card:member,position:layout.drag,unit:28,layout,allCards:[member,blocker],maxRows:240,dragScroll,onMove(){events.push('move');},onOpen(){},onDragging(){}};
+ let root=h.render(p);root.props.onPanResponderGrant({nativeEvent:{locationY:12}},{});h.advance(350);y=224;refresh();root.props.onPanResponderRelease(null,{dx:0,dy:0});assert.deepEqual(events,['stop']);
+ root=h.render(p);root.props.onPanResponderGrant({nativeEvent:{locationY:12}},{});h.advance(350);root.props.onPanResponderTerminate();assert.deepEqual(events,['stop','stop']);
+});
+
+test('Drawer responder calibrates touch-root to measured window coordinates and accepts genuine zero coordinates',()=>{
+ const h=nativeHarness('src/components/bemem/DecorateMode.tsx','__DrawerAsset'),events=[];
+ const props={assetId:'pet-cat',unit:28,disabled:false,selected:false,onSelect(){assert.fail('Hold cannot tap');},onDrag:(_id,p)=>events.push(['drag',p]),onDrop:(_id,p)=>events.push(['drop',p]),onEnd(){events.push(['end']);}};
+ const root=h.render(props);root.props.ref.current={measureInWindow:fn=>fn(40,600,40,40)};
+ const g={x0:26,y0:572,dx:0,dy:0,numberActiveTouches:1};root.props.onPanResponderGrant({nativeEvent:{pageX:26,pageY:572,locationX:6,locationY:12}},g);
+ h.advance(349);assert.equal(events.length,0);h.advance(1);assert.deepEqual(events[0],['drag',{x:46,y:612}]);
+ root.props.onPanResponderMove(null,{...g,dx:-46,dy:-612});root.props.onPanResponderRelease(null,{...g,dx:-46,dy:-612});
+ assert.deepEqual(events.at(-2),['drop',{x:0,y:0}]);assert.deepEqual(events.at(-1),['end']);
+});
+
+test('Late drawer measurement after cancellation cannot start a ghost or write a decoration',()=>{
+ const h=nativeHarness('src/components/bemem/DecorateMode.tsx','__DrawerAsset');let delayed;const events=[];
+ const root=h.render({assetId:'pet-cat',unit:28,disabled:false,selected:false,onSelect(){},onDrag(){events.push('drag');},onDrop(){events.push('drop');},onEnd(){events.push('end');}});
+ root.props.ref.current={measureInWindow:fn=>{delayed=fn;}};const g={x0:10,y0:600,dx:0,dy:0,numberActiveTouches:1};
+ root.props.onPanResponderGrant({nativeEvent:{pageX:10,pageY:600,locationX:10,locationY:10}},g);h.advance(350);assert.equal(events.length,0);
+ root.props.onPanResponderTerminate();delayed(0,590,40,40);assert.deepEqual(events,['end']);
+});
+
+test('Decorate ghost measures its actual under-header parent and lands at that exact snapped preview after scroll/repeated layout',async()=>{
+ const x=await editorHarness();let tree=x.render();const layer=nodes(tree).find(n=>n.props?.onLayout&&n.props.ref);
+ layer.props.ref.current={measureInWindow:fn=>fn(0,148,368,500)};layer.props.onLayout();
+ let canvas=nodes(tree).find(n=>n.type==='WalletCanvas');canvas.props.onGeometry({pageX:16,pageY:148,width:336,height:280,unit:28,scrollY:56});tree=x.render();
+ let asset=nodes(tree).find(n=>typeof n.type==='function'&&n.props.assetId==='pet-cat');asset.props.onDrag('pet-cat',{x:254,y:190});tree=x.render();
+ const ghost=nodes(tree).find(n=>n.props?.testID==='decoration-drag-ghost');assert.equal(ghost.props.style.left,240);assert.equal(ghost.props.style.top,28);
+ canvas=nodes(tree).find(n=>n.type==='WalletCanvas');assert.deepEqual(canvas.props.dropTarget.position,{col:8,row:3});
+ asset.props.onDrop('pet-cat',{x:254,y:190});asset.props.onEnd();tree=x.render();canvas=nodes(tree).find(n=>n.type==='WalletCanvas');
+ const deco=canvas.props.cards.find(c=>c.kind==='decoration');assert.deepEqual(canvas.props.layout[deco.id],{col:8,row:3});
+ assert.equal(148+ghost.props.style.top,148+3*28-56);assert.equal(x.e.events.length,0);
+ const nextLayer=nodes(tree).find(n=>n.props?.onLayout&&n.props.ref);nextLayer.props.onLayout();tree=x.render();
+ asset=nodes(tree).find(n=>typeof n.type==='function'&&n.props.assetId==='pet-cat');asset.props.onDrag('pet-cat',{x:282,y:190});tree=x.render();
+ const repeated=nodes(tree).find(n=>n.props?.testID==='decoration-drag-ghost');assert.equal(repeated.props.style.left,268);assert.equal(repeated.props.style.top,28);asset.props.onEnd();
+});
+
+test('Canvas geometry rejects stale native measurements and publishes actual current scroll offset',()=>{
+ const h=nativeHarness('src/components/bemem/WalletCanvas.tsx','WalletCanvas',{3:336,4:400}),measurements=[],published=[];
+ const tree=h.render({cards:[],allCards:[],layout:{},editing:true,disabled:false,onMove(){},onOpen(){},onDragging(){},onGeometry:g=>published.push(g)});
+ tree.props.ref.current={measureInWindow:callback=>measurements.push(callback)};
+ tree.props.onLayout({nativeEvent:{layout:{width:336,height:400}}});
+ tree.props.onLayout({nativeEvent:{layout:{width:336,height:280}}});
+ measurements[1](16,148,336,280);measurements[0](16,100,336,400);
+ assert.equal(published.length,1);assert.equal(published[0].pageY,148);
+ nodes(tree).find(n=>n.type==='ScrollView').props.onScroll({nativeEvent:{contentOffset:{y:56}}});
+ measurements[2](16,148,336,280);assert.equal(published.at(-1).scrollY,56);
 });

@@ -60,7 +60,7 @@ function code128(value: string): Extract<CardCode, { ok: true }> {
 /** Encoding reads the membership Number for both formats; obsolete payload is ignored for both formats. No storage/network/logging. */
 export function encodeCardCode(card: Pick<MembershipCard, 'kind' | 'memberNumber'> | { kind: 'demo' }, format: DisplayFormat): CardCode {
   if (card.kind !== 'membership') return { ok: false, code: 'demo_card', message: 'Demo cards do not have scannable codes.' };
-  if (typeof card.memberNumber !== 'string' || !card.memberNumber.length) return { ok: false, code: 'invalid_payload', message: 'This card has no Number. Add one in Create to display a code.' };
+  if (typeof card.memberNumber !== 'string' || !card.memberNumber.length) return { ok: false, code: 'invalid_payload', message: 'This card has no Number. Add one in Arrange to display a code.' };
   let eligible: boolean;
   try { eligible = payloadCapabilities(card.memberNumber).code128.eligible; }
   catch { return { ok: false, code: 'invalid_payload', message: 'This code value is invalid. The stored value has not been changed.' }; }

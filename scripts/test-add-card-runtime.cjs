@@ -39,7 +39,7 @@ async function fixture() {
   assert.equal(memory.inspectBytes().length, 0);
   return { memory, runtime };
 }
-function add(runtime, preset = CARD_SIZE_PRESETS[1]) {
+function add(runtime, preset = CARD_SIZE_PRESETS.find(p=>p.id==='card-landscape')) {
   return runtime.add(runtime.beginSubmission(), { ...values(), orientation: preset.orientation },
     { ...emptyCardPresentation(), sizePresetId: preset.id });
 }
@@ -138,7 +138,7 @@ test('Same submission cannot add twice, even after Save or Discard; cancelled fo
 });
 test('Mixed footprints use existing row-major placement, never move others and reject collisions', async () => {
   const { runtime } = await fixture();
-  const a = add(runtime), b = add(runtime), c = add(runtime, CARD_SIZE_PRESETS[6]);
+  const a = add(runtime), b = add(runtime), c = add(runtime, CARD_SIZE_PRESETS.find(p=>p.id==='vaccine-passport-portrait'));
   assert.ok(a.ok && b.ok && c.ok);
   const wallet = runtime.getSnapshot().session.draft, view = walletCanvasPresentation(wallet);
   assert.deepEqual(view.layout[a.card.id], { col: 0, row: 0 });
@@ -154,7 +154,7 @@ test('Mixed footprints use existing row-major placement, never move others and r
 test('Discard drops added cards and positions together, preserving committed snapshot bytes', async () => {
   const { runtime, memory } = await fixture(); add(runtime); await runtime.save();
   const bytes = memory.inspectBytes(), saved = copy(runtime.getSnapshot().session.saved);
-  add(runtime, CARD_SIZE_PRESETS[6]); runtime.discard();
+  add(runtime, CARD_SIZE_PRESETS.find(p=>p.id==='vaccine-passport-portrait')); runtime.discard();
   assert.deepEqual(runtime.getSnapshot().session.draft, saved); assert.deepEqual(memory.inspectBytes(), bytes);
 });
 test('One owner rejects concurrent saves, reads back atomic cards/layout and avoids no-op duplicate Save', async () => {
@@ -169,7 +169,7 @@ test('One owner rejects concurrent saves, reads back atomic cards/layout and avo
   assert.equal((await runtime.reload()).ok, true);
 });
 test('New test runtime loads the same Map snapshots through resolver, with exact fields and no import', async () => {
-  const { runtime, memory } = await fixture(); add(runtime, CARD_SIZE_PRESETS[6]); await runtime.save();
+  const { runtime, memory } = await fixture(); add(runtime, CARD_SIZE_PRESETS.find(p=>p.id==='vaccine-passport-portrait')); await runtime.save();
   const saved = copy(runtime.getSnapshot().session.saved), bytes = memory.inspectBytes();
   const restarted = createDevAddCardRuntime(memory); await restarted.initialize();
   assert.deepEqual(restarted.getSnapshot().session.saved, saved); assert.equal(restarted.getSnapshot().state.source, 'v2');
@@ -259,4 +259,18 @@ test('DEV module import graph has no real storage, production hook, import path 
   const route = fs.readFileSync(path.join(root, 'src/app/dev-add-card.tsx'), 'utf8');
   assert.match(route, /if \(!__DEV__\) return <Redirect/);
   assert.doesNotMatch(route, /initialize\(|createDevAddCardRuntime\(/);
+});
+
+
+test('Per-card sheet modes validate strictly, preserve legacy absence and roundtrip through existing repository',async()=>{
+ const validation=load('src/lib/wallet-validation.ts'),editor=load('src/lib/card-editor-state.ts');
+ for(const mode of ['cardcode','frontback']){
+  const result=adaptCardForm(values(),{...emptyCardPresentation(),sheetDisplayMode:mode},metadata);assert.equal(result.ok,true);assert.equal(result.card.sheetDisplayMode,mode);
+  const legacy=copy(result.card);delete legacy.sheetDisplayMode;const bytes=JSON.stringify(legacy);
+  assert.deepEqual(validation.validateWalletCard(legacy),legacy);assert.equal(JSON.stringify(legacy),bytes);assert.equal(editor.membershipEditorState(legacy).presentation.sheetDisplayMode,'cardcode');
+  const form=editor.membershipEditorState(legacy);form.values.name='Rename only';const renamed=editor.prepareFullMembershipEdit(legacy,form,time);assert.equal(Object.hasOwn(renamed.card,'sheetDisplayMode'),false);
+  for(const bad of [null,undefined,'both',42,true]){assert.throws(()=>validation.validateWalletCard({...legacy,sheetDisplayMode:bad}),/invalid_sheet_display_mode/);assert.equal(adaptCardForm(values(),{...emptyCardPresentation(),sheetDisplayMode:bad},metadata).ok,false);}
+  const {runtime,memory}=await fixture();const added=runtime.add(runtime.beginSubmission(),values(),{...emptyCardPresentation(),sheetDisplayMode:mode});assert.equal(added.ok,true);assert.equal((await runtime.save()).ok,true);
+  const fresh=createDevAddCardRuntime(memory);assert.equal((await fresh.initialize()).ok,true);assert.equal(fresh.getSnapshot().session.saved.cards[0].sheetDisplayMode,mode);
+ }
 });

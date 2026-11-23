@@ -31,8 +31,8 @@ function harness(component,props={},options={}){
  const theme={core:tokens.core,lagoon:tokens.palettes['pearl-gray'].colors,lagoonTokens:tokens,lagoonFonts:{latin:'BememManrope'},alpha:(c,a)=>c+Math.round(a*255).toString(16).padStart(2,'0')};
  const deps={react,'react/jsx-runtime':{jsx,jsxs:jsx},'react-native':native,'react-native-safe-area-context':{SafeAreaView:'SafeAreaView'},
   'expo-camera':{CameraView:'CameraView',useCameraPermissions:()=>[ctx.permission,request,refresh]},'../../constants/ci-theme':require('./ci-theme-fixture.cjs'),'../../constants/lagoon-theme':theme};
- for(const name of ['AddCardIcon','AddCardText','CardArtworkControls','CardAppearancePreview','GlassButton','MembershipNumberScanner','ExpirationDatePicker'])deps['./'+name]={[name]:name};
- for(const name of ['card-form','card-presentation','card-size-presets','wallet-validation'])deps['../../lib/'+name]=logic('src/lib/'+name+'.ts');
+ for(const name of ['CardSizeCarousel','CardSheetModeSelector','AddCardIcon','AddCardText','CardArtworkControls','CardAppearancePreview','GlassButton','MembershipNumberScanner','ExpirationDatePicker'])deps['./'+name]={[name]:name};
+ for(const name of ['default-card-artwork','card-form','card-presentation','card-size-presets','wallet-validation'])deps['../../lib/'+name]=logic('src/lib/'+name+'.ts');
  deps['./add-card-layout']=logic('src/components/bemem/add-card-layout.ts');
  const module={exports:{}},file=path.join(root,'src/components/bemem',component+'.tsx');
  const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,jsx:ts.JsxEmit.ReactJSX}}).outputText;

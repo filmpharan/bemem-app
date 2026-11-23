@@ -105,7 +105,7 @@ export function WalletMigrationPanel({ onClose }: { onClose: () => void }) {
           : state.failure?.code === 'backup_not_verified' ? 'Backup integrity failed or could not be verified. Import was not started. Wallet v1 is unchanged; keep all files and reinspect before continuing.'
           : recovery ? 'Wallet is locked. Reinspect the saved data before continuing.'
             : state.saving ? 'A save is in progress. Wait before reviewing.'
-              : state.dirty ? 'Unsaved draft. Return to Create and choose Save, Discard or Cancel before reviewing.'
+              : state.dirty ? 'Unsaved draft. Return to Arrange and choose Save, Discard or Cancel before reviewing.'
                 : state.source === 'v2' ? 'Wallet v2 is active. No further v1 import is available.'
                   : 'Wallet v1 is active. Reviewing alone does not write files.';
   return <Modal transparent animationType="slide" onRequestClose={close}>
@@ -137,7 +137,7 @@ export function WalletMigrationPanel({ onClose }: { onClose: () => void }) {
           <Text style={styles.text}>{state.phase === 'activation_incomplete' ? 'Retry verified activation' : 'Reinspect wallet · No import retry'}</Text>
         </Pressable>}
         <Text accessibilityLiveRegion="polite" style={styles.text}>{notice}</Text>
-        <Pressable disabled={busy} accessibilityRole="button" accessibilityLabel="Cancel migration review" onPress={close} style={styles.button}><Text style={styles.text}>{activated() ? 'Back to Create' : 'Cancel'}</Text></Pressable>
+        <Pressable disabled={busy} accessibilityRole="button" accessibilityLabel="Cancel migration review" onPress={close} style={styles.button}><Text style={styles.text}>{activated() ? 'Back to Arrange' : 'Cancel'}</Text></Pressable>
       </ScrollView></View>
     </View>
   </Modal>;

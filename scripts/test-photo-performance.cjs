@@ -1,0 +1,21 @@
+﻿const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),ts=require('typescript');
+const root=path.resolve(__dirname,'..');
+function diagnostics(dev=true){let time=100;const context={exports:{},__DEV__:dev,performance:{now:()=>time},console:{debug(){assert.fail('No automatic logs');},log(){assert.fail('No automatic logs');}}};vm.createContext(context);const code=ts.transpileModule(fs.readFileSync(path.join(root,'src/lib/artwork-performance.ts'),'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;vm.runInContext(code,context);return {api:context.exports,context,advance:ms=>time+=ms};}
+test('DEV camera stages separate picker round-trip from retain and first visible display without private identifiers',()=>{
+ const {api,context,advance}=diagnostics(),trace=api.beginPhotoTrace('camera');advance(20);trace.mark('permission_returned');trace.mark('picker_requested');advance(2000);trace.mark('picker_returned');trace.mark('retain_started',{width:4000,height:3000});advance(30);trace.mark('retain_finished',{width:4000,height:3000,byteLength:4567});trace.bind('art-private-identifier.jpg');advance(40);api.photoDisplayVisible('art-private-identifier.jpg','crop_visible');api.photoDisplayVisible('art-private-identifier.jpg','crop_visible');trace.mark('crop_confirmed');advance(50);api.photoDisplayVisible('art-private-identifier.jpg','editor_visible');
+ const result=context.bememPhotoDiagnostics(),samples=result.traces[0].samples;assert.equal(samples.find(s=>s.stage==='retain_finished').elapsedMs-samples.find(s=>s.stage==='retain_started').elapsedMs,30);assert.equal(samples.filter(s=>s.stage==='crop_visible').length,1);assert.equal(samples.at(-1).elapsedMs,2140);assert.match(result.notice,/includes user interaction/);assert.match(result.notice,/not measured/);assert.equal(JSON.stringify(result).includes('art-private'),false);
+ trace.close();api.photoDisplayVisible('art-private-identifier.jpg','crop_visible');const copy=api.photoDiagnostics();copy.traces[0].samples[0].stage='modified-copy';assert.equal(api.photoDiagnostics().traces[0].samples[0].stage,'admitted');
+});
+test('Repeated captures and numeric artwork timings stay bounded and closed sessions reject display callbacks',()=>{
+ const {api}=diagnostics();for(let n=0;n<40;n++){const t=api.beginPhotoTrace(n%2?'camera':'library');t.bind('art-'+n);for(let i=0;i<50;i++)t.mark('picker_returned');t.close();api.artworkTiming('preview-visible',0);}
+ const before=JSON.stringify(api.photoDiagnostics());api.photoDisplayVisible('art-0','crop_visible');api.photoDisplayVisible('art-39','editor_visible');assert.equal(JSON.stringify(api.photoDiagnostics()),before);assert.equal(api.photoDiagnostics().traces.length,8);assert.ok(api.photoDiagnostics().traces.every(t=>t.samples.length<=24));assert.equal(api.photoDiagnostics().timings.length,20);
+});
+test('Production registers no diagnostics global, traces, display bindings or timing history',()=>{
+ const {api,context}=diagnostics(false),trace=api.beginPhotoTrace('camera');trace.mark('retain_started');trace.bind('secret');api.photoDisplayVisible('secret','crop_visible');api.artworkTiming('file-preparation',0);trace.close();assert.equal(context.bememPhotoDiagnostics,undefined);assert.equal(api.photoDiagnostics().traces.length,0);assert.equal(api.photoDiagnostics().timings.length,0);
+});
+test('Installed SDK 58 Android raw acquisition avoids full bitmap compression and keeps EXIF-aware dimensions',()=>{
+ const read=file=>fs.readFileSync(path.join(root,'node_modules/expo-image-picker/android/src/main/java/expo/modules/imagepicker',file),'utf8');
+ assert.match(read('MediaHandler.kt'),/options.quality == ImagePickerConstants.MAXIMUM_QUALITY[\s\S]*?RawImageExporter\(\)[\s\S]*?else[\s\S]*?CompressionImageExporter/);
+ const raw=read('exporters/RawImageExporter.kt');assert.match(raw,/copyFile\(source, output, contentResolver\)/);assert.doesNotMatch(raw,/Bitmap\.create|compress\(/);
+ const dims=read('exporters/DimensionsExporter.kt');assert.match(dims,/inJustDecodeBounds = true/);assert.match(dims,/ORIENTATION_ROTATE_90/);assert.match(dims,/ORIENTATION_ROTATE_270/);
+});

@@ -5,14 +5,11 @@ export type CanvasPageMetadata = {version:1;assignments:Record<string,CanvasPage
 export const CANVAS_PAGES:readonly CanvasPage[]=[1,2,3,4,5];
 type Document = {readonly cards:readonly {readonly id:string}[];readonly canvas:{readonly pages?:{readonly version:1;readonly assignments:Readonly<Record<string,CanvasPage>>;readonly selectedCount?:2|3|4|5}}};
 export function itemCanvasPage(doc:Document,id:string):CanvasPage {return doc.canvas.pages?.assignments[id]??1;}
-export function canvasAccess(doc:Document|undefined,status:MembershipAccess='free') {
-  if(!['free','active','expired'].includes(status))status='free';
-  const preferred=doc?.canvas.pages?.selectedCount;
-  const selected=status==='free'?1:preferred&&[2,3,4,5].includes(preferred)?preferred:Math.max(2,...Object.values(doc?.canvas.pages?.assignments??{}).filter(p=>CANVAS_PAGES.includes(p)));
-  const count=Math.min(5,Math.max(1,selected));
-  return CANVAS_PAGES.map(page=>{const editable=page===1||status==='active'&&page<=count;
-    return {page,visible:page<=count||(status!=='active'&&page===count+1),
-      preview:status!=='active'&&page===count+1,readable:page<=count,editable,editorDestination:editable};});
+/** All five pages are available for the current functional-testing phase.
+ * This is app availability, not a fabricated login or Premium entitlement.
+ * Existing selectedCount metadata is retained without restricting page access. */
+export function canvasAccess(_doc:Document|undefined,_status:MembershipAccess='free') {
+  return CANVAS_PAGES.map(page=>({page,visible:true,preview:false,readable:true,editable:true,editorDestination:true}));
 }
 export function assignCanvasItem(doc:WalletDocument,id:string,page:CanvasPage) {
   if(page===1&&!doc.canvas.pages)return;

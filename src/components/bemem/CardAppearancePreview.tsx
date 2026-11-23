@@ -10,10 +10,15 @@ import { CardArtworkImage } from './CardArtworkImage';
 import { cardPaintSize } from '../../lib/card-geometry';
 import { defaultBackTextColor } from '../../lib/default-card-artwork';
 
-export function CardAppearancePreview({ values, presentation, width, height, appearance, showText = true, onArtworkReady, onArtworkFailure,artworkSources }: {
+export function CardAppearancePreview({ values, presentation, width, height, appearance, showText = true, onArtworkReady, onArtworkFailure,artworkSources,renderScale,renderArtwork=true,displayPreview=false }: {
   values: CardFormValues; presentation?: CardPresentationDraft; width?: number; height?: number; appearance?: MembershipCard['appearance'];
   showText?: boolean; onArtworkReady?: () => void; onArtworkFailure?: () => void;
   artworkSources?:Readonly<Record<string,string>>;
+  /** Share composition only; default app card rendering is unchanged. */
+  renderScale?:number;
+  /** Offscreen carousel cells keep their geometry without mounting native images. */
+  renderArtwork?:boolean;
+  displayPreview?:boolean;
 }) {
   const color = appearance ? { background: appearance.backgroundColor, text: appearance.textColor }
     : CARD_COLORS.find(c => c.id === values.colorId) ?? CARD_COLORS[0];
@@ -28,13 +33,14 @@ export function CardAppearancePreview({ values, presentation, width, height, app
   // Text is an overlay: it must never change the image's crop boundary.
   const paint = cardPaintSize(preset.ratioWidth,preset.ratioHeight);
   const minHeight = artWidth * paint.height / paint.width;
+  const shareRadius=renderScale===undefined?undefined:{borderRadius:CARD_CORNER_RADIUS*renderScale};
   return <View style={[styles.stage, width !== undefined && { width }, height !== undefined && { height }]} onLayout={event => setAvailableWidth(event.nativeEvent.layout.width)}>
-    <View style={[styles.card, { minHeight, backgroundColor: color.background }, height !== undefined && { height, minHeight: 0, overflow: 'hidden' }]}>
-      <View pointerEvents="none" accessible={false} style={[styles.artwork, gradient && {
+    <View style={[styles.card, { minHeight, backgroundColor: color.background },shareRadius,renderScale!==undefined&&{boxShadow:'none'},height !== undefined && { height, minHeight: 0, overflow: 'hidden' }]}>
+      <View pointerEvents="none" accessible={false} style={[styles.artwork, shareRadius, gradient && {
         backgroundImage: `linear-gradient(135deg, ${gradient.map((stop, index) => gradientId === 'seven' && index === 1 ? stop + ' 60%' : stop).join(', ')})`,
       }]} />
-      <View pointerEvents="none" accessible={false} style={styles.shade} />
-      {image && <CardArtworkImage key={sourceUri?image.assetId+sourceUri:image.assetId} image={image} sourceUri={sourceUri} onReady={onArtworkReady} onFailure={onArtworkFailure} />}
+      <View pointerEvents="none" accessible={false} style={[styles.shade,shareRadius]} />
+      {image && renderArtwork && <CardArtworkImage key={sourceUri?image.assetId+sourceUri:image.assetId} image={image} cornerRadius={shareRadius?.borderRadius} thumbnail={renderScale!==undefined} displayPreview={displayPreview?'editor':undefined} sourceUri={sourceUri} onReady={onArtworkReady} onFailure={onArtworkFailure} />}
       {showText && <Text numberOfLines={3}
         style={[back ? styles.number : styles.name, { color: defaultBackTextColor(image?.assetId)??(gradient ? lagoon.text.onAction : color.text) }]}>
         {back ? values.memberNumber || 'Membership number' : values.name || 'Card name'}

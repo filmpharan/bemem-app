@@ -1,0 +1,268 @@
+{
+  "collection": "Vivid Lagoon Matte v1",
+  "status": "awaiting Samsung acceptance",
+  "production": "Original programmatically authored SVG geometry, Inkscape raster export; not hand-painted or screenshot crops",
+  "palette": {
+    "gray": [
+      "#E1DEDF",
+      "#C8C4C6",
+      "#B7B4B8"
+    ],
+    "brown": [
+      "#EED2C2",
+      "#D9AE98",
+      "#CD9E86"
+    ],
+    "red": [
+      "#F7CDCF",
+      "#ECA5AA",
+      "#DF9197"
+    ],
+    "green": [
+      "#DBE7D5",
+      "#B3CDB1",
+      "#9ABD9A"
+    ],
+    "blue": [
+      "#D3DDF4",
+      "#B3C5EA",
+      "#A0B8E3"
+    ],
+    "purple": [
+      "#E1D7EE",
+      "#C7B4DD",
+      "#B7A1D4"
+    ],
+    "pink": [
+      "#F7D7E1",
+      "#F0B7CB",
+      "#E9A7BF"
+    ],
+    "orange": [
+      "#FFE0C5",
+      "#FFC392",
+      "#F6AF7B"
+    ]
+  },
+  "patterns": {
+    "gray": "Large cropped circles and a separate circular accent",
+    "brown": "Two diagonal rounded capsule bands",
+    "red": "Overlapping arches and semicircles",
+    "green": "Interlocking soft-corner blocks",
+    "blue": "Tilted ellipses with a central oval",
+    "purple": "Offset concentric circular focus",
+    "pink": "Rounded triangles with a soft circular intersection",
+    "orange": "Four curved petal modules"
+  },
+  "artworks": [
+    {
+      "assetId": "art-bemem-vl1-front-gray.png",
+      "color": "gray",
+      "side": "front",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 32250,
+      "md5": "a8080f6176b20128ba8f632b53349b24",
+      "sha256": "7012a47aef8c0d5ab83ec7d4ce5d3baadb6dd0303effc08a943eb167f9062e83",
+      "source": "design-system/bemem-vivid-lagoon/artwork/gray-front.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-front-gray.png",
+      "base": "#E1DEDF"
+    },
+    {
+      "assetId": "art-bemem-vl1-back-gray.png",
+      "color": "gray",
+      "side": "back",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 16320,
+      "md5": "2ab579084a80a8d4cd7444656d76e3b9",
+      "sha256": "cb624e673baf6849cec4667a6f58b6ad546b3f15df1182f758425ca4c7d4e2eb",
+      "source": "design-system/bemem-vivid-lagoon/artwork/gray-back.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-back-gray.png",
+      "base": "#EBE9E9"
+    },
+    {
+      "assetId": "art-bemem-vl1-front-brown.png",
+      "color": "brown",
+      "side": "front",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 22450,
+      "md5": "d5bfdd81c787291feee374e908438324",
+      "sha256": "7c6fd7578eb56a7c04168cd5dc72e8e452d83587d987efe9db9300fdc228a0f1",
+      "source": "design-system/bemem-vivid-lagoon/artwork/brown-front.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-front-brown.png",
+      "base": "#EED2C2"
+    },
+    {
+      "assetId": "art-bemem-vl1-back-brown.png",
+      "color": "brown",
+      "side": "back",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 11200,
+      "md5": "334912b78d2f9568943ea41380b9dc09",
+      "sha256": "99a7318d4a47ffc60ed602583f4c716d097a2b714617efcc74700724ae8fbedd",
+      "source": "design-system/bemem-vivid-lagoon/artwork/brown-back.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-back-brown.png",
+      "base": "#F3E0D6"
+    },
+    {
+      "assetId": "art-bemem-vl1-front-red.png",
+      "color": "red",
+      "side": "front",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 24554,
+      "md5": "905e54e1450e7b5c4e601dbd14db0799",
+      "sha256": "8688b833a5b47af2820c24c1ef86a72aeee64a12b8210014d1073a32fa5a6ede",
+      "source": "design-system/bemem-vivid-lagoon/artwork/red-front.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-front-red.png",
+      "base": "#F7CDCF"
+    },
+    {
+      "assetId": "art-bemem-vl1-back-red.png",
+      "color": "red",
+      "side": "back",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 14762,
+      "md5": "cb66d4f3a9c2baac6c50189d4e8aa2a4",
+      "sha256": "16ced82f11c5172763e25c4a00efc9931cba6345a17a23e193f3b40c415e8ec6",
+      "source": "design-system/bemem-vivid-lagoon/artwork/red-back.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-back-red.png",
+      "base": "#FADDDE"
+    },
+    {
+      "assetId": "art-bemem-vl1-front-green.png",
+      "color": "green",
+      "side": "front",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 16924,
+      "md5": "b74665865c33f1c6d923bcad1ea2c474",
+      "sha256": "30e048a74b0c41742abfec2b6c71f0306fb19849d64f62c808bd313b14aca510",
+      "source": "design-system/bemem-vivid-lagoon/artwork/green-front.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-front-green.png",
+      "base": "#DBE7D5"
+    },
+    {
+      "assetId": "art-bemem-vl1-back-green.png",
+      "color": "green",
+      "side": "back",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 14407,
+      "md5": "bcb79283179de0c0bfe78c23d57eb6cc",
+      "sha256": "33dcf56ccd154b9d50783361fc5427b4f106a0c0c9f8d480ebb91440544be958",
+      "source": "design-system/bemem-vivid-lagoon/artwork/green-back.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-back-green.png",
+      "base": "#E7EFE2"
+    },
+    {
+      "assetId": "art-bemem-vl1-front-blue.png",
+      "color": "blue",
+      "side": "front",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 34832,
+      "md5": "dc48f9a33a7dac2b0f66f9b5b7aad581",
+      "sha256": "bc9dd42f98b2068f3991833cfa4910dad6d406a038a494281cad95bce4085437",
+      "source": "design-system/bemem-vivid-lagoon/artwork/blue-front.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-front-blue.png",
+      "base": "#D3DDF4"
+    },
+    {
+      "assetId": "art-bemem-vl1-back-blue.png",
+      "color": "blue",
+      "side": "back",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 16191,
+      "md5": "72ae6182b9a94ef96b73cd8841f2c20c",
+      "sha256": "732cca4e316a046cc84ec45e432c7cd678b41ea5d0380f7f29b20f20d2328285",
+      "source": "design-system/bemem-vivid-lagoon/artwork/blue-back.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-back-blue.png",
+      "base": "#E1E8F8"
+    },
+    {
+      "assetId": "art-bemem-vl1-front-purple.png",
+      "color": "purple",
+      "side": "front",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 55336,
+      "md5": "91f613aa08b8519ff4dbbde6f8065bb5",
+      "sha256": "2108fb9ec50836db984d4f6087dd952f1404239abc702165518ce744b3ef974d",
+      "source": "design-system/bemem-vivid-lagoon/artwork/purple-front.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-front-purple.png",
+      "base": "#E1D7EE"
+    },
+    {
+      "assetId": "art-bemem-vl1-back-purple.png",
+      "color": "purple",
+      "side": "back",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 21481,
+      "md5": "9b1c6ea1cbad63d0a9a84a8b7a104e1d",
+      "sha256": "cf394523de37a8f79c1f3492ac1d02c853f11df7f59076b38dc3dd4574d8264a",
+      "source": "design-system/bemem-vivid-lagoon/artwork/purple-back.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-back-purple.png",
+      "base": "#EBE4F3"
+    },
+    {
+      "assetId": "art-bemem-vl1-front-pink.png",
+      "color": "pink",
+      "side": "front",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 33083,
+      "md5": "7a28af391e29f4831c3c7dfa276a7fde",
+      "sha256": "7f634208598cefdf47d80e7eb29588f4182dab069a2a232ec76668282b7751e4",
+      "source": "design-system/bemem-vivid-lagoon/artwork/pink-front.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-front-pink.png",
+      "base": "#F7D7E1"
+    },
+    {
+      "assetId": "art-bemem-vl1-back-pink.png",
+      "color": "pink",
+      "side": "back",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 17555,
+      "md5": "744c5b8aba97b3e0c8627e5db1c984bf",
+      "sha256": "279de63d1ebf847472d7d116e6fb5aa76e959510c2ed8c85238d69e631cc2f09",
+      "source": "design-system/bemem-vivid-lagoon/artwork/pink-back.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-back-pink.png",
+      "base": "#FAE4EB"
+    },
+    {
+      "assetId": "art-bemem-vl1-front-orange.png",
+      "color": "orange",
+      "side": "front",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 50632,
+      "md5": "50b9b3c8960fb6126524b515121d9b9c",
+      "sha256": "a9a218d3f3f2d77fc0967932c6bf6b01fe22c04da09f6b9e0243d5e262c91512",
+      "source": "design-system/bemem-vivid-lagoon/artwork/orange-front.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-front-orange.png",
+      "base": "#FFE0C5"
+    },
+    {
+      "assetId": "art-bemem-vl1-back-orange.png",
+      "color": "orange",
+      "side": "back",
+      "width": 1536,
+      "height": 1536,
+      "byteLength": 15662,
+      "md5": "83ee0c0a5ed3615e6f5346dc69a7eb30",
+      "sha256": "f4c005605af11cba57da98dbce49ac5a31e53ca88e6dfa3e780e0b3e134e7615",
+      "source": "design-system/bemem-vivid-lagoon/artwork/orange-back.svg",
+      "runtime": "assets/card-faces/vivid-lagoon-v1/art-bemem-vl1-back-orange.png",
+      "base": "#FFEAD8"
+    }
+  ],
+  "totalBytes": 397639
+}

@@ -11,11 +11,12 @@ export type AddCardAdapterResult = { ok: true; card: NewMembershipCard }
 export function adaptCardForm(values: CardFormValues, presentation: CardPresentationDraft,
   metadata: Pick<NewMembershipCard, 'id' | 'createdAt' | 'updatedAt'>): AddCardAdapterResult {
   const valueKeys = ['name', 'memberNumber', 'payload', 'payloadEdited', 'preferredDisplayFormat', 'orientation', 'colorId'];
-  const presentationKeys = ['country', 'brandQuery', 'brandId', 'expiryMonth', 'side', 'sizePresetId', 'gradientPresetId', 'artwork'];
+  const presentationKeys = ['country', 'brandQuery', 'brandId', 'expiryMonth', 'side', 'sizePresetId', 'gradientPresetId', 'artwork', 'sheetDisplayMode'];
   if (!values || !presentation || Object.keys(values).some(key => !valueKeys.includes(key))
     || Object.keys(presentation).some(key => !presentationKeys.includes(key))
     || valueKeys.filter(key => key !== 'payloadEdited').some(key => typeof values[key as keyof CardFormValues] !== 'string')
     || typeof values.payloadEdited !== 'boolean'
+    || (Object.hasOwn(presentation, 'sheetDisplayMode') && presentation.sheetDisplayMode !== 'cardcode' && presentation.sheetDisplayMode !== 'frontback')
     || presentation.country !== 'TH'
     || (presentation.brandId !== null && !WEB_BRANDS.some(brand => brand.id === presentation.brandId))
     || ['country', 'brandQuery', 'expiryMonth', 'sizePresetId'].some(key => typeof presentation[key as keyof CardPresentationDraft] !== 'string')
@@ -31,6 +32,7 @@ export function adaptCardForm(values: CardFormValues, presentation: CardPresenta
     const preset = cardSizePreset(presentation.sizePresetId);
     const gradientPresetId = presentation.gradientPresetId ?? null;
     const card = validateNewMembershipCard({ ...base.card,
+      sheetDisplayMode: presentation.sheetDisplayMode ?? 'cardcode',
       sizePresetId: preset.id, widthBlocks: preset.ratioWidth, heightBlocks: preset.ratioHeight,
       expiryMonth: presentation.expiryMonth, appearance: { ...base.card.appearance, gradientPresetId,
         // Existing gradient previews use white text; keep newly persisted Home cards consistent.

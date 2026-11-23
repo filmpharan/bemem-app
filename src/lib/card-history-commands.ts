@@ -1,3 +1,4 @@
+import {prepareKeep,type KeepForm} from './keeps';
 import { cloneHistory, HistoryError, preparePhotoEntry, type HistoryDocument, type PhotoEntryForm } from './card-history';
 import type { createHistoryRepository } from './card-history-repository';
 
@@ -5,20 +6,22 @@ export type HistoryAdmission = { generation: number; revision: number; canManage
 /** Capability scoped to a card/context. No Wallet write capability, no global form state. */
 export function createHistoryCommands(repository: ReturnType<typeof createHistoryRepository>, ports: {
   cardId: string; admission: () => HistoryAdmission; now: () => string; nextId: () => string;
+  beforeCommit?: (before: HistoryDocument, after: HistoryDocument) => Promise<void>;
   afterCommit?: (before: HistoryDocument, after: HistoryDocument) => Promise<void>;
 }) {
   let document: HistoryDocument | null = null, generation = -1, walletRevision = -1, busy = false, closed = false, needsReview = false;
   let context: HistoryAdmission['context'] | null = null;
-  const admission = (operation: 'add' | 'delete') => {
+  const admission = (operation: 'add' | 'delete' | 'keep-delete') => {
     const current = ports.admission();
-    return current.context === context && (operation === 'add' ? current.context === 'home' : current.context === 'create') && !closed && current.cardExists && current.canManage && current.generation === generation && current.revision === walletRevision;
+    return current.context === context && (operation !== 'delete' ? current.context === 'home' : current.context === 'create') && !closed && current.cardExists && current.canManage && current.generation === generation && current.revision === walletRevision;
   };
-  async function mutate(operation: 'add' | 'delete', change: (doc: HistoryDocument) => void) {
+  async function mutate(operation: 'add' | 'delete' | 'keep-delete', change: (doc: HistoryDocument) => void) {
     if (busy) throw new HistoryError('busy', 'A history operation is in progress.');
     if (needsReview || !document || !admission(operation)) throw new HistoryError('blocked', 'This editing session ended. Close the form and reload history.');
     busy = true; const before = cloneHistory(document), next = cloneHistory(document);
     try {
       change(next);
+      await ports.beforeCommit?.(before, next);
       const saved = await repository.save(next, before.revision, () => admission(operation));
       document = cloneHistory(saved);
       // Cleanup is never part of commit success and cannot delete original card artwork.
@@ -48,6 +51,11 @@ export function createHistoryCommands(repository: ReturnType<typeof createHistor
         recordId = record.id; doc.records.push(record);
       }).then(result => ({ ...result, recordId }));
     },
+    saveKeep(form:KeepForm){let recordId='';return mutate('add',doc=>{const record=prepareKeep(form,ports.cardId,ports.nextId(),ports.now());recordId=record.id;doc.records.push(record);}).then(result=>({...result,recordId}));},
+    updateReminder(id:string,change:{notification?:NonNullable<NonNullable<import('./card-history').HistoryRecord['keep']>['reminder']>['notification'];state?:'pending'|'completed'}){
+      return mutate('add',doc=>{const record=doc.records.find(r=>r.id===id&&r.cardId===ports.cardId);if(!record?.keep?.reminder)throw new HistoryError('blocked','Reminder changed. Reload My Keeps.');Object.assign(record.keep.reminder,change);record.updatedAt=ports.now();});
+    },
+    deleteKeep(id:string){return mutate('keep-delete',doc=>{if(!doc.records.some(r=>r.id===id&&r.cardId===ports.cardId))throw new HistoryError('blocked','Keep changed. Reload My Keeps.');doc.records=doc.records.filter(r=>r.id!==id);});},
     deleteSelected(ids: readonly string[]) {
       return mutate('delete', doc => {
         const selected = new Set(ids);

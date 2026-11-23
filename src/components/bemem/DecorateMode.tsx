@@ -1,22 +1,23 @@
 import { ciColors,ciTypography,ciStates } from '../../constants/ci-theme';
 import { useCallback, useEffect, useMemo, useRef, useState, type ComponentRef } from 'react';
-import { ActivityIndicator, Alert, Modal, PanResponder, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { ActivityIndicator, BackHandler, Modal, PanResponder, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import type { useWalletCanvas } from '../../hooks/use-wallet-canvas';
 import { bemem } from '../../constants/bemem-theme';
 import { DECORATION_ASSETS, DECORATION_COLLECTIONS, type DecorationAssetId } from '../../lib/decoration-catalog';
-import { createDecorateSession, decorationDropCell, type DecorationDropGeometry, type DecorateResult } from '../../lib/decorate-session';
+import { createDecorateSession, decorationDropCell, decorationGhostFrame, decorationTouchOffset, type DecorationDropGeometry, type DecorateResult } from '../../lib/decorate-session';
 import { createCardInteraction } from '../../lib/card-interaction';
 import { canPlace } from '../../lib/canvas-layout';
 import { walletCanvasPresentation } from '../../lib/wallet-preparation';
 import type { Position } from '../../types/wallet-ui';
 import { WalletCanvas } from './WalletCanvas';
-import { EightSlotHeader,compactHeaderStyles } from './EightSlotHeader';
+import { NavigationHeader } from './NavigationHeader';
+import { ContextualFooter,type ContextualFooterHandle } from './ContextualFooter';
 import { DecorationImage } from './DecorationImage';
 import { BememIcon } from './BememIcon';
 import { AddCardIcon } from './AddCardIcon';
-import { CanvasPageSelector } from './CanvasPageSelector';
-import { CanvasPagePopoverHost,type CanvasPagePopoverHandle } from './CanvasPagePopoverHost';
+
+
 import type { CanvasPage } from '../../lib/canvas-pages';
 import { ConfirmationDialog,type ConfirmationRequest } from './ConfirmationDialog';
 import { decorationPages, decorationPickerGeometry, DRAWER_COLUMNS, DRAWER_ROWS } from '../../lib/decoration-pagination';
@@ -34,24 +35,35 @@ type AssetProps = { assetId: DecorationAssetId; unit: number; cellSize?: number;
 function DrawerAsset(props: AssetProps) {
   const current = useRef(props); current.current = props;
   const point = useRef<Point>({ x: 0, y: 0 });
+  const target=useRef<ComponentRef<typeof View>>(null),touchOffset=useRef<Point|null>(null),gestureEpoch=useRef(0);
+  const windowPoint=()=>touchOffset.current?{x:point.current.x+touchOffset.current.x,y:point.current.y+touchOffset.current.y}:null;
+  function publish(){const value=windowPoint();if(value)current.current.onDrag(current.current.assetId,value);}
   const interaction = useMemo(() => createCardInteraction({
     onTap: () => current.current.onSelect(current.current.assetId),
-    onDragStart: () => current.current.onDrag(current.current.assetId, point.current),
-    onDragMove: () => current.current.onDrag(current.current.assetId, point.current),
-    onDrop: () => current.current.onDrop(current.current.assetId, point.current), onDragEnd: () => current.current.onEnd(),
+    onDragStart: publish,
+    onDragMove: publish,
+    onDrop: () => {const value=windowPoint();if(value)current.current.onDrop(current.current.assetId,value);}, onDragEnd: () => current.current.onEnd(),
   }), []);
-  useEffect(() => () => interaction.cancel(), [interaction]);
+  useEffect(() => () => {++gestureEpoch.current;interaction.cancel();}, [interaction]);
   const responder = useMemo(() => PanResponder.create({
     onStartShouldSetPanResponder: (_, g) => !current.current.disabled && g.numberActiveTouches === 1,
     onMoveShouldSetPanResponder: () => false,
-    onPanResponderGrant: (_, g) => { point.current = { x: g.x0, y: g.y0 }; interaction.start(); },
-    onPanResponderMove: (_, g) => { point.current = { x: g.moveX, y: g.moveY }; interaction.move(g.dx, g.dy, g.numberActiveTouches); },
-    onPanResponderRelease: (_, g) => { point.current = { x: g.moveX || g.x0, y: g.moveY || g.y0 }; interaction.release(g.dx, g.dy); },
-    onPanResponderTerminate: interaction.cancel,
+    onPanResponderGrant: (event, g) => {
+      const epoch=++gestureEpoch.current;point.current={x:g.x0,y:g.y0};touchOffset.current=null;
+      const touch=event?.nativeEvent;
+      interaction.start();
+      // Null events exist only in the headless responder tests. Native touches
+      // require a real measurement; an unmeasured drag never writes a position.
+      if(!touch)touchOffset.current={x:0,y:0};
+      else target.current?.measureInWindow((x,y)=>{if(epoch!==gestureEpoch.current)return;touchOffset.current=decorationTouchOffset({x,y},touch);if(interaction.isDragging())publish();});
+    },
+    onPanResponderMove: (_, g) => { point.current = { x: g.x0+g.dx, y: g.y0+g.dy }; interaction.move(g.dx, g.dy, g.numberActiveTouches); },
+    onPanResponderRelease: (_, g) => { point.current = { x: g.x0+g.dx, y: g.y0+g.dy };++gestureEpoch.current;interaction.release(g.dx, g.dy); },
+    onPanResponderTerminate: () => {++gestureEpoch.current;interaction.cancel();},
     onPanResponderTerminationRequest: () => !interaction.isDragging(), onShouldBlockNativeResponder: () => interaction.isDragging(),
   }), [interaction]);
   const label = DECORATION_ASSETS.find(a => a.id === props.assetId)?.label ?? props.assetId;
-  return <View {...responder.panHandlers} accessible accessibilityRole="button" accessibilityState={{ disabled: props.disabled, selected: props.selected }}
+  return <View ref={target} collapsable={false} {...responder.panHandlers} accessible accessibilityRole="button" accessibilityState={{ disabled: props.disabled, selected: props.selected }}
     accessibilityLabel={`${label}. Hold to drag, or activate then tap an empty cell.`}
     accessibilityActions={[{ name: 'activate', label: `Select ${label} for placement` }]}
     onAccessibilityAction={() => { if (!props.disabled) props.onSelect(props.assetId); }}
@@ -61,7 +73,7 @@ function DrawerAsset(props: AssetProps) {
 }
 
 /** Mounted only while editing decorations. Home never mounts the drawer or session history. */
-type Props={wallet:ReturnType<typeof useWalletCanvas>;onClose:()=>void;onSaved:()=>void};
+type Props={wallet:ReturnType<typeof useWalletCanvas>;onClose:()=>void;onSaved:()=>void;presentation?:'modal'|'screen';availableWidth?:number;initialScrollY?:number;onNavigate?:(destination:'home'|'create'|'add')=>void};
 export function DecorateMode(props:Props){
  const owner=props.wallet.runtime?.pages;
  const forbidden=props.wallet.pageEditable===false||!!owner&&!owner.access()[owner.current()-1].editable;
@@ -71,15 +83,16 @@ export function DecorateMode(props:Props){
  if(forbidden)return null;
  return <EditableDecorateMode key={props.wallet.page??1} {...props}/>;
 }
-export function EditableDecorateMode({ wallet, onClose, onSaved }: Props) {
-  const pagePopover=useRef<CanvasPagePopoverHandle>(null);
+export function EditableDecorateMode({ wallet, onClose, onSaved,onNavigate,presentation='modal',availableWidth,initialScrollY }: Props) {
+  const alive=useRef(true);useEffect(()=>{alive.current=true;return()=>{alive.current=false;};},[]);
+  const pagePopover=useRef<ContextualFooterHandle>(null);
   const [session] = useState(() => createDecorateSession(wallet.runtime));
-  const [entryHasCreateDraft] = useState(() => wallet.runtime.getSnapshot().state.dirty);
+  const [footerExpanded,setFooterExpanded]=useState(false);
   const [state, setState] = useState(session.snapshot);
   const { width:windowWidth } = useWindowDimensions();
   const [collection, setCollection] = useState(DECORATION_COLLECTIONS[0]);
   const [page,setPage] = useState(0);
-  const [pickerWidth,setPickerWidth] = useState(Math.min(600,windowWidth)-2);
+  const [pickerWidth,setPickerWidth] = useState((availableWidth??Math.min(600,windowWidth))-2);
   const picker=decorationPickerGeometry(pickerWidth);
   const pages=useMemo(()=>decorationPages(collection.assets),[collection]);
   const pageCells=pages[Math.min(page,pages.length-1)];
@@ -91,7 +104,7 @@ export function EditableDecorateMode({ wallet, onClose, onSaved }: Props) {
   const [error, setError] = useState('');
   const [unit, setUnit] = useState(28);
   const geometry = useRef<DecorationDropGeometry | null>(null);
-  const root = useRef<ComponentRef<typeof View>>(null), rootPoint = useRef<Point>({ x: 0, y: 0 });
+  const root = useRef<ComponentRef<typeof View>>(null), rootPoint = useRef<Point|null>(null);
   const [exitDialog,setExitDialog]=useState<ConfirmationRequest|null>(null);
   const exitRequest=useRef<ConfirmationRequest|null>(null),exitSequence=useRef(0);
   const view = useMemo(() => walletCanvasPresentation(state.document,wallet.page??1), [state.document,wallet.page]);
@@ -128,39 +141,60 @@ export function EditableDecorateMode({ wallet, onClose, onSaved }: Props) {
     if (armed) { apply({ type: 'add', assetId: armed, position }); setArmed(null); }
     setSelected(null);
   }
-  function changeCanvas(next:CanvasPage){
-    if(!navigationAllowed()||wallet.runtime.pages&&!wallet.runtime.pages.access()[next-1]?.editable)return;
-    if(!wallet.runtime.getSnapshot().state.dirty){wallet.selectPage(next);return;}
-    Alert.alert('Unsaved changes',entryHasCreateDraft
-      ? 'Save all current changes to switch canvases. Discard removes only changes made in Decorate and returns to Create on this canvas, keeping your earlier Create draft.'
-      : 'Save or discard changes made in Decorate before switching canvases.',[
-      {text:'Stay',style:'cancel'},
-      {text:'Discard',style:'destructive',onPress:()=>{if(!navigationAllowed())return;
-        const result=session.cancel();refresh(result);if(!result.ok)return;
-        // cancel restores the entry snapshot, including any earlier Create work.
-        // The owner correctly refuses to switch while that earlier draft is dirty.
-        if(wallet.runtime.getSnapshot().state.dirty)onClose();else wallet.selectPage(next);}},
-      {text:'Save',onPress:()=>{const work=session.save();refresh();void work.then(result=>{refresh(result);if(result.ok)wallet.selectPage(next);});}},
-    ]);
+  function save(){
+    if(session.snapshot().busy||canvasDragActive.current||dragActive.current||exitRequest.current)return;
+    const work=session.save();refresh();void work.then(result=>{refresh(result);if(result.ok&&alive.current)onSaved();});
   }
-  return <Modal visible animationType="none" statusBarTranslucent navigationBarTranslucent onRequestClose={()=>{if(!pagePopover.current?.dismiss())requestClose();}}>
-    <SafeAreaView style={styles.safe}><CanvasPagePopoverHost ref={pagePopover}><View accessibilityElementsHidden={!!exitDialog} importantForAccessibility={exitDialog?'no-hide-descendants':'auto'} ref={root} collapsable={false} style={styles.root} onLayout={() => {
-      root.current?.measureInWindow((x,y) => { rootPoint.current={x,y}; });
-    }}>
-      <EightSlotHeader mode="Decorate" slots={{
-        8:<CanvasPageSelector compact page={wallet.page??1} destinations={wallet.pageAccess??[]} disabled={interactionLocked} onSelect={changeCanvas}/>,
-        4:(<Pressable accessibilityRole="button" accessibilityLabel="Back" accessibilityState={{disabled:state.busy || canvasDragging || !!drag}} disabled={state.busy || canvasDragging || !!drag} onPress={requestClose}
-            style={[compactHeaderStyles.target, (state.busy || canvasDragging || !!drag) && styles.inactive]}><BememIcon name="chevron-left" color={ciColors.action.back}/></Pressable>),
-        5:(<Pressable accessibilityRole="button" accessibilityLabel="Undo" accessibilityState={{disabled:interactionLocked || !state.canUndo}} accessibilityHint="Undo last decoration or card move" disabled={interactionLocked || !state.canUndo}
-            onPress={() => { setSelected(null); refresh(session.undo()); }} style={[compactHeaderStyles.target, (interactionLocked || !state.canUndo) && styles.inactive]}><AddCardIcon name="undo" size={22} color={bemem.foreground} /></Pressable>),
-        6:(<Pressable accessibilityRole="button" accessibilityLabel="Redo" accessibilityState={{disabled:interactionLocked || !state.canRedo}} accessibilityHint="Redo last undone action" disabled={interactionLocked || !state.canRedo}
-            onPress={() => { setSelected(null); refresh(session.redo()); }} style={[compactHeaderStyles.target, (interactionLocked || !state.canRedo) && styles.inactive]}><AddCardIcon name="redo" size={22} color={bemem.foreground} /></Pressable>),
-        7:(<Pressable accessibilityRole="button" accessibilityLabel="Save" accessibilityHint={state.busy ? 'Saving decorations' : undefined} accessibilityState={{busy:state.busy,disabled:interactionLocked}} disabled={interactionLocked}
-            style={[compactHeaderStyles.target, interactionLocked && !state.busy && styles.inactive]} onPress={() => {
-            const work=session.save(); refresh(); void work.then(result => { refresh(result); if (result.ok) onSaved(); });
-          }}>{state.busy ? <ActivityIndicator accessible={false} size="small" color={saveInk} /> : <AddCardIcon name="check" size={22} color={saveInk} />}</Pressable>),
-      }}/>
-      <WalletCanvas cards={view.cards} allCards={view.cards} layout={view.layout} editing decorating
+  function requestDestination(destination:'home'|'create'|'add'|CanvasPage){
+    if(!navigationAllowed()||exitRequest.current||session.snapshot().closed)return;
+    const initial=wallet.runtime.getSnapshot(),sourcePage=wallet.runtime.pages?.current()??wallet.page??1,epoch=wallet.runtime.pages?.generation()??0;
+    const targetAccess=typeof destination==='number'?wallet.runtime.pages?.access()[destination-1]:undefined;
+    if(typeof destination==='number'&&(destination===sourcePage||wallet.runtime.pages&&!targetAccess?.editable))return;
+    pagePopover.current?.dismiss();
+    const valid=(saved=false,settled=false)=>{
+      const current=wallet.runtime.getSnapshot();return alive.current&&current.state.generation===initial.state.generation
+        &&(wallet.runtime.pages?.current()??wallet.page??1)===sourcePage&&(wallet.runtime.pages?.generation()??0)===epoch
+        &&current.session?.revision===(initial.session?.revision??0)+(saved?1:0)
+        &&(saved||settled||JSON.stringify(current.session?.draft)===JSON.stringify(initial.session?.draft))
+        &&(typeof destination!=='number'||!wallet.runtime.pages||!!wallet.runtime.pages.access()[destination-1]?.visible&&wallet.runtime.pages.access()[destination-1]?.editable===targetAccess?.editable);
+    };
+    const finish=()=>{
+      exitRequest.current=null;setExitDialog(null);
+      if(typeof destination==='number'){
+        // Normally entry is clean; retain earlier Create drafts through its existing page guard.
+        if(wallet.runtime.getSnapshot().state.dirty){if(onNavigate)onNavigate('create');else onClose();}
+        wallet.selectPage(destination);
+      }else if(onNavigate)onNavigate(destination);else onClose();
+    };
+    const settle=async(choice:'save'|'discard')=>{
+      if(exitRequest.current!==request||session.snapshot().busy)return;
+      if(!valid()){exitRequest.current=null;setExitDialog(null);setError('The editing session changed. Review it before navigating.');return;}
+      const work=choice==='save'?session.save():session.cancel();refresh();const result=await work;refresh(result);
+      if(!alive.current)return;
+      if(result.ok&&valid(choice==='save',true))finish();else{exitRequest.current=null;setExitDialog(null);if(result.ok)setError('The editing session changed. Review it before navigating.');}
+    };
+    const dismiss=()=>{if(exitRequest.current!==request||session.snapshot().busy)return;exitRequest.current=null;setExitDialog(null);};
+    const request:ConfirmationRequest={id:`decorate-navigation-${++exitSequence.current}`,title:'Unsaved changes',
+      description:'Save or discard your decoration changes before continuing.',onDismiss:dismiss,
+      actions:[{label:'Save',role:'primary',onPress:()=>{void settle('save');}},
+        {label:'Discard',role:'destructive',onPress:()=>{void settle('discard');}},
+        {label:'Stay',role:'neutral',onPress:dismiss}]};
+    exitRequest.current=request;
+    if(wallet.runtime.getSnapshot().state.dirty){setExitDialog(request);return;}
+    void settle('discard');
+  }
+  function changeCanvas(next:CanvasPage){requestDestination(next);}
+  const requestBack=()=>{if(!pagePopover.current?.dismiss())requestClose();};
+  const latestBack=useRef(requestBack);latestBack.current=requestBack;
+  useEffect(()=>{if(presentation!=='screen')return;const subscription=BackHandler.addEventListener('hardwareBackPress',()=>{latestBack.current();return true;});return()=>subscription.remove();},[presentation]);
+  const content=<SafeAreaView style={styles.safe}><View style={{flex:1}}><View accessibilityElementsHidden={!!exitDialog} importantForAccessibility={exitDialog?'no-hide-descendants':'auto'} style={styles.root}>
+      <View onTouchStart={()=>pagePopover.current?.dismiss()}><NavigationHeader mode="Decorate" disabled={interactionLocked} saving={state.busy}
+        cancelDisabled={state.busy||canvasDragging||!!drag||!!exitDialog} onCancel={requestClose} onSave={save}/></View>
+      <View style={styles.content}>
+      <View ref={root} collapsable={false} style={styles.content} accessibilityElementsHidden={footerExpanded} importantForAccessibility={footerExpanded?'no-hide-descendants':'auto'} onLayout={()=>{
+        root.current?.measureInWindow((x,y)=>{rootPoint.current={x,y};});
+      }}>
+      <WalletCanvas initialViewportWidth={availableWidth?Math.max(1,availableWidth-32):undefined} initialScrollY={initialScrollY} cards={view.cards} allCards={view.cards} layout={view.layout} editing decorating
         disabled={locked || !!drag} selectedDecoration={selected} externalDragging={!!drag} dropTarget={target}
         onGeometry={measured} onCanvasPress={canvasTap} onDragging={active=>{canvasDragActive.current=active;setCanvasDragging(active);}}
         onOpen={card => { setArmed(null); setSelected(card.kind === 'decoration' ? card.id : null); }}
@@ -203,14 +237,21 @@ export function EditableDecorateMode({ wallet, onClose, onSaved }: Props) {
           </View>)}
         </View>
       </View>
-      {drag && <View pointerEvents="none" style={{ position:'absolute', zIndex:50, width:unit,height:unit,
-        left:drag.point.x-rootPoint.current.x-unit/2,top:drag.point.y-rootPoint.current.y-unit/2,opacity:0.8 }}><DecorationImage assetId={drag.assetId} /></View>}
-    </View><ConfirmationDialog presentation="inline" request={exitDialog}/></CanvasPagePopoverHost></SafeAreaView>
-  </Modal>;
+      {drag && geometry.current && rootPoint.current && <View testID="decoration-drag-ghost" pointerEvents="none" style={{ position:'absolute', zIndex:50,
+        ...decorationGhostFrame(drag.point,geometry.current,rootPoint.current),opacity:0.8 }}><DecorationImage assetId={drag.assetId} /></View>}
+      </View>
+      {footerExpanded&&<Pressable accessibilityRole="button" accessibilityLabel="Close canvas selector" style={StyleSheet.absoluteFill} onPress={()=>pagePopover.current?.dismiss()}/>}
+      </View>
+      <ContextualFooter ref={pagePopover} mode="Decorate" page={wallet.page??1} destinations={wallet.pageAccess??[]} onPage={changeCanvas}
+        onExpandedChange={setFooterExpanded} disabled={state.busy||canvasDragging||!!drag||!!exitDialog} actionsBlocked={locked} saving={state.busy}
+        onHome={()=>requestDestination('home')} onCreate={()=>requestDestination('create')} onAdd={()=>requestDestination('add')} onDecorate={()=>{pagePopover.current?.dismiss();}}/>
+
+    </View><ConfirmationDialog presentation="inline" request={exitDialog} busy={state.busy}/></View></SafeAreaView>;
+  return presentation==='screen'?content:<Modal visible animationType="none" statusBarTranslucent navigationBarTranslucent onRequestClose={requestBack}>{content}</Modal>;
 }
 const styles=StyleSheet.create({
-  safe:{flex:1,backgroundColor:bemem.background},root:{flex:1,width:'100%',maxWidth:600,alignSelf:'center'},
-  drawer:{flexShrink:0,paddingVertical:8,borderTopLeftRadius:24,borderTopRightRadius:24,borderWidth:1,borderColor:bemem.border,backgroundColor:bemem.background,overflow:'hidden'},
+  content:{flex:1},safe:{flex:1,backgroundColor:bemem.background},root:{flex:1,width:'100%',maxWidth:600,alignSelf:'center'},
+  drawer:{flexShrink:0,paddingVertical:8,borderTopLeftRadius:24,borderTopRightRadius:24,borderWidth:1,borderColor:bemem.border,backgroundColor:ciColors.surface.sheet,overflow:'hidden'},
   inactive:{opacity:ciStates.decoratorDisabled},
   pageTarget:{alignItems:'center',justifyContent:'center'},
   pageCircle:{borderRadius:14,borderWidth:1,borderColor:'#d5dce0',backgroundColor:'#f8fafb',alignItems:'center',justifyContent:'center'},

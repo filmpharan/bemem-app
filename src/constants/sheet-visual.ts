@@ -9,5 +9,4 @@ export const sheetVisual = {
   border: lagoon.rim.boundary,
   rim: alpha(lagoon.rim.boundary, 0.6),
   shadow: `0 -6px 28px -10px ${alpha(lagoon.shadow.tint, 0.22)}`,
-  controlShadow: `0 1px 2px ${alpha(lagoon.shadow.tint, 0.13)}`,
 } as const;

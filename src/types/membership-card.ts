@@ -3,6 +3,7 @@ import type { CardSizePresetId } from '../lib/card-size-presets';
 import type { CardPresentationDraft, WEB_BRANDS } from '../lib/card-presentation';
 
 export type DisplayFormat = 'qr' | 'code128';
+export type CardSheetDisplayMode = 'cardcode' | 'frontback';
 export type CardArtwork = {
   assetId: string; width: number; height: number; byteLength: number; md5: string;
   crop: { x: number; y: number; zoom: number };
@@ -40,6 +41,8 @@ export type MembershipCard = Partial<MembershipCardDetails> & {
   /** Exact source text for BOTH renderers. Never trim, normalize, or parse as a number. */
   payload: string;
   preferredDisplayFormat: DisplayFormat;
+  /** Absent legacy records use cardcode without backfilling persisted data. */
+  sheetDisplayMode?: CardSheetDisplayMode;
   orientation: Orientation;
   appearance: {
     backgroundColor: string;

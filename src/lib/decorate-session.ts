@@ -22,7 +22,7 @@ export function createDecorateSession(owner: Owner) {
   if (!initial.session || initial.state.source !== 'v2' || !initial.state.editsAllowed) throw Error('Decorate requires an active, unlocked Wallet v2.');
   const generation = initial.state.generation, revision = initial.session.revision;
   const entry = validateWalletDocument(initial.session.draft);
-  let document = validateWalletDocument(entry), past: WalletDocument[] = [], future: WalletDocument[] = [];
+  let document = validateWalletDocument(entry);
   let busy = false, closed = false, uncertain = false, sequence = 0;
   const prefix = `decor-${Date.now().toString(36)}-${Math.random().toString(36).slice(2,10)}`;
   const fail = (message: string): DecorateResult => ({ ok: false, message });
@@ -39,7 +39,7 @@ export function createDecorateSession(owner: Owner) {
   }
   return {
     snapshot: () => ({ document: validateWalletDocument(document), dirty: !same(document, entry),
-      canUndo: !busy && !closed && !uncertain && past.length > 0, canRedo: !busy && !closed && !uncertain && future.length > 0, busy, closed, uncertain }),
+      busy, closed, uncertain }),
     apply(action: DecorateAction): DecorateResult {
       if (!admitted()) return fail('The wallet changed or is locked. Close Decorate and check wallet status.');
       const next = validateWalletDocument(document), items = next.canvas.decorations?.items ?? [];
@@ -67,26 +67,14 @@ export function createDecorateSession(owner: Owner) {
       }
       let validated: WalletDocument;
       try { validated = validateWalletDocument(next); } catch { return fail('This placement is not valid. Nothing was moved.'); }
-      const previous = document, result = install(validated);
-      if (result.ok) { past.push(previous); future = []; }
-      return result;
-    },
-    undo(): DecorateResult {
-      if (!past.length) return yes;
-      const previous = document, result = install(past[past.length-1]);
-      if (result.ok) { past.pop(); future.push(previous); } return result;
-    },
-    redo(): DecorateResult {
-      if (!future.length) return yes;
-      const previous = document, result = install(future[future.length-1]);
-      if (result.ok) { future.pop(); past.push(previous); } return result;
+      return install(validated);
     },
     cancel(): DecorateResult {
       if (busy) return fail('Wait for saving to finish.');
       // After an uncertain save, only close the editor; never write an old draft over a possibly committed result.
       if (uncertain) { closed = true; return yes; }
       const result = install(entry);
-      if (result.ok) { closed = true; past = []; future = []; }
+      if (result.ok) { closed = true; }
       return result;
     },
     async save(): Promise<DecorateResult> {
@@ -100,7 +88,7 @@ export function createDecorateSession(owner: Owner) {
           || !same(latest.session.saved.canvas, expected.canvas)) {
           uncertain = true; return fail('Saving was not confirmed. Your draft is retained. Close Decorate and use Reinspect wallet. No automatic retry was made.');
         }
-        closed = true; past = []; future = []; return yes;
+        closed = true; return yes;
       } catch {
         uncertain = true; return fail('Saving was not confirmed. Close Decorate and check wallet status. No automatic retry was made.');
       } finally { busy = false; }
@@ -108,8 +96,20 @@ export function createDecorateSession(owner: Owner) {
   };
 }
 
-/** Screen coordinates measured from the same native canvas viewport; scroll is presentation only. */
+/** Window coordinates measured from the same native canvas viewport; scroll is presentation only. */
 export type DecorationDropGeometry = { pageX: number; pageY: number; width: number; height: number; unit: number; scrollY: number };
+
+/** Calibrate RN touch-root coordinates to measureInWindow, using the actual hit view. */
+export function decorationTouchOffset(windowOrigin:{x:number;y:number},touch:{pageX:number;pageY:number;locationX:number;locationY:number}) {
+  return {x:windowOrigin.x+touch.locationX-touch.pageX,y:windowOrigin.y+touch.locationY-touch.pageY};
+}
+
+/** The ghost uses the same snapped cell as commit, relative to its actual parent. */
+export function decorationGhostFrame(point:{x:number;y:number},geometry:DecorationDropGeometry,layer:{x:number;y:number}) {
+  const cell=decorationDropCell(point,geometry),unit=geometry.unit;
+  return {width:unit,height:unit,left:(cell?geometry.pageX+cell.col*unit:point.x-unit/2)-layer.x,
+    top:(cell?geometry.pageY+cell.row*unit-geometry.scrollY:point.y-unit/2)-layer.y};
+}
 export function decorationDropCell(point: { x: number; y: number }, geometry: DecorationDropGeometry): Position | null {
   const { pageX, pageY, width, height, unit, scrollY } = geometry;
   if (![point.x,point.y,pageX,pageY,width,height,unit,scrollY].every(Number.isFinite) || unit <= 0

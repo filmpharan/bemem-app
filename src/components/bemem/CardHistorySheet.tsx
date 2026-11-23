@@ -8,7 +8,7 @@ import type { MembershipCard } from '../../types/membership-card';
 import { amountInput, cardHistory, HistoryError, localHistoryTimestamp, preparePhotoEntry,
   type HistoryDocument, type HistoryRecord, type PhotoEntryForm, type Receipt } from '../../lib/card-history';
 import { createHistoryCommands } from '../../lib/card-history-commands';
-import { deviceHistoryRepository, receiptUri, removeRetiredReceipts } from '../../lib/card-history-native';
+import { deviceHistoryRepository, receiptUri, removeRetiredReceipts, prepareRetiredReminders } from '../../lib/card-history-native';
 import type { HistoryDeleteIntent } from '../../lib/card-history-deletion';
 import { lagoon, lagoonFonts } from '../../constants/lagoon-theme';
 import { useWalletRuntime } from './WalletRuntimeProvider';
@@ -52,7 +52,7 @@ export function CardHistorySheet({ card, fromCreate, onClose }: { card: Readonly
   useEffect(() => {
     active.current = true;
     const commands = createHistoryCommands(deviceHistoryRepository, {
-      cardId: card.id, now: () => new Date().toISOString(), nextId: () => uuid.v4(), afterCommit: removeRetiredReceipts,
+      cardId: card.id, now: () => new Date().toISOString(), nextId: () => uuid.v4(), beforeCommit: prepareRetiredReminders, afterCommit: removeRetiredReceipts,
       admission() {
         const state = runtime.getSnapshot();
         return { generation: state.state.generation, revision: state.session?.revision ?? -1, context: fromCreate ? 'create' : 'home',

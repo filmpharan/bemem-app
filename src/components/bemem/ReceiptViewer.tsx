@@ -11,7 +11,8 @@ import { CardArtworkImage } from './CardArtworkImage';
 import { GlassButton } from './GlassButton';
 
 /** Only the displayed receipt bitmap is exported; never the surrounding record or Wallet metadata. */
-export function ReceiptViewer({ receipt, onClose }: { receipt: Receipt; onClose: () => void }) {
+export function ReceiptViewer({ receipt, onClose, context = 'receipt' }: { receipt: Receipt; onClose: () => void; context?: 'receipt'|'photo' }) {
+  const photo = context === 'photo';
   const { width } = useWindowDimensions();
   const ratio = receipt.cropRatio ?? receipt.width / receipt.height;
   const imageWidth = Math.max(1, width - 40);
@@ -57,16 +58,16 @@ export function ReceiptViewer({ receipt, onClose }: { receipt: Receipt; onClose:
   return <Modal visible animationType="none" onRequestClose={close}>
     <SafeAreaView style={styles.screen} accessibilityViewIsModal>
       <ScrollView contentContainerStyle={styles.content}>
-        <Text accessibilityRole="header" style={styles.title}>Receipt</Text>
+        <Text accessibilityRole="header" style={styles.title}>{photo?'Photo':'Receipt'}</Text>
         <View ref={view} collapsable={false} style={{ width: imageWidth, height: imageHeight, backgroundColor: '#ffffff', alignSelf: 'center' }}>
           {valid && <CardArtworkImage image={receipt} sourceUri={receiptUri(receipt.assetId)} cornerRadius={0}
             onReady={() => setReady(true)} onFailure={() => { setReady(false); setNotice('This image cannot be decoded. Sharing is unavailable.'); }} />}
         </View>
         {!!notice && <Text accessibilityRole="alert" accessibilityLiveRegion="polite" style={styles.text}>{notice}</Text>}
-        <GlassButton accessibilityLabel="Share receipt" disabled={!ready || busy} onPress={() => { void share(); }} style={styles.button}>
-          <Text style={styles.text}>{busy ? 'Opening share sheet…' : 'Share Receipt'}</Text>
+        <GlassButton accessibilityLabel={photo?'Share Photo':'Share receipt'} disabled={!ready || busy} onPress={() => { void share(); }} style={styles.button}>
+          <Text style={styles.text}>{busy ? 'Opening share sheet…' : photo?'Share Photo':'Share Receipt'}</Text>
         </GlassButton>
-        <GlassButton accessibilityLabel="Close receipt" disabled={busy} onPress={close} style={styles.button}><Text style={styles.text}>Close</Text></GlassButton>
+        <GlassButton accessibilityLabel={photo?'Close photo':'Close receipt'} disabled={busy} onPress={close} style={styles.button}><Text style={styles.text}>Close</Text></GlassButton>
       </ScrollView>
     </SafeAreaView>
   </Modal>;

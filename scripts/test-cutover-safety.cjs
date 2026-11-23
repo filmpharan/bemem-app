@@ -72,7 +72,7 @@ function fixture() {
 async function initialized() { const f = fixture(); assert.equal((await f.runtime.commands.initialize()).ok, true); return f; }
 function reviewed(f) { return copy(f.runtime.getSnapshot().session.saved); }
 function cutover(f) { return f.runtime.commands.cutover(f.runtime.getSnapshot().state.generation, reviewed(f)); }
-function newCard(id, preset = CARD_SIZE_PRESETS[1]) {
+function newCard(id, preset = CARD_SIZE_PRESETS.find(p=>p.id==='card-landscape')) {
   const result = adaptCardForm({ ...emptyCardForm(), name: 'Synthetic Club', memberNumber: ' 000Ab ', payload: ' 000 CODE ', orientation: preset.orientation },
     { ...emptyCardPresentation(), sizePresetId: preset.id }, { id, createdAt: time, updatedAt: time });
   assert.equal(result.ok, true); return result.card;

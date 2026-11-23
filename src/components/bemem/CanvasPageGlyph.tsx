@@ -10,6 +10,6 @@ export function CanvasPageGlyph({page}:{page:CanvasPage}){
  </View>;
 }
 const styles=StyleSheet.create({
- page:{width:PAGE_POPOVER.glyph,height:PAGE_POPOVER.glyph,borderRadius:5,borderWidth:1.8,borderColor:lagoon.text.primary,backgroundColor:lagoon.canvas.base,alignItems:'center',justifyContent:'center'},
- number:{fontFamily:lagoonFonts.latin,fontSize:14,lineHeight:20,color:lagoon.text.primary,fontWeight:'700',includeFontPadding:false},
+ page:{width:PAGE_POPOVER.glyph,height:PAGE_POPOVER.glyph,borderRadius:5,borderWidth:1.8,borderColor:lagoon.action.primary,backgroundColor:lagoon.canvas.base,alignItems:'center',justifyContent:'center'},
+ number:{fontFamily:lagoonFonts.latin,fontSize:14,lineHeight:20,color:lagoon.action.primary,fontWeight:'700',includeFontPadding:false},
 });

@@ -6,7 +6,7 @@ function logic(relative){let file=path.resolve(root,relative);if(!path.extname(f
  vm.runInThisContext(`(function(require,module,exports){${code}\n})`)(n=>{assert.ok(n.startsWith('.'),'No native/storage/network code in pure helpers');return logic(path.resolve(path.dirname(file),n));},m,m.exports);return m.exports;}
 const {fullViewOrientation}=logic('src/lib/full-view-orientation.ts'),{fullCardFit}=logic('src/lib/full-card-view.ts');
 const presets=logic('src/lib/card-size-presets.ts').CARD_SIZE_PRESETS;
-const member=(p=presets[1])=>({kind:'membership',id:'synthetic-full',name:'Test Member',memberNumber:'00123456',payload:'OLD URL',preferredDisplayFormat:'qr',
+const member=(p=presets.find(p=>p.id==='card-landscape'))=>({kind:'membership',id:'synthetic-full',name:'Test Member',memberNumber:'00123456',payload:'OLD URL',preferredDisplayFormat:'qr',
  orientation:p.orientation,sizePresetId:p.id,widthBlocks:p.ratioWidth,heightBlocks:p.ratioHeight,appearance:{backgroundColor:'#405764',textColor:'#ffffff',imageAssetId:null,gradientPresetId:'ptt',artwork:{front:{assetId:'art-front.jpg'},back:{assetId:'art-back.jpg'}}}});
 const tick=async()=>{for(let i=0;i<6;i++)await new Promise(r=>setImmediate(r));};
 function port(previous=0){const events=[],lock={DEFAULT:0,ALL:1,PORTRAIT:2,PORTRAIT_UP:3,PORTRAIT_DOWN:4,LANDSCAPE:5,LANDSCAPE_LEFT:6,LANDSCAPE_RIGHT:7,OTHER:8,UNKNOWN:9};
@@ -87,4 +87,14 @@ test('Native UI resumes after background/effect replay, preserves side, and cann
  const h=view();h.render();h.replay();await tick();assert.equal(h.p.current,5);h.appState('background');await tick();assert.equal(h.p.current,0);h.appState('active');await tick();assert.equal(h.p.current,5);assert.equal(h.props.side,'back');
  h.p.failRestore=true;byLabel(h.render(),'Return to Home').props.onPress();await tick();assert.equal(h.home,0);assert.ok(nodes(h.render()).some(n=>n.props?.accessibilityRole==='alert'));
  h.p.failRestore=false;byLabel(h.render(),'Return to Home').props.onPress();await tick();assert.equal(h.home,1);h.unmount();await tick();
+});
+
+test('Home Front&Back display-preview option preserves independent saved crops and releases orientation on Back',async()=>{
+ for(const preset of presets){
+  const card=member(preset);card.appearance.artwork={front:{assetId:'art-front.jpg',width:4000,height:3000,crop:{x:.9,y:.02,zoom:2.8}},back:{assetId:'art-back.jpg',width:1200,height:4000,crop:{x:.1,y:.8,zoom:1.7}}};const before=JSON.stringify(card),h=view(card);h.props.displayPreview=true;
+  let tree=h.render();await tick();nodes(tree).find(n=>n.props?.testID==='full-card-stage').props.onLayout({nativeEvent:{layout:{width:600,height:400}}});tree=h.render();let preview=nodes(tree).find(n=>n.type==='CardAppearancePreview');assert.equal(preview.props.displayPreview,true);assert.equal(preview.props.appearance,card.appearance);assert.equal(preview.props.presentation.side,'back');
+  byLabel(tree,'Switch card front and back').props.onPress();tree=h.render();preview=nodes(tree).find(n=>n.type==='CardAppearancePreview');assert.equal(preview.props.presentation.side,'front');assert.ok(Math.abs(preview.props.width/preview.props.height-(preset.ratioWidth-.2)/(preset.ratioHeight-.2))<1e-8);
+  tree.props.onRequestClose();await tick();assert.equal(h.back,1);h.unmount();await tick();assert.equal(h.p.current,0);assert.equal(JSON.stringify(card),before);
+ }
+ const original=view();let tree=original.render();nodes(tree).find(n=>n.props?.testID==='full-card-stage').props.onLayout({nativeEvent:{layout:{width:600,height:400}}});tree=original.render();assert.equal(nodes(tree).find(n=>n.type==='CardAppearancePreview').props.displayPreview,false);original.unmount();await tick();
 });

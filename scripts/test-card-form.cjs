@@ -142,7 +142,7 @@ function renderNative(relative, exportName, props, os = 'android', version = 36,
     useWindowDimensions: () => ({ width: 360, height: 800, fontScale }),
     StyleSheet: { create: x => x, absoluteFill: {}, flatten } });
   const dependencies = {
-    react: { useState: initial => [Object.hasOwn(stateOverrides, stateIndex) ? stateOverrides[stateIndex++] : (stateIndex++, initial), () => {}],
+    react: { useState: initial => [Object.hasOwn(stateOverrides, stateIndex) ? stateOverrides[stateIndex++] : (stateIndex++, typeof initial==='function'?initial():initial), () => {}],
       useRef: initial => ({ current: initial }), memo: component => component, useEffect() {}, useCallback: fn => fn, useMemo: fn => fn() },
     'react/jsx-runtime': { jsx: (type, props) => ({ type, props }), jsxs: (type, props) => ({ type, props }) },
     'react-native': native, 'react-native-safe-area-context': { SafeAreaView: 'SafeAreaView' },
@@ -155,9 +155,10 @@ function renderNative(relative, exportName, props, os = 'android', version = 36,
     '../../lib/card-geometry': load('src/lib/card-geometry.ts'),
     '../../lib/default-card-artwork': load('src/lib/default-card-artwork.ts'),
     '../../lib/canvas-layout': load('src/lib/canvas-layout.ts'), '../../lib/card-interaction': load('src/lib/card-interaction.ts'),
+    '../../lib/canvas-drag-scroll': load('src/lib/canvas-drag-scroll.ts'),
     '../../lib/wallet-validation': load('src/lib/wallet-validation.ts'),
     './GlassButton': { GlassButton: 'GlassButton' }, './CardAppearancePreview': { CardAppearancePreview: 'CardAppearancePreview' },
-    './CardArtworkControls': { CardArtworkControls: 'CardArtworkControls' }, './MembershipNumberScanner': { MembershipNumberScanner: 'MembershipNumberScanner' }, './ExpirationDatePicker': { ExpirationDatePicker: 'ExpirationDatePicker' }, './CardArtworkImage': { CardArtworkImage: 'CardArtworkImage' },
+    './CardSheetModeSelector': {CardSheetModeSelector:'CardSheetModeSelector'}, './CardSizeCarousel': { CardSizeCarousel: 'CardSizeCarousel' }, './CardArtworkControls': { CardArtworkControls: 'CardArtworkControls' }, './MembershipNumberScanner': { MembershipNumberScanner: 'MembershipNumberScanner' }, './ExpirationDatePicker': { ExpirationDatePicker: 'ExpirationDatePicker' }, './CardArtworkImage': { CardArtworkImage: 'CardArtworkImage' },
     './AddCardIcon': { AddCardIcon: 'AddCardIcon' }, './add-card-layout': load('src/components/bemem/add-card-layout.ts'),
     'expo-image': { Image: 'Image' },
     'expo-font': { useFonts: () => [fontReady] },
@@ -176,13 +177,13 @@ function renderNative(relative, exportName, props, os = 'android', version = 36,
 }
 function descendants(tree) {
   const nodes = [];
-  function walk(node) { if (!node || typeof node !== 'object') return; if (Array.isArray(node)) return node.forEach(walk); nodes.push(node); walk(node.props?.children); }
+  function walk(node) { if (!node || typeof node !== 'object') return; if (Array.isArray(node)) return node.forEach(walk); nodes.push(node); walk(node.props?.children); if(node.type==='CardArtworkControls'&&node.props.renderTrigger)walk(node.props.renderTrigger({type:'PhotoAction'})); if(node.type==='CardSizeCarousel'){const size=load('src/components/bemem/add-card-layout.ts').cardPreviewSize(node.props.width,node.props.selectedId);walk(node.props.renderPreview(node.props.selectedId,size.width,size.height));} }
   walk(tree); return nodes;
 }
 test('Sheet Close, backdrop and Android Back share dismissal; keyboard content remains scrollable', () => {
-  const close = () => {};
+  let closed=0; const close = () => {closed++;};
   const nodes = descendants(renderNative('src/components/bemem/AddCardSheet.tsx', 'AddCardSheet', { onClose: close, children: 'form', footer: 'action' }));
-  assert.equal(nodes.find(n => n.type === 'Modal').props.onRequestClose, close);
+  nodes.find(n => n.type === 'Modal').props.onRequestClose();assert.equal(closed,1);
   assert.equal(nodes.find(n => n.type === 'Pressable').props.onPress, close);
   assert.equal(nodes.find(n => n.type === 'GlassButton').props.onPress, close);
   assert.equal(nodes.find(n => n.type === 'KeyboardAvoidingView').props.behavior, 'height');
@@ -204,8 +205,8 @@ test('Simplified form preserves tools and exact values; country/brand controls a
   const labels = nodes.filter(n => typeof n.type === 'function').map(n => n.props.label);
   assert.deepEqual(labels, ['Name', 'Number']);
   assert.equal(nodes.some(n => n.props?.accessibilityLabel === 'PTT Blue Card'), false, 'Brand suggestions must not fill the default form');
-  nodes.find(n => n.props?.accessibilityLabel === 'Switch card front and back').props.onPress();
-  assert.equal(nextPresentation.side, 'back'); assert.equal(nextValues, undefined);
+  assert.equal(nodes.some(n=>n.props?.accessibilityLabel==='Switch card front and back'),false,'Face control belongs to the shared Sheet header');
+  assert.equal(nextPresentation,undefined);assert.equal(nextValues,undefined);
   assert.equal(nodes.some(n => n.props?.accessibilityLabel === 'Find or select a brand'), false);
   assert.equal(nodes.some(n => String(n.props?.accessibilityLabel).startsWith('Country:')), false);
   assert.equal(nodes.find(n=>n.type==='CardArtworkControls').props.disabled,false);
@@ -230,17 +231,14 @@ test('Card artwork bounds name overlays without changing image geometry and dist
     assert.equal(text.props.numberOfLines, 3); assert.equal(text.props.ellipsizeMode, undefined);
   }
 });
-test('Locked preview uses two thirds of content width and a 144-unit portrait', () => {
-  const { cardPreviewSize } = load('src/components/bemem/add-card-layout.ts');
-  for (const width of [280, 320, 372]) {
-    const landscape = cardPreviewSize(width, 'card-landscape');
-    assert.equal(landscape.width, width * 2 / 3);
-    assert.ok(Math.abs(landscape.height - landscape.width * 3.8 / 5.8) < 1e-8);
-    const portrait = cardPreviewSize(width, 'card-portrait');
-    assert.equal(portrait.width, 144); assert.ok(Math.abs(portrait.height - 144 * 5.8 / 3.8) < 1e-8);
-  }
-  assert.equal(cardPreviewSize(120, 'card-portrait').width, 120);
+test('Responsive carousel uses one bounded block unit and a stable height per orientation',()=>{
+ const {cardCarouselLayout}=load('src/components/bemem/add-card-layout.ts');
+ for(const width of [120,280,320,372])for(const id of ['card-landscape','card-portrait']){
+  const m=cardCarouselLayout(width,id);assert.ok(m.sizes.every(s=>s.width<=width*.84+1e-8));assert.ok(m.height<=256);
+  assert.ok(m.offsets.every((x,i)=>!i||x>m.offsets[i-1]));
+ }
 });
+
 test('Original-flow footer and header remain inside the sheet scroll content', () => {
   const tree = renderNative('src/components/bemem/AddCardSheet.tsx', 'AddCardSheet', {
     children: { type: 'FormMarker' }, footer: { type: 'ActionMarker' }, onClose() {},
@@ -255,18 +253,13 @@ test('Original-flow footer and header remain inside the sheet scroll content', (
   assert.equal(close.props.hitSlop, 6);
   assert.ok(descendants(close).some(n => n.type === 'AddCardIcon' && n.props.name === 'close'));
 });
-test('Compact tools keep icon-only 36-unit visuals and disabled upcoming capabilities', () => {
-  const tree = renderNative('src/components/bemem/AddCardForm.tsx', 'AddCardForm', {
-    values: valid(), errors: {}, presentation: presentation.emptyCardPresentation(), onPresentationChange() {}, onChange() {},
-  });
-  for (const label of ['Switch card front and back']) {
-    const tool = descendants(tree).find(n => n.props?.accessibilityLabel === label);
-    const style = Array.isArray(tool.props.style) ? tool.props.style[0] : tool.props.style;
-    assert.equal(style.width, 36); assert.equal(style.minHeight, 36);
-    assert.ok(descendants(tool).some(n => n.type === 'AddCardIcon'));
-    assert.equal(descendants(tool).some(n => n.type === 'Text'), false);
-  }
+test('Form uses one on-card photo controller and no external Front/Back or Gallery/Camera tool rail',()=>{
+ const tree=renderNative('src/components/bemem/AddCardForm.tsx','AddCardForm',{values:valid(),errors:{},presentation:presentation.emptyCardPresentation(),onPresentationChange(){},onChange(){}}),ns=descendants(tree);
+ assert.equal(ns.filter(n=>n.type==='CardArtworkControls').length,1);assert.equal(ns.filter(n=>n.type==='CardSizeCarousel').length,1);
+ assert.equal(typeof ns.find(n=>n.type==='CardArtworkControls').props.renderTrigger,'function');
+ assert.equal(ns.some(n=>n.props?.accessibilityLabel==='Switch card front and back'),false);
 });
+
 test('Local 16-unit SVG icons use Android-compatible Base64 without disk caching or external URLs', () => {
   for (const name of ['close', 'flip', 'image', 'camera', 'chevron', 'pin']) {
     const icon = renderNative('src/components/bemem/AddCardIcon.tsx', 'AddCardIcon', { name });
@@ -281,7 +274,7 @@ test('Local 16-unit SVG icons use Android-compatible Base64 without disk caching
     assert.equal(icon.props.cachePolicy, 'none');
   }
 });
-test('Original-density fields keep a 44-unit minimum, English labels and unmodified controlled text', () => {
+test('Shared-density fields keep a 48-unit minimum, English labels and unmodified controlled text', () => {
   const tree = renderNative('src/components/bemem/AddCardForm.tsx', 'AddCardForm', {
     values: valid(), errors: {}, presentation: presentation.emptyCardPresentation(), onPresentationChange() {}, onChange() {},
   });
@@ -290,7 +283,7 @@ test('Original-density fields keep a 44-unit minimum, English labels and unmodif
   assert.equal(name.props.hideLabel, true);
   for (const field of fields) {
     const input = descendants(field.type(field.props)).find(n => n.type === 'TextInput');
-    assert.equal(input.props.style[0].minHeight, 44); assert.equal(input.props.style[0].fontSize, 14);
+    assert.equal(input.props.style.minHeight, 48); assert.equal(input.props.style.fontSize, 14);
     assert.equal(input.props.value, field.props.value); assert.equal(input.props.autoCorrect, false);
     assert.equal(input.props.autoCapitalize, 'none'); assert.equal(input.props.numberOfLines, undefined);
   }
@@ -316,7 +309,7 @@ test('Uploaded artwork cards have no gradient underpaint, colored border or turq
   }
 });
 
-test('Shared Name/Number/EXP inputs have no external headings; Edit labels sit above exact values inside the field', () => {
+test('Shared Name/Number fields keep identical placeholder geometry in Add and Edit', () => {
   for (const editing of [false,true]) {
     const props = { values:valid(), presentation: presentation.emptyCardPresentation(), errors:{}, onChange(){}, onPresentationChange(){},
       ...(editing ? { mode:'edit', fullEditing:true, editCard:{ appearance:{ backgroundColor:'#123456', textColor:'#ffffff', imageAssetId:null } } } : {}) };
@@ -328,14 +321,14 @@ test('Shared Name/Number/EXP inputs have no external headings; Edit labels sit a
       assert.equal(!!field.props.hideLabel,index < 2); assert.equal(input.props.value,field.props.value);
       assert.equal(input.props.placeholder,['Name','Number',undefined][index]);
       const labels=descendants(rendered).filter(n=>n.type==='Text'&&n.props.children===field.props.label);
-      assert.equal(labels.length,index===2 || editing ? 1 : 0);
+      assert.equal(labels.length,0);
     }
   }
 });
 test('Measured labels reserve glyph bearings without changing font size or using ellipsis', () => {
   const tree = renderNative('src/components/bemem/AddCardText.tsx', 'AddCardText', {
     children: 'Add Card', style: { fontSize: 14, lineHeight: 20, fontWeight: '700' }, maxWidth: 200,
-  }, 'android', 36, { 0: { epoch: 'true-1-Add Card-14-700', width: 63.1 } });
+  }, 'android', 36, { 0: { epoch: 'true-1-undefined-Add Card-14-700', width: 63.1 } });
   assert.equal(tree.props.style.width, 68);
   const visible = descendants(tree).find(n => n.type === 'Text' && !n.props.onTextLayout);
   assert.equal(flattenStyle(visible.props.style).fontSize, 14);
@@ -349,7 +342,7 @@ test('Normal and enlarged font metrics remain bounded and permit wrapping for ev
     const measured = text.length * 8 * fontScale;
     const tree = renderNative('src/components/bemem/AddCardText.tsx', 'AddCardText', {
       children: text, style: { fontSize: 14, lineHeight: 20, fontWeight: '700' }, maxWidth: 80,
-    }, 'android', 36, { 0: { epoch: `true-${fontScale}-${text}-14-700`, width: measured } }, fontScale);
+    }, 'android', 36, { 0: { epoch: `true-${fontScale}-undefined-${text}-14-700`, width: measured } }, fontScale);
     assert.equal(tree.props.style.width, Math.min(Math.ceil(measured) + 4, 80));
     const visible = descendants(tree).find(n => n.type === 'Text' && !n.props.onTextLayout);
     assert.equal(visible.props.allowFontScaling, true); assert.equal(visible.props.numberOfLines, undefined);
@@ -359,7 +352,7 @@ test('Normal and enlarged font metrics remain bounded and permit wrapping for ev
 test('A fallback-font measurement cannot constrain the loaded Manrope label', () => {
   const tree = renderNative('src/components/bemem/AddCardText.tsx', 'AddCardText', {
     children: 'Thailand', style: { fontSize: 14, fontWeight: '600' }, maxWidth: 200,
-  }, 'android', 36, { 0: { epoch: 'false-1-Thailand-14-600', width: 1 } });
+  }, 'android', 36, { 0: { epoch: 'false-1-undefined-Thailand-14-600', width: 1 } });
   assert.ok(tree.props.style.width > 5);
   const visible = descendants(tree).find(n => n.type === 'Text' && !n.props.onTextLayout);
   assert.equal(flattenStyle(visible.props.style).fontFamily, 'BememManrope');
@@ -383,37 +376,36 @@ test('Size selectors give labels definite pixel budgets with room for the unchan
     const inactive = nodes.find(n => n.type === 'AddCardText' && n.props.children === 'Portrait');
     const innerWidth = (formWidth - 16) / 2 - 18;
     assert.equal(active.props.maxWidth + 16 + 4, innerWidth);
-    assert.equal(inactive.props.maxWidth, innerWidth);
-    const rail = nodes.find(n => n.type === 'AddCardText' && n.props.children === 'Front');
-    assert.equal(rail.props.maxWidth, 36);
+    assert.equal(inactive.props.maxWidth + 16 + 4, innerWidth);
+    assert.equal(nodes.some(n=>n.type==='AddCardText'&&n.props.children==='Front'),false);
   }
 });
 
 const sizes = load('src/lib/card-size-presets.ts');
 const previewGeometry = load('src/components/bemem/add-card-layout.ts');
-const sizeLabels = ['Mini 3×2', 'Card 6×4', 'Voucher 7×3', 'Boarding Pass 8×4', 'Mini 2×3', 'Card 4×6', 'Vaccine Passport 5×7'];
-test('Seven unique named size IDs exist with Landscape Card as default', () => {
-  assert.equal(sizes.CARD_SIZE_PRESETS.length, 7);
-  assert.equal(new Set(sizes.CARD_SIZE_PRESETS.map(p => p.id)).size, 7);
+const sizeLabels = ['Mini 3\u00d72', 'Photo 4\u00d73', 'Card 6\u00d74', 'Voucher 7\u00d73', 'Boarding Pass 8\u00d74', 'Mini 2\u00d73', 'Photo 3\u00d74', 'Card 4\u00d76', 'Vaccine Passport 5\u00d77'];
+test('Nine unique named size IDs exist with Landscape Card as default', () => {
+  assert.equal(sizes.CARD_SIZE_PRESETS.length, 9);
+  assert.equal(new Set(sizes.CARD_SIZE_PRESETS.map(p => p.id)).size, 9);
   assert.deepEqual(sizes.CARD_SIZE_PRESETS.map(p => p.label), sizeLabels);
   assert.equal(form.emptyCardForm().orientation, 'landscape');
   assert.equal(presentation.emptyCardPresentation().sizePresetId, 'card-landscape');
 });
-test('Landscape options contain exactly four presets in the requested order', () => {
-  assert.deepEqual(sizes.cardSizePresetsFor('landscape').map(p => p.label), sizeLabels.slice(0, 4));
+test('Landscape options contain exactly five presets in the requested order', () => {
+  assert.deepEqual(sizes.cardSizePresetsFor('landscape').map(p => p.label), sizeLabels.slice(0, 5));
 });
-test('Portrait options contain exactly three presets in the requested order', () => {
-  assert.deepEqual(sizes.cardSizePresetsFor('portrait').map(p => p.label), sizeLabels.slice(4));
+test('Portrait options contain exactly four presets in the requested order', () => {
+  assert.deepEqual(sizes.cardSizePresetsFor('portrait').map(p => p.label), sizeLabels.slice(5));
 });
-test('Mini Landscape uses exact 3:2 and half the Card preview width', () => {
+test('Mini Landscape uses exact 3:2 and the same painted block unit as Card', () => {
   const mini = previewGeometry.cardPreviewSize(372, 'mini-landscape');
   const card = previewGeometry.cardPreviewSize(372, 'card-landscape');
-  assert.equal(mini.width / mini.height, 2.8 / 1.8); assert.equal(mini.width, card.width / 2);
+  assert.ok(Math.abs(mini.width/mini.height-2.8/1.8)<1e-8);assert.ok(Math.abs(mini.width/card.width-2.8/5.8)<1e-8);
 });
-test('Mini Portrait uses exact 2:3 and half the Card preview width', () => {
+test('Mini Portrait uses exact 2:3 and the same painted block unit as Card', () => {
   const mini = previewGeometry.cardPreviewSize(372, 'mini-portrait');
   const card = previewGeometry.cardPreviewSize(372, 'card-portrait');
-  assert.equal(mini.width / mini.height, 1.8 / 2.8); assert.equal(mini.width, card.width / 2);
+  assert.ok(Math.abs(mini.width/mini.height-1.8/2.8)<1e-8);assert.ok(Math.abs(mini.width/card.width-1.8/3.8)<1e-8);
 });
 test('Every other preset uses its declared dimensions without treating them as Canvas coordinates', () => {
   const ratios = { 'card-landscape': 5.8 / 3.8, 'voucher-landscape': 6.8 / 2.8, 'boarding-pass-landscape': 7.8 / 3.8,
@@ -471,7 +463,7 @@ test('Every selection preserves all form/presentation properties and leaves its 
 function renderSizeForm(values, draft, callbacks = {}, formWidth = 320) {
   return renderNative('src/components/bemem/AddCardForm.tsx', 'AddCardForm', {
     values, errors: {}, presentation: draft, onChange() {}, onPresentationChange() {}, ...callbacks,
-  }, 'android', 36, { 0: formWidth, 1: true });
+  }, 'android', 36, { 0: formWidth, 1: true, 5: values.orientation });
 }
 test('Size menu renders only current-axis presets, full accessible names and selected state', () => {
   for (const orientation of ['landscape', 'portrait']) {
@@ -493,6 +485,9 @@ test('Pressing a size or orientation invokes real controlled updates while prese
   assert.equal(draft.sizePresetId, 'mini-landscape'); assert.equal(values.payload, ' 000Custom ');
   nodes = descendants(renderSizeForm(values, draft, { onChange: next => { values = next; }, onPresentationChange: next => { draft = next; } }));
   nodes.find(n => n.type === 'GlassButton' && n.props.accessibilityLabel === 'Portrait').props.onPress();
+  assert.equal(values.orientation,'landscape','Orientation trigger only opens choices');
+  nodes=descendants(renderNative('src/components/bemem/AddCardForm.tsx','AddCardForm',{values,presentation:draft,errors:{},onChange:next=>{values=next;},onPresentationChange:next=>{draft=next;}},'android',36,{0:320,1:true,5:'portrait'}));
+  nodes.find(n=>n.props?.accessibilityLabel==='Use Portrait').props.onPress();
   assert.equal(values.orientation, 'portrait'); assert.equal(draft.sizePresetId, 'mini-portrait');
   assert.equal(values.memberNumber, ' 000Ab c '); assert.equal(values.payload, ' 000Custom ');
 });
@@ -515,7 +510,7 @@ test('Preview sizes stay within narrow viewports; invalid IDs fail before any st
   for (const width of [240, 280, 320, 372]) for (const preset of sizes.CARD_SIZE_PRESETS) {
     const geometry = previewGeometry.cardPreviewSize(width, preset.id);
     assert.ok(geometry.width > 0 && geometry.width <= width);
-    assert.ok(geometry.width + 16 + 36 <= width);
+    assert.ok(geometry.width <= width*.84+1e-8);
   }
   const values = valid(), draft = presentation.emptyCardPresentation(), before = JSON.stringify({ values, draft });
   assert.throws(() => sizes.selectCardSize(values, draft, 'unknown-shape'), /Unknown card size preset/);
@@ -610,14 +605,14 @@ test('Shared form preserves raw membership input and expiry while busy/reinspect
   let fields = expandFields(nodes);
   fields.find(n => n.props?.accessibilityLabel === 'Number').props.onChangeText(' 000Ab C ');
   assert.equal(changed.memberNumber, ' 000Ab C ');
-  const expiry = nodes.find(n => n.props?.accessibilityLabel === 'Expiration date');
-  assert.equal(expiry.type, 'Pressable'); assert.equal(expiry.props.disabled,false);
+  const expiry = nodes.find(n => n.type === 'CardSheetModeSelector');
+  assert.equal(expiry.type, 'CardSheetModeSelector'); assert.equal(expiry.props.disabled,false);
   assert.equal(draft, undefined, 'Opening or rendering cannot change expiry');
   changed = undefined; draft = undefined;
   nodes = editFormNodes({ disabled: true, onChange: v => { changed = v; }, onPresentationChange: v => { draft = v; } });
   fields = expandFields(nodes).filter(n => n.type === 'TextInput');
   assert.ok(fields.every(n => n.props.editable === false)); fields[0].props.onChangeText('Ignored while saving');
-  assert.equal(nodes.find(n=>n.props?.accessibilityLabel==='Expiration date').props.disabled,true);
+  assert.equal(nodes.find(n=>n.type==='CardSheetModeSelector').props.disabled,true);
   assert.equal(changed, undefined); assert.equal(draft, undefined);
 });
 test('Legacy country/brand is not displayed and edit expiry errors are shown beside the shared field', () => {
@@ -634,4 +629,94 @@ test('Full Edit keeps size and image controls while preserving saved colors with
  assert.equal(nodes.find(n=>n.type==='CardArtworkControls').props.disabled,false);
  const preview=nodes.find(n=>n.type==='CardAppearancePreview').props;assert.equal(preview.appearance.backgroundColor,'#123456');assert.equal(preview.appearance.gradientPresetId,'ptt');
  for(const label of ['QR Code','Code 128','Slate card color','No gradient'])assert.equal(nodes.some(n=>n.props?.accessibilityLabel===label),false);
+});
+
+
+test('Shared Name/Number fields keep Next navigation, exact input strings and a stable visible preview',()=>{
+ for(const mode of ['create','edit']){
+  const values={...valid(),name:'Test สมาชิก',memberNumber:' 00123Ab '},draft=presentation.emptyCardPresentation(),before=JSON.stringify({values,draft});
+  const tree=renderNative('src/components/bemem/AddCardForm.tsx','AddCardForm',{mode,fullEditing:true,editCard:{id:'synthetic'},values,presentation:draft,errors:{},onChange(){assert.fail('Focus cannot change values');},onPresentationChange(){}});
+  const all=descendants(tree),fields=all.filter(n=>typeof n.type==='function'&&['Name','Number'].includes(n.props.label));let next=0;
+  fields[1].props.inputRef.current={focus(){next++;}};fields[0].props.onFocus();fields[0].props.onNext();fields[1].props.onFocus();
+  assert.equal(next,1);assert.equal(fields[0].props.value,values.name);assert.equal(fields[1].props.value,values.memberNumber);
+  const preview=all.find(n=>n.props?.testID==='add-card-preview-tools');assert.equal(flattenStyle(preview.props.style).display,undefined);
+  assert.equal(all.filter(n=>n.type==='CardAppearancePreview').length,1);assert.equal(JSON.stringify({values,draft}),before);
+ }
+});
+
+test('Photo previews use the Card block unit on each axis, preserving paint inset and the actual Canvas frame',()=>{
+ const grid=load('src/lib/canvas-layout.ts');
+ for(const width of [240,280,320,353,372,560])for(const id of ['photo-landscape','photo-portrait']){
+  const preset=sizes.cardSizePreset(id),referenceId=preset.orientation==='landscape'?'card-landscape':'card-portrait',reference=sizes.cardSizePreset(referenceId);
+  const card=previewGeometry.cardPreviewSize(width,referenceId),photo=previewGeometry.cardPreviewSize(width,id),unit=card.width/(reference.ratioWidth-.2);
+  assert.ok(photo.width<card.width&&photo.height<card.height,'Photo must be smaller on BOTH axes');
+  const canvas=grid.canvasItemFrame({id:'synthetic-preview',name:'Test',orientation:preset.orientation,colors:['#123456','#654321'],sizePresetId:id},{col:0,row:0},unit);
+  assert.ok(Math.abs(photo.width-canvas.width)<1e-8);assert.ok(Math.abs(photo.height-canvas.height)<1e-8);
+  assert.ok(Math.abs((photo.width+.2*unit)/(photo.height+.2*unit)-preset.ratioWidth/preset.ratioHeight)<1e-8);
+ }
+});
+test('All nine previews share the same x/y block unit within their orientation',()=>{
+ for(const width of [120,240,320,372,560])for(const p of sizes.CARD_SIZE_PRESETS){
+  const geometry=previewGeometry.cardPreviewSize(width,p.id),reference=previewGeometry.cardPreviewSize(width,p.orientation==='portrait'?'card-portrait':'card-landscape'),ref=sizes.cardSizePreset(p.orientation==='portrait'?'card-portrait':'card-landscape'),unit=reference.width/(ref.ratioWidth-.2);
+  assert.ok(Math.abs(geometry.width-unit*(p.ratioWidth-.2))<1e-8);assert.ok(Math.abs(geometry.height-unit*(p.ratioHeight-.2))<1e-8);
+ }
+});
+
+test('Actual Add form updates Photo geometry immediately across orientation/front/back and fixes its frame without resetting fields',()=>{
+ let values={...valid(),name:'A long synthetic card name that remains an overlay',memberNumber:' 00123Ab '};
+ const image=(id,w,h)=>({assetId:id,width:w,height:h,crop:{x:.5,y:.5,zoom:1}}),artwork={front:image('art-front.png',1200,800),back:image('art-back.png',800,1200)};
+ let draft={...presentation.emptyCardPresentation(),sizePresetId:'photo-landscape',artwork},baseline=JSON.stringify({name:values.name,memberNumber:values.memberNumber,artwork});
+ const render=()=>renderNative('src/components/bemem/AddCardForm.tsx','AddCardForm',{values,presentation:draft,errors:{},onChange:next=>{values=next;},onPresentationChange:next=>{draft=next;}});
+ for(const orientation of ['landscape','portrait','landscape']){
+  let tree=render();if(values.orientation!==orientation){const carousel=descendants(tree).find(n=>n.type==='CardSizeCarousel');const next=sizes.selectCardSize(values,draft,sizes.sizePresetForOrientation(draft.sizePresetId,orientation));values=next.values;draft=next.presentation;tree=render();}
+  assert.equal(draft.sizePresetId,'photo-'+orientation);let art=descendants(tree).find(n=>n.type==='CardAppearancePreview');const expected=previewGeometry.cardPreviewSize(320,draft.sizePresetId);assert.equal(art.props.width,expected.width);assert.equal(art.props.height,expected.height);
+  for(const fontScale of [1,1.5,2]){
+   const appearance=renderNative('src/components/bemem/CardAppearancePreview.tsx','CardAppearancePreview',art.props,'android',36,{},fontScale),card=flattenStyle(appearance.props.children.props.style);
+   assert.equal(card.height,expected.height);assert.equal(card.minHeight,0);assert.equal(card.overflow,'hidden');assert.equal(card.borderRadius,14);
+  }
+  draft={...draft,side:draft.side==='front'?'back':'front'};tree=render();art=descendants(tree).find(n=>n.type==='CardAppearancePreview');assert.equal(art.props.width,expected.width);assert.equal(art.props.height,expected.height);
+  const crop=load('src/lib/card-artwork.ts').artworkFrame(artwork[draft.side],expected.width,expected.height);assert.ok(crop.width>=expected.width&&crop.height>=expected.height);
+  assert.equal(JSON.stringify({name:values.name,memberNumber:values.memberNumber,artwork:draft.artwork}),baseline);
+ }
+});
+
+
+test('Actual shared Add/Edit form synchronizes Carousel and dropdown, rejects cross-axis selection and preserves data',()=>{
+ for(const mode of ['create','edit']){
+  let values={...valid(),name:'สมาชิก Test',memberNumber:' 001Ab '},draft={...presentation.emptyCardPresentation(),side:'back'};
+  const render=(open=false)=>renderNative('src/components/bemem/AddCardForm.tsx','AddCardForm',{mode,fullEditing:true,editCard:{appearance:{backgroundColor:'#123456',textColor:'#fff'}},values,presentation:draft,errors:{},onChange:v=>values=v,onPresentationChange:v=>draft=v},'android',36,{0:353,1:open,5:values.orientation});
+  let ns=descendants(render()),carousel=ns.find(n=>n.type==='CardSizeCarousel');carousel.props.onSelect('voucher-landscape');
+  ns=descendants(render(true));carousel=ns.find(n=>n.type==='CardSizeCarousel');assert.equal(carousel.props.selectedId,'voucher-landscape');
+  assert.equal(ns.find(n=>n.props?.accessibilityLabel==='Landscape').props.accessibilityValue.text,'Voucher 7×3');
+  ns.find(n=>n.props?.accessibilityLabel==='Photo 4×3').props.onPress();ns=descendants(render());assert.equal(ns.find(n=>n.type==='CardSizeCarousel').props.selectedId,'photo-landscape');
+  carousel.props.onSelect('card-portrait');assert.equal(values.orientation,'landscape');assert.equal(draft.sizePresetId,'photo-landscape');
+  assert.equal(draft.side,'back');assert.equal(values.name,'สมาชิก Test');assert.equal(values.memberNumber,' 001Ab ');
+ }
+});
+
+
+test('Add/Edit Name and Number geometry stays identical for empty, filled, focused and disabled forms',()=>{
+ let baseline;
+ for(const editing of [false,true])for(const populated of [false,true])for(const disabled of [false,true]){
+  const v={...valid(),name:populated?'Test Member':'',memberNumber:populated?' 000Ab C ':''};
+  const props={values:v,presentation:presentation.emptyCardPresentation(),errors:{},disabled,onChange(){},onPresentationChange(){},...(editing?{mode:'edit',fullEditing:true,editCard:{appearance:{backgroundColor:'#123456',textColor:'#ffffff',imageAssetId:null}}}:{})};
+  const tree=renderNative('src/components/bemem/AddCardForm.tsx','AddCardForm',props),fields=descendants(tree).filter(n=>typeof n.type==='function'&&n.props.label);
+  const geometry=fields.map(f=>{const rendered=f.type(f.props),input=descendants(rendered).find(n=>n.type==='TextInput');assert.equal(input.props.placeholder,f.props.label);assert.equal(input.props.value,f.props.value);assert.equal(input.props.editable,!disabled);assert.equal(descendants(rendered).some(n=>n.type==='Text'&&n.props.children===f.props.label),false);return input.props.style;});
+  if(!baseline)baseline=geometry;else assert.deepEqual(geometry,baseline);
+  assert.deepEqual(geometry[0],geometry[1]);assert.equal(geometry[0].minHeight,48);assert.equal(tree.props.style.gap,12);
+ }
+});
+
+
+test('Flat Tonal GlassButton preserves Save dimensions, distinguishes disabled state and mounts no glossy overlays',()=>{
+ const tokens=require('../design-system/bemem-vivid-lagoon/TOKENS.json'),palette=tokens.palettes[tokens.metadata.defaultThemeId].colors;
+ const mod={exports:{}},file=path.join(root,'src/components/bemem/GlassButton.tsx'),code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2022}}).outputText;
+ vm.runInThisContext(`(function(require,module,exports){${code}\n})`)(name=>{
+  if(name==='react/jsx-runtime')return{jsx:(type,props)=>({type,props}),jsxs:(type,props)=>({type,props})};
+  if(name==='react-native')return{Pressable:'Pressable',View:'View',StyleSheet:{create:s=>s,flatten:s=>s}};
+  if(name==='../../constants/lagoon-theme')return{core:tokens.core,lagoon:palette};if(name==='../../constants/ci-theme')return require('./ci-theme-fixture.cjs');throw Error(name);
+ },mod,mod.exports);
+ const appearance=disabled=>{const t=mod.exports.GlassButton({children:'Save Changes',kind:'action',disabled,busy:false,style:{borderRadius:8}});return{tree:t,style:Object.assign({},...t.props.style({pressed:false}))};};
+ const inactive=appearance(true),active=appearance(false);assert.equal(active.style.backgroundColor,'#00786F');assert.notEqual(inactive.style.backgroundColor,active.style.backgroundColor);
+ for(const v of [inactive,active]){assert.equal(v.style.borderRadius,8);assert.equal(v.style.minHeight,48);assert.equal(v.style.boxShadow,undefined);assert.equal(v.tree.props.children.type,'View');assert.equal(v.tree.props.children.props.children,'Save Changes');}
 });

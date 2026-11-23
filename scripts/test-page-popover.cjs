@@ -15,7 +15,7 @@ function harness(){const cache=new Map(),scopes=new Map(),backs=new Set();let sc
   vm.runInThisContext(`(function(require,module,exports){${code}\n})`,{filename:file})(n=>{
    if(n==='react')return react;if(n==='react/jsx-runtime')return{jsx:(type,props)=>({type,props}),jsxs:(type,props)=>({type,props})};
    if(n==='react-native')return{View:'View',Text:'Text',Pressable:'Pressable',StyleSheet:{create:v=>v,absoluteFill:{position:'absolute',left:0,top:0,right:0,bottom:0}},BackHandler:{addEventListener(_,fn){backs.add(fn);return{remove:()=>backs.delete(fn)};}}};
-   if(n.endsWith('lagoon-theme'))return{lagoon:{canvas:{base:'#eceff1'},text:{primary:'#263943'}},lagoonFonts:{latin:'Manrope'}};
+   if(n.endsWith('lagoon-theme'))return{lagoon:require('../design-system/bemem-vivid-lagoon/TOKENS.json').palettes['vivid-lagoon'].colors,lagoonFonts:{latin:'Manrope'}};
    assert.ok(n.startsWith('.'),'No storage/network/native window '+n);return load(path.resolve(path.dirname(file),n));
   },m,m.exports);return m.exports;
  }

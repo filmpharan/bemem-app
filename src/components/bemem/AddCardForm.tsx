@@ -12,15 +12,18 @@ import { CardAppearancePreview } from './CardAppearancePreview';
 import { AddCardIcon } from './AddCardIcon';
 import { AddCardText } from './AddCardText';
 import { CardArtworkControls } from './CardArtworkControls';
+import { CardSheetModeSelector } from './CardSheetModeSelector';
 import { ExpirationDatePicker } from './ExpirationDatePicker';
 import { MembershipNumberScanner } from './MembershipNumberScanner';
+import { CardSizeCarousel } from './CardSizeCarousel';
+import { photoFallbackArtwork } from '../../lib/default-card-artwork';
 import { addCardLayout as layout, cardPreviewSize } from './add-card-layout';
 
 type Props = { values: CardFormValues; errors: CardFormErrors; onChange: (values: CardFormValues) => void; onBlur?: (field: CardFormField) => void;
   presentation: CardPresentationDraft; onPresentationChange: (draft: CardPresentationDraft) => void; disabled?: boolean;
-  expiryError?: string; fullEditing?: boolean; onImageBusy?: (busy: boolean) => void;artworkSources?:Readonly<Record<string,string>> } & ({ mode?: 'create'; editCard?: never } | { mode: 'edit'; editCard: MembershipCard });
-function Field({ label, value, error, inputRef, onChange, onBlur, onNext, last, hideLabel, inlineLabel = false, placeholder, onFocus, readOnly = false, onScan }: {
-  label: string; value: string; error?: string; inputRef?: Ref<TextInputInstance>; hideLabel?: boolean; inlineLabel?: boolean; placeholder?: string;
+  expiryError?: string; fullEditing?: boolean; onImageBusy?: (busy: boolean) => void;fallbackArtwork?:CardPresentationDraft['artwork'];artworkSources?:Readonly<Record<string,string>> } & ({ mode?: 'create'; editCard?: never } | { mode: 'edit'; editCard: MembershipCard });
+function Field({ label, value, error, inputRef, onChange, onBlur, onNext, last, hideLabel, placeholder, onFocus, readOnly = false, onScan }: {
+  label: string; value: string; error?: string; inputRef?: Ref<TextInputInstance>; hideLabel?: boolean; placeholder?: string;
   onChange: (text: string) => void; onBlur: () => void; onNext: () => void; last?: boolean; onFocus?: () => void; readOnly?: boolean; onScan?: () => void;
 }) {
   const [focused, setFocused] = useState(false);
@@ -28,13 +31,12 @@ function Field({ label, value, error, inputRef, onChange, onBlur, onNext, last, 
     {!hideLabel && <Text style={styles.label}>{label}</Text>}
     <View style={[styles.inputFrame, focused && styles.focused, !!error && styles.inputError]}>
     <View style={styles.inputContent}>
-    {inlineLabel && <Text accessible={false} style={styles.inlineLabel}>{label}</Text>}
     <TextInput ref={inputRef} accessibilityLabel={label} accessibilityHint={error || (readOnly ? 'Read-only' : undefined)} editable={!readOnly}
       value={value} placeholder={placeholder} placeholderTextColor={lagoon.text.secondary} onChangeText={onChange}
       onFocus={() => { setFocused(true); onFocus?.(); }} onBlur={() => { setFocused(false); onBlur(); }} onSubmitEditing={onNext}
       autoCapitalize="none" autoCorrect={false} spellCheck={false} autoComplete="off" importantForAutofill="no"
       keyboardType="default" returnKeyType={last ? 'done' : 'next'} submitBehavior={last ? 'blurAndSubmit' : 'submit'}
-      underlineColorAndroid="transparent" style={[styles.input, inlineLabel && styles.labeledInput]} />
+      underlineColorAndroid="transparent" style={styles.input} />
     </View>
     {onScan && <Pressable accessibilityRole="button" accessibilityLabel="Scan QR Code or barcode" disabled={readOnly}
       accessibilityState={{ disabled: readOnly }} onPress={onScan}
@@ -48,10 +50,9 @@ function Field({ label, value, error, inputRef, onChange, onBlur, onNext, last, 
 
 /** Presentation only: approved source proportions; all values remain controlled and memory-only. */
 export function AddCardForm({ values, errors, onChange: commitChange, onBlur, presentation, onPresentationChange: commitPresentation,
-  mode = 'create', editCard, disabled = false, expiryError, fullEditing = false, onImageBusy,artworkSources }: Props) {
+  mode = 'create', editCard, disabled = false, expiryError, fullEditing = false, onImageBusy,artworkSources,fallbackArtwork }: Props) {
   const editing = mode === 'edit';
   const readOnlyEdit = editing && !fullEditing;
-  const locked = readOnlyEdit || disabled;
   // Even a stale callback cannot change size, appearance or code settings in edit mode.
   const onChange = (next: CardFormValues) => {
     if (!disabled) commitChange(readOnlyEdit ? { ...values, name: next.name, memberNumber: next.memberNumber } : next);
@@ -59,15 +60,19 @@ export function AddCardForm({ values, errors, onChange: commitChange, onBlur, pr
   const onPresentationChange = (next: CardPresentationDraft) => {
     if (!disabled) commitPresentation(readOnlyEdit ? { ...presentation, side: next.side, expiryMonth: next.expiryMonth } : next);
   };
-  const number = useRef<TextInputInstance>(null);
+  const number = useRef<TextInputInstance>(null),nameInput=useRef<TextInputInstance>(null);
   const [formWidth, setFormWidth] = useState(320);
   const [sizeOpen, setSizeOpen] = useState(false);
   const [scanOpen, setScanOpen] = useState(false);
   const [expirationOpen, setExpirationOpen] = useState(false);
+  const [photoBusy,setPhotoBusy]=useState(false);
+  const locked = readOnlyEdit || disabled || photoBusy;
+  const [menuOrientation,setMenuOrientation]=useState(values.orientation);
+  const [photoFallbacks]=useState(()=>fallbackArtwork??photoFallbackArtwork(presentation.artwork,values.colorId));
   const expirationSession = useRef<object | null>(null);
   const scanSession = useRef<{ handled: boolean } | null>(null), mounted = useRef(true);
-  const latest = useRef({ values, presentation, disabled, commitChange, commitPresentation, onImageBusy });
-  latest.current = { values, presentation, disabled, commitChange, commitPresentation, onImageBusy };
+  const latest = useRef({ values, presentation, disabled, locked, commitChange, commitPresentation, onImageBusy });
+  latest.current = { values, presentation, disabled, locked, commitChange, commitPresentation, onImageBusy };
   useEffect(() => {
     mounted.current = true;
     return () => { mounted.current = false; scanSession.current = null; expirationSession.current = null; };
@@ -108,13 +113,16 @@ export function AddCardForm({ values, errors, onChange: commitChange, onBlur, pr
   const currentExpirationSession = expirationSession.current;
   const currentScanSession = scanSession.current;
   const activePreset = cardSizePreset(presentation.sizePresetId);
-  const preview = cardPreviewSize(formWidth, activePreset.id);
   function choosePreset(id: CardSizePresetId) {
-    if (locked) return;
-    const next = selectCardSize(values, presentation, id);
-    onChange(next.values);
-    onPresentationChange(next.presentation);
+    if (latest.current.locked) return;
+    const next = selectCardSize(latest.current.values, latest.current.presentation, id);
+    latest.current.commitChange(next.values);
+    latest.current.commitPresentation(next.presentation);
     setSizeOpen(false);
+  }
+  function chooseCarouselPreset(id:CardSizePresetId) {
+    if(values.orientation!==latest.current.values.orientation||cardSizePreset(id).orientation!==latest.current.values.orientation)return;
+    choosePreset(id);
   }
   // Bound the row inside GlassButton's intrinsic content wrapper. A percentage
   // width here previously had no definite containing width on native layouts.
@@ -126,16 +134,13 @@ export function AddCardForm({ values, errors, onChange: commitChange, onBlur, pr
     {scanOpen && currentScanSession && <MembershipNumberScanner onClose={() => finishScan(currentScanSession)} onResult={text => scanned(currentScanSession, text)} />}
     {expirationOpen && currentExpirationSession && <ExpirationDatePicker value={presentation.expiryMonth}
       onCancel={() => finishExpiration(currentExpirationSession)} onConfirm={value => finishExpiration(currentExpirationSession, value)} />}
-    <View style={styles.previewRow}>
-      <CardAppearancePreview width={preview.width} values={values} presentation={presentation} appearance={editAppearance} artworkSources={artworkSources} />
-      <View style={styles.tools}>
-        <GlassButton disabled={disabled} accessibilityLabel="Switch card front and back" accessibilityState={{ selected: presentation.side === 'back' }} hitSlop={6}
-          onPress={() => onPresentationChange({ ...presentation, side: presentation.side === 'front' ? 'back' : 'front' })} style={styles.tool}>
-          <AddCardIcon name="flip" />
-        </GlassButton>
-        <AddCardText maxWidth={layout.toolSize} style={styles.sideLabel}>{presentation.side === 'front' ? 'Front' : 'Back'}</AddCardText>
-        <CardArtworkControls presentation={presentation} onChange={onPresentationChange} disabled={locked} onBusy={onImageBusy} simpleReplacement={editing} />
-      </View>
+    <View testID="add-card-preview-tools">
+      <CardArtworkControls presentation={presentation} onChange={onPresentationChange} disabled={locked} fallbackArtwork={photoFallbacks}
+        previewSize={cardPreviewSize(formWidth,activePreset.id)}
+        onBusy={busy=>{setPhotoBusy(busy);onImageBusy?.(busy);}} simpleReplacement={editing}
+        renderTrigger={photoAction=><CardSizeCarousel width={formWidth} selectedId={activePreset.id} disabled={locked} onSelect={chooseCarouselPreset}
+          photoAction={photoAction} renderPreview={(id,width,height,renderArtwork)=><CardAppearancePreview displayPreview renderArtwork={renderArtwork} width={width} height={height} showText={height>=100} values={values}
+            presentation={{...presentation,sizePresetId:id}} appearance={editAppearance} artworkSources={artworkSources}/>} />}/>
     </View>
     <View style={[styles.selectorArea, sizeOpen && styles.menuLayer]}>
       <View style={styles.orientation}>
@@ -144,18 +149,17 @@ export function AddCardForm({ values, errors, onChange: commitChange, onBlur, pr
           return <View key={orientation} style={styles.axis}>
             <GlassButton disabled={locked} accessibilityLabel={orientation === 'landscape' ? 'Landscape' : 'Portrait'}
               accessibilityValue={selected ? { text: activePreset.label } : undefined}
-              accessibilityHint={readOnlyEdit ? 'Size and orientation are read-only while editing' : selected ? 'Choose a card size' : 'Switch card orientation'}
-              accessibilityState={{ selected, expanded: selected && sizeOpen }} selected={selected}
+              accessibilityHint={readOnlyEdit ? 'Size and orientation are read-only while editing' : selected ? 'Choose a card size' : 'Open orientation and size choices'}
+              accessibilityState={{ selected, expanded: sizeOpen && menuOrientation===orientation }} selected={selected}
               style={[styles.sizeButton, !selected && styles.inactiveAxis]}
               onPress={() => {
                 if (locked) return;
                 Keyboard.dismiss();
-                if (selected) setSizeOpen(!sizeOpen);
-                else choosePreset(sizePresetForOrientation(activePreset.id, orientation));
+                setMenuOrientation(orientation);setSizeOpen(!(sizeOpen&&menuOrientation===orientation));
               }}>
               <View style={[styles.sizeContent, { width: sizeContentWidth }]}>
-                <AddCardText maxWidth={sizeContentWidth - (selected ? layout.iconSize + 4 : 0)} style={styles.sizeText}>{selected ? activePreset.label : orientation === 'landscape' ? 'Landscape' : 'Portrait'}</AddCardText>
-                {selected && <AddCardIcon name="chevron" />}
+                <AddCardText maxWidth={sizeContentWidth - layout.iconSize - 4} style={styles.sizeText}>{selected ? activePreset.label : orientation === 'landscape' ? 'Landscape' : 'Portrait'}</AddCardText>
+                <AddCardIcon name="chevron" />
               </View>
             </GlassButton>
           </View>;
@@ -163,7 +167,11 @@ export function AddCardForm({ values, errors, onChange: commitChange, onBlur, pr
       </View>
       {sizeOpen && <View style={styles.popup}>
         <ScrollView nestedScrollEnabled keyboardShouldPersistTaps="handled" style={styles.sizeResults}>
-          {cardSizePresetsFor(values.orientation).map(preset => <Pressable key={preset.id} accessibilityRole="button"
+          {menuOrientation!==values.orientation&&<Pressable accessibilityRole="button" accessibilityLabel={`Use ${menuOrientation==='portrait'?'Portrait':'Landscape'}`}
+            onPress={()=>choosePreset(sizePresetForOrientation(activePreset.id,menuOrientation))} style={styles.sizeOption}>
+            <AddCardText maxWidth={Math.max(1,formWidth-48)} style={styles.choiceText}>{menuOrientation==='portrait'?'Portrait':'Landscape'}</AddCardText>
+          </Pressable>}
+          {cardSizePresetsFor(menuOrientation).map(preset => <Pressable key={preset.id} accessibilityRole="button"
             accessibilityLabel={preset.label} accessibilityState={{ selected: preset.id === activePreset.id }}
             onPress={() => choosePreset(preset.id)} style={({ pressed }) => [styles.sizeOption,
               (pressed || preset.id === activePreset.id) && styles.sizeOptionSelected]}>
@@ -174,18 +182,15 @@ export function AddCardForm({ values, errors, onChange: commitChange, onBlur, pr
     </View>
     {errors.orientation && <Text style={styles.error}>{errors.orientation}</Text>}
     {readOnlyEdit && <Text style={styles.hint}>Size and artwork are read-only.</Text>}
-    <Field label="Name" hideLabel inlineLabel={editing} placeholder="Name" value={values.name} error={errors.name}
+    <Field inputRef={nameInput} label="Name" hideLabel placeholder="Name" value={values.name} error={errors.name}
       readOnly={disabled}
       onFocus={closeMenus} onChange={name => onChange({ ...values, name })} onBlur={() => onBlur?.('name')} onNext={() => number.current?.focus()} />
-    <Field label="Number" hideLabel inlineLabel={editing} placeholder="Number" value={values.memberNumber} error={errors.memberNumber} inputRef={number} onScan={openScanner}
+    <Field label="Number" hideLabel placeholder="Number" value={values.memberNumber} error={errors.memberNumber} inputRef={number} onScan={openScanner}
       readOnly={disabled}
       onFocus={closeMenus} onChange={text => onChange(changeMembershipNumber(values, text))} onBlur={() => onBlur?.('memberNumber')} onNext={openExpiration} />
-    <Pressable accessibilityRole="button" accessibilityLabel="Expiration date" accessibilityValue={{ text: presentation.expiryMonth || 'No expiry' }}
-      accessibilityHint="Opens Day, Month and Year wheels" accessibilityState={{ disabled }} disabled={disabled} onPress={openExpiration}
-      style={({ pressed }) => [styles.expirationField, { opacity: disabled ? 0.45 : pressed ? 0.7 : 1 }]}>
-      <Text style={[styles.expirationText, !presentation.expiryMonth && styles.emptyExpiration]}>{`EXP ${presentation.expiryMonth || 'YYYY-MM-DD'}`}</Text>
-      <AddCardIcon name="chevron" />
-    </Pressable>
+    <CardSheetModeSelector width={formWidth} mode={presentation.sheetDisplayMode??'cardcode'} expiration={presentation.expiryMonth}
+      disabled={disabled||photoBusy||scanOpen||expirationOpen} onExpiration={openExpiration}
+      onChange={sheetDisplayMode=>onPresentationChange({...presentation,sheetDisplayMode})}/>
     {!!(expiryError || expiryMonthError(presentation.expiryMonth)) && <Text accessibilityRole="alert" style={styles.error}>{expiryError || expiryMonthError(presentation.expiryMonth)}</Text>}
   </View>;
 }
@@ -217,13 +222,8 @@ const styles = StyleSheet.create({
   hint: { ...ciTypography.supporting, color: ciColors.text.supporting },
   inputFrame: { flexDirection: 'row', alignItems: 'center', borderRadius: layout.fieldRadius, borderWidth: 1, borderColor: alpha(lagoon.rim.boundary, 0.5), backgroundColor: lagoon.surface.base },
   inputContent: { flex: 1, minWidth: 0 },
-  expirationField: { flexDirection: 'row', alignItems: 'center', gap: 8, minHeight: 48, paddingHorizontal: 12, paddingVertical: 10, borderRadius: layout.fieldRadius, borderWidth: 1, borderColor: alpha(lagoon.rim.boundary, 0.5), backgroundColor: lagoon.surface.base },
-  expirationText: { ...ciTypography.body, flex: 1, color: ciColors.text.primary },
-  emptyExpiration: { color: lagoon.text.secondary },
   scanButton: { width: 48, minHeight: 48, flexShrink: 0, alignItems: 'center', justifyContent: 'center' },
-  inlineLabel: { paddingHorizontal: 12, paddingTop: 6, fontSize: 10, lineHeight: 15, fontFamily: lagoonFonts.latin, color: lagoon.text.secondary },
-  labeledInput: { paddingTop: 2, minHeight: 36 },
-  input: { minHeight: layout.inputHeight, borderRadius: layout.fieldRadius,
+  input: { minHeight: Math.max(48,layout.inputHeight), borderRadius: layout.fieldRadius,
     paddingHorizontal: 12, paddingVertical: 11, color: lagoon.text.primary, backgroundColor: lagoon.surface.base,
     fontFamily: lagoonFonts.latin, fontSize: 14, lineHeight: 20, includeFontPadding: false,
     boxShadow: `0 5px 14px -10px ${alpha(lagoon.shadow.tint, 0.24)}` },

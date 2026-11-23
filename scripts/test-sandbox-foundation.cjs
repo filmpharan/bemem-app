@@ -36,8 +36,8 @@ test('One square logical unit uses actual canvas width with zero logical gap', (
     assert.equal(one.width, one.height); assert.equal(one.left + one.width, next.left);
   }
 });
-test('All seven footprints are integer blocks from the existing preset definitions', () => {
-  const expected = [[3, 2], [6, 4], [7, 3], [8, 4], [2, 3], [4, 6], [5, 7]];
+test('All nine footprints are integer blocks from the existing preset definitions', () => {
+  const expected = [[3, 2], [4, 3], [6, 4], [7, 3], [8, 4], [2, 3], [3, 4], [4, 6], [5, 7]];
   CARD_SIZE_PRESETS.forEach((preset, index) => {
     const footprint = grid.cardSize(card(preset.id, preset.id));
     assert.deepEqual([footprint.cols, footprint.rows], expected[index]);
@@ -73,7 +73,7 @@ test('Automatic placement never moves or mutates existing objects', () => {
   const state = samples.initialSandboxPreview(), before = clone(state);
   const next = samples.appendSandboxSamples(state);
   for (const existing of state.cards) assert.deepEqual(next.layout[existing.id], state.layout[existing.id]);
-  assert.deepEqual(state, before); assert.equal(next.cards.length, 14);
+  assert.deepEqual(state, before); assert.equal(next.cards.length, 18);
 });
 test('Placement and metrics grow past row 240 with the unbounded Sandbox option', () => {
   const cards = [], layout = {};
@@ -116,11 +116,11 @@ test('Search shows matching cards only and hides even matching decoration names'
   assert.equal(searchReflow(items, layout, '', true, Infinity).layout, layout);
   assert.equal(searchReflow(items, layout, '', true, Infinity).cards, items);
 });
-test('All seven matching shapes reflow collision-free without changing saved coordinates', () => {
+test('All nine matching shapes reflow collision-free without changing saved coordinates', () => {
   const state = samples.initialSandboxPreview(), before = clone(state);
   const cards = state.cards.map(c => ({ ...c, name: 'Match ' + c.name }));
   const result = searchReflow(cards, state.layout, 'match', true, Infinity);
-  assert.equal(result.cards.length, 7);
+  assert.equal(result.cards.length, 9);
   assert.deepEqual(result.layout[result.cards[0].id], { col: 0, row: 0 });
   for (const item of result.cards) assert.ok(grid.canPlace(item, result.layout[item.id], result.cards, result.layout, Infinity));
   assert.deepEqual(state, before); assert.equal(searchReflow(cards, state.layout, '', false).layout, state.layout);

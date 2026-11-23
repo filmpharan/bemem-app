@@ -22,7 +22,7 @@ export const MembershipCard = memo(function MembershipCard({ card }: { card: Pre
   const gradient = WEB_BRANDS.find(brand => brand.id === card.appearance?.gradientPresetId)?.gradient;
   return <View style={[styles.card, { backgroundColor: art?.fill ?? card.colors[0],
     backgroundImage: art ? undefined : `linear-gradient(135deg, ${(gradient ?? card.colors).join(', ')})` }, image && styles.imageCard]}>
-    {image && <CardArtworkImage key={image.assetId} image={image} />}
+    {image && <CardArtworkImage key={image.assetId} image={image} displayPreview="canvas" />}
     {art && <>
       <View pointerEvents="none" style={[styles.orb, card.orientation === 'portrait' && styles.portraitOrb, {
         backgroundColor: art.light,

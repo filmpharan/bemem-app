@@ -40,6 +40,7 @@
         }
       ],
       "expo-sharing",
+      "expo-notifications",
       [
         "expo-camera",
         {

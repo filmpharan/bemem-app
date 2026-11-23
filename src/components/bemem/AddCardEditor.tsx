@@ -1,5 +1,5 @@
 import { ciColors,ciTypography } from '../../constants/ci-theme';
-import { useEffect,useRef, useState, type ReactNode } from 'react';
+import { useEffect,useImperativeHandle,useRef, useState, type ReactNode,type Ref } from 'react';
 import { Keyboard, StyleSheet, Text, View } from 'react-native';
 import { type CardFormErrors } from '../../lib/card-form';
 import { createDefaultCardArtworkSession } from '../../lib/default-card-artwork';
@@ -15,10 +15,13 @@ import { addCardLayout as layout } from './add-card-layout';
 import { editorChanged } from '../../lib/card-editor-state';
 import { ConfirmationDialog, type ConfirmationRequest } from './ConfirmationDialog';
 
+export type AddCardEditorHandle={requestClose:(onStay?:()=>void)=>boolean;back:()=>void};
+
 /** Approved sheet/form geometry; production draft submission only, never a Save. */
-export function AddCardEditor({ commands, background, onClose, onAdded, disabled, v2Active }: {
+export function AddCardEditor({ commands, background, onClose, onAdded, disabled, v2Active,ref,onNavigationBlockedChange }: {
   commands: ReturnType<typeof createWalletFeatureCommands>; background: ReactNode;
   onClose: () => void; onAdded: () => void; disabled: boolean; v2Active: boolean;
+  ref?:Ref<AddCardEditorHandle>;onNavigationBlockedChange?:(blocked:boolean)=>void;
 }) {
   const [defaults]=useState(createDefaultCardArtworkSession);
   const [values, setValues] = useState(()=>defaults.values);
@@ -45,15 +48,18 @@ export function AddCardEditor({ commands, background, onClose, onAdded, disabled
   const submitting = useRef(false), confirming = useRef<string | null>(null);
   const confirmationSequence = useRef(0);
   const [confirmation, setConfirmation] = useState<ConfirmationRequest | null>(null);
-  function finishClose() { Keyboard.dismiss(); commands.cancel(token); onClose(); }
+  const closed=useRef(false),stayCallback=useRef<(()=>void)|undefined>(undefined),latestClose=useRef<()=>void>(()=>{});
+  function finishClose() {if(closed.current)return;closed.current=true;Keyboard.dismiss();commands.cancel(token);onClose();}
+  useImperativeHandle(ref,()=>({requestClose(onStay){if(submitting.current||imageActive.current||confirming.current||closed.current)return false;stayCallback.current=onStay;latestClose.current();return true;},back(){if(confirmation)confirmation.onDismiss();else latestClose.current();}}),[confirmation]);
+  useEffect(()=>{onNavigationBlockedChange?.(imageBusy||!!confirmation||submitting.current);return()=>onNavigationBlockedChange?.(false);},[imageBusy,!!confirmation,onNavigationBlockedChange]);
   function close() {
-    if (submitting.current || imageActive.current || confirming.current) return;
+    if (submitting.current || imageActive.current || confirming.current || closed.current) return;
     if (!editorChanged(initial, { values, presentation })) { finishClose(); return; }
     const id = `add-card-discard-${++confirmationSequence.current}`;
     confirming.current = id;
     const keepEditing = () => {
       if (confirming.current !== id) return;
-      confirming.current = null; setConfirmation(null);
+      confirming.current = null; setConfirmation(null);const stay=stayCallback.current;stayCallback.current=undefined;stay?.();
     };
     setConfirmation({ id, title: 'Discard changes?', description: 'Your unsaved card changes will be discarded.',
       onDismiss: keepEditing, actions: [
@@ -64,15 +70,17 @@ export function AddCardEditor({ commands, background, onClose, onAdded, disabled
         } },
       ] });
   }
-  return <AddCardSheet background={background} onClose={close} closeDisabled={imageBusy}
+  latestClose.current=close;
+  return <AddCardSheet modalOnly background={background} onClose={close} closeDisabled={imageBusy}
+    face={{side:presentation.side,disabled:imageBusy||disabled,onToggle:()=>{if(!imageActive.current&&!submitting.current&&!confirming.current)setPresentation(previous=>({...previous,side:previous.side==='front'?'back':'front'}));}}}
     confirmation={confirmation ? { content: <ConfirmationDialog presentation="inline" request={confirmation} />, onRequestClose: confirmation.onDismiss } : undefined} footer={<>
     <View style={styles.actionRow}>
     <GlassButton disabled={imageBusy} style={styles.action} accessibilityLabel="Cancel adding card" onLayout={event => setWidth(event.nativeEvent.layout.width)} onPress={close}>
       <AddCardText maxWidth={Math.max(1, width - 34)} style={[styles.actionText, { color: lagoon.text.primary }]}>Cancel</AddCardText>
     </GlassButton>
-    <GlassButton kind="action" disabled={disabled || imageBusy || preparingDefaults} style={styles.action} accessibilityLabel="Add Card to Create draft"
+    <GlassButton kind="action" disabled={disabled || imageBusy || preparingDefaults} style={styles.action} accessibilityLabel="Add Card to Arrange draft"
       onLayout={event => setWidth(event.nativeEvent.layout.width)} onPress={() => {
-        if (disabled || preparingDefaults || imageActive.current || submitting.current || confirming.current) return;
+        if (disabled || preparingDefaults || imageActive.current || submitting.current || confirming.current || closed.current) return;
         submitting.current = true;
         Keyboard.dismiss(); const result = commands.add(token, values, presentation);
         if (result.ok) onAdded(); else { submitting.current = false; setErrors(result.errors); setNotice(result.message); }
@@ -82,7 +90,7 @@ export function AddCardEditor({ commands, background, onClose, onAdded, disabled
     {preparingDefaults&&!defaultsError&&<Text accessibilityLiveRegion="polite" style={styles.notice}>Preparing artwork...</Text>}
     {!!defaultsError&&preparingDefaults&&<Text accessibilityRole="alert" style={styles.notice}>{defaultsError}</Text>}
   </>}>
-    <AddCardForm values={values} presentation={presentation} artworkSources={sources} errors={errors} onImageBusy={imageActivity}
+    <AddCardForm values={values} presentation={presentation} fallbackArtwork={{front:defaults.front,back:defaults.back}} artworkSources={sources} errors={errors} onImageBusy={imageActivity}
       onChange={next => { setValues(next); setErrors({}); setNotice(''); }}
       onPresentationChange={next => { setPresentation(next); setNotice(''); }} />
   </AddCardSheet>;

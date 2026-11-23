@@ -1,19 +1,19 @@
 const {test}=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),ts=require('typescript');
-const root=path.resolve(__dirname,'..'),tokens=require('../design-system/bemem-lagoon-glass-rc2/TOKENS.json');
-const {ciColors,ciTypography}=require('./ci-theme-fixture.cjs'),{sheetVisual}=require('./sheet-visual-fixture.cjs');
-const lagoon=tokens.palettes['pearl-gray'].colors,lagoonFonts={latin:'BememManrope',thai:'BememThai'};
+const root=path.resolve(__dirname,'..'),tokens=require('../design-system/bemem-vivid-lagoon/TOKENS.json');
+const {ciColors,ciTypography,ciButtons}=require('./ci-theme-fixture.cjs'),{sheetVisual}=require('./sheet-visual-fixture.cjs');
+const lagoon=tokens.palettes[tokens.metadata.defaultThemeId].colors,lagoonFonts={latin:'BememManrope',thai:'BememThai'};
 const layout={padding:20,gap:12,toolSize:36,sheetRadius:22};
 const file=name=>path.join(root,'src/components/bemem',name+'.tsx');
 const source=name=>fs.readFileSync(file(name),'utf8');
 function styles(name){const sf=ts.createSourceFile(name,source(name),ts.ScriptTarget.Latest,true,ts.ScriptKind.TSX);let expression;
  for(const s of sf.statements)if(ts.isVariableStatement(s))for(const d of s.declarationList.declarations)if(d.name.getText(sf)==='styles')expression=d.initializer.arguments[0].getText(sf);
- assert.ok(expression,name);return vm.runInNewContext(`(${expression})`,{sheetVisual,ciColors,ciTypography,lagoon,lagoonFonts,layout,
+ assert.ok(expression,name);return vm.runInNewContext(`(${expression})`,{sheetVisual,ciColors,ciTypography,ciButtons,lagoon,lagoonFonts,layout,
   bemem:{border:'#bac5cc',background:lagoon.canvas.base},StyleSheet:{absoluteFill:{position:'absolute'},hairlineWidth:1}});
 }
 function nodes(t,out=[]){if(!t||typeof t!=='object')return out;if(Array.isArray(t)){t.forEach(n=>nodes(n,out));return out;}out.push(t);nodes(t.props?.children,out);return out;}
-function harness(name){let cursor=0;const slots=[],jsx=(type,props)=>({type,props}),react={useState(v){const i=cursor++;if(!(i in slots))slots[i]=v;return[slots[i],v=>{slots[i]=v;}];}};
- const native={StyleSheet:{create:s=>s,absoluteFill:{}},Platform:{OS:'android',Version:35}};
+function harness(name){let cursor=0;const slots=[],jsx=(type,props)=>({type,props}),react={useRef(v){const i=cursor++;return slots[i]??={current:v};},useCallback:fn=>fn,useEffect(){},useState(v){const i=cursor++;if(!(i in slots))slots[i]=v;return[slots[i],v=>{slots[i]=v;}];}};
+ const native={Keyboard:{isVisible:()=>false,dismiss(){}},StyleSheet:{create:s=>s,absoluteFill:{}},Platform:{OS:'android',Version:35}};
  for(const n of ['Modal','SafeAreaView','KeyboardAvoidingView','ScrollView','View','Text','Pressable'])native[n]=n;
  const m={exports:{}},code=ts.transpileModule(source(name),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX}}).outputText;
  vm.runInThisContext(`(function(require,module,exports){${code}\n})`)(n=>{
@@ -24,13 +24,22 @@ function harness(name){let cursor=0;const slots=[],jsx=(type,props)=>({type,prop
   if(['./GlassButton','./AddCardText','./AddCardIcon'].includes(n))return{[n.slice(2)]:n.slice(2)};
   throw Error('Unexpected native or storage dependency '+n);
  },m,m.exports);
- return{render(props){cursor=0;return m.exports[name](props);}};
+ return{keyboard:native.Keyboard,render(props){cursor=0;return m.exports[name](props);}};
 }
 const byLabel=(t,label)=>nodes(t).find(n=>n.props?.accessibilityLabel===label);
-test('Sheet recipe reuses Pearl Gray surfaces and existing understated rim/shadow without a modal manager',()=>{
- assert.equal(sheetVisual.surface,'#eceff1');assert.equal(sheetVisual.elevated,'#fafcfd');assert.equal(sheetVisual.border,lagoon.rim.boundary);
+test('Sheet recipe reuses Vivid Lagoon surfaces and existing understated rim/shadow without a modal manager',()=>{
+ assert.equal(sheetVisual.surface,ciColors.surface.sheet);assert.equal(sheetVisual.elevated,ciColors.surface.elevated);assert.equal(sheetVisual.border,lagoon.rim.boundary);
  assert.equal(sheetVisual.scrim,lagoon.action.deep+'66');assert.equal(sheetVisual.rim,lagoon.rim.boundary+'99');
  const s=fs.readFileSync(path.join(root,'src/constants/sheet-visual.ts'),'utf8');assert.doesNotMatch(s,/react-native|useState|Provider|Modal|FileSystem/);
+});
+
+test('Optional fixed-footer viewport observer reports native dimensions without changing Modal, keyboard or dismissal',()=>{
+ const h=harness('AddCardSheet'),measured=[];let closed=0;
+ const props={modalOnly:true,fixedFooter:true,title:'Share Card',children:'body',footer:'share',onClose:()=>closed++,onContentViewportLayout:size=>measured.push(size)};
+ const t=h.render(props),scroll=nodes(t).find(n=>n.type==='ScrollView'&&n.props.onLayout);
+ scroll.props.onLayout({nativeEvent:{layout:{width:360,height:540,x:0,y:68}}});assert.equal(measured[0].height,540);assert.equal(measured[0].width,360);assert.equal(closed,0);
+ assert.equal(t.type,'Modal');assert.equal(nodes(t).find(n=>n.type==='KeyboardAvoidingView').props.behavior,'height');t.props.onRequestClose();assert.equal(closed,1);
+ const without=h.render({...props,onContentViewportLayout:undefined});nodes(without).find(n=>n.type==='ScrollView'&&n.props.onLayout).props.onLayout({nativeEvent:{layout:{width:360,height:540}}});assert.equal(measured.length,1);
 });
 test('Shared Add/Edit/Policy/Login/Share/History retain their presentation owner and footer modes',()=>{
  for(const name of ['AddCardEditor','EditMembershipCardEditor','HomeAccountMenu','ShareCardSheet','CardHistorySheet'])assert.match(source(name),/AddCardSheet/);
@@ -64,8 +73,8 @@ test('Measured shared titles retain available width and wrap contract at360/393/
  }
 });
 test('Card Detail migrates only UI chrome; white scan panel, quiet-zone region and reference geometry remain',()=>{
- const s=styles('MembershipCardDetail');assert.equal(s.sheet.backgroundColor,'#eceff1');assert.equal(s.surface.backgroundColor,'#fafcfd');assert.equal(s.history.backgroundColor,'#fafcfd');
- assert.equal(s.title.color,'#263943');assert.equal(s.expiry.color,'#4c606c');assert.equal(s.side.color,'#4c606c');assert.equal(s.number.color,'#263943');
+ const s=styles('MembershipCardDetail');assert.equal(s.sheet.backgroundColor,ciColors.surface.sheet);assert.equal(s.surface.backgroundColor,'transparent');assert.equal(s.history.backgroundColor,ciButtons.secondary);
+ assert.equal(s.title.color,'#263943');assert.equal(s.expiry.color,lagoon.text.secondary);assert.equal(s.side.color,lagoon.text.secondary);assert.equal(s.number.color,'#263943');
  assert.equal(s.sheet.maxHeight,'92%');assert.equal(s.sheet.maxWidth,600);assert.equal(s.sheet.borderTopLeftRadius,24);assert.equal(s.sheet.paddingTop,20);
  assert.equal(s.header.marginBottom,16);assert.equal(s.content.gap,8);assert.equal(s.hit.width,48);assert.equal(s.hit.height,48);assert.equal(s.surface.width,36);
  assert.equal(s.code.backgroundColor,'#ffffff');assert.equal(s.code.paddingHorizontal,4);assert.equal(s.code.borderRadius,20);assert.equal(s.codeLabel.color,'#000000');
@@ -73,9 +82,9 @@ test('Card Detail migrates only UI chrome; white scan panel, quiet-zone region a
  assert.doesNotMatch(source('MembershipCardDetail'),/#f4f4fa|#f4f4f9|#10121c|#596577/);
 });
 test('Share outer controls use CI while capture dimensions and exact white image preview stay independent',()=>{
- const s=styles('ShareCardSheet');assert.equal(s.text.lineHeight,21);assert.equal(s.error.color,'#b42318');assert.equal(s.choices.backgroundColor,sheetVisual.surface);assert.equal(s.choice.minHeight,48);
- const text=source('ShareCardSheet');assert.match(text,/captureRef\(view, \{ format: 'png', result: 'tmpfile' \}\)/);assert.match(text,/contentFit="contain"/);assert.match(text,/backgroundColor:'#ffffff',borderRadius:14/);
- assert.match(text,/CardShareSurface plan=\{plan\}/);assert.match(text,/AddCardSheet modalOnly fixedFooter/);
+ const s=styles('ShareCardSheet');assert.equal(s.text.lineHeight,21);assert.equal(s.error.color,'#b42318');assert.equal(s.controlsRow.flexDirection,'row');assert.equal(s.controlsRow.flexWrap,'nowrap');assert.equal(s.choice.minHeight,48);
+ const text=source('ShareCardSheet');assert.match(text,/captureRef\(view, \{ format: 'png', result: 'tmpfile' \}\)/);assert.match(source('CardShareSurface'),/contentFit="contain"/);assert.equal(s.preview.backgroundColor,'transparent');assert.equal(s.preview.borderWidth,undefined);assert.equal(s.preview.borderRadius,undefined);
+ assert.match(text,/CardShareSurface.*plan=\{plan\}/);assert.match(text,/AddCardSheet modalOnly fixedFooter/);
 });
 test('Membership chrome uses title/body roles and keeps locked Canvas and manual Coming Soon flow',()=>{
  const s=styles('LockedCanvas');assert.equal(s.sheet.backgroundColor,sheetVisual.surface);assert.equal(s.sheet.padding,24);assert.equal(s.sheet.gap,16);assert.equal(s.sheet.borderTopLeftRadius,24);
@@ -94,4 +103,24 @@ test('Policy/History keep local spacing and dividers while shared sheet owns chr
  const p=styles('HomeAccountMenu'),h=styles('CardHistorySheet');assert.equal(p.section.borderBottomColor,sheetVisual.border);assert.equal(h.row.borderBottomColor,sheetVisual.border);
  assert.equal(p.body.fontSize,15);assert.equal(p.body.lineHeight,24);assert.equal(p.section.paddingBottom,18);assert.equal(h.row.minHeight,88);assert.equal(h.list.paddingHorizontal,20);
  assert.match(source('CardHistorySheet'),/<FlatList/);assert.match(source('CardHistorySheet'),/virtualized/);
+});
+
+test('M3-A sheet motion is opt-in: Add/Edit retain identical native Modal, layout, keyboard and scrim defaults',()=>{
+ const h=harness('AddCardSheet'),base={modalOnly:true,title:'Add Card',children:'form',footer:'actions',onClose(){}};
+ const original=h.render(base);assert.equal(original.type,'Modal');assert.equal(original.props.animationType,'none');assert.equal(original.props.onShow,undefined);assert.equal(nodes(original).some(n=>n.type==='Animated.View'),false);
+ let shows=0,body;const motion={onShow(){shows++;},scrim:{type:'Animated.View',props:{testID:'keeps-motion-scrim'}},renderSheet(element){body=element;return{type:'Animated.View',props:{...element.props,testID:'opt-in-sheet'}};}};
+ const animated=h.render({...base,title:'Add Keep',keepsMotion:motion});assert.equal(nodes(animated).filter(n=>n.type==='Modal').length,1);assert.equal(nodes(animated).filter(n=>n.props?.testID==='keeps-motion-scrim').length,1);assert.equal(animated.props.animationType,'none');assert.equal(animated.props.statusBarTranslucent,true);assert.equal(animated.props.navigationBarTranslucent,true);animated.props.onShow();assert.equal(shows,1);
+ const oldBody=nodes(original).find(n=>n.props?.style?.[0]?.maxHeight==='92%');assert.deepEqual(body.props.style,oldBody.props.style);assert.equal(nodes(animated).find(n=>n.type==='KeyboardAvoidingView').props.behavior,'height');assert.equal(nodes(h.render({...base,title:'Edit Card'})).some(n=>n.type==='Animated.View'),false);
+});
+test('M3-A opt-in sheet preserves keyboard-first Back, busy and inline confirmation priority',()=>{
+ const h=harness('AddCardSheet');let closed=0,cancelled=0,dismissed=0;const p={modalOnly:true,title:'Add Keep',children:'choices',footer:null,onClose:()=>closed++,keepsMotion:{onShow(){},scrim:null,renderSheet:element=>element}};
+ h.keyboard.isVisible=()=>true;h.keyboard.dismiss=()=>dismissed++;h.render(p).props.onRequestClose();assert.equal(dismissed,1);assert.equal(closed,0);
+ h.keyboard.isVisible=()=>false;h.render({...p,closeDisabled:true}).props.onRequestClose();assert.equal(closed,0);h.render({...p,confirmation:{content:'confirm',onRequestClose:()=>cancelled++}}).props.onRequestClose();assert.equal(cancelled,1);assert.equal(closed,0);h.render(p).props.onRequestClose();assert.equal(closed,1);
+});
+
+test('M3-B content motion stays inside one native sheet and composes onShow without changing default Add/Edit',()=>{
+ const h=harness('AddCardSheet');for(const fixedFooter of [false,true]){let inner=0,outer=0,fields,fill;const base={modalOnly:true,title:'Add Keep',fixedFooter,children:'form',footer:'buttons',onClose(){}};const tree=h.render({...base,keepsMotion:{scrim:'same scrim',onShow:()=>outer++,renderSheet:s=>s},keepsContentMotion:{onShow:()=>inner++,renderContent:(s,f)=>{fields=s;fill=f;return s;}}});assert.equal(tree.type,'Modal');assert.equal(nodes(tree).filter(n=>n.type==='Modal').length,1);tree.props.onShow();assert.equal(inner,1);assert.equal(outer,1);assert.equal(fill,fixedFooter);assert.equal(fields.type,fixedFooter?'View':'ScrollView');if(fixedFooter)assert.equal(fields.props.style.flex,1);else{assert.equal(fields.props.keyboardShouldPersistTaps,'handled');assert.equal(fields.props.keyboardDismissMode,'on-drag');}assert.equal(tree.props.animationType,'none');assert.equal(h.render({...base,title:'Add Card'}).props.onShow,undefined);assert.equal(h.render({...base,title:'Edit Card'}).props.onShow,undefined);}
+});
+test('M3-B keyboard-first Back and discard confirmation remain higher priority than editor cancellation',()=>{
+ const h=harness('AddCardSheet');let cancels=0,confirms=0,keyboards=0;const p={modalOnly:true,title:'Note',children:'draft',footer:'actions',onClose:()=>cancels++,keepsContentMotion:{onShow(){},renderContent:s=>s}};h.keyboard.isVisible=()=>true;h.keyboard.dismiss=()=>keyboards++;h.render(p).props.onRequestClose();assert.equal(keyboards,1);assert.equal(cancels,0);h.keyboard.isVisible=()=>false;h.render({...p,confirmation:{content:'discard',onRequestClose:()=>confirms++}}).props.onRequestClose();assert.equal(confirms,1);assert.equal(cancels,0);h.render({...p,closeDisabled:true}).props.onRequestClose();assert.equal(cancels,0);h.render(p).props.onRequestClose();assert.equal(cancels,1);
 });

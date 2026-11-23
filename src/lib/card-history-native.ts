@@ -4,6 +4,9 @@ import { Image } from 'expo-image';
 import { createArtworkStore } from './card-artwork-store';
 import { ARTWORK_ID } from './card-artwork';
 import { createHistoryRepository, HISTORY_COMMIT, HISTORY_PENDING } from './card-history-repository';
+import { HISTORY_DELETE_DIRECTORY, recoveryFiles } from './history-recovery-files-native';
+import { createKeepRecovery, validateKeepRecovery, type KeepRecoveryIntent } from './keep-recovery';
+import {createKeepMediaFiles} from './keep-media-files';
 import type { HistoryDocument, Receipt } from './card-history';
 
 export const HISTORY_DIRECTORY = 'bemem-card-history';
@@ -17,9 +20,7 @@ function historyFile(name: string) {
   if (!HISTORY_COMMIT.test(name) && !HISTORY_PENDING.test(name)) throw Error('Invalid history filename.');
   return new File(historyFolder(), name);
 }
-const receiptStore = createArtworkStore({
-  info: uri => new File(uri).info({ md5: true }), uri: receiptUri, nextId: () => uuid.v4(),
-  async copyExclusive(source, id) {
+async function copyReceipt(source:string,id:string,overwrite=false,admit=()=>true){
     // Sniff file signatures before retaining; decoding failures also surface in the image viewer.
     const bytes = await new File(source).bytes();
     const png = bytes.length >= 24 && [137, 80, 78, 71, 13, 10, 26, 10].every((n, i) => bytes[i] === n);
@@ -30,9 +31,10 @@ const receiptStore = createArtworkStore({
     try { if (!(decoded.width > 0 && decoded.height > 0)) throw Error('The receipt image cannot be decoded.'); }
     finally { decoded.release(); }
     new Directory(Paths.document, RECEIPT_DIRECTORY).create({ idempotent: true, overwrite: false });
-    await new File(source).copy(new File(receiptUri(id)), { overwrite: false });
-  },
-});
+    if(!admit())throw Error('The photo context changed before copying.');
+    await new File(source).copy(new File(receiptUri(id)), { overwrite });
+}
+const receiptStore = createArtworkStore({info:uri=>new File(uri).info({md5:true}),uri:receiptUri,nextId:()=>uuid.v4(),copyExclusive:(source,id)=>copyReceipt(source,id)});
 export const deviceReceiptStore = receiptStore;
 export const deviceHistoryRepository = createHistoryRepository({
   scope: HISTORY_DIRECTORY,
@@ -56,10 +58,43 @@ export const deviceHistoryRepository = createHistoryRepository({
   verifyImages(doc) { for (const record of doc.records) for (const receipt of record.receipts) receiptStore.verifyArtwork(receipt); },
 });
 
+/** Only the new Keep media path uses exclusive destination ownership and narrow rollback. */
+export const keepMediaFiles=createKeepMediaFiles({
+ nextId:()=>uuid.v4(),uri:receiptUri,info:uri=>new File(uri).info({md5:true}),
+ reserve(id){new Directory(Paths.document,RECEIPT_DIRECTORY).create({idempotent:true,overwrite:false});new File(receiptUri(id)).create({overwrite:false});},
+ copy:(source,id,admit)=>copyReceipt(source,id,true,admit),
+ async remove(id){await new File(receiptUri(id)).delete();},
+ async referenced(id){
+  if(deviceHistoryRepository.isBusy())throw Error('History is saving.');
+  const doc=await deviceHistoryRepository.load();
+  const recovery=Paths.document.list().find(item=>item.name===HISTORY_DELETE_DIRECTORY);
+  if(recovery&&(!(recovery instanceof Directory)||recovery.list().length))throw Error('Recovery evidence needs review before photo cleanup.');
+  if(deviceHistoryRepository.isBusy())throw Error('History changed during cleanup review.');
+  return doc.records.some(record=>record.receipts.some(image=>image.assetId===id));
+ },
+});
+
+/** Lazy native notification access: no scans, scheduling or recovery on Home renders. */
+export const keepRecovery = createKeepRecovery({
+  repository: deviceHistoryRepository,
+  intents: recoveryFiles<KeepRecoveryIntent>(true, validateKeepRecovery),
+  nextId: () => uuid.v4(),
+  notifications: {
+    async scheduled() { const {keepNotifications}=await import('./keep-notifications-native'); return keepNotifications.scheduled(); },
+    async cancel(id) { const {keepNotifications}=await import('./keep-notifications-native'); await keepNotifications.cancelId(id); },
+  },
+});
+export const prepareRetiredReminders = keepRecovery.prepareDeletion;
+
 /** Narrow, post-readback cleanup: only references removed from the committed latest snapshot. */
 export async function removeRetiredReceipts(before: HistoryDocument, after: HistoryDocument) {
   const current = await deviceHistoryRepository.load();
   if (JSON.stringify(current) !== JSON.stringify(after)) throw Error('History changed before receipt cleanup.');
+  const retainedIds=new Set(after.records.map(record=>record.id));
+  for(const record of before.records)if(!retainedIds.has(record.id)&&record.keep?.reminder){
+    const {keepNotifications}=await import('./keep-notifications-native');await keepNotifications.cancel(record);
+  }
+  await keepRecovery.finishDeletion(before, after);
   const kept = new Set(after.records.flatMap(record => record.receipts.map(image => image.assetId)));
   const removed = new Map<string, Receipt>();
   for (const record of before.records) for (const image of record.receipts) if (!kept.has(image.assetId)) removed.set(image.assetId, image);
@@ -78,4 +113,12 @@ export async function removeRetiredReceipts(before: HistoryDocument, after: Hist
     const match = HISTORY_COMMIT.exec(entry.name);
     if (entry instanceof File && match && Number(match[1]) < after.revision) await entry.delete();
   }
+}
+
+/** Only newly selected, never-submitted session files; pending/uncertain history blocks cleanup. */
+export async function discardKeepPhotos(images:readonly Receipt[]){
+ if(!images.length)return;
+ if(deviceHistoryRepository.isBusy())throw Error('History is busy. Photo cleanup deferred.');
+ const current=await deviceHistoryRepository.load(),used=new Set(current.records.flatMap(r=>r.receipts.map(i=>i.assetId)));
+ for(const image of images){if(used.has(image.assetId))continue;receiptStore.verifyArtwork(image);const file=new File(receiptUri(image.assetId));if(file.exists)await file.delete();}
 }

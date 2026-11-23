@@ -6,7 +6,8 @@ export type HistoryCurrency = keyof typeof HISTORY_CURRENCIES;
 export type Receipt = CardArtwork & { id: string; cropRatio?: number };
 export type HistoryRecord = {
   /** Absent on legacy structured entries; never inferred from their contents. */
-  entryKind?: 'photo';
+  entryKind?: 'photo' | 'keep';
+  keep?: { kind:'full'|'reminder'|'gallery'|'note'|'camera'; reminder?: { at:string; title:string; state:'pending'|'completed'; notification:{status:'not_scheduled'|'scheduled'|'denied'|'failed';id:string|null} } };
   id: string; cardId: string; type: 'visit' | 'purchase' | 'note'; date: string; time: string;
   description: string; notes: string; money: { minorUnits: string; currency: HistoryCurrency } | null;
   receipts: Receipt[]; createdAt: string; updatedAt: string;
@@ -74,8 +75,8 @@ function timestamp(value: unknown) {
   if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(value) || !Number.isFinite(Date.parse(value)) || new Date(value).toISOString() !== value) invalid('Invalid timestamp.');
 }
 export function validateHistoryRecord(value: unknown): asserts value is HistoryRecord {
-  const record = object(value); keys(record, ['entryKind', 'id', 'cardId', 'type', 'date', 'time', 'description', 'notes', 'money', 'receipts', 'createdAt', 'updatedAt']);
-  if (record.entryKind !== undefined && record.entryKind !== 'photo') invalid('Unsupported history entry kind.');
+  const record = object(value); keys(record, ['entryKind', 'id', 'cardId', 'type', 'date', 'time', 'description', 'notes', 'money', 'receipts', 'createdAt', 'updatedAt', 'keep']);
+  if (record.entryKind !== undefined && record.entryKind !== 'photo' && record.entryKind !== 'keep') invalid('Unsupported history entry kind.');
   historyId(record.id); historyId(record.cardId);
   if (typeof record.type !== 'string' || !['visit', 'purchase', 'note'].includes(record.type)) invalid('Choose Visit, Purchase or Note.');
   text(record.date, 10); validateHistoryDate(record.date); text(record.time, 5);
@@ -92,6 +93,19 @@ export function validateHistoryRecord(value: unknown): asserts value is HistoryR
   timestamp(record.createdAt); timestamp(record.updatedAt);
   if (record.entryKind === 'photo' && ((record.receipts as unknown[]).length < 1 || (record.receipts as unknown[]).length > 4 || record.type !== 'note' || record.description !== '' || record.money !== null
     || record.date !== String(record.createdAt).slice(0, 10) || record.time !== String(record.createdAt).slice(11, 16))) invalid('A photo entry requires 1–4 images and its automatic creation timestamp.');
+  if(record.entryKind==='keep'){
+    const keep=object(record.keep);keys(keep,['kind','reminder']);
+    if(!['full','reminder','gallery','note','camera'].includes(String(keep.kind)))invalid('Unsupported Keep type.');
+    if(record.type!=='note'||record.money!==null||record.description!==''||record.date!==String(record.createdAt).slice(0,10)||record.time!==String(record.createdAt).slice(11,16)||(record.receipts as unknown[]).length>4)invalid('Invalid Keep content or automatic timestamp.');
+    if(keep.reminder!==undefined){
+      const reminder=object(keep.reminder);keys(reminder,['at','title','state','notification']);timestamp(reminder.at);text(reminder.title,240);
+      if(!(reminder.title as string).trim()||!['pending','completed'].includes(String(reminder.state)))invalid('Invalid reminder.');
+      const notification=object(reminder.notification);keys(notification,['status','id']);
+      if(!['not_scheduled','scheduled','denied','failed'].includes(String(notification.status))||notification.id!==null&&notification.id!==`bemem-keep-${record.id}`||notification.status==='scheduled'&&notification.id===null)invalid('Invalid notification status.');
+    }
+    if(!(record.notes as string).trim()&&!(record.receipts as unknown[]).length&&!keep.reminder)invalid('Add a photo, note or reminder.');
+    if(keep.kind==='reminder'&&!keep.reminder||keep.kind==='note'&&!(record.notes as string).trim()||['camera','gallery'].includes(String(keep.kind))&&!(record.receipts as unknown[]).length)invalid('Keep is missing its required content.');
+  }else if(record.keep!==undefined)invalid('Legacy entries cannot contain Keep metadata.');
   if (String(record.updatedAt) < String(record.createdAt)) invalid('Updated time precedes creation.');
 }
 export function validateHistoryDocument(value: unknown): asserts value is HistoryDocument {

@@ -1,0 +1,81 @@
+{
+  "version": "yellow-top-flap-v1",
+  "status": "WAITING FOR SAMSUNG ACCEPTANCE",
+  "method": "Original programmatically authored vector masters; Inkscape transparent export",
+  "palette": {
+    "bodyTop": "#FFE4A8",
+    "body": "#FFE09B",
+    "bodyBottom": "#FFDA89",
+    "flapTop": "#FFE09B",
+    "flap": "#FFD17B",
+    "edge": "#F2C45F",
+    "ink": "#60451D"
+  },
+  "assets": [
+    {
+      "orientation": "landscape",
+      "layer": "back",
+      "width": 1200,
+      "height": 800,
+      "runtime": "assets/group-folders/yellow-top-flap-v1/landscape-back.png",
+      "source": "design-system/bemem-yellow-folder/artwork/landscape-back.svg",
+      "byteLength": 11184,
+      "sha256": "22b753b965d111c6e4b27346f633b3a1e5b6a0331167e6c4ba344361296b7914",
+      "decoded": true,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "orientation": "landscape",
+      "layer": "front",
+      "width": 1200,
+      "height": 150,
+      "runtime": "assets/group-folders/yellow-top-flap-v1/landscape-front.png",
+      "source": "design-system/bemem-yellow-folder/artwork/landscape-front.svg",
+      "byteLength": 2837,
+      "sha256": "9c84a01e09725e8087939c68ca9cd127f4334f274c2cde90dc4f05214564907f",
+      "decoded": true,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "orientation": "portrait",
+      "layer": "back",
+      "width": 800,
+      "height": 1200,
+      "runtime": "assets/group-folders/yellow-top-flap-v1/portrait-back.png",
+      "source": "design-system/bemem-yellow-folder/artwork/portrait-back.svg",
+      "byteLength": 11364,
+      "sha256": "2d17697309da901b58bfb885ee30644acaa4de2cabc084bf15bd3a680d4c8603",
+      "decoded": true,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "orientation": "portrait",
+      "layer": "front",
+      "width": 800,
+      "height": 150,
+      "runtime": "assets/group-folders/yellow-top-flap-v1/portrait-front.png",
+      "source": "design-system/bemem-yellow-folder/artwork/portrait-front.svg",
+      "byteLength": 2561,
+      "sha256": "f4549562de0a55591d7344720904ce7f1c07436753391738c647b6e5f5cdf232",
+      "decoded": true,
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ]
+    }
+  ],
+  "bytes": 27946
+}

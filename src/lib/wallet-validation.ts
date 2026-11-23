@@ -103,7 +103,7 @@ export function validateWalletCard(value: unknown, path = 'card'): WalletCard {
       colors: [color(card.colors[0], `${path}.colors[0]`), color(card.colors[1], `${path}.colors[1]`)] } satisfies DemoCard;
   }
   if (card.kind !== 'membership') fail('unsupported_card_kind', path);
-  fields(card, ['kind', 'id', 'name', 'memberNumber', 'payload', 'preferredDisplayFormat', 'orientation', 'appearance', 'createdAt', 'updatedAt'], path, detailNames);
+  fields(card, ['kind', 'id', 'name', 'memberNumber', 'payload', 'preferredDisplayFormat', 'orientation', 'appearance', 'createdAt', 'updatedAt'], path, [...detailNames, 'sheetDisplayMode']);
   const details: Partial<MembershipCardDetails> = { ...readSize(card, path) };
   if (Object.hasOwn(card, 'country')) {
     if (card.country !== 'TH') fail('invalid_country', `${path}.country`);
@@ -119,6 +119,7 @@ export function validateWalletCard(value: unknown, path = 'card'): WalletCard {
     if (expiryMonthError(month)) fail('invalid_expiry_month', `${path}.expiryMonth`);
     details.expiryMonth = month;
   }
+  if (Object.hasOwn(card, 'sheetDisplayMode') && card.sheetDisplayMode !== 'cardcode' && card.sheetDisplayMode !== 'frontback') fail('invalid_sheet_display_mode', `${path}.sheetDisplayMode`);
   const memberNumber = card.memberNumber === null ? null : text(card.memberNumber, `${path}.memberNumber`, true);
   const payload = text(card.payload, `${path}.payload`);
   if (card.preferredDisplayFormat !== 'qr' && card.preferredDisplayFormat !== 'code128') fail('invalid_display_format', `${path}.preferredDisplayFormat`);
@@ -160,6 +161,7 @@ export function validateWalletCard(value: unknown, path = 'card'): WalletCard {
   if (Date.parse(updatedAt) < Date.parse(createdAt)) fail('invalid_timestamp_order', path);
   return {
     kind: 'membership', id, name, memberNumber, payload, preferredDisplayFormat: card.preferredDisplayFormat, orientation, ...details,
+    ...(Object.hasOwn(card, 'sheetDisplayMode') ? {sheetDisplayMode: card.sheetDisplayMode as MembershipCard['sheetDisplayMode']} : {}),
     appearance: { backgroundColor: color(appearance.backgroundColor, `${path}.appearance.backgroundColor`),
       textColor: color(appearance.textColor, `${path}.appearance.textColor`),
       imageAssetId: appearance.imageAssetId === null ? null : identifier(appearance.imageAssetId, `${path}.appearance.imageAssetId`), ...gradient, ...artwork },

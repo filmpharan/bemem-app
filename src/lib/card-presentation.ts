@@ -8,6 +8,7 @@ import type { CardArtworkPair, GradientPresetId } from '../types/membership-card
 export type CardPresentationDraft = {
   country: 'TH'; brandQuery: string; brandId: string | null; expiryMonth: string; side: 'front' | 'back';
   sizePresetId: CardSizePresetId;
+  sheetDisplayMode?: import('../types/membership-card').CardSheetDisplayMode;
   gradientPresetId?: GradientPresetId | null;
   artwork?: CardArtworkPair;
 };
@@ -21,7 +22,7 @@ export const WEB_BRANDS = [
 ] as const;
 export function emptyCardPresentation(): CardPresentationDraft {
   // Preserve the approved default artwork independently of the removed brand workflow.
-  return { country: 'TH', brandQuery: '', brandId: null, gradientPresetId: 'ptt', expiryMonth: '', side: 'front', sizePresetId: DEFAULT_CARD_SIZE_PRESET };
+  return { country: 'TH', brandQuery: '', brandId: null, gradientPresetId: 'ptt', expiryMonth: '', sheetDisplayMode: 'cardcode', side: 'front', sizePresetId: DEFAULT_CARD_SIZE_PRESET };
 }
 export function expiryMonthError(value: string): string | undefined {
   return expirationDateError(value);

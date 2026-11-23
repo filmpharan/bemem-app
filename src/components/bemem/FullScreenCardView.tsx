@@ -12,9 +12,9 @@ import { AddCardIcon } from './AddCardIcon';
 import { CardAppearancePreview } from './CardAppearancePreview';
 
 /** Read-only artwork presentation; owns only a temporary orientation lease. */
-export function FullScreenCardView({ card, side, onSide, onBack, onHome }: {
+export function FullScreenCardView({ card, side, onSide, onBack, onHome, displayPreview=false }: {
   card: Readonly<MembershipCard>; side: 'front' | 'back'; onSide: (side: 'front' | 'back') => void;
-  onBack: () => void; onHome: () => void;
+  onBack: () => void; onHome: () => void; displayPreview?:boolean;
 }) {
   const portrait = fullCardFit(card, 1, 1).portrait;
   const lease = useRef<ReturnType<typeof fullViewOrientation> | null>(null);
@@ -52,7 +52,7 @@ export function FullScreenCardView({ card, side, onSide, onBack, onHome }: {
           const { width, height } = event.nativeEvent.layout; setArea(previous => previous.width === width && previous.height === height ? previous : { width, height });
         }}>
           {fit.width > 0 && fit.height > 0 && <CardAppearancePreview key={card.id + side} values={values} presentation={presentation}
-            appearance={card.appearance} width={fit.width} height={fit.height} />}
+            displayPreview={displayPreview} appearance={card.appearance} width={fit.width} height={fit.height} />}
         </View>
         <View testID="full-card-controls" style={[styles.controls, { flexDirection: portrait ? 'row' : 'column' }]}>
           <Pressable accessibilityRole="button" accessibilityLabel="Switch card front and back" accessibilityState={{ selected: side === 'back', disabled: closing }}

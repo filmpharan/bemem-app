@@ -13,11 +13,12 @@ function controls(side, cancelled=false, simpleReplacement=true) {
   const pick=async options=>{calls.push(options);return cancelled?{canceled:true}:{canceled:false,assets:[{uri:'file:///synthetic.jpg'}]};};
   const slots=[];let cursor=0;
   const deps={react:{useState(v){const i=cursor++;if(!(i in slots))slots[i]=v;return[slots[i],v=>{slots[i]=v;}];},useRef(v){const i=cursor++;return slots[i]??={current:v};},useEffect:fn=>fn(),useMemo:fn=>fn()},
-    'react/jsx-runtime':{jsx,jsxs:jsx},'react-native':{Alert:{alert(){assert.fail('No extra image menu or error expected');}},Keyboard:{dismiss(){}},StyleSheet:{create:s=>s},View:'View',Text:'Text'},
+    'react/jsx-runtime':{jsx,jsxs:jsx},'react-native':{Platform:{OS:'android'},Alert:{alert(){assert.fail('No extra image menu or error expected');}},Keyboard:{dismiss(){}},StyleSheet:{create:s=>s},View:'View',Text:'Text'},
     'expo-image-picker':{requestCameraPermissionsAsync:async()=>({granted:true}),launchCameraAsync:pick,launchImageLibraryAsync:pick,UIImagePickerPreferredAssetRepresentationMode:{Compatible:'compatible'}},
     'react-native-safe-area-context':{SafeAreaView:'SafeAreaView'},'../../lib/card-artwork-store':{deviceArtworkStore:{retain:async()=>replacement}},
     '../../lib/card-geometry':{cardPaintSize:(w,h)=>({width:w-.2,height:h-.2})},'../../lib/artwork-adjustment':{},'./ArtworkSlider':{ArtworkSlider:'ArtworkSlider'},'../../lib/card-size-presets':{cardSizePreset:()=>({ratioWidth:6,ratioHeight:4})},
     '../../constants/lagoon-theme':{lagoon:{text:{primary:'#263943',secondary:'#586670'},surface:{base:'#fff'},canvas:{base:'#eee'}},lagoonFonts:{latin:'Manrope'}},
+    '../../lib/default-card-artwork':{isUserCardPhoto:image=>!!image},'../../lib/artwork-performance':{beginPhotoTrace:()=>({mark(){},bind(){},close(){}})},'./CardPhotoAction':{CardPhotoAction:'CardPhotoAction'},
     './GlassButton':{GlassButton:'GlassButton'},'./AddCardIcon':{AddCardIcon:'AddCardIcon'},'./CardArtworkImage':{CardArtworkImage:'CardArtworkImage'},
     './add-card-layout':{addCardLayout:{toolSize:36,buttonRadius:12}}};
   const module={exports:{}},file=path.join(root,'src/components/bemem/CardArtworkControls.tsx');

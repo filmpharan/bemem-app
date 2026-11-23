@@ -1,6 +1,6 @@
+import {validateImageSelection} from './card-artwork';
 import type { CardArtwork } from '../types/membership-card';
 import type { Receipt } from './card-history';
-import type { validateImageSelection } from './card-artwork';
 
 type Input = Parameters<typeof validateImageSelection>[0];
 type PickerPorts = {
@@ -32,4 +32,15 @@ export async function pickReceipts(camera: boolean, remaining: number, ports: Pi
 }
 export async function pickReceipt(camera: boolean, ports: PickerPorts): Promise<Receipt | null> {
   return (await pickReceipts(camera, 1, ports))?.[0] ?? null;
+}
+
+/** Selection-only path for Keeps. SDK cache remains temporary; no application retain is performed. */
+export async function selectKeepReceipt(camera:boolean,ports:Pick<PickerPorts,'active'|'cameraPermission'|'pick'>):Promise<Input|null>{
+ if(!ports.active())return null;
+ if(camera&&!await ports.cameraPermission())throw Error('Camera access was denied. You can choose a photo from Gallery instead.');
+ if(!ports.active())return null;
+ const result=await ports.pick(camera,1);
+ if(result.canceled||!ports.active())return null;
+ if(result.assets?.length!==1)throw new ReceiptSelectionError('Choose one photo.');
+ const input=result.assets[0];validateImageSelection(input);return input;
 }

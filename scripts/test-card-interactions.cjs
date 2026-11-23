@@ -21,6 +21,7 @@ function load(relative) {
     compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, jsx: ts.JsxEmit.ReactJSX, esModuleInterop: true },
   }).outputText;
   function localRequire(name) {
+    if (name === 'react') return {useState:initial=>[initial,()=>{}],useRef:initial=>({current:initial}),useMemo:fn=>fn(),useEffect(){}};
     if (name === 'react-native') return native;
     if (name === 'react/jsx-runtime') return { jsx, jsxs: jsx, Fragment: 'Fragment' };
     if (name === './MembershipCard') return { MembershipCard: 'MembershipCard' };

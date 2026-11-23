@@ -1,4 +1,4 @@
-import tokens from '../../design-system/bemem-lagoon-glass-rc2/TOKENS.json';
+import tokens from '../../design-system/bemem-vivid-lagoon/TOKENS.json';
 
 export type LagoonThemeId = keyof typeof tokens.palettes;
 export const DEFAULT_THEME_ID = tokens.metadata.defaultThemeId as LagoonThemeId;
