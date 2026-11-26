@@ -7,14 +7,11 @@ import { GlassButton } from './GlassButton';
 import { AddCardIcon } from './AddCardIcon';
 import { AddCardText } from './AddCardText';
 import { addCardLayout as layout } from './add-card-layout';
-import type {KeepsSheetMotion} from './keeps-motion';
-import type {KeepsContentMotion} from './keeps-editor-motion';
 
 export const supportsSheetBackgroundBlur = () => Platform.OS === 'android' && Number(Platform.Version) >= 31;
 
 /** Source-flow footer: header, form and CTA all belong to the same scroll content. */
-export function AddCardSheet({ children, footer, background, onClose, title = 'Add Card', closeDisabled = false, modalOnly = false, virtualized = false, fixedFooter = false,confirmation,presentation = 'modal', face,onContentViewportLayout,contentScrollEnabled = true, keepsMotion, keepsContentMotion }: {
-  keepsMotion?:KeepsSheetMotion; keepsContentMotion?:KeepsContentMotion;
+export function AddCardSheet({ children, footer, background, onClose, title = 'Add Card', closeDisabled = false, modalOnly = false, virtualized = false, fixedFooter = false,confirmation,presentation = 'modal', face,onContentViewportLayout,contentScrollEnabled = true }: {
   children: ReactNode; footer: ReactNode; background?: ReactNode; onClose: () => void;
   title?: string; closeDisabled?: boolean; modalOnly?: boolean; virtualized?: boolean;
   contentScrollEnabled?:boolean;fixedFooter?: boolean;presentation?:'modal'|'inline';
@@ -63,19 +60,18 @@ export function AddCardSheet({ children, footer, background, onClose, title = 'A
             </ScrollView>;
   const body=<View accessibilityElementsHidden={!!confirmation} importantForAccessibility={confirmation?'no-hide-descendants':'auto'} accessibilityViewIsModal={!confirmation&&presentation!=='inline'} style={[styles.sheet, (virtualized || fixedFooter) && { height: '92%' }]}>
             <View pointerEvents="none" accessible={false} style={styles.rim} />
-            {keepsContentMotion?keepsContentMotion.renderContent(fields,virtualized||fixedFooter):fields}
+            {fields}
           </View>;
   const Container=presentation==='inline'?View:SafeAreaView;
-  const content=<Container style={presentation==='inline'?[styles.overlay,styles.inline]:keepsMotion?[styles.overlay,{backgroundColor:'transparent'}]:styles.overlay}>
-        {keepsMotion?.scrim}
+  const content=<Container style={presentation==='inline'?[styles.overlay,styles.inline]:styles.overlay}>
         <Pressable accessibilityElementsHidden={!!confirmation} importantForAccessibility={confirmation?'no-hide-descendants':'auto'} accessibilityLabel={`Close ${title}`} accessibilityRole="button" disabled={closeDisabled||!!confirmation} onPress={requestClose} style={StyleSheet.absoluteFill} />
         <KeyboardAvoidingView behavior={Platform.OS==='ios'?'padding':'height'} style={styles.keyboard} pointerEvents="box-none">
-          {keepsMotion?keepsMotion.renderSheet(body):body}
+          {body}
           {confirmation?.content}
         </KeyboardAvoidingView>
       </Container>;
   if(presentation==='inline')return content;
-  const sheet=<Modal visible transparent animationType="none" {...(keepsMotion||keepsContentMotion?{onShow:()=>{keepsMotion?.onShow();keepsContentMotion?.onShow();}}:{})} onRequestClose={requestBack} statusBarTranslucent navigationBarTranslucent>{content}</Modal>;
+  const sheet=<Modal visible transparent animationType="none" onRequestClose={requestBack} statusBarTranslucent navigationBarTranslucent>{content}</Modal>;
   return modalOnly ? sheet : <View style={styles.screen}>
     <View importantForAccessibility="no-hide-descendants" accessibilityElementsHidden pointerEvents="none"
       style={[StyleSheet.absoluteFill, supportsSheetBackgroundBlur() && { filter: [{ blur: 5 }] }]}>{background}</View>

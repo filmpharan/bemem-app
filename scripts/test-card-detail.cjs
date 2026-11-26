@@ -29,7 +29,7 @@ function environment(artwork = false, fontScale = 1) {
       if (name.endsWith('/lagoon-theme')) return { lagoon: { canvas: { base: '#eceff1' }, surface: { base: '#fafcfd' },
         action: { soft: '#d7e1e6', deep: '#2b3e49' }, rim: { outer: '#ffffff' }, shadow: { tint: '#293e48' }, text: { primary: '#263943', secondary: '#4c606c', onAction: '#fff' } },
         lagoonFonts: { latin: 'BememManrope' }, alpha: (hex, value) => hex + Math.round(value * 255).toString(16).padStart(2,'0') };
-      if (['./GlassButton','./ConfirmationDialog','./GroupFolderCard', './CardFrontBackArtwork', './CardCodeView', './AddCardIcon', './EditMembershipCardEditor', './CardArtworkImage', './ShareCardSheet', './KeepsSheet','./CardHistorySheet', './FullScreenCardView'].includes(name) || name === './CardAppearancePreview' && !artwork) {
+      if (['./GlassButton','./ConfirmationDialog','./GroupFolderCard', './CardFrontBackArtwork', './CardCodeView', './AddCardIcon', './EditMembershipCardEditor', './CardArtworkImage', './ShareCardSheet', './KeepsFeature','./CardHistorySheet', './FullScreenCardView'].includes(name) || name === './CardAppearancePreview' && !artwork) {
         const key = name.slice(2); return { [key]: key };
       }
       assert.ok(name.startsWith('.'), `Unexpected native/IO dependency ${name}`);
@@ -206,7 +206,7 @@ test('Home Share opens a read-only sheet and restores the original code format a
 test('Home has My Keeps left and Add Keep right in both modes; old Memory is removed',()=>{
  for(const mode of ['cardcode','frontback'])for(const action of ['My Keeps','Add Keep']){
   const e=environment(),props={card:{...base,sheetDisplayMode:mode},fromCreate:false,onClose(){}};let tree=e.render(props);const row=byId(tree,'card-keeps-actions');assert.equal(row.props.style.flexDirection,'row');assert.equal(row.props.children[0].props.accessibilityLabel,'My Keeps');assert.equal(row.props.children[1].props.accessibilityLabel,'Add Keep');assert.equal(row.props.children[1].props.kind,'action');assert.equal(nodes(tree).some(n=>n.props?.accessibilityLabel==='Memory'),false);
-  byLabel(tree,action).props.onPress();tree=e.render(props);assert.equal(tree.type,'KeepsSheet');assert.equal(tree.props.card,props.card);assert.equal(tree.props.initialAdd,action==='Add Keep');tree.props.onClose();assert.ok(byId(e.render(props),'card-keeps-actions'));
+  byLabel(tree,action).props.onPress();tree=e.render(props);assert.equal(tree.type,'KeepsFeature');assert.equal(tree.props.card,props.card);assert.equal(tree.props.initialAdd,action==='Add Keep');tree.props.onClose();assert.ok(byId(e.render(props),'card-keeps-actions'));
  }
 });
 
@@ -273,7 +273,7 @@ test('Front&Back mounts only image-focused presentation; legacy Card+Code retain
   const e=environment(),card={...makeCard(preset),sheetDisplayMode:'frontback'},before=JSON.stringify(card);let closed=0;
   const props={card,fromCreate,editCommands:{openEdit(){return{ok:false,message:'Synthetic blocked edit'};}},onClose:()=>closed++};let t=e.render(props);
   assert.equal(nodes(t).some(n=>n.type==='CardCodeView'||n.props?.testID==='card-detail-code-panel'||n.props?.testID==='card-detail-slot'),false);assert.ok(find(t,n=>n.type==='CardFrontBackArtwork'));
-  assert.ok(byLabel(t,fromCreate?'Edit Card':'Share card'));if(!fromCreate){byLabel(t,'My Keeps').props.onPress();assert.equal(e.render(props).type,'KeepsSheet');}
+  assert.ok(byLabel(t,fromCreate?'Edit Card':'Share card'));if(!fromCreate){byLabel(t,'My Keeps').props.onPress();assert.equal(e.render(props).type,'KeepsFeature');}
   assert.equal(JSON.stringify(card),before);
   const old=environment(),legacy=old.render({...props,card:makeCard(preset)});assert.ok(find(legacy,n=>n.type==='CardCodeView'));
  }

@@ -83,7 +83,7 @@ function environment(approved = false, populated = true, editorUI = false) {
           if (activationFailure && session.source === 'v2') throw Error('Synthetic binding failure');
         } }) };
       }
-      if (['./CardFrontBackArtwork', './ConfirmationDialog','./CardAppearancePreview', './AddCardIcon', './GlassButton', './CardCodeView', './AddCardForm', './AddCardSheet', './AddCardText', './ShareCardSheet', './KeepsSheet','./CardHistorySheet', './FullScreenCardView'].includes(name)
+      if (['./CardFrontBackArtwork', './ConfirmationDialog','./CardAppearancePreview', './AddCardIcon', './GlassButton', './CardCodeView', './AddCardForm', './AddCardSheet', './AddCardText', './ShareCardSheet', './KeepsFeature','./CardHistorySheet', './FullScreenCardView'].includes(name)
         || name === './EditMembershipCardEditor' && !editorUI) { const component = name.slice(2); return { [component]: component }; }
  if(name.endsWith('/ci-theme'))return require('./ci-theme-fixture.cjs');
       if (name === '../../constants/lagoon-theme') return { core: tokens.core, lagoon: tokens.palettes['pearl-gray'].colors, lagoonFonts: { latin: 'BememManrope' } };

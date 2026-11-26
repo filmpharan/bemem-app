@@ -3,7 +3,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { ActivityIndicator, Alert, BackHandler, Keyboard, Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { KeepsSheet } from '@/components/bemem/KeepsSheet';
+import { KeepsFeature } from '@/components/bemem/KeepsFeature';
+import { KeepNotificationBridge } from '@/components/bemem/KeepNotificationBridge';
 import { GlassButton } from '@/components/bemem/GlassButton';
 import { CardPreview } from '@/components/bemem/CardPreview';
 import { AddCardEditor,type AddCardEditorHandle } from '@/components/bemem/AddCardEditor';
@@ -26,6 +27,8 @@ import { FolderNameSheet } from '@/components/bemem/FolderNameSheet';
 
 export default function HomeScreen() {
   const [keepsRecoveryOpen,setKeepsRecoveryOpen]=useState(false);
+  const [notificationKeep,setNotificationKeep]=useState<{cardId:string;keepId:string;generation:number;source:string|null|undefined}|null>(null);
+  const [notificationUnavailable,setNotificationUnavailable]=useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState('');
   const wallet = useWalletCanvas(searchOpen&&query.trim().length>0);
@@ -51,6 +54,8 @@ export default function HomeScreen() {
   // UI session invalidation only; never retain old artwork to finish an exit.
   const previewOwner=useRef<{request:typeof openedPreview;generation:number;source:string|null|undefined}|null>(null);
   const previewState=wallet.runtime.getSnapshot().state;
+  const notificationCurrent=!notificationKeep||notificationKeep.generation===previewState.generation&&notificationKeep.source===previewState.source&&!!wallet.runtime.getSnapshot().session?.saved.cards.some(c=>c.kind==='membership'&&c.id===notificationKeep.cardId);
+  useEffect(()=>{if(notificationKeep&&!notificationCurrent){setNotificationKeep(null);setNotificationUnavailable(true);}},[notificationKeep,notificationCurrent]);
   if(previewOwner.current?.request!==openedPreview)previewOwner.current={request:openedPreview,generation:previewState.generation,source:previewState.source};
   const previewCurrent=!openedPreview||previewOwner.current?.generation===previewState.generation&&previewOwner.current?.source===previewState.source;
   const previewLatest=useRef({openedPreview,openedFolder,wallet});previewLatest.current={openedPreview,openedFolder,wallet};
@@ -74,7 +79,7 @@ export default function HomeScreen() {
   },[openedPreview,previewCurrent,pageReadable,wallet]);
   const scrollKey=`${editing?'create':'home'}-${page}`;
   const handleDragging = useCallback((active: boolean) => setDragging(active), []);
-  const disabled = keepsRecoveryOpen || !wallet.ready || wallet.saving || dragging || migrationOpen || proOpen || !!wallet.folderProposal || sheetBlocked || navigationClosing || wallet.exitPrompt || !!wallet.pageConfirmation;
+  const disabled = !!notificationKeep || notificationUnavailable || keepsRecoveryOpen || !wallet.ready || wallet.saving || dragging || migrationOpen || proOpen || !!wallet.folderProposal || sheetBlocked || navigationClosing || wallet.exitPrompt || !!wallet.pageConfirmation;
 
   // Ordinary sheets unmount in one committed render before consuming a navigation intent.
   function navigate(action:()=>void){
@@ -203,7 +208,13 @@ export default function HomeScreen() {
         onRename={name=>{const ok=wallet.renameFolder(currentFolder.id,name,openedFolder!.ticket);if(ok)setOpenedFolder({id:currentFolder.id,ticket:wallet.folderTicket()});return ok;}}
         onUngroup={()=>{const ok=wallet.ungroupFolder(currentFolder.id,openedFolder!.ticket);if(ok)setOpenedFolder(null);return ok;}}/>}
       {wallet.folderProposal&&<FolderNameSheet error={wallet.error} onCancel={wallet.cancelFolderProposal} onConfirm={wallet.confirmFolder}/>}
-      {keepsRecoveryOpen&&<KeepsSheet onClose={()=>setKeepsRecoveryOpen(false)}/>}
+      {keepsRecoveryOpen&&<KeepsFeature onClose={()=>setKeepsRecoveryOpen(false)}/>}
+      <KeepNotificationBridge blocked={disabled||editing||proOpen||addOpen||!!openedPreview||!!openedFolder||footerExpanded||wallet.dirty}
+        onOpen={target=>{const card=wallet.runtime.getSnapshot().session?.saved.cards.find(c=>c.kind==='membership'&&c.id===target.cardId);if(card?.kind==='membership'){const owner=wallet.runtime.getSnapshot().state;setNotificationKeep({...target,generation:owner.generation,source:owner.source});}else setNotificationUnavailable(true);}}
+        onUnavailable={()=>setNotificationUnavailable(true)}/>
+      {notificationKeep&&notificationCurrent&&(()=>{const card=wallet.runtime.getSnapshot().session?.saved.cards.find(c=>c.kind==='membership'&&c.id===notificationKeep.cardId);return card?.kind==='membership'?<KeepsFeature key={`${card.id}:${notificationKeep.keepId}`} card={card} initialKeepId={notificationKeep.keepId} onClose={()=>setNotificationKeep(null)}/>:null;})()}
+      <ConfirmationDialog request={notificationUnavailable?{id:'notification-target-unavailable',title:'Reminder unavailable',description:'This Keep could not be verified in the current wallet. No data was changed.',onDismiss:()=>setNotificationUnavailable(false),actions:[{label:'Back to Home',role:'primary',onPress:()=>setNotificationUnavailable(false)}]}:null}/>
+
       {migrationOpen && <WalletMigrationPanel onClose={() => setMigrationOpen(false)} />}
     {footerExpanded&&<Pressable accessibilityRole="button" accessibilityLabel="Close canvas selector" style={StyleSheet.absoluteFill} onPress={()=>pagePopover.current?.dismiss()}/>}
     </View>

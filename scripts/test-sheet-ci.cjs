@@ -104,23 +104,3 @@ test('Policy/History keep local spacing and dividers while shared sheet owns chr
  assert.equal(p.body.fontSize,15);assert.equal(p.body.lineHeight,24);assert.equal(p.section.paddingBottom,18);assert.equal(h.row.minHeight,88);assert.equal(h.list.paddingHorizontal,20);
  assert.match(source('CardHistorySheet'),/<FlatList/);assert.match(source('CardHistorySheet'),/virtualized/);
 });
-
-test('M3-A sheet motion is opt-in: Add/Edit retain identical native Modal, layout, keyboard and scrim defaults',()=>{
- const h=harness('AddCardSheet'),base={modalOnly:true,title:'Add Card',children:'form',footer:'actions',onClose(){}};
- const original=h.render(base);assert.equal(original.type,'Modal');assert.equal(original.props.animationType,'none');assert.equal(original.props.onShow,undefined);assert.equal(nodes(original).some(n=>n.type==='Animated.View'),false);
- let shows=0,body;const motion={onShow(){shows++;},scrim:{type:'Animated.View',props:{testID:'keeps-motion-scrim'}},renderSheet(element){body=element;return{type:'Animated.View',props:{...element.props,testID:'opt-in-sheet'}};}};
- const animated=h.render({...base,title:'Add Keep',keepsMotion:motion});assert.equal(nodes(animated).filter(n=>n.type==='Modal').length,1);assert.equal(nodes(animated).filter(n=>n.props?.testID==='keeps-motion-scrim').length,1);assert.equal(animated.props.animationType,'none');assert.equal(animated.props.statusBarTranslucent,true);assert.equal(animated.props.navigationBarTranslucent,true);animated.props.onShow();assert.equal(shows,1);
- const oldBody=nodes(original).find(n=>n.props?.style?.[0]?.maxHeight==='92%');assert.deepEqual(body.props.style,oldBody.props.style);assert.equal(nodes(animated).find(n=>n.type==='KeyboardAvoidingView').props.behavior,'height');assert.equal(nodes(h.render({...base,title:'Edit Card'})).some(n=>n.type==='Animated.View'),false);
-});
-test('M3-A opt-in sheet preserves keyboard-first Back, busy and inline confirmation priority',()=>{
- const h=harness('AddCardSheet');let closed=0,cancelled=0,dismissed=0;const p={modalOnly:true,title:'Add Keep',children:'choices',footer:null,onClose:()=>closed++,keepsMotion:{onShow(){},scrim:null,renderSheet:element=>element}};
- h.keyboard.isVisible=()=>true;h.keyboard.dismiss=()=>dismissed++;h.render(p).props.onRequestClose();assert.equal(dismissed,1);assert.equal(closed,0);
- h.keyboard.isVisible=()=>false;h.render({...p,closeDisabled:true}).props.onRequestClose();assert.equal(closed,0);h.render({...p,confirmation:{content:'confirm',onRequestClose:()=>cancelled++}}).props.onRequestClose();assert.equal(cancelled,1);assert.equal(closed,0);h.render(p).props.onRequestClose();assert.equal(closed,1);
-});
-
-test('M3-B content motion stays inside one native sheet and composes onShow without changing default Add/Edit',()=>{
- const h=harness('AddCardSheet');for(const fixedFooter of [false,true]){let inner=0,outer=0,fields,fill;const base={modalOnly:true,title:'Add Keep',fixedFooter,children:'form',footer:'buttons',onClose(){}};const tree=h.render({...base,keepsMotion:{scrim:'same scrim',onShow:()=>outer++,renderSheet:s=>s},keepsContentMotion:{onShow:()=>inner++,renderContent:(s,f)=>{fields=s;fill=f;return s;}}});assert.equal(tree.type,'Modal');assert.equal(nodes(tree).filter(n=>n.type==='Modal').length,1);tree.props.onShow();assert.equal(inner,1);assert.equal(outer,1);assert.equal(fill,fixedFooter);assert.equal(fields.type,fixedFooter?'View':'ScrollView');if(fixedFooter)assert.equal(fields.props.style.flex,1);else{assert.equal(fields.props.keyboardShouldPersistTaps,'handled');assert.equal(fields.props.keyboardDismissMode,'on-drag');}assert.equal(tree.props.animationType,'none');assert.equal(h.render({...base,title:'Add Card'}).props.onShow,undefined);assert.equal(h.render({...base,title:'Edit Card'}).props.onShow,undefined);}
-});
-test('M3-B keyboard-first Back and discard confirmation remain higher priority than editor cancellation',()=>{
- const h=harness('AddCardSheet');let cancels=0,confirms=0,keyboards=0;const p={modalOnly:true,title:'Note',children:'draft',footer:'actions',onClose:()=>cancels++,keepsContentMotion:{onShow(){},renderContent:s=>s}};h.keyboard.isVisible=()=>true;h.keyboard.dismiss=()=>keyboards++;h.render(p).props.onRequestClose();assert.equal(keyboards,1);assert.equal(cancels,0);h.keyboard.isVisible=()=>false;h.render({...p,confirmation:{content:'discard',onRequestClose:()=>confirms++}}).props.onRequestClose();assert.equal(confirms,1);assert.equal(cancels,0);h.render({...p,closeDisabled:true}).props.onRequestClose();assert.equal(cancels,0);h.render(p).props.onRequestClose();assert.equal(cancels,1);
-});

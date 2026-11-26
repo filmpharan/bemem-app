@@ -22,7 +22,7 @@ import { CardCodeView } from './CardCodeView';
 import { EditMembershipCardEditor } from './EditMembershipCardEditor';
 import { ShareCardSheet } from './ShareCardSheet';
 import { FullScreenCardView } from './FullScreenCardView';
-import { KeepsSheet } from './KeepsSheet';
+import { KeepsFeature } from './KeepsFeature';
 import type { createWalletFeatureCommands, MembershipEditSession } from '../../lib/wallet-feature-commands';
 
 export type CardDetailMotionPresentation={
@@ -102,7 +102,7 @@ export function MembershipCardDetail({ card, fromCreate, onClose, editCommands, 
     onClose={requiresReview => { setEditing(null); if (requiresReview) onClose(); }}
     onSaved={() => { setEditing(null); setFormat('qr'); setNotice(''); }} />;
   if (!fromCreate && shareOpen) return <ShareCardSheet card={card} onClose={() => setShareOpen(false)} />;
-  if (!fromCreate&&keepsOpen) return <KeepsSheet card={card} initialAdd={keepsOpen==='add'} onClose={()=>setKeepsOpen(null)}/>;
+  if (!fromCreate&&keepsOpen) return <KeepsFeature card={card} initialAdd={keepsOpen==='add'} onClose={()=>setKeepsOpen(null)}/>;
   function requestEdit(){
     if(!mounted.current||motion?.isClosing()||!editCommands||saving.current||confirmation.current||requiresReview)return;
     const result=editCommands.openEdit(card.id);

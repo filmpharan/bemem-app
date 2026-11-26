@@ -31,7 +31,7 @@ function environment(){
  if(name.endsWith('/sheet-visual'))return require('./sheet-visual-fixture.cjs');
  if(name.endsWith('/ci-theme'))return require('./ci-theme-fixture.cjs');
  if(name.endsWith('/lagoon-theme'))return{core:{typography:{styles:{button:{}}}},lagoon:{canvas:{base:'#eee'},surface:{base:'#fff'},text:{primary:'#222',secondary:'#555',onAction:'#fff'},rim:{outer:'#fff'},action:{deep:'#333',soft:'#eee'}},lagoonFonts:{latin:'Manrope'}};
- if(['./KeepsSheet','./CardAppearancePreview','./CardFrontBackArtwork','./CardCodeView','./AddCardIcon','./EditMembershipCardEditor','./ShareCardSheet','./FullScreenCardView','./ConfirmationDialog','./GlassButton','./AddCardSheet','./CardArtworkImage','./ReceiptViewer','./AddCardForm','./AddCardText'].includes(name)){const key=name.slice(2);return{[key]:key};}
+ if(['./KeepsFeature','./CardAppearancePreview','./CardFrontBackArtwork','./CardCodeView','./AddCardIcon','./EditMembershipCardEditor','./ShareCardSheet','./FullScreenCardView','./ConfirmationDialog','./GlassButton','./AddCardSheet','./CardArtworkImage','./ReceiptViewer','./AddCardForm','./AddCardText'].includes(name)){const key=name.slice(2);return{[key]:key};}
  if(name==='./CardArtworkControls')return{ArtworkCrop:'ArtworkCrop'};
  assert.ok(name.startsWith('.'),'No uncontrolled dependency '+name);return load(path.resolve(path.dirname(file),name));},mod,mod.exports);return mod.exports;}
  function render(Component,props,key='main'){slots=frames.get(key)??[];frames.set(key,slots);cursor=0;effects=[];const tree=Component(props);effects.forEach(run=>run());return tree;}
@@ -162,7 +162,7 @@ test('Approved Delete confirmation shows actual History counts and Cancel invoke
  e.render(Editor,props,'membership-editor');let tree=e.render(Editor,props,'membership-editor');control(tree,'Delete Card').props.onPress();assert.equal(e.alerts.length,0);await flush();const dialog=confirmation(e.render(Editor,props,'membership-editor'));assert.match(dialog.description,/3 history records and 5 receipt attachments/);assert.equal(dialog.actions[1].label,'Delete Card & History');assert.equal(dialog.actions[0].role,'primary');dialog.actions[0].onPress();assert.equal(deleted,0);assert.equal(cancelled,1);
 });
 test('MembershipCardDetail History entry opens the same card/context without changing format or side',()=>{
- const source=fs.readFileSync(path.join(root,'src/components/bemem/MembershipCardDetail.tsx'),'utf8');assert.ok(source.includes('<KeepsSheet card={card}'));assert.ok(!source.includes('Card History and Receipts. Coming soon.'));
+ const source=fs.readFileSync(path.join(root,'src/components/bemem/MembershipCardDetail.tsx'),'utf8');assert.ok(source.includes('<KeepsFeature card={card}'));assert.ok(!source.includes('Card History and Receipts. Coming soon.'));
 });
 test('Receipt viewer shares only the receipt capture, preserving ratio and excluding record UI',async()=>{
  const e=environment(),native=e.load('src/lib/card-history-native.ts'),image=await native.deviceReceiptStore.retain(seedImage(e)),receipt={...image,id:'view-r'};

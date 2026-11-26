@@ -18,7 +18,7 @@ function harness(){
   if(name.endsWith('/lagoon-theme')){const t=require('../design-system/bemem-vivid-lagoon/TOKENS.json');return{lagoon:t.palettes[t.metadata.defaultThemeId].colors,lagoonTokens:t,core:t.core,lagoonFonts:{latin:'Manrope'},alpha:(v,a)=>v+Math.round(a*255).toString(16).padStart(2,'0')};}
   if(name.endsWith('/ci-theme'))return require('./ci-theme-fixture.cjs');
   if(name.endsWith('/sheet-visual'))return require('./sheet-visual-fixture.cjs');
-  if(['./GroupFolderCard','./EditMembershipCardEditor','./ShareCardSheet','./KeepsSheet','./CardHistorySheet','./FullScreenCardView','./CardCodeView'].includes(name))return{[name.slice(2)]:name.slice(2)};
+  if(['./GroupFolderCard','./EditMembershipCardEditor','./ShareCardSheet','./KeepsFeature','./CardHistorySheet','./FullScreenCardView','./CardCodeView'].includes(name))return{[name.slice(2)]:name.slice(2)};
   if(name==='./CardArtworkControls')return{CardArtworkControls:function CardArtworkControls(p){return p.renderTrigger('photo action');}};
   if(['./GlassButton','./AddCardIcon','./AddCardText','./CardSheetModeSelector','./ExpirationDatePicker','./MembershipNumberScanner'].includes(name))return{[name.slice(2)]:name.slice(2)};
   assert.ok(name.startsWith('.'),'No native IO or network: '+name);return load(path.resolve(path.dirname(file),name));
@@ -113,8 +113,8 @@ test('Home Card Detail mounts Keeps only after an explicit action and releases c
  const h=harness(),Detail=h.load('src/components/bemem/MembershipCardDetail.tsx').MembershipCardDetail;
  const cards=['first','second'].map(id=>({kind:'membership',id,name:'Synthetic '+id,memberNumber:'00123456',payload:'00123456',preferredDisplayFormat:'qr',orientation:'landscape',sizePresetId:'card-landscape',widthBlocks:6,heightBlocks:4,sheetDisplayMode:'frontback',appearance:{backgroundColor:'#123456',textColor:'#ffffff',imageAssetId:null},createdAt:'2026-11-22T00:00:00Z',updatedAt:'2026-11-22T00:00:00Z'}));
  for(const card of [...cards,cards[0]]){
-  const draw=()=>h.render([h.jsx(Detail,{card,fromCreate:false,onClose(){}},card.id)]);let tree=draw();assert.equal(h.nodes(tree).some(n=>n.type==='KeepsSheet'),false);const baseline=h.resources();
-  for(let cycle=0;cycle<3;cycle++){h.nodes(tree).find(n=>n.props?.accessibilityLabel==='My Keeps').props.onPress();tree=draw();const sheets=h.nodes(tree).filter(n=>n.type==='KeepsSheet');assert.equal(sheets.length,1);assert.equal(sheets[0].props.card.id,card.id);sheets[0].props.onClose();tree=draw();assert.equal(h.nodes(tree).some(n=>n.type==='KeepsSheet'),false);assert.deepEqual(h.resources(),baseline);}
+  const draw=()=>h.render([h.jsx(Detail,{card,fromCreate:false,onClose(){}},card.id)]);let tree=draw();assert.equal(h.nodes(tree).some(n=>n.type==='KeepsFeature'),false);const baseline=h.resources();
+  for(let cycle=0;cycle<3;cycle++){h.nodes(tree).find(n=>n.props?.accessibilityLabel==='My Keeps').props.onPress();tree=draw();const sheets=h.nodes(tree).filter(n=>n.type==='KeepsFeature');assert.equal(sheets.length,1);assert.equal(sheets[0].props.card.id,card.id);sheets[0].props.onClose();tree=draw();assert.equal(h.nodes(tree).some(n=>n.type==='KeepsFeature'),false);assert.deepEqual(h.resources(),baseline);}
  }
  h.unmount();assert.deepEqual(h.resources(),{frames:0,effects:0,listeners:0});
 });

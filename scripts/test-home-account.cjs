@@ -44,8 +44,8 @@ function home(source='v2',allowed=true){
 test('Last-card removal retains an explicit lazy Keeps recovery entry; normal Home and Arrange do not show it',()=>{
  const h=home();h.session.saved.cards=[{id:'saved-card',kind:'membership'}];
  let tree=h.render();assert.ok(!nodes(tree).some(n=>n.props?.accessibilityLabel==='My Keeps recovery'));
- h.session.saved.cards=[];tree=h.render();const entry=nodes(tree).find(n=>n.props?.accessibilityLabel==='My Keeps recovery');assert.ok(entry);assert.ok(!nodes(tree).some(n=>n.type==='KeepsSheet'));
- const saved=JSON.stringify(h.session);entry.props.onPress();tree=h.render();const sheet=nodes(tree).find(n=>n.type==='KeepsSheet');assert.ok(sheet);assert.equal(sheet.props.card,undefined);assert.equal(nodes(tree).find(n=>n.type==='ContextualFooter').props.disabled,true);sheet.props.onClose();assert.ok(!nodes(h.render()).some(n=>n.type==='KeepsSheet'));assert.equal(JSON.stringify(h.session),saved);
+ h.session.saved.cards=[];tree=h.render();const entry=nodes(tree).find(n=>n.props?.accessibilityLabel==='My Keeps recovery');assert.ok(entry);assert.ok(!nodes(tree).some(n=>n.type==='KeepsFeature'));
+ const saved=JSON.stringify(h.session);entry.props.onPress();tree=h.render();const sheet=nodes(tree).find(n=>n.type==='KeepsFeature');assert.ok(sheet);assert.equal(sheet.props.card,undefined);assert.equal(nodes(tree).find(n=>n.type==='ContextualFooter').props.disabled,true);sheet.props.onClose();assert.ok(!nodes(h.render()).some(n=>n.type==='KeepsFeature'));assert.equal(JSON.stringify(h.session),saved);
  h.wallet.mode='create';assert.ok(!nodes(h.render()).some(n=>n.props?.accessibilityLabel==='My Keeps recovery'));
 });
 
